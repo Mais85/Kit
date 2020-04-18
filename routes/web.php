@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (){
 
     return view('welcome');
 });
 
 Auth::routes(['register'=>false]);
 
-Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],function (){
 
@@ -29,11 +29,11 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
         Route::get('/index','IndexPageController@index');
         Route::post('/index/create','IndexPageController@store')->name('indexcreate');
 
-        Route::get('/about-us','AboutController@index');
-        Route::post('/about-us/create-edit','AboutController@store')->name('/aboutus');
-
-        Route::get('/contact','ContactPageController@index');
-        Route::post('/contact/create-edit','ContactPageController@store')->name('/contact');
+        Route::get('/about-us','AboutPageController@index');
+        Route::post('/about-us/create-edit','AboutController@store')->name('aboutus');
+//
+//        Route::get('/contact','ContactPageController@index');
+//        Route::post('/contact/create-edit','ContactPageController@store')->name('/contact');
 
     });
 
