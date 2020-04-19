@@ -27,21 +27,37 @@ class IndexPageController extends AdminBaseController
     /**
      *  show index page editor
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
      */
     public function index ()
     {
         $title = 'Ana Səhifə Redaktəsi';
         $items = $this->indexpagerepository->all();
+        cache(['inpagemod'=> $items],3600*24);
+
         return view ('admin.pages.indexpage',compact('title','items'));
     }
 
 
+    /**
+     *  Create or update index page
+     * @param IndexPageRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
+     */
     public function store(IndexPageRequest $request)
     {
 
         $bvalidated = $request->validated();
         if($bvalidated){
-            $items = $this->indexpagerepository->all();
+         $data = cache('inpagemod');
+
+           if(isset($data)){
+               $items =$data;
+           }else{
+               $items = $this->indexpagerepository->all();
+           }
+
             if(isset($items)){
                 $this->indexpagerepository->update($request, $items);
             }else{

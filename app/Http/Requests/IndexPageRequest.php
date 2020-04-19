@@ -37,7 +37,9 @@ class IndexPageRequest extends FormRequest
     {
         return[
             'title1_'.config('app.locale').'.required' => 'Başlıq 1 mütləq doldurulmalıdır !',
-            'title2_'.config('app.locale').'.required' => 'Başlıq 1 mütləq doldurulmalıdır !',
+            'title2_'.config('app.locale').'.required' => 'Başlıq 2 mütləq doldurulmalıdır !',
+            'contents1_'.config('app.locale').'.required' => 'Mətn 1 mütləq doldurulmalıdır !',
+            'contents2_'.config('app.locale').'.required' => 'Mətn 2 mütləq doldurulmalıdır !',
             'max:191' => 'Maksimum 191 simvol daxil etmək olar',
         ];
     }

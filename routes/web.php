@@ -30,10 +30,10 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
         Route::post('/index/create','IndexPageController@store')->name('indexcreate');
 
         Route::get('/about-us','AboutPageController@index');
-        Route::post('/about-us/create-edit','AboutController@store')->name('aboutus');
-//
-//        Route::get('/contact','ContactPageController@index');
-//        Route::post('/contact/create-edit','ContactPageController@store')->name('/contact');
+        Route::post('/about-us/create-edit','AboutPageController@store')->name('aboutus');
+
+        Route::get('/projects','ProjectPageController@index');
+        Route::post('/projects/create-edit','ProjectPageController@store')->name('projects');
 
     });
 

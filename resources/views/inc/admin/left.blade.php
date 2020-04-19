@@ -19,18 +19,12 @@
                         <i class="c-sidebar__icon feather icon-file-text "></i>Səhifələr
                     </a>
 
-                    {{--                            <div>--}}
-                    {{--                                <ul class="c-sidebar__list collapse {{menuActive('pages',3)}}" id="sidebar-pages">--}}
-                    {{--                                    <li><a class="c-sidebar__link {{menuActive('pages')}}" href="/home/pages" >Bütün Səhifələr</a></li>--}}
-                    {{--                                    <li><a class="c-sidebar__link {{menuActive('pages/create')}}" href="/home/pages/create">Səhifə Yarat</a></li>--}}
-                    {{--                                </ul>--}}
-                    {{--                            </div>--}}
+
 
                     <div>
                         <ul class="c-sidebar__list collapse {{menuActive('pages',3)}}" id="sidebar-pages">
                             <li><a class="c-sidebar__link {{menuActive('pages/index')}}" href="/admin/pages/index" >Ana səhifə</a></li>
                             <li><a class="c-sidebar__link {{menuActive('pages/about-us')}}" href="/admin/pages/about-us" >Haqqımızda</a></li>
-{{--                            <li><a class="c-sidebar__link {{menuActive('pages/customers')}}" href="/home/pages/customers">Müştərilər</a></li>--}}
                             <li><a class="c-sidebar__link {{menuActive('pages/projects')}}" href="/admin/pages/projects">Layihələr</a></li>
                             <li><a class="c-sidebar__link {{menuActive('pages/contact')}}" href="/admin/pages/contact">Əlaqə</a></li>
                         </ul>

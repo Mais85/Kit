@@ -20,7 +20,6 @@ class IndexPageRepository extends AdminBaseController
 
    public function store($request)
    {
-//       dd($request->all());
       return IndexPage::create([
           'slug'=> Str::slug('main page edit','-'),
           'contents1' =>$this->getFormTranslations('contents1',$request),

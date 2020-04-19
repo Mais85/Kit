@@ -98,9 +98,9 @@
                                             <label class="c-field__label">1.Blok - Şəkil 1</label>
                                             @if(isset($items->img))
                                                 <div class="admin_image old_img">
-                                                    <img src="{{$items->img1}}"style="max-width: 190px;border: 1px solid #aaa;">
+                                                    <img src="{{$items->img}}"style="max-width: 190px;border: 1px solid #aaa;">
                                                     <div class="admin_image_close" onclick="delete_old_image('old_img')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
-                                                    <input type="hidden" name="old_img" value="{{$items->img1}}">
+                                                    <input type="hidden" name="old_img" value="{{$items->img}}">
                                                 </div>
                                             @endif
                                             <input type="file" class="c-input" name="img" accept="image/*"/>
