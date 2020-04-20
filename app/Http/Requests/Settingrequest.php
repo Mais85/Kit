@@ -25,7 +25,7 @@ class Settingrequest extends FormRequest
     {
         return [
             //
-            'title_'.config('app.locale') => 'required',
+            'title_'.config('app.locale') => 'required|max:191',
             'meta_description_'.config('app.locale') => 'required',
             'meta_keywords_'.config('app.locale') => 'required',
             'footcontent_'.config('app.locale') => 'required',
@@ -50,6 +50,7 @@ class Settingrequest extends FormRequest
             'email.required' =>'Email mütləq doldurulmalıdır !',
             'email.email:rfc,dns' =>'Email doğru deyil !',
             'url' => 'link (url) daxil edin !',
+            'max:191' => 'Maksimum 191 simvol daxil etmək olar',
         ];
     }
 }

@@ -38,14 +38,31 @@ class ProjectPageController extends AdminBaseController
         return view('admin.pages.projectpage',compact('title','items'));
     }
 
+    /**
+     * Create or update project page data from db
+     * @param ProjectPageRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
+     */
    public function store(ProjectPageRequest $request)
    {
        $bvalitated = $request->validated();
 
        if($bvalitated){
-
+           $data = cache('propagemod');
+           if(isset($data)){
+               $items = $data;
+           }else{
+               $items = $this->projectpagerepository->all();
+           }
+           if(isset($items)){
+               $this->projectpagerepository->update($items,$request);
+           }else{
+               $this->projectpagerepository->store($request);
+           }
+           return redirect('/admin/pages/projects')->with('message',' Məlumatlarınız uğurla dəyişdirildi !');
        }else{
-
+           return redirect()->back()->withErrors($bvalitated)->withInput();
        }
    }
 }

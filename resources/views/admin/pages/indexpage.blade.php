@@ -22,7 +22,7 @@
                                                 <h3>Blok 1</h3>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Başlıq 1</label>
-                                                    <input type="text" class="c-input" name="title1_{{$language_key}}" {{-- requiredFall($language_key) --}} @if(!empty($items)) value="{{ $items->getTranslation('title1',$language_key,false) }}" @else value="{{ old('title1_'.$language_key) }}" @endif />
+                                                    <input type="text" class="c-input" name="title1_{{$language_key}}"  @if(!empty($items)) value="{{ $items->getTranslation('title1',$language_key,false) }}" @else value="{{ old('title1_'.$language_key) }}" @endif />
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn Bloku 1</label>

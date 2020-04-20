@@ -26,7 +26,6 @@
                             <li><a class="c-sidebar__link {{menuActive('pages/index')}}" href="/admin/pages/index" >Ana səhifə</a></li>
                             <li><a class="c-sidebar__link {{menuActive('pages/about-us')}}" href="/admin/pages/about-us" >Haqqımızda</a></li>
                             <li><a class="c-sidebar__link {{menuActive('pages/projects')}}" href="/admin/pages/projects">Layihələr</a></li>
-                            <li><a class="c-sidebar__link {{menuActive('pages/contact')}}" href="/admin/pages/contact">Əlaqə</a></li>
                         </ul>
                     </div>
 

@@ -10,6 +10,6 @@ class ProjectPage extends Model
     use HasTranslations;
 
     protected $table = 'project_pages';
-    protected $fillable = ['content','slug'];
-    public $translatable = ['content'];
+    protected $fillable = ['contents','slug'];
+    public $translatable = ['contents'];
 }

@@ -26,6 +26,11 @@ class AdminBaseController extends Controller
         return $translations;
     }
 
+    public function uploadFile($file,$path = 'common')
+    {
+         return;
+    }
+
     public function uploadImage($image,$path = "common",$thumbs = NULL)
     {
         ini_set('memory_limit','256M');
