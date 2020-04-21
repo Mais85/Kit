@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="c-table-responsive@wide">
@@ -34,6 +34,7 @@
                         <th class="c-table__cell c-table__cell--head">ID</th>
                         <th class="c-table__cell c-table__cell--head">Şirkət</th>
                         <th class="c-table__cell c-table__cell--head">Email</th>
+                        <th class="c-table__cell c-table__cell--head">Pdf fayl</th>
                         <th class="c-table__cell c-table__cell--head">Redaktə Edildi</th>
                         <th class="c-table__cell c-table__cell--head">Hərəkətlər</th>
                     </tr>
@@ -50,8 +51,9 @@
 
                             </td>
                             <td class="c-table__cell">#{{$item->id}}</td>
-                            <th class="c-table__cell">{{$item->name}}</th>
+                            <th class="c-table__cell">{{$item->company}}</th>
                             <th class="c-table__cell">{{$item->email}}</th>
+                            <th class="c-table__cell">{{Str::afterlast($item->pdf,'/')}}</th>
                             <th class="c-table__cell">{{$item->updated_at}}</th>
                             <td class="c-table__cell">
                                 <div class="c-dropdown dropdown">
@@ -59,8 +61,8 @@
                                         Göstər <i class="feather icon-chevron-down"></i>
                                     </a>
                                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuTable1">
-                                        <a class="c-dropdown__item dropdown-item" href="/home/advertiser/logo/edit/{{$item->id}}" >Redaktə Et</a>
-                                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/companies/delete/{{$item->id}}')">Sil</a>
+                                        <a class="c-dropdown__item dropdown-item" href="/admin/companies/edit/{{$item->slug}}" >Redaktə Et</a>
+                                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/companies/delete/{{$item->slug}}')">Sil</a>
                                     </div>
                                 </div>
                             </td>

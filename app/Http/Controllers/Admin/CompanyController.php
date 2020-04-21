@@ -28,6 +28,7 @@ class CompanyController extends Controller
     {
         $title = 'Bütün Şirkətlər';
         $items = $this->companyrepository->paginate();
+//        dd($items);
         cache(['compmod' => $items],3600*24);
         return view('admin.company.index',compact('title','items'));
     }
@@ -50,5 +51,12 @@ class CompanyController extends Controller
             return redirect('/admin/companies')->with('message','Yaradılma əməliyyatı uğurla başa çatdı.');
       }else
           return redirect()->back()->withErrors($bvalidated)->withInput();
+    }
+
+    public function edit($slug)
+    {
+        $title = "Şirkət Redaktəsi";
+        $items = $this->companyrepository->getWithSlug($slug);
+        return view('admin.company.edit',compact('title','items'));
     }
 }

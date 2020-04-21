@@ -17,13 +17,16 @@
                                         @endforeach
                                     </div>
                                     <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">
+                                        <div class="c-tabs__pane active">
+                                            <div class="c-field">
+                                                <label class="c-field__label">Şirkət</label>
+                                                <input type="text" class="c-input" name="company" value="{{ old('company') }}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">
                                         @foreach($__languages as $language_key => $language_title )
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
-
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Şirkət</label>
-                                                    <input type="text" class="c-input" name="company_{{$language_key}}" value="{{ old('company_'.$language_key) }}"/>
-                                                </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn</label>
                                                     <textarea class="c-input" name="contents_{{$language_key}}" rows="10" >{{old('contents_'.$language_key)}}</textarea>

@@ -148,20 +148,6 @@
                         </ul>
                     </div>
                 </li>
-
-{{--                <li class="c-sidebar__item has-submenu">--}}
-{{--                    <a class="c-sidebar__link {{menuActive('emails',4)}}" data-toggle="collapse" href="#sidebar-emails" aria-expanded="{{menuActive('emails',2)}}" aria-controls="sidebar-submenu">--}}
-{{--                        <i class="c-sidebar__icon feather icon-inbox "></i>E-maillər--}}
-{{--                    </a>--}}
-
-{{--                    <div>--}}
-{{--                        <ul class="c-sidebar__list collapse {{menuActive('emails',3)}}" id="sidebar-emails">--}}
-{{--                            <li><a class="c-sidebar__link {{menuActive('emails')}}" href="/admin/emails" >Gələn mailler</a></li>--}}
-{{--                            --}}{{--                                    <li><a class="c-sidebar__link {{menuActive('emails/create')}}" href="/admin/emails/create">Reklamçı Yarat</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-
                 <li>
                     <a class="c-sidebar__link  {{menuActive('setting')}}" href="/admin/setting">
                         <i class="c-sidebar__icon feather icon-settings"></i>Nizamlamalar

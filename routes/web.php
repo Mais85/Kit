@@ -41,6 +41,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/companies','CompanyController@index');
     Route::get('/companies/create','CompanyController@create');
     Route::post('/companies/create','CompanyController@store')->name('store');
+    Route::get('/companies/edit/{slug}','CompanyController@edit')->name('edit');
 
     //Settings
     Route::get('/setting','SettingController@index')->name('setting');

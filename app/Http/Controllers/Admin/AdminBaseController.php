@@ -42,6 +42,11 @@ class AdminBaseController extends Controller
 
     }
 
+    public function deleteFile($file,$path = 'common')
+    {
+       Storage::delete("public/$path"/$file);
+    }
+
     public function uploadImage($image,$path = "common",$thumbs = NULL)
     {
         ini_set('memory_limit','256M');

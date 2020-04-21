@@ -11,5 +11,5 @@ class Company extends Model
 
     protected $table = 'companies';
     protected $fillable = ['company','img1','img2','pdf','email','phone','mobphone','address','contacttext','fb','twitter','instagram','youtube','contents','slug'];
-    protected $translatable = ['company','contacttext','contents'];
+    protected $translatable = ['contacttext','contents'];
 }
