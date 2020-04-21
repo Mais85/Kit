@@ -22,6 +22,7 @@ class Companyrepository extends AdminBaseController
 
     public function store($request)
     {
+        //dd($request->all());
         $items = Company::create([
             //'slug'=> Str::slug('main page edit','-'),
             'company' =>$this->getFormTranslations('company',$request),
@@ -35,11 +36,12 @@ class Companyrepository extends AdminBaseController
             'twitter' => $request->twitter,
             'instagram' => $request->instagram,
             'youtube' => $request->youtube,
-            //'pdf' => $this->uploadFile(),
+            'pdf' => $this->uploadFile($request->pdf,'files'),
             'img1' => $this->uploadImage($request->img1,"photos"),
             'img2' => $this->uploadImage($request->img2,"photos"),
 
         ]);
+        
         if($items){
             return $items;
         }else{

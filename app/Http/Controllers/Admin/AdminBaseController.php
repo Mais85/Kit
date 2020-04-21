@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
 
 
 class AdminBaseController extends Controller
@@ -28,7 +30,16 @@ class AdminBaseController extends Controller
 
     public function uploadFile($file,$path = 'common')
     {
-         return;
+        ini_set('memory_limit','256M');
+        if(isset($file)){
+            $filename = $file->getClientOriginalName();
+            Storage::putFileAs("public/$path",$file,$filename);
+            $pdf = "storage/app/public/$path/".$filename;
+            return $pdf;
+        }else{
+            return null;
+        }
+
     }
 
     public function uploadImage($image,$path = "common",$thumbs = NULL)

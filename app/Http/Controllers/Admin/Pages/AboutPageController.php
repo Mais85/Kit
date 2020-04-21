@@ -59,7 +59,7 @@ class AboutPageController extends AdminBaseController
             }else{
                 $this->aboutPageRepository->store($request);
             }
-            return redirect('/admin/pages/about-us')->with('message',' Uğurla əlavə edildi.');
+            return redirect('/admin/pages/about-us')->with('message',' Uğurla yerine yetirildi.');
         }else{
             return redirect()->back()->withErrors($bvalidated)->withInput();
         }

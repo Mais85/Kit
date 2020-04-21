@@ -27,7 +27,7 @@ class Companycreaterequest extends FormRequest
             'company_'.config('app.locale') => 'required|string|max:191',
             'contents_'.config('app.locale') => 'required|string',
             'contacttext_'.config('app.locale') => 'required|string',
-            'email'=> 'required|email:rfc,dns:',
+            'email'=> 'required|email:rfc,dns',
             'address'=> 'required',
             'phone'=> 'required|min:10|max:12',
             'mobphone'=> 'required|min:10|max:12',

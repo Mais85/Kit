@@ -26,7 +26,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn</label>
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="10" {{requiredFall($language_key)}} >@if(empty($items)){{old('contents'.$language_key)}}@else{{$items->getTranslation('contents1',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="10" >{{old('contents_'.$language_key)}}</textarea>
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Kontakt Mətni</label>
