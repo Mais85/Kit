@@ -88,14 +88,15 @@
                                                 <script>
                                                    function deletepdf() {
                                                        var elem = document.getElementById('oldpdf');
-                                                       elem.remove();}
+                                                       elem.remove();
+                                                   }
                                                 </script>
                                             <div class="c-field">
                                                 <label class="c-field__label">Şəkil 1</label>
                                                 @if($items->img1)
-                                                    <div class="admin_image old_img">
-                                                        <img src="{{$items->img1}}"style="max-width: 190px;border: 1px solid #aaa;">
-                                                        <div class="admin_image_close" onclick="delete_old_image('old_img1')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                    <div id="old_img1" class="admin_image old_img">
+                                                        <img src="{{$items->img1}}" style="max-width: 190px;border: 1px solid #aaa;">
+                                                        <div class="admin_image_close" onclick="deloldimg('old_img1');"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
                                                         <input type="hidden" name="old_img1" value="{{$items->img1}}">
                                                     </div>
                                                 @endif
@@ -104,20 +105,22 @@
                                             <div class="c-field">
                                                 <label class="c-field__label">Şəkil 2</label>
                                                 @if($items->img2)
-                                                    <div class="admin_image old_img">
+                                                    <div id="old_img2" class="admin_image old_img">
                                                         <img src="{{$items->img2}}"style="max-width: 190px;border: 1px solid #aaa;">
-                                                        <div class="admin_image_close" onclick="delete_old_image('old_img2')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                        <div class="admin_image_close" onclick="deloldimg('old_img2');"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
                                                         <input type="hidden" name="old_img2" value="{{$items->img2}}">
                                                     </div>
                                                 @endif
                                                 <input type="file" class="c-input" name="img2" accept="image/*"/>
                                             </div>
-                                            <script>
-                                                $('#nn').on('change', function(){
-                                                    $('.old_img1').hide();
-                                                });
 
+                                            <script type="text/javascript">
+                                             function deloldimg(oldimg) {
+                                                 var elem = document.getElementById(oldimg);
+                                                 elem.remove();
+                                             }
                                             </script>
+
                                             <div class="c-field">
                                                 <button class="c-btn c-btn--info u-mb-xsmall" type="submit" name="btn">Yarat</button>
                                             </div>
