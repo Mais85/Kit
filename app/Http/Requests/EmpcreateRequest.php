@@ -40,7 +40,7 @@ class EmpcreateRequest extends FormRequest
     }
 
     /**
-     * et the validation messages that apply to the request.
+     * Get the validation messages that apply to the request.
      * @return array
      */
     public function messages()

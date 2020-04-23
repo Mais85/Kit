@@ -38,10 +38,26 @@ class EmployerController extends AdminBaseController
         return view ('admin.employee.index',compact('title','items'));
     }
 
+    /**
+     * Create employee
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         $title = "İşçi Yarat";
         $companies = $this->employeerepository->getCompanylist();
         return view('admin.employee.create',compact('title','companies'));
+    }
+
+    public function store(EmpcreateRequest $request)
+    {
+        $bvalidated = $request->validated();
+
+        if($bvalidated){
+            $this->employeerepository->store($request);
+            return redirect('/admin/employers')->with('message','Yaradılma əməliyyatı uğurla başa çatdı.');
+        }else{
+            return redirect()->back()->withErrors($bvalidated)->withInput();
+        }
     }
 }
