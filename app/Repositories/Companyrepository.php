@@ -65,7 +65,6 @@ class Companyrepository extends AdminBaseController
     public function update($request,$slug)
     {
         $item = cache('modCompEdit');
-        //dd($request->all());
         $item->update([
             'slug'=>Str::slug($request->company,'-'),
             'company' =>$request->company,
@@ -83,5 +82,27 @@ class Companyrepository extends AdminBaseController
             'img1' => $this->editImage($request->img1,$item->img1,$request->old_img1,"photos"),
             'img2' => $this->editImage($request->img2,$item->img2,$request->old_img2,"photos"),
         ]);
+    }
+
+    public function destroy($id)
+    {
+        $items = array_filter(explode(',',$id));
+        foreach ($items as $item) {
+            $data = cache('compmod');
+            $deleted_item = $data->where('id',$item)->first();
+            $filename1 = $deleted_item->img1;
+            $filename2 = $deleted_item->img2;
+            $pos = '/storage/photos/';
+            $filename1 = str_replace($pos, '', $filename1);
+            $filename2 = str_replace($pos, '', $filename2);
+            $filepdf = $deleted_item->pdf;
+            $deleted_item->delete();
+            if($deleted_item){
+                if($filename1 || $filename2)
+                    $this->deleteImage($filename1);
+                    $this->deleteImage($filename2);
+                    $this->deleteFile($filepdf,'files');
+            }
+        }
     }
 }

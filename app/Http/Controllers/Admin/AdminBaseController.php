@@ -55,13 +55,22 @@ class AdminBaseController extends Controller
             }
             return $pdf;
         }else{
-
+            if(empty($oldFileForm)){
+                $pos = 'storage/files/';
+                $oldFiledb= str_replace($pos, '', $oldFiledb);
+                File::delete(base_path("/storage/app/public/$path/$oldFiledb"));
+                return null;
+            }else{
+                return $oldFileForm;
+            }
         }
     }
 
     public function deleteFile($file,$path = 'common')
     {
-       Storage::delete("public/$path"/$file);
+        $pos = 'storage/files/';
+        $file= str_replace($pos, '', $file);
+        File::delete(base_path("storage/app/public/$path/$file"));
     }
 
     public function uploadImage($image,$path = "common",$thumbs = NULL)

@@ -37,12 +37,21 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
 
     });
 
+    //Employers
+    Route::get('/employers', 'EmployerController@index');
+    Route::get('/employers/create', 'EmployerController@create');
+    Route::post('/employers/create', 'EmployerController@store');
+    Route::get('/employers/delete/{id}', 'EmployerController@destroy');
+    Route::get('/employers/edit/{id}', 'EmployerController@edit');
+    Route::post('/employers/edit/{id}', 'EmployerController@update');
+
     //Companies
     Route::get('/companies','CompanyController@index');
     Route::get('/companies/create','CompanyController@create');
     Route::post('/companies/create','CompanyController@store')->name('store');
     Route::get('/companies/edit/{slug}','CompanyController@edit')->name('editG');
     Route::post('/companies/edit/{slug}','CompanyController@update')->name('editP');
+    Route::get('/companies/delete/{id}','CompanyController@destroy')->name('destG');
 
     //Settings
     Route::get('/setting','SettingController@index')->name('setting');

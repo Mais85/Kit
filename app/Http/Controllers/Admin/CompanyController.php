@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Companycreaterequest;
 use App\Http\Requests\Companyupdaterequest;
+use App\Models\Company;
 use App\Repositories\Companyrepository;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,6 @@ class CompanyController extends Controller
     {
         $title = 'Bütün Şirkətlər';
         $items = $this->companyrepository->paginate();
-//        dd($items);
         cache(['compmod' => $items],3600*24);
         return view('admin.company.index',compact('title','items'));
     }
@@ -54,7 +54,7 @@ class CompanyController extends Controller
 
       if($bvalidated){
             $this->companyrepository->store($request);
-            return redirect('/admin/companies')->with('message','Yaradılma əməliyyatı uğurla başa çatdı.');
+          return redirect('/admin/companies')->with('message','Yaradılma əməliyyatı uğurla başa çatdı.');
       }else
           return redirect()->back()->withErrors($bvalidated)->withInput();
     }
@@ -76,6 +76,26 @@ class CompanyController extends Controller
 
     public function update(Companyupdaterequest $request,$slug)
     {
-        $this->companyrepository->update($request, $slug);
+        $bvalidated = $request->validated();
+
+        if($bvalidated){
+            $this->companyrepository->update($request, $slug);
+            return redirect('/admin/companies')->with('message','Yenilənmə əməliyyatı uğurla başa çatdı.');
+        }else{
+            abort(404);
+        }
+
+    }
+
+    /**
+     * Deelete company items from db and storage
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     *
+     */
+    public function destroy($id)
+    {
+       $this->companyrepository->destroy($id);
+        return redirect('/admin/companies')->with('message','Silinmə əməliyyatı uğurla başa çatdı.');
     }
 }
