@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\File;
 
 
 class AdminBaseController extends Controller
@@ -34,12 +34,29 @@ class AdminBaseController extends Controller
         if(isset($file)){
             $filename = $file->getClientOriginalName();
             Storage::putFileAs("public/$path",$file,$filename);
-            $pdf = "storage/app/public/$path/".$filename;
+            $pdf = "storage/$path/".$filename;
             return $pdf;
         }else{
             return null;
         }
 
+    }
+
+    public function editFile($file, $oldFiledb,$oldFileForm,$path='common')
+    {
+        ini_set('memory_limit','256M');
+
+        if(isset($file)){
+            $pdf = $this->uploadFile($file,$path);
+            if($oldFiledb){
+                $pos = 'storage/files/';
+                $oldFiledb= str_replace($pos, '', $oldFiledb);
+                File::delete(base_path("storage/app/public/$path/$oldFiledb"));
+            }
+            return $pdf;
+        }else{
+
+        }
     }
 
     public function deleteFile($file,$path = 'common')

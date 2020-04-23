@@ -65,7 +65,7 @@
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Twitter</label>
-                                                <input type="text" class="c-input" name="twitter" value="@if(isset($items->twitter)){{ $items->twitter }}@else{{ old('twitter') }} @endif}"/>
+                                                <input type="text" class="c-input" name="twitter" value="@if(isset($items->twitter)){{ $items->twitter }}@else{{ old('twitter') }} @endif"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Instagram</label>
@@ -79,8 +79,9 @@
                                             <div class="c-field">
                                                 <label class="c-field__label">Pdf</label>
                                                 @if(isset($items->pdf))
-                                                 <div id="oldpdf" style="margin-bottom: 7px; padding:6px; border:1px solid #99a5bd; border-radius: 4px" >
+                                                 <div id="oldpdf"  style="margin-bottom: 7px; padding:6px; border:1px solid #99a5bd; border-radius: 4px" >
                                                      <i style="margin: 0; padding: 1px" class="c-sidebar__icon feather icon-file "></i>{{Str::afterlast($items->pdf,'/') }}
+                                                     <input type="hidden" name="oldpdf" value="{{ $items->pdf }}">
                                                  </div>
                                                 @endif
                                                 <input type="file" class="c-input"  id="pdf" name="pdf" accept=".pdf" onclick="deletepdf()"/>

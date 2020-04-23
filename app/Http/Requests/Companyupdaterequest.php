@@ -3,8 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Company;
+use Illuminate\Validation\Rule;
 
-class Companycreaterequest extends FormRequest
+class Companyupdaterequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,10 +23,12 @@ class Companycreaterequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Company $company)
     {
         return [
-            'company' => 'required|unique|string|max:191',
+
+            'company' => 'required|string|max:191',
+             Rule::unique('companies')->ignore($company->id),
             'contents_'.config('app.locale') => 'required|string',
             'contacttext_'.config('app.locale') => 'required|string',
             'email'=> 'required|email:rfc,dns',

@@ -61,4 +61,27 @@ class Companyrepository extends AdminBaseController
         }
 
     }
+
+    public function update($request,$slug)
+    {
+        $item = cache('modCompEdit');
+        //dd($request->all());
+        $item->update([
+            'slug'=>Str::slug($request->company,'-'),
+            'company' =>$request->company,
+            'contents' =>$this->getFormTranslations('contents',$request),
+            'contacttext' => $this->getFormTranslations('contacttext',$request),
+            'phone' => $request->phone,
+            'mobphone' => $request->mobphone,
+            'address' => $request->address,
+            'email' => $request->email,
+            'fb' => $request->fb,
+            'twitter' => $request->twitter,
+            'instagram' => $request->instagram,
+            'youtube' => $request->youtube,
+            'pdf' => $this->editFile($request->pdf,$item->pdf,$request->oldpdf,'files'),
+            'img1' => $this->editImage($request->img1,$item->img1,$request->old_img1,"photos"),
+            'img2' => $this->editImage($request->img2,$item->img2,$request->old_img2,"photos"),
+        ]);
+    }
 }

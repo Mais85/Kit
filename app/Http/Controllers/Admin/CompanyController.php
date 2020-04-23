@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Companycreaterequest;
+use App\Http\Requests\Companyupdaterequest;
 use App\Repositories\Companyrepository;
 use Illuminate\Http\Request;
 
@@ -42,6 +43,11 @@ class CompanyController extends Controller
         return view('admin.company.create',compact('title'));
     }
 
+    /**
+     * Creeta new company data in db
+     * @param Companycreaterequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Companycreaterequest $request)
     {
       $bvalidated = $request->validated();
@@ -53,10 +59,23 @@ class CompanyController extends Controller
           return redirect()->back()->withErrors($bvalidated)->withInput();
     }
 
+
+    /**
+     * edit page company data
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
+     */
     public function edit($slug)
     {
         $title = "Şirkət Redaktəsi";
         $items = $this->companyrepository->getWithSlug($slug);
+        cache(['modCompEdit' => $items],3600*24);
         return view('admin.company.edit',compact('title','items'));
+    }
+
+    public function update(Companyupdaterequest $request,$slug)
+    {
+        $this->companyrepository->update($request, $slug);
     }
 }
