@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Http\Requests\EmpcreateRequest;
+use App\Http\Requests\EmpupdateRequest;
 use App\Repositories\EmployeeRepository;
 use Illuminate\Http\Request;
 
@@ -50,6 +51,21 @@ class EmployerController extends AdminBaseController
         return view('admin.employee.create',compact('title','companies'));
     }
 
+    public function edit ($slug)
+    {
+        $title = 'İşçi redaktəsi';
+        $items = $this->employeerepository->getEmployee($slug);
+        $companies = $this->employeerepository->getCompanylist();
+        cache(['modEmpEdit' => $items],3600*24);
+        return view('admin.employee.edit',compact('title','items','companies'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param EmpcreateRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(EmpcreateRequest $request)
     {
         $bvalidated = $request->validated();
@@ -62,10 +78,33 @@ class EmployerController extends AdminBaseController
         }
     }
 
-    public function edit ($slug,$id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param EmpupdateRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(EmpupdateRequest $request)
     {
-        $title = 'İşçi redaktəsi';
-        $item = $this->employeerepository->getEmployee($slug,$id);
-        return view('admin.employee.edit',compact('title','item'));
+         $bvalidated = $request->validated();
+        if($bvalidated){
+            $this->employeerepository->update($request);
+            return redirect('/admin/employers')->with('message','Yenilənmə əməliyyatı uğurla başa çatdı.');
+        }else{
+            return redirect()->back()->withErrors($bvalidated)->withInput();
+        }
+    }
+
+
+    /**
+     * Deelete employers table  from db and storage
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     *
+     */
+    public function destroy($id)
+    {
+        $this->employeerepository->destroy($id);
+        return redirect('/admin/employers')->with('message','Silinmə əməliyyatı uğurla başa çatdı.');
     }
 }

@@ -62,7 +62,7 @@
                                     </a>
 
                                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuTable1">
-                                        <a class="c-dropdown__item dropdown-item" href="/admin/employers/edit/{{$item->slug}} - {{$item->id}}">Redaktə Et</a>
+                                        <a class="c-dropdown__item dropdown-item" href="/admin/employers/edit/{{$item->slug}}">Redaktə Et</a>
                                         <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/employers/delete/{{$item->id}}')">Sil</a>
                                     </div>
                                 </div>

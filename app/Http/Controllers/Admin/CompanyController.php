@@ -79,7 +79,7 @@ class CompanyController extends Controller
         $bvalidated = $request->validated();
 
         if($bvalidated){
-            $this->companyrepository->update($request, $slug);
+            $this->companyrepository->update($request);
             return redirect('/admin/companies')->with('message','Yenilənmə əməliyyatı uğurla başa çatdı.');
         }else{
             abort(404);

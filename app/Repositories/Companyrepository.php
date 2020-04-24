@@ -62,7 +62,7 @@ class Companyrepository extends AdminBaseController
 
     }
 
-    public function update($request,$slug)
+    public function update($request)
     {
         $item = cache('modCompEdit');
         $item->update([
