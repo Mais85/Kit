@@ -54,7 +54,7 @@
                                         <div class="c-tabs__pane active">
                                             <div class="c-field">
                                                 <label class="c-field__label">Şəkil</label>
-                                                <input type="file" class="c-input" name="image" accept="image/*"/>
+                                                <input type="file" class="c-input" name="img" accept="image/*"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Email</label>

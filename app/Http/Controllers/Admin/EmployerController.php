@@ -32,6 +32,7 @@ class EmployerController extends AdminBaseController
      */
     public function index()
     {
+
         $title = "Bütün İşçilər";
         $items = $this->employeerepository->getpaginate();
         cache(['empmod'=> $items],3600*24);
@@ -59,5 +60,12 @@ class EmployerController extends AdminBaseController
         }else{
             return redirect()->back()->withErrors($bvalidated)->withInput();
         }
+    }
+
+    public function edit ($slug,$id)
+    {
+        $title = 'İşçi redaktəsi';
+        $item = $this->employeerepository->getEmployee($slug,$id);
+        return view('admin.employee.edit',compact('title','item'));
     }
 }

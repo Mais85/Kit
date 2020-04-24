@@ -49,7 +49,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/companies','CompanyController@index');
     Route::get('/companies/create','CompanyController@create');
     Route::post('/companies/create','CompanyController@store')->name('store');
-    Route::get('/companies/edit/{slug}','CompanyController@edit')->name('editG');
+    Route::get('/companies/edit/{slug}-{id}','CompanyController@edit')->name('editG');
     Route::post('/companies/edit/{slug}','CompanyController@update')->name('editP');
     Route::get('/companies/delete/{id}','CompanyController@destroy')->name('destG');
 
