@@ -49,7 +49,7 @@
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
                                                 <div class="c-field">
                                                     <label class="c-field__label">Vəzifəsi</label>
-                                                    <input type="text" class="c-input" name="position_{{$language_key}}" value="@if(isset($items)){{$items->getTranslation('position',$language_key,false)}} @else {{old('position_'.$language_key) }}@endif"/>
+                                                    <input type="text" class="c-input" name="position_{{$language_key}}" value="@if(isset($items->position)){{$items->getTranslation('position',$language_key,false)}} @else {{old('position_'.$language_key) }}@endif"/>
                                                 </div>
                                             </div>
                                         @endforeach

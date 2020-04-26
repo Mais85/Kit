@@ -33,7 +33,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Kontakt Mətni</label>
-                                                    <textarea class="c-input" name="contacttext_{{$language_key}}" rows="8" >@if(empty($items)){{old('contacttext_'.$language_key) }}@else{{$items->getTranslation('contacttext',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="c-input" name="contacttext_{{$language_key}}" rows="8" >@if(empty($items->contacttext)){{old('contacttext_'.$language_key) }}@else{{$items->getTranslation('contacttext',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

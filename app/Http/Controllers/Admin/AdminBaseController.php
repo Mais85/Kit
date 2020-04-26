@@ -180,8 +180,8 @@ class AdminBaseController extends Controller
             $image = $this->uploadImageFit($image,$path,$fit,$thumbs);
             //Deleting File if New One Exist
             if($old_from_db){
-                $pos = '/storage/smallPhotos/';
-                $old_from_dbD = str_replace($pos, '', $old_from_db);
+                $pos = '/storage/smallphotos/';
+                $old_from_dbD = str_replace($pos, '', $old_from_db);;
 //                $this->deleteImage($old_from_dbD/*,$thumbs*/);
 //                $n = pathinfo($old_from_form, PATHINFO_FILENAME);
 //                $e = pathinfo($old_from_form, PATHINFO_EXTENSION);

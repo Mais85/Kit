@@ -53,6 +53,22 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::post('/companies/edit/{slug}','CompanyController@update')->name('editP');
     Route::get('/companies/delete/{id}','CompanyController@destroy')->name('destG');
 
+    // news
+    Route::get('/news','NewsController@index');
+    Route::get('/news/create','NewsController@create');
+    Route::post('/news/create','NewsController@store')->name('newscreate');
+    Route::get('/news/edit/{slug}/{id}','NewsController@edit');
+    Route::post('/news/edit','NewsController@update')->name('newsupdate');
+    Route::get('/news/delete/{id}','NewsController@destroy');
+
+    // services
+    Route::get('/services','ServiceController@index');
+    Route::get('/services/create','ServiceController@create');
+    Route::post('/services/create','ServiceController@store');
+    Route::get('/services/edit/{slug}/{id}','ServiceController@edit');
+    Route::post('/services/edit','ServiceController@update')->name('serviceUpdate');
+    Route::get('/services/delete/{id}','ServiceController@destroy');
+
     //Settings
     Route::get('/setting','SettingController@index')->name('setting');
     Route::post('/setting','SettingController@store')->name('settingstore');

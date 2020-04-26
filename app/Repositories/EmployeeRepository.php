@@ -91,7 +91,6 @@ class EmployeeRepository extends AdminBaseController
             $filename = $deleted_item->img;
             $pos = '/storage/photos/';
             $filename = str_replace($pos, '', $filename);
-            $filepdf = $deleted_item->pdf;
             $deleted_item->delete();
             if($deleted_item){
                 if($filename)
