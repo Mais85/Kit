@@ -196,7 +196,7 @@ function status_premium($i){
 
 function menuActive($given,$type=1){
     $must_be = url()->current()."/";
-    $given = url("home/".$given)."/";
+    $given = url("admin/".$given)."/";
     if($type ==  1){
         if($must_be == $given)
             return "is-active";
@@ -222,6 +222,7 @@ function menuActive($given,$type=1){
                 return "";
         }
     }
+    return "";
 }
 
 function favOrNot($id){

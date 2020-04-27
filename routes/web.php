@@ -69,6 +69,23 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::post('/services/edit','ServiceController@update')->name('serviceUpdate');
     Route::get('/services/delete/{id}','ServiceController@destroy');
 
+    // projects
+    Route::get('/projects','ProjectController@index');
+    Route::get('/projects/create','ProjectController@create');
+    Route::post('/projects/create','ProjectController@store');
+    Route::get('/projects/edit/{slug}/{id}','ProjectController@edit');
+    Route::post('/projects/edit','ProjectController@update')->name('projectsUpdate');
+    Route::get('/projects/delete/{id}','ProjectController@destroy');
+
+
+    // partners
+    Route::get('/partners','PartnerController@index');
+    Route::get('/partners/create','PartnerController@create');
+    Route::post('/partners/create','PartnerController@store');
+    Route::get('/partners/edit/{slug}/{id}','PartnerController@edit');
+    Route::post('/partners/edit','PartnerController@update')->name('partnersUpdate');
+    Route::get('/partners/delete/{id}','PartnerController@destroy');
+
     //Settings
     Route::get('/setting','SettingController@index')->name('setting');
     Route::post('/setting','SettingController@store')->name('settingstore');

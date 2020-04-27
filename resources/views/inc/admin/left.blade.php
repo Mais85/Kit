@@ -98,14 +98,14 @@
                 </li>
 
                 <li class="c-sidebar__item has-submenu">
-                    <a class="c-sidebar__link {{menuActive('clients',4)}}" data-toggle="collapse" href="#sidebar-clients" aria-expanded="{{menuActive('clients',2)}}" aria-controls="sidebar-submenu">
+                    <a class="c-sidebar__link {{menuActive('partners',4)}}" data-toggle="collapse" href="#sidebar-partners" aria-expanded="{{menuActive('partners',2)}}" aria-controls="sidebar-submenu">
                         <i class="c-sidebar__icon feather icon-briefcase "></i>Müştərilərimiz
                     </a>
 
                     <div>
-                        <ul class="c-sidebar__list collapse {{menuActive('clients',3)}}" id="sidebar-clients">
-                            <li><a class="c-sidebar__link {{menuActive('clients')}}" href="/admin/clients" >Bütün Müştərilər</a></li>
-                            <li><a class="c-sidebar__link {{menuActive('clients/create')}}" href="/admin/clients/create">Müştəri Yarat</a></li>
+                        <ul class="c-sidebar__list collapse {{menuActive('partners',3)}}" id="sidebar-partners">
+                            <li><a class="c-sidebar__link {{menuActive('partners')}}" href="/admin/partners" >Bütün Müştərilər</a></li>
+                            <li><a class="c-sidebar__link {{menuActive('partners/create')}}" href="/admin/partners/create">Müştəri Yarat</a></li>
                         </ul>
                     </div>
                 </li>
@@ -117,7 +117,7 @@
 
                     <div>
                         <ul class="c-sidebar__list collapse {{menuActive('testimonials',3)}}" id="sidebar-testimonials">
-                            <li><a class="c-sidebar__link {{menuActive('testimonials')}}" href="/admin/clients" >Bütün Rəylər</a></li>
+                            <li><a class="c-sidebar__link {{menuActive('testimonials')}}" href="/admin/testimonials" >Bütün Rəylər</a></li>
                             <li><a class="c-sidebar__link {{menuActive('testimonials/create')}}" href="/admin/testimonials/create">Rəy Yarat</a></li>
                         </ul>
                     </div>
