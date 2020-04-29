@@ -94,7 +94,7 @@ class EmployeeRepository extends AdminBaseController
             $deleted_item->delete();
             if($deleted_item){
                 if($filename)
-                $this->deleteImage($filename);
+                $this->deleteImage($filename,'photos');
             }
         }
     }

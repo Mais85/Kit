@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\AdminBaseController;
+use App\Http\Requests\PartnersRequest;
 use App\Repositories\PartnersRepository;
 use Illuminate\Http\Request;
 
@@ -39,11 +40,12 @@ class PartnerController extends AdminBaseController
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        //
+        $title = 'Müştəri Yarat';
+        return view ('admin.partners.create',compact('title'));
     }
 
     /**
@@ -52,31 +54,30 @@ class PartnerController extends AdminBaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PartnersRequest $request)
     {
-        //
+        $bvalidated = $request->validated();
+        if($bvalidated){
+            $this->partnersrepository->store($request);
+            return redirect('\admin\partners')->with('message','Yaradılma əməliyyatı uğurla başa çatdı.');
+        }else{
+            abort(404);
+        }
     }
 
     /**
-     * Display the specified resource.
+     *  Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
      */
     public function edit($id)
     {
-        //
+        $title = 'Müştəri redaktəsi';
+        $items = $this->partnersrepository->getPartners($id);
+        cache(['modClientedit'=>$items],3600*24);
+        return view ('admin.partners.edit',compact('title','items'));
     }
 
     /**
@@ -86,19 +87,26 @@ class PartnerController extends AdminBaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PartnersRequest $request)
     {
-        //
+        $bvalidated = $request->validated();
+        if($bvalidated){
+            $this->partnersrepository->update($request);
+            return redirect('/admin/partners')->with('message','Yenilənmə əməliyyatı uğurla başa çatdı.');
+        }else{
+            return redirect()->back()->withErrors($bvalidated)->withInput();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        //
+        $this->partnersrepository->destroy($id);
+        return redirect('/admin/partners')->with('message','Silinmə əməliyyatı uğurla başa çatdı.');
     }
 }

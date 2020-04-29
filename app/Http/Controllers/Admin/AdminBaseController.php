@@ -121,25 +121,25 @@ class AdminBaseController extends Controller
             $image = $this->uploadImage($image, $path, $thumbs);
             //Deleting File if New One Exist
             if ($old_from_db){
-                $pos = '/storage/photos/';
+                $pos = "/storage/$path/";
                 $old_from_dbD = str_replace($pos, '', $old_from_db);
-                $this->deleteImage($old_from_dbD, $thumbs);
+                $this->deleteImage($old_from_dbD, $path,$thumbs);
             }
             return $image;
         }
         if(empty($old_from_form)){
-            $pos = '/storage/photos/';
+            $pos = "/storage/$path/";
             $old_from_dbD = str_replace($pos, '', $old_from_db);
-            $this->deleteImage($old_from_dbD, $thumbs);
+            $this->deleteImage($old_from_dbD,$path, $thumbs);
             return  $image = null;
         }else{
             return $image = $old_from_db;
         }
     }
 
-    public function deleteImage($filename,$thumbs = NULL)
+    public function deleteImage($filename,$path='common',$thumbs = NULL)
     {
-        File::delete(base_path("storage/app/public/photos/".$filename));
+        File::delete(base_path("storage/app/public/$path/".$filename));
         if($thumbs){
             $n = pathinfo($filename, PATHINFO_FILENAME);
             $e = pathinfo($filename, PATHINFO_EXTENSION);
@@ -180,7 +180,7 @@ class AdminBaseController extends Controller
             $image = $this->uploadImageFit($image,$path,$fit,$thumbs);
             //Deleting File if New One Exist
             if($old_from_db){
-                $pos = '/storage/smallphotos/';
+                $pos = "/storage/$path/";
                 $old_from_dbD = str_replace($pos, '', $old_from_db);;
 //                $this->deleteImage($old_from_dbD/*,$thumbs*/);
 //                $n = pathinfo($old_from_form, PATHINFO_FILENAME);
@@ -188,7 +188,7 @@ class AdminBaseController extends Controller
 //                $var2 = substr(strrchr($n, "_"), 0);
 //                $var2 = str_replace($var2,'',$n);
 //                $var2.='.'.$e;
-                File::delete(base_path("storage/app/public/smallPhotos/".$old_from_dbD));
+                File::delete(base_path("storage/app/public/$path/".$old_from_dbD));
             }
         }else {
             if($old_from_db){
@@ -199,9 +199,9 @@ class AdminBaseController extends Controller
                 if(!empty($old_from_form)){
                     $image = $old_from_db;
                 }else{
-                    $pos = '/storage/smallPhotos/';
+                    $pos = "/storage/$path/";
                     $old_from_dbD = str_replace($pos, '', $old_from_db);
-                    File::delete(base_path("storage/app/public/smallPhotos/".$old_from_dbD));
+                    File::delete(base_path("storage/app/public/$path/".$old_from_dbD));
                     $image = null;
                 }
             }else{

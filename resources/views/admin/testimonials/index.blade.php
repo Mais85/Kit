@@ -11,14 +11,13 @@
                     </a>
 
                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuToggleModal">
-                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="massDelete('clients')">Seçili Olanları Sil</a>
+                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="massDelete('testimonials')">Seçili Olanları Sil</a>
                         <a class="c-dropdown__item dropdown-item" href="">Səhifəni Yenilə</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-12">
             <div class="c-table-responsive@wide">
@@ -32,8 +31,9 @@
                             </div>
                         </th>
                         <th class="c-table__cell c-table__cell--head">ID</th>
-                        <th class="c-table__cell c-table__cell--head">Müştəri</th>
-                        <th class="c-table__cell c-table__cell--head">Logo</th>
+                        <th class="c-table__cell c-table__cell--head">Rəyverən</th>
+                        <th class="c-table__cell c-table__cell--head">Vəzifəsi</th>
+                        <th class="c-table__cell c-table__cell--head">Şirkəti</th>
                         <th class="c-table__cell c-table__cell--head">Redaktə Edildi</th>
                         <th class="c-table__cell c-table__cell--head">Hərəkətlər</th>
                     </tr>
@@ -47,20 +47,21 @@
                                     <input class="c-choice__input" id="id{{$item->id}}" name="ids[]" value="{{$item->id}}" type="checkbox">
                                     <label class="c-choice__label" for="id{{$item->id}}" > </label>
                                 </div>
-
                             </td>
                             <td class="c-table__cell">#{{$item->id}}</td>
-                            <th class="c-table__cell">{{$item->name}}</th>
-                            <th class="c-table__cell"><img width="144" src="{{$item->logo}}"></th>
+                            <th class="c-table__cell">{{$item->username}}</th>
+                            <th class="c-table__cell">{{$item->position}}</th>
+                            <th class="c-table__cell">{{$item->company}}</th>
                             <th class="c-table__cell">{{$item->updated_at}}</th>
                             <td class="c-table__cell">
                                 <div class="c-dropdown dropdown">
                                     <a href="#" class="c-btn c-btn--info has-icon dropdown-toggle" id="dropdownMenuTable1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Göstər <i class="feather icon-chevron-down"></i>
                                     </a>
+
                                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuTable1">
-                                        <a class="c-dropdown__item dropdown-item" href="/admin/partners/edit/{{$item->id}}">Redaktə Et</a>
-                                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/partners/delete/{{$item->id}}')">Sil</a>
+                                        <a class="c-dropdown__item dropdown-item" href="/admin/testimonials/edit/{{$item->slug}}/{{$item->id}}">Redaktə Et</a>
+                                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/testimonials/delete/{{$item->id}}')">Sil</a>
                                     </div>
                                 </div>
                             </td>
@@ -71,6 +72,5 @@
             </div>
         </div>
     </div>
-    {{$items->appends(request()->input())->links('pagination.admin')}}
+    {{$items->links('pagination.admin')}}
 @endsection
-

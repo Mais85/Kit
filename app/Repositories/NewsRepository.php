@@ -90,7 +90,7 @@ class NewsRepository  extends AdminBaseController
             $deleted_item->delete();
             if($deleted_item){
                 if($filename1 || $filename2)
-                    $this->deleteImage($filename1);
+                    $this->deleteImage($filename1,'photos');
                 File::delete(base_path("storage/app/public/smallphotos/".$filename2));
 
             }

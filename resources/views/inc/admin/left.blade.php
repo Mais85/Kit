@@ -124,6 +124,19 @@
                 </li>
 
                 <li class="c-sidebar__item has-submenu">
+                    <a class="c-sidebar__link {{menuActive('referances',4)}}" data-toggle="collapse" href="#sidebar-referances" aria-expanded="{{menuActive('referances',2)}}" aria-controls="sidebar-submenu">
+                        <i class="c-sidebar__icon feather icon-file-text"></i>Referanslar
+                    </a>
+
+                    <div>
+                        <ul class="c-sidebar__list collapse {{menuActive('referances',3)}}" id="sidebar-referances">
+                            <li><a class="c-sidebar__link {{menuActive('referances')}}" href="/admin/referances" >Bütün Referanslar</a></li>
+                            <li><a class="c-sidebar__link {{menuActive('referances/create')}}" href="/admin/referances/create">Referans Yarat</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="c-sidebar__item has-submenu">
                     <a class="c-sidebar__link {{menuActive('certificates',4)}}" data-toggle="collapse" href="#sidebar-certificates" aria-expanded="{{menuActive('certificates',2)}}" aria-controls="sidebar-submenu">
                         <i class="c-sidebar__icon feather icon-award "></i>Sertifikatlarımız
                     </a>

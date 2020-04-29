@@ -38,7 +38,7 @@
     this.option(options);
   }
 
-  // Descriptions of all options available on the demo site:
+  // Descriptions of all options available on the demo testimonials:
   // http://lokeshdhakar.com/projects/lightbox2/index.html#options
   Lightbox.defaults = {
     albumLabel: '%1/%2',

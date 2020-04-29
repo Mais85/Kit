@@ -99,8 +99,8 @@ class Companyrepository extends AdminBaseController
             $deleted_item->delete();
             if($deleted_item){
                 if($filename1 || $filename2)
-                    $this->deleteImage($filename1);
-                    $this->deleteImage($filename2);
+                    $this->deleteImage($filename1,'photos');
+                    $this->deleteImage($filename2,'photos');
                     $this->deleteFile($filepdf,'files');
             }
         }

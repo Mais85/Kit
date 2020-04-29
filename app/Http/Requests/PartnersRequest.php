@@ -24,7 +24,24 @@ class PartnersRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:191',
+            'logo' => 'image|nullable',
+            'link' => 'url|nullable',
+        ];
+    }
+
+    /**
+     * Get the validation messages that apply to the request.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'Müştəri adı mütləq doldurulmalıdır !',
+            'name.max:191' => 'Müştəri adı maksimum 191 simvoldan ibarət ola bilər !' ,
+            'logo.image' => 'Yalnız şəkil seçmək olar !',
+            'link.url' =>'Link düzgün deyil !',
         ];
     }
 }

@@ -82,9 +82,25 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/partners','PartnerController@index');
     Route::get('/partners/create','PartnerController@create');
     Route::post('/partners/create','PartnerController@store');
-    Route::get('/partners/edit/{slug}/{id}','PartnerController@edit');
+    Route::get('/partners/edit/{id}','PartnerController@edit');
     Route::post('/partners/edit','PartnerController@update')->name('partnersUpdate');
     Route::get('/partners/delete/{id}','PartnerController@destroy');
+
+    // testimonials
+    Route::get('/testimonials','TestimonialsController@index');
+    Route::get('/testimonials/create','TestimonialsController@create');
+    Route::post('/testimonials/create','TestimonialsController@store');
+    Route::get('/testimonials/edit/{slug}/{id}','TestimonialsController@edit');
+    Route::post('/testimonials/edit','TestimonialsController@update')->name('testimonialsUpdate');
+    Route::get('/testimonials/delete/{id}','TestimonialsController@destroy');
+
+    // referances
+    Route::get('/referances','TestimonialsController@index');
+    Route::get('/referances/create','TestimonialsController@create');
+    Route::post('/referances/create','TestimonialsController@store');
+    Route::get('/referances/edit/{slug}/{id}','TestimonialsController@edit');
+    Route::post('/referances/edit','TestimonialsController@update')->name('testimonialsUpdate');
+    Route::get('/referances/delete/{id}','TestimonialsController@destroy');
 
     //Settings
     Route::get('/setting','SettingController@index')->name('setting');
