@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ReferanceRequest extends FormRequest
+class CertificateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -43,6 +43,7 @@ class ReferanceRequest extends FormRequest
             'desc_'.config('app.locale').'.required' =>'Qısa mətn mütləq doldurulmalıdır !',
             'desc_'.config('app.locale').'.max:191' =>'Qısa mətn 191 simvoldan artıq ola bilməz!',
             'img.image' => 'Yalnız şəkil seçmək olar !',
+            'link.url' =>'Link düzgün deyil !',
         ];
     }
 }

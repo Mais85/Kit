@@ -57,7 +57,7 @@
                                         Göstər <i class="feather icon-chevron-down"></i>
                                     </a>
                                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuTable1">
-                                        <a class="c-dropdown__item dropdown-item" href="/admin/referances/edit/{{$item->id}}">Redaktə Et</a>
+                                        <a class="c-dropdown__item dropdown-item" href="/admin/referances/edit/{{ $item->slug }}/{{$item->id}}">Redaktə Et</a>
                                         <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/referances/delete/{{$item->id}}')">Sil</a>
                                     </div>
                                 </div>

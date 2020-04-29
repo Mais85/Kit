@@ -12,4 +12,9 @@ class Referance extends Model
     protected $table = 'referances';
     protected $fillable = ['title', 'img', 'desc', 'slug'];
     public $translatable = ['desc'];
+
+    public function setTitleAttribute($title)
+    {
+        $this->attributes['title'] = ucfirst($title);
+    }
 }

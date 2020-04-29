@@ -22,7 +22,8 @@ class CompanyController extends Controller
     }
 
     /**
-     * Listing company datas from db
+     * Display a listing of the resource.
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @throws \Exception
      */

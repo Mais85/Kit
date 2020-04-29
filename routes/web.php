@@ -95,12 +95,20 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/testimonials/delete/{id}','TestimonialsController@destroy');
 
     // referances
-    Route::get('/referances','TestimonialsController@index');
-    Route::get('/referances/create','TestimonialsController@create');
-    Route::post('/referances/create','TestimonialsController@store');
-    Route::get('/referances/edit/{slug}/{id}','TestimonialsController@edit');
-    Route::post('/referances/edit','TestimonialsController@update')->name('testimonialsUpdate');
-    Route::get('/referances/delete/{id}','TestimonialsController@destroy');
+    Route::get('/referances','ReferanceController@index');
+    Route::get('/referances/create','ReferanceController@create');
+    Route::post('/referances/create','ReferanceController@store');
+    Route::get('/referances/edit/{slug}/{id}','ReferanceController@edit');
+    Route::post('/referances/edit','ReferanceController@update')->name('referanceUpdate');
+    Route::get('/referances/delete/{id}','ReferanceController@destroy');
+
+    // certificates
+    Route::get('/certificates','CertificateController@index');
+    Route::get('/certificates/create','CertificateController@create');
+    Route::post('/certificates/create','CertificateController@store');
+    Route::get('/certificates/edit/{slug}/{id}','CertificateController@edit');
+    Route::post('/certificates/edit','CertificateController@update')->name('certificateUpdate');
+    Route::get('/certificates/delete/{id}','CertificateController@destroy');
 
     //Settings
     Route::get('/setting','SettingController@index')->name('setting');

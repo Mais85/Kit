@@ -9,7 +9,7 @@
                     <div class="c-card">
                         <div class="row u-mb-medium">
                             <div class="col-lg-12 u-mb-xsmall">
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('certificateUpdate') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="c-tabs__list nav nav-tabs" id="myTab" role="tablist">
                                         @foreach($__languages as $language_key => $language_title )
@@ -20,7 +20,7 @@
                                         <div class="c-tabs__pane active">
                                             <div class="c-field">
                                                 <label class="c-field__label">Referans</label>
-                                                <input type="text" class="c-input" name="title" value="{{ old('title') }}"/>
+                                                <input type="text" class="c-input" name="title" value="@if(isset($items->title)){{ $items->title}}@else{{ old('title') }} @endif"/>
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +29,7 @@
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
                                                 <div class="c-field">
                                                     <label class="c-field__label">Qısa məlumat  <span style="font: italic  bold 12px/30px 'Verdana'; color:#FA5661;text-decoration: underline">( max: 191 simvol )</span></label>
-                                                    <textarea class="c-input" name="desc_{{$language_key}}" rows="3" >{{old('desc_'.$language_key) }}</textarea>
+                                                    <textarea class="c-input" name="desc_{{$language_key}}" rows="3" >@if(empty($items->desc)){{old('desc_'.$language_key) }}@else{{$items->getTranslation('desc',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -38,6 +38,13 @@
                                         <div class="c-tabs__pane active">
                                             <div class="c-field">
                                                 <label class="c-field__label">Şəkil</label>
+                                                @if($items->img)
+                                                    <div id="old_img" class="admin_image old_img">
+                                                        <img src="{{$items->img}}" style="max-width: 190px;border: 1px solid #aaa;">
+                                                        <div class="admin_image_close" onclick="deloldimg('old_img');"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                        <input type="hidden" name="old_img" value="{{$items->img}}">
+                                                    </div>
+                                                @endif
                                                 <input type="file" class="c-input" name="img" accept="image/*"/>
                                             </div>
                                             <div class="c-field">
@@ -53,4 +60,10 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function deloldimg(oldimg) {
+            var elem = document.getElementById(oldimg);
+            elem.remove();
+        }
+    </script>
 @endsection

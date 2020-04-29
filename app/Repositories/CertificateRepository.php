@@ -5,46 +5,46 @@ namespace App\Repositories;
 
 
 use App\Http\Controllers\Admin\AdminBaseController;
-use App\Models\Referance;
+use App\Models\Certificate;
 use Illuminate\Support\Str;
 
-class ReferanceRepository extends AdminBaseController
+class CertificateRepository extends AdminBaseController
 {
     public function getAll()
     {
-        return Referance::all();
+        return Certificate::all();
     }
 
     public function getPaginate()
     {
-        return Referance::paginate(8);
+        return Certificate::paginate(8);
     }
 
     public function getReferance($slug,$id)
     {
-        $data = cache('modRef');
+        $data = cache('modCertificate');
         $items = $data->where('id',$id)->first();
         return $items;
     }
 
     public function store($request)
     {
-        return Referance::create([
+        return Certificate::create([
             'slug'=>Str::slug($request->title,'-'),
             'title' => $request->title,
             'desc' =>$this->getFormTranslations('desc',$request),
-            'img' => $this->uploadImage($request->img,"referancephotos"),
+            'img' => $this->uploadImage($request->img,"certificatephotos"),
         ]);
     }
 
     public function update($request)
     {
-        $item = cache('modReferanceEdit');
+        $item = cache('modCertificateEdit');
         return $item->update([
             'slug'=>Str::slug($request->title,'-'),
             'title' => $request->title,
             'desc' =>$this->getFormTranslations('desc',$request),
-            'img' => $this->editImage($request->img,$item->img,$request->old_img,"referancephotos"),
+            'img' => $this->editImage($request->img,$item->img,$request->old_img,"certificatephotos"),
         ]);
     }
 
@@ -52,15 +52,15 @@ class ReferanceRepository extends AdminBaseController
     {
         $items = array_filter(explode(',',$id));
         foreach ($items as $item) {
-            $data = cache('modRef');
+            $data = cache('modCertificate');
             $deleted_item = $data->where('id',$item)->first();
             $filename = $deleted_item->img;
-            $pos = '/storage/referancephotos/';
+            $pos = '/storage/certificatephotos/';
             $filename = str_replace($pos, '', $filename);
             $deleted_item->delete();
             if($deleted_item){
                 if($filename)
-                    $this->deleteImage($filename,'referancephotos');
+                    $this->deleteImage($filename,'certificatephotos');
             }
         }
     }

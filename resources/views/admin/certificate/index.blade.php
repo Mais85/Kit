@@ -11,7 +11,7 @@
                     </a>
 
                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuToggleModal">
-                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="massDelete('projects')">Seçili Olanları Sil</a>
+                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="massDelete('certificates')">Seçili Olanları Sil</a>
                         <a class="c-dropdown__item dropdown-item" href="">Səhifəni Yenilə</a>
                     </div>
                 </div>
@@ -32,8 +32,7 @@
                             </div>
                         </th>
                         <th class="c-table__cell c-table__cell--head">ID</th>
-                        <th class="c-table__cell c-table__cell--head">Layihə adı</th>
-                        <th class="c-table__cell c-table__cell--head">Kateqoriyası</th>
+                        <th class="c-table__cell c-table__cell--head">Referans</th>
                         <th class="c-table__cell c-table__cell--head">Redaktə Edildi</th>
                         <th class="c-table__cell c-table__cell--head">Hərəkətlər</th>
                     </tr>
@@ -50,8 +49,7 @@
 
                             </td>
                             <td class="c-table__cell">#{{$item->id}}</td>
-                            <th class="c-table__cell">{{$item->getTranslation('title1',app()->getLocale(),false)}}</th>
-                            <th class="c-table__cell">{{$item->getTranslation('catname',app()->getLocale(),false)}}</th>
+                            <th class="c-table__cell">{{$item->title}}</th>
                             <th class="c-table__cell">{{$item->updated_at}}</th>
                             <td class="c-table__cell">
                                 <div class="c-dropdown dropdown">
@@ -59,8 +57,8 @@
                                         Göstər <i class="feather icon-chevron-down"></i>
                                     </a>
                                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuTable1">
-                                        <a class="c-dropdown__item dropdown-item" href="/admin/projects/edit/@if(isset($item->slug)){{$item->getTranslation('slug',\App::getlocale(),false)}}@endif/{{$item->id}}" >Redaktə Et</a>
-                                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/projects/delete/{{$item->id}}')">Sil</a>
+                                        <a class="c-dropdown__item dropdown-item" href="/admin/certificates/edit/{{ $item->slug }}/{{$item->id}}">Redaktə Et</a>
+                                        <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/certificates/delete/{{$item->id}}')">Sil</a>
                                     </div>
                                 </div>
                             </td>
