@@ -101,6 +101,14 @@
                                                 <label class="c-field__label">İnfo 4 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
                                                 <input type="text" class="c-input" name="value6" value="{{ old('value6') }}"/>
                                             </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">İnfo 4 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
+                                                <input type="text" class="c-input" name="value6" value="{{ old('value6') }}"/>
+                                            </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">Layihənin tarixi</label>
+                                                <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="projectdata" value="{{date("Y-m-d",(time()))}}" placeholder="iiii-aa-gg ss:dd:00">
+                                            </div>
                                             <hr>
                                             <div class="c-field">
                                                 <label class="c-field__label">Şəkil 2</label>
