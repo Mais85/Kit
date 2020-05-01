@@ -31,8 +31,8 @@ class Settingrequest extends FormRequest
             'footcontent_'.config('app.locale') => 'required',
             'yandexMetrix' => 'nullable',
             'googleMetrix' => 'nullable',
-            'phone' => 'nullable',
-            'mobphone' => 'nullable',
+            'phone'=> 'required|numeric|digits_between:10,12',
+            'mobphone'=> 'required|numeric|digits_between:10,12',
             'address' => 'required',
             'email' => 'required|email:rfc,dns',
             'fb' => 'nullable|url',
@@ -51,6 +51,12 @@ class Settingrequest extends FormRequest
             'email.email:rfc,dns' =>'Email doğru deyil !',
             'url' => 'link (url) daxil edin !',
             'max:191' => 'Maksimum 191 simvol daxil etmək olar',
+            'phone.required' => 'Telefon qeyd olunmalıdır !',
+            'phone.numeric' => 'Telefon yalniz rəqəmlərdən ibarət ola bilər !',
+            'phone.digits_between' => 'Telefon  min::min   max::max simvoldan ibarət ola bilər !',
+            'mobphone.required' => 'Mob.Telefon qeyd olunmalıdır !',
+            'mobphone.numeric' => 'Mob.Telefon yalniz rəqəmlərdən ibarət ola bilər !',
+            'mobphone.digits_between' => 'Mob.Telefon  min::min   max::max simvoldan ibarət ola bilər !',
         ];
     }
 }

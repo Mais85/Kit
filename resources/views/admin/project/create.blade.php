@@ -9,7 +9,7 @@
                     <div class="c-card">
                         <div class="row u-mb-medium">
                             <div class="col-lg-12 u-mb-xsmall">
-                                <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="c-tabs__list nav nav-tabs" id="myTab" role="tablist">
                                         @foreach($__languages as $language_key => $language_title )
@@ -40,11 +40,11 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn 1</label>
-                                                    <textarea class="c-input" name="contents1_{{$language_key}}" rows="7" >{{old('contents1__'.$language_key)}}</textarea>
+                                                    <textarea class="c-input" name="contents1_{{$language_key}}" rows="7" >{{old('contents1_'.$language_key)}}</textarea>
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn 2</label>
-                                                    <textarea class="c-input" name="contents2_{{$language_key}}" rows="7" >{{old('contents2__'.$language_key)}}</textarea>
+                                                    <textarea class="c-input" name="contents2_{{$language_key}}" rows="7" >{{old('contents2_'.$language_key)}}</textarea>
                                                 </div>
                                                 <hr>
                                                 <h3>Bölmə 3</h3>
@@ -87,27 +87,23 @@
                                         <div class="c-tabs__pane active">
                                             <div class="c-field">
                                                 <label class="c-field__label">İnfo 1 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="text" class="c-input" name="value3" value="{{ old('value3') }}"/>
+                                                <input type="number" class="c-input" name="val3" value="{{ old('val3') }}"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">İnfo 2 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="text" class="c-input" name="value4" value="{{ old('value4') }}"/>
+                                                <input type="number" class="c-input" name="val4" value="{{ old('val4') }}"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">İnfo 3 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="text" class="c-input" name="value5" value="{{ old('value5') }}"/>
+                                                <input type="number" class="c-input" name="val5" value="{{ old('val5') }}"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">İnfo 4 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="text" class="c-input" name="value6" value="{{ old('value6') }}"/>
-                                            </div>
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 4 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="text" class="c-input" name="value6" value="{{ old('value6') }}"/>
+                                                <input type="number" class="c-input" name="val6" value="{{ old('val6') }}"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Layihənin tarixi</label>
-                                                <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="projectdata" value="{{date("Y-m-d",(time()))}}" placeholder="iiii-aa-gg ss:dd:00">
+                                                <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="projectdate" value="{{date("Y-m-d",(time()))}}" placeholder="iiii-aa-gg ss:dd:00">
                                             </div>
                                             <hr>
                                             <div class="c-field">
