@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsTable extends Migration
+class CreateAlbomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('alboms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title',191);
-            $table->string('desc',191);
-            $table->string('img',191);
-            $table->text('contents');
+            $table->string('name',191);
+            $table->string('coverimg',191);
             $table->boolean('isPublished')->default(false);
-            $table->string('slug',191)->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('alboms');
     }
 }

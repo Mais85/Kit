@@ -150,14 +150,14 @@
                 </li>
 
                 <li class="c-sidebar__item has-submenu">
-                    <a class="c-sidebar__link {{menuActive('gallery',4)}}" data-toggle="collapse" href="#sidebar-gallery" aria-expanded="{{menuActive('gallery',2)}}" aria-controls="sidebar-submenu">
-                        <i class="c-sidebar__icon feather icon-film "></i>Qalareya
+                    <a class="c-sidebar__link {{menuActive('alboms',4)}}" data-toggle="collapse" href="#sidebar-gallery" aria-expanded="{{menuActive('alboms',2)}}" aria-controls="sidebar-submenu">
+                        <i class="c-sidebar__icon feather icon-film "></i>Qalereya
                     </a>
 
                     <div>
-                        <ul class="c-sidebar__list collapse {{menuActive('gallery',3)}}" id="sidebar-gallery">
-                            <li><a class="c-sidebar__link {{menuActive('gallery')}}" href="/admin/gallery" >Bütün Albomlar </a></li>
-                            <li><a class="c-sidebar__link {{menuActive('gallery/create')}}" href="/admin/gallery/create">AlbomYarat</a></li>
+                        <ul class="c-sidebar__list collapse {{menuActive('alboms',3)}}" id="sidebar-gallery">
+                            <li><a class="c-sidebar__link {{menuActive('alboms')}}" href="/admin/alboms" >Bütün Albomlar </a></li>
+                            <li><a class="c-sidebar__link {{menuActive('alboms/create')}}" href="/admin/alboms/create">AlbomYarat</a></li>
                         </ul>
                     </div>
                 </li>

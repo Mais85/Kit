@@ -110,6 +110,16 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::post('/certificates/edit','CertificateController@update')->name('certificateUpdate');
     Route::get('/certificates/delete/{id}','CertificateController@destroy');
 
+    // alboms
+    Route::get('/alboms','AlbomController@index');
+    Route::get('/alboms/create','AlbomController@create');
+    Route::post('/alboms/create','AlbomController@store');
+    Route::get('/alboms/edit/{slug}/{id}','AlbomController@edit');
+    Route::post('/alboms/edit','AlbomController@update')->name('AlbomUpdate');
+    Route::get('/alboms/delete/{id}','AlbomController@destroy');
+
+
+
     //Settings
     Route::get('/setting','SettingController@index')->name('setting');
     Route::post('/setting','SettingController@store')->name('settingstore');

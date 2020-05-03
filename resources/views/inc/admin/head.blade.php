@@ -8,6 +8,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="{{ asset('/assets/admin//css/datepicker.min.css') }}" rel="stylesheet" type="text/css">
+    @yield('assets')
     <script src="{{ asset('/assets/admin/js/datepicker.min.js') }}"></script>
     <script src="{{ asset('/assets/admin//js/datepicker.az.js') }}"></script>
     <style>
