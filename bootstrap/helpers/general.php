@@ -1,4 +1,7 @@
 <?php
+
+use App\Models\Photo;
+
 function cities($id = null){
     $cities = array (
         1 => 'Ağcabədi',
@@ -225,6 +228,10 @@ function menuActive($given,$type=1){
     return "";
 }
 
+function getPhotos($id)
+{
+    return Photo::where('albom_id', $id)->get()->count();
+}
 function favOrNot($id){
     if(auth()->guest()){
         $favourites = [];

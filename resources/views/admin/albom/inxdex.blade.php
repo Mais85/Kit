@@ -52,8 +52,12 @@
                             </td>
                             <td class="c-table__cell">#{{$item->id}}</td>
                             <th class="c-table__cell">{{$item->name}}</th>
-                            <th class="c-table__cell">{{$item->photos_sum}}</th>
-                            <th class="c-table__cell">{{$item->isPublished}}</th>
+                            <th class="c-table__cell">{{ getPhotos($item->id) }}</th>
+                            @if($item->isPublished ==1)
+                                <th class="c-table__cell"><a class="c-badge c-badge--small c-badge--success c-tooltip c-tooltip--top" aria-label=".{{ $item->isPublished }}.">Aktiv</a></th>
+                            @else
+                                <th class="c-table__cell"><a class="c-badge c-badge--small c-badge--danger c-tooltip c-tooltip--top" aria-label=".{{ $item->isPublished }}.">Deaktiv</a></th>
+                            @endif
                             <th class="c-table__cell">{{$item->updated_at}}</th>
                             <td class="c-table__cell">
                                 <div class="c-dropdown dropdown">
@@ -61,7 +65,7 @@
                                         Göstər <i class="feather icon-chevron-down"></i>
                                     </a>
                                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuTable1">
-                                        <a class="c-dropdown__item dropdown-item" href="/admin/alboms/edit/{{$item->id}}">Redaktə Et</a>
+                                        <a class="c-dropdown__item dropdown-item" href="/admin/alboms/edit/{{ $item->slug }}/{{$item->id}}">Redaktə Et</a>
                                         <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/alboms/delete/{{$item->id}}')">Sil</a>
                                     </div>
                                 </div>

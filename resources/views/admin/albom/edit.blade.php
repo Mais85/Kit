@@ -27,11 +27,11 @@
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Şəkil </label>
-                                                @if($items->img)
+                                                @if($items->coverimg)
                                                     <div id="old_img" class="admin_image old_img">
-                                                        <img src="{{$items->img}}" style="max-width: 190px;border: 1px solid #aaa;">
+                                                        <img src="{{$items->coverimg}}" style="max-width: 190px;border: 1px solid #aaa;">
                                                         <div class="admin_image_close" onclick="deloldimg('old_img');"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
-                                                        <input type="hidden" name="old_img" value="{{$items->img}}">
+                                                        <input type="hidden" name="old_img" value="{{$items->coverimg}}">
                                                     </div>
                                                 @endif
                                                 <input type="file" class="c-input" name="img" accept="image/*"/>
@@ -52,7 +52,7 @@
                                                                 <!--button onclick="delete_old_image('old_img')" class="filepond--file-action-button filepond--action-remove-item" type="button" data-align="left" style="transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) ;opacity:1;clear: both;"><i class="feather icon-trash-2 "></i><span></span></button-->
                                                                 <!--br-->
 
-                                                                <button onclick="confirm_gitem_delete(this,'/admin/announcements/photo/delete/{{$photo->id}}')" class="filepond--file-action-button filepond--action-remove-item" type="button" data-align="left" style="transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) ;opacity:1;clear: both;"><i class="feather icon-trash-2 "></i><span></span></button>
+                                                                <button onclick="confirm_gitem_delete(this,'/admin/alboms/photo/delete/{{$photo->id}}')" class="filepond--file-action-button filepond--action-remove-item" type="button" data-align="left" style="transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) ;opacity:1;clear: both;"><i class="feather icon-trash-2 "></i><span></span></button>
                                                                 <br>
                                                                 <button onclick='dc("{{$photo->id}}")' class="filepond--file-action-button filepond--action-remove-item" type="button" data-align="left" style="margin-left: -4px;margin-top: 2px;transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) ;opacity:1;"><i class="feather icon-edit "></i><span></span></button>
 
@@ -165,9 +165,9 @@
 
             $('.my-pond').filepond( {
                 server: {
-                    url: 'http://kit/admin/alboms/create',
+                    url: 'http://kit/admin/alboms/',
                     process: {
-                        url: './photo',
+                        url: '/photo',
                         method: 'POST',
                         withCredentials: false,
                         headers: {
@@ -180,7 +180,7 @@
                     },
 
                     revert: {
-                        url: './photo/delete',
+                        url: 'photo/delete',
                         method: 'DELETE',
                         withCredentials: true,
                         headers: {
@@ -213,9 +213,43 @@
                 onaddfile: () => { fp_out(); },
 
                 // Use Doka.js as image editor
-                imageEditEditor: dokaCreate()
+                imageEditEditor: dokaCreate({
+                    utils: ['crop', 'filter', 'color', 'markup', 'resize']
+                })
             });
 
+        });
+
+        function dc(id){
+            dokaCreate({
+                "src": $("#gal"+id).attr("src"),
+                onconfirm: function(out){
+                    var post_data = new FormData();
+                    var reader = new FileReader();
+                    reader.readAsDataURL(out.file);
+                    reader.onloadend = function() {
+                        var base64data = reader.result;
+                        post_data.append('img', base64data);
+                        var imageUrl = URL.createObjectURL(out.file);
+                        $.ajax({
+                            type: 'POST',
+                            url: '/admin/announcements/photo/update/'+id,
+                            data: post_data,
+                            processData: false,
+                            contentType: false
+                        }).done(function(data) {
+                            $("#gal"+id).attr("src",imageUrl);
+                        });
+                    }
+                }
+            });
+
+        }
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
     </script>
 @endsection

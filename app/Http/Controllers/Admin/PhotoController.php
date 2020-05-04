@@ -2,63 +2,40 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminBaseController;
+use App\Repositories\PhotoRepository;
 use Illuminate\Http\Request;
 
-class PhotoController extends Controller
+class PhotoController extends AdminBaseController
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @var PhotoRepository
      */
-    public function index()
+    private $photorepository;
+
+    /**
+     * PhotoController constructor.
+     * @param PhotoRepository $photorepository
+     */
+    public function __construct(PhotoRepository $photorepository)
     {
-        //
+        $this->photorepository = $photorepository;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Store a newly created resource in storage with ajax.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return array
      */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = $this->photorepository->store($request);
+        return $data;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +46,8 @@ class PhotoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $this->photorepository->update($request,$id);
+        return $data;
     }
 
     /**
@@ -80,6 +58,23 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
+
+    /**
+     *Remove the specified resource from storage.
+     */
+    public function delete()
+    {
+        $this->photorepository->delete();
+    }
+
+    /**
+     * @param $id
+     */
+    public function delPhoto($id)
+    {
+        $this->photorepository->delPhoto($id);
+    }
+
 }

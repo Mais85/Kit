@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -117,6 +118,10 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/alboms/edit/{slug}/{id}','AlbomController@edit');
     Route::post('/alboms/edit','AlbomController@update')->name('AlbomUpdate');
     Route::get('/alboms/delete/{id}','AlbomController@destroy');
+    Route::post('/alboms/photo','PhotoController@store');
+    Route::post('/alboms/photo/delete/{id}','PhotoController@delPhoto');
+    Route::delete('/alboms/photo/delete','PhotoController@delete');
+
 
 
 

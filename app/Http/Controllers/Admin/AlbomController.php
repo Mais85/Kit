@@ -107,6 +107,7 @@ class AlbomController extends AdminBaseController
      */
     public function destroy($id)
     {
+        $this->albomrepository->delPhotoFromStorage($id);
         $this->albomrepository->destroy($id);
         return redirect('/admin/alboms')->with('message','Silinmə əməliyyatı uğurla başa çatdı.');
     }

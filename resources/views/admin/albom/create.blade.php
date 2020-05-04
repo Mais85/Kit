@@ -108,9 +108,9 @@
 
             $('.my-pond').filepond( {
             server: {
-                url: 'http://kit/admin/alboms/create',
+                url: 'http://kit/admin/alboms',
                 process: {
-                    url: './photo',
+                    url: '/photo',
                     method: 'POST',
                     withCredentials: false,
                     headers: {
@@ -123,7 +123,7 @@
                 },
 
                 revert: {
-                    url: './photo/delete',
+                    url: '/photo/delete',
                     method: 'DELETE',
                     withCredentials: true,
                     headers: {
