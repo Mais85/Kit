@@ -25,7 +25,7 @@ class AlbomRequest extends FormRequest
     {
         return [
             'name' => 'required| string|max:191',
-            'img' => 'required|image',
+            'img' => 'required_without:old_img|image',
         ];
     }
 

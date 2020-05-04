@@ -77,7 +77,7 @@ class AlbomRepository extends AdminBaseController
         return $item->update([
             'slug' =>Str::slug($request->name,'-'),
             'name' =>$request->name,
-            'coverimg' =>$this->editImageFit($request->img,$item->img,$request->old_img,'smallphotos',$this->__thumbs),
+            'coverimg' =>$this->editImageFit($request->img,$item->coverimg,$request->old_img,'smallphotos',$this->__thumbs),
             'isPublished' => $request->isPublished
         ]);
     }

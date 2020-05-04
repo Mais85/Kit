@@ -17,7 +17,7 @@
                     <div class="c-card">
                         <div class="row u-mb-medium">
                             <div class="col-lg-12 u-mb-xsmall">
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('AlbomUpdate') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">
                                         <div class="c-tabs__pane active">
@@ -233,7 +233,7 @@
                         var imageUrl = URL.createObjectURL(out.file);
                         $.ajax({
                             type: 'POST',
-                            url: '/admin/announcements/photo/update/'+id,
+                            url: '/admin/alboms/photo/update/'+id,
                             data: post_data,
                             processData: false,
                             contentType: false

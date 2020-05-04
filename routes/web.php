@@ -120,6 +120,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/alboms/delete/{id}','AlbomController@destroy');
     Route::post('/alboms/photo','PhotoController@store');
     Route::post('/alboms/photo/delete/{id}','PhotoController@delPhoto');
+    Route::post('/alboms/photo/update/{id}','PhotoController@update');
     Route::delete('/alboms/photo/delete','PhotoController@delete');
 
 
