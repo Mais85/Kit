@@ -165,7 +165,7 @@
 
             $('.my-pond').filepond( {
                 server: {
-                    url: 'http://kit/admin/alboms/',
+                    url: 'http://kit/admin/alboms',
                     process: {
                         url: '/photo',
                         method: 'POST',

@@ -40,7 +40,7 @@ class AlbomRequest extends FormRequest
         return [
             'name.required' => 'Albom adı mütləq seçilməlidir !',
             'name.max' => 'Albom adı :max simvoldan artıq ola bilməz !',
-            'img.required'  => 'Şəkil mütləq seçilməlidir !',
+            'img.required_without'  => 'Kapak şəkili mütləq seçilməlidir !',
             'img.image'  => 'Şəkil seçin !',
         ];
     }

@@ -38,7 +38,6 @@ class PhotoRepository extends AdminBaseController
 
     public function delPhoto($id)
     {
-        dd($id);
         $item = Photo::where('id',$id)->pluck('img')->first();
         $pos = '/storage/albumsphotos/';
         $item = str_replace($pos,'',$item);
@@ -52,6 +51,7 @@ class PhotoRepository extends AdminBaseController
     public function update($request,$id)
     {
         $item = Photo::where('id',$id)->pluck('img')->first();
+        dd();
         $pos = '/storage/albumsphotos/';
         $item = str_replace($pos,'',$item);
         File::delete(base_path("storage/app/public/albumsphotos/".$item));
