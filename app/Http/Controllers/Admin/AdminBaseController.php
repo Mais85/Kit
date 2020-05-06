@@ -9,6 +9,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
+use App\Models\Photo;
 
 
 class AdminBaseController extends Controller
@@ -17,6 +18,16 @@ class AdminBaseController extends Controller
     public function __construct(){
         parent::__construct();
         App::setLocale('az');
+        $lastdate = (new \DateTime())->modify("-1 day");
+        $delPhoto = Photo::select( 'id','created_at','img')->where('albom_id',null)->where('created_at',"<",$lastdate)->get();
+        foreach($delPhoto as $val){
+            $image = $val->img;
+            $pos = '/storage/albumsphotos/';
+            $image = str_replace($pos,'',$image);
+            File::delete(base_path("storage/app/public/albumsphotos/".$image));
+            $val->delete();
+        }
+
     }
 
     public function getFormTranslations($name,$request)
