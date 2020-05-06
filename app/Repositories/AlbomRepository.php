@@ -74,12 +74,24 @@ class AlbomRepository extends AdminBaseController
     public function update($request)
     {
         $item = cache('modAlbEdit');
-        return $item->update([
+         $data = $item->update([
             'slug' =>Str::slug($request->name,'-'),
             'name' =>$request->name,
             'coverimg' =>$this->editImageFit($request->img,$item->coverimg,$request->old_img,'smallphotos',$this->__thumbs),
             'isPublished' => $request->isPublished
         ]);
+
+        if($data){
+            $id = auth()->user()->id;
+            $elems = Photo::select('id')->where([['albom_id',null],['user_id',$id]])->get();
+            $idAlbom= Albom::where('name',$request->name)->pluck('id')->first();
+
+            foreach ($elems as $el){
+                $el->update([
+                    'albom_id'=>$idAlbom,
+                ]);
+            }
+        }
     }
 
     public function destroy($id)

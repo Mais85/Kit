@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\AdminBaseController;
+use App\Http\Requests\AlbomRequest;
 use App\Repositories\PhotoRepository;
 use Illuminate\Http\Request;
 

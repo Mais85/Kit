@@ -50,16 +50,15 @@ class PhotoRepository extends AdminBaseController
 
     public function update($request,$id)
     {
-        $item = Photo::where('id',$id)->pluck('img')->first();
-        dd();
+        $item = Photo::where('id',$id)->first();
         $pos = '/storage/albumsphotos/';
-        $item = str_replace($pos,'',$item);
+        $item = str_replace($pos,'',$item->img);
         File::delete(base_path("storage/app/public/albumsphotos/".$item));
         $data = explode( ',', $request->img);
         $data = array_pop($data);
         $file = base64_decode($data);
-
-        Storage::disk('local')->put($item, $file);
+        dd($file,$item,$request->img);
+        Storage::putFileAs("public/albumsphotos/",$file,$item);
 
         return ["type"=>"success"];
     }
