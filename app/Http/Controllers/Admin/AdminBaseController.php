@@ -88,7 +88,7 @@ class AdminBaseController extends Controller
     {
         ini_set('memory_limit','256M');
         if(isset($image)){
-            $filename = time() . '.' . $image->getClientOriginalName();
+            $filename = time() . '-' . $image->getClientOriginalName();
             $width=Image::make($image)->width();
             $height=Image::make($image)->height();
 
@@ -164,7 +164,7 @@ class AdminBaseController extends Controller
     public function uploadImageFit($image, $path = "common" ,$fit,$thumbs = NULL){
         ini_set('memory_limit','256M');
         if(isset($image)){
-            $filename = time() . '.' . $image->getClientOriginalName();
+            $filename = time() . '-' . $image->getClientOriginalName();
             $filename2 = null;
             /*Image::make($image)->fit($fit[0],$fit[1])->save(base_path("storage/app/public/$path/".$filename),60)*/
             if($fit){

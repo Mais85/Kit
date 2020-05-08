@@ -42,6 +42,7 @@ class Companyupdaterequest extends FormRequest
             'pdf'=> 'nullable|file',
             'img1'=> 'nullable|image',
             'img2'=> 'nullable|image',
+            'logo'=> 'nullable|image',
         ];
     }
 
@@ -74,6 +75,7 @@ class Companyupdaterequest extends FormRequest
             'pdf.file'  => 'Pdf fayl seçin !',
             'img1.image'  => 'Şəkil 1 seçin !',
             'img2.image'  => 'Şəkil 2 seçin !',
+            'logo.image'  => 'Şəkil 2 seçin !',
         ];
     }
 }

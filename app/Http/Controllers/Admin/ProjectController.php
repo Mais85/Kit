@@ -41,7 +41,8 @@ class ProjectController extends AdminBaseController
     public function create()
     {
         $title = 'Layihə Yarat';
-        return view('admin.project.create')->with(['title' => $title]);
+        $alboms = $this->projectrepository->getAlbom();
+        return view('admin.project.create')->with(['title' => $title,'alboms'=>$alboms]);
     }
 
     public function store(ProjectCreateRequest $request)
@@ -68,8 +69,9 @@ class ProjectController extends AdminBaseController
     {
         $title = 'Layihə redaktəsi';
         $items = $this->projectrepository->getProject($slug,$id);
+        $alboms = $this->projectrepository->getAlbom();
         cache(['modProjectEdit' => $items],3600*24);
-        return view ('admin.project.edit',compact('title','items'));
+        return view ('admin.project.edit',compact('title','items','alboms'));
     }
 
     /**

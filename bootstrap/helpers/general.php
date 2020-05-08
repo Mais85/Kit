@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Albom;
 use App\Models\Photo;
 
 function cities($id = null){
@@ -257,4 +258,10 @@ function r1($bool,$string){
         return $string;
     else
         return "";
+}
+
+function getAlbomName($id)
+{
+    $el = Albom::where('id',$id)->pluck('name')->first();
+    return $el;
 }

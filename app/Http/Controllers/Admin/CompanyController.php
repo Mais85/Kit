@@ -41,7 +41,8 @@ class CompanyController extends Controller
     public function create()
     {
         $title = "Şirkət Yarat";
-        return view('admin.company.create',compact('title'));
+        $alboms = $this->companyrepository->getAlbom();
+        return view('admin.company.create',compact('title','alboms'));
     }
 
     /**
@@ -51,6 +52,7 @@ class CompanyController extends Controller
      */
     public function store(Companycreaterequest $request)
     {
+
       $bvalidated = $request->validated();
 
       if($bvalidated){
@@ -71,8 +73,9 @@ class CompanyController extends Controller
     {
         $title = "Şirkət Redaktəsi";
         $items = $this->companyrepository->getWithSlug($slug);
+        $alboms = $this->companyrepository->getAlbom();
         cache(['modCompEdit' => $items],3600*24);
-        return view('admin.company.edit',compact('title','items'));
+        return view('admin.company.edit',compact('title','items','alboms'));
     }
 
     public function update(Companyupdaterequest $request,$slug)

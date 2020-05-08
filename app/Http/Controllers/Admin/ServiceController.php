@@ -47,7 +47,8 @@ class ServiceController extends AdminBaseController
     {
         $title = 'Xidmət Yarat';
         $companies = $this->servicerepository->getCompanylist();
-        return view('admin.service.create',compact('title','companies'));
+        $alboms = $this->servicerepository->getAlbom();
+        return view('admin.service.create',compact('title','companies','alboms'));
     }
 
     /**
@@ -79,8 +80,9 @@ class ServiceController extends AdminBaseController
         $title = 'Xəbər redaktəsi';
         $items = $this->servicerepository->getServices($id);
         $companies = $this->servicerepository->getCompanylist();
+        $alboms = $this->servicerepository->getAlbom();
         cache(['modServiceEdit' => $items],3600*24);
-        return view ('admin.service.edit',compact('title','items','companies'));
+        return view ('admin.service.edit',compact('title','items','companies','alboms'));
     }
 
     /**

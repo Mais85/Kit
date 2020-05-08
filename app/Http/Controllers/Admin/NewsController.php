@@ -46,7 +46,8 @@ class NewsController extends AdminBaseController
     public function create()
     {
         $title = 'Xəbər Yarat';
-        return view('admin.news.create',compact('title'));
+        $alboms = $this->newsrepository->getAlbom();
+        return view('admin.news.create',compact('title','alboms'));
     }
 
     /**
@@ -79,8 +80,9 @@ class NewsController extends AdminBaseController
     {
         $title = 'Xəbər redaktəsi';
         $items = $this->newsrepository->getNews($slug,$id);
+        $alboms = $this->newsrepository->getAlbom();
         cache(['modNewsEdit' => $items],3600*24);
-        return view('admin.news.edit',compact('title','items'));
+        return view('admin.news.edit',compact('title','items','alboms'));
     }
 
     /**

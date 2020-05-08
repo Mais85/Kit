@@ -46,6 +46,22 @@
                                                 @endif
                                                 <input type="file" class="c-input" name="img" accept="image/*"/>
                                             </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">Albom</label>
+                                                <select style="font-size:13px" class="c-input" name="albom_id" >
+                                                    <option value="" disabled selected hidden>Albom seçin...</option>
+                                                    @forelse($alboms as $key=>$value)
+                                                        @if($value == getAlbomName($items->albom_id))
+                                                            <option value="{{ $key}}" selected>{{ $value}}</option>
+                                                        @else
+                                                            <option value="{{ $key}}" >{{ $value }}</option>
+                                                        @endif
+                                                    @empty
+                                                        <option value="">Şirkət tapılmadı !</option>
+                                                    @endforelse
+
+                                                </select>
+                                            </div>
                                             <label for="">Xəbər dərc olunsun ?</label><br>
                                             <input type="radio" id="no" name="status" value="0" {{ checked('0',$items->isPublished) }}>
                                             <label for="no">Xeyir</label>

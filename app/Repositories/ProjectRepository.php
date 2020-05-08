@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 
 use App\Http\Controllers\Admin\AdminBaseController;
+use App\Models\Albom;
 use App\Models\Project;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -37,34 +38,27 @@ class ProjectRepository extends AdminBaseController
         return $item;
     }
 
+    public function getAlbom(){
+        return Albom::all()->pluck('name','id');
+    }
+
     public function store($request)
     {
         return Project::create([
             'slug'=> $this->getSlugFrom('title1',$request),
             'title1' =>$this->getFormTranslations('title1',$request),
             'title2' =>$this->getFormTranslations('title2',$request),
-            'title3' =>$this->getFormTranslations('title3',$request),
-            'title4' =>$this->getFormTranslations('title4',$request),
-            'title5' =>$this->getFormTranslations('title5',$request),
-            'title6' =>$this->getFormTranslations('title6',$request),
             'contents1' =>$this->getFormTranslations('contents1',$request),
             'contents2' =>$this->getFormTranslations('contents2',$request),
             'catname' =>$this->getFormTranslations('catname',$request),
             'desc' =>$this->getFormTranslations('desc',$request),
-            'value3' => $request->val3,
-            'value4' => $request->val4,
-            'value5' => $request->val5,
-            'value6' => $request->val6,
-            'info3' =>$this->getFormTranslations('info3',$request),
-            'info4' =>$this->getFormTranslations('info4',$request),
-            'info5' =>$this->getFormTranslations('info5',$request),
-            'info6' =>$this->getFormTranslations('info6',$request),
             'phone' => $request->mobphone,
             'projectdate' => date('Y-m-d',strtotime($request->projectdate)),
             'email' => $request->email,
             'link' => $request->link,
             'img1' => $this->uploadImage($request->img1,'photos'),
             'img2' => $this->uploadImage($request->img2,'photos'),
+            'albom_id' => $request->albom_id,
             'smallimg' => $this->uploadImageFit($request->img1,"smallphotos",$this->__thumbs),
         ]);
     }
@@ -76,28 +70,17 @@ class ProjectRepository extends AdminBaseController
             'slug'=> $this->getSlugFrom('title1',$request),
             'title1' =>$this->getFormTranslations('title1',$request),
             'title2' =>$this->getFormTranslations('title2',$request),
-            'title3' =>$this->getFormTranslations('title3',$request),
-            'title4' =>$this->getFormTranslations('title4',$request),
-            'title5' =>$this->getFormTranslations('title5',$request),
-            'title6' =>$this->getFormTranslations('title6',$request),
             'contents1' =>$this->getFormTranslations('contents1',$request),
             'contents2' =>$this->getFormTranslations('contents2',$request),
             'catname' =>$this->getFormTranslations('catname',$request),
             'desc' =>$this->getFormTranslations('desc',$request),
-            'value3' => $request->val3,
-            'value4' => $request->val4,
-            'value5' => $request->val5,
-            'value6' => $request->val6,
-            'info3' =>$this->getFormTranslations('info3',$request),
-            'info4' =>$this->getFormTranslations('info4',$request),
-            'info5' =>$this->getFormTranslations('info5',$request),
-            'info6' =>$this->getFormTranslations('info6',$request),
             'phone' => $request->mobphone,
             'projectdate' => date('Y-m-d',strtotime($request->projectdate)),
             'email' => $request->email,
             'link' => $request->link,
             'img1' => $this->editImage($request->img1,$item->img1,$request->old_img1,'photos'),
             'img2' => $this->editImage($request->img2,$item->img2,$request->old_img2,'photos'),
+            'albom_id' => $request->albom_id,
             'smallimg' => $this->editImageFit($request->img1,$item->smallimg,$request->old_img1,'smallphotos',$this->__thumbs),
         ]);
     }

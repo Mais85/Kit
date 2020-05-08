@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 
 use App\Http\Controllers\Admin\AdminBaseController;
+use App\Models\Albom;
 use App\Models\Company;
 use App\Models\Service;
 use Illuminate\Support\Facades\File;
@@ -43,6 +44,10 @@ class ServiceRepository extends AdminBaseController
         return $item;
     }
 
+    public function getAlbom(){
+        return Albom::all()->pluck('name','id');
+    }
+
     public function store($request)
     {
         return Service::create([
@@ -52,6 +57,7 @@ class ServiceRepository extends AdminBaseController
             'img2' => $this->uploadImage($request->img2,'photos'),
             'slug' =>$this->getSlugFrom('title',$request),
             'company_id' =>$request->company,
+            'albom_id' => $request->albom_id,
             'company_name' => $this->getCompanylist()[$request->company],
         ]);
     }
@@ -66,6 +72,7 @@ class ServiceRepository extends AdminBaseController
             'img2' => $this->editImage($request->img2,$item->img2,$request->old_img2,'photos'),
             'slug' =>$this->getSlugFrom('title',$request),
             'company_id' =>$request->company,
+            'albom_id' => $request->albom_id,
             'company_name' => $this->getCompanylist()[$request->company],
         ]);
     }

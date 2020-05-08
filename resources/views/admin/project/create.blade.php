@@ -46,76 +46,27 @@
                                                     <label class="c-field__label">Mətn 2</label>
                                                     <textarea class="c-input" name="contents2_{{$language_key}}" rows="7" >{{old('contents2_'.$language_key)}}</textarea>
                                                 </div>
-                                                <hr>
-                                                <h3>Bölmə 3</h3>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 1</label>
-                                                    <input type="text" class="c-input" name="title3_{{$language_key}}" value="{{ old('title3_'.$language_key) }}"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 2</label>
-                                                    <input type="text" class="c-input" name="title4_{{$language_key}}" value="{{ old('title4_'.$language_key) }}"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 3</label>
-                                                    <input type="text" class="c-input" name="title5_{{$language_key}}" value="{{ old('title5_'.$language_key) }}"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 4</label>
-                                                    <input type="text" class="c-input" name="title6_{{$language_key}}" value="{{ old('title6_'.$language_key) }}"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 1</label>
-                                                    <input type="text" class="c-input" name="info3_{{$language_key}}" value="{{ old('info3_'.$language_key) }}"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 2</label>
-                                                    <input type="text" class="c-input" name="info4_{{$language_key}}" value="{{ old('info4_'.$language_key) }}"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 3</label>
-                                                    <input type="text" class="c-input" name="info5_{{$language_key}}" value="{{ old('info5_'.$language_key) }}"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 4</label>
-                                                    <input type="text" class="c-input" name="info6_{{$language_key}}" value="{{ old('info6_'.$language_key) }}"/>
-                                                </div>
                                             </div>
                                         @endforeach
                                     </div>
                                     <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">
                                         <div class="c-tabs__pane active">
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 1 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val3" value="{{ old('val3') }}"/>
-                                            </div>
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 2 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val4" value="{{ old('val4') }}"/>
-                                            </div>
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 3 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val5" value="{{ old('val5') }}"/>
-                                            </div>
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 4 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val6" value="{{ old('val6') }}"/>
-                                            </div>
+                                            <hr>
+                                            <h3>Bölmə 3</h3>
                                             <div class="c-field">
                                                 <label class="c-field__label">Layihənin tarixi</label>
                                                 <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="projectdate" value="{{date("Y-m-d",(time()))}}" placeholder="iiii-aa-gg ss:dd:00">
                                             </div>
                                             <hr>
                                             <div class="c-field">
-                                                <label class="c-field__label">Şəkil 2</label>
+                                                <label class="c-field__label">Şəkil 1</label>
                                                 <input type="file" class="c-input" name="img1" accept="image/*"/>
                                             </div>
                                             <div class="c-field">
-                                                <label class="c-field__label">Şəkil 1</label>
+                                                <label class="c-field__label">Şəkil 2</label>
                                                 <input type="file" class="c-input" name="img2" accept="image/*"/>
                                             </div>
-                                            <hr>
-                                            <h3>Bölmə 4</h3>
+
                                             <div class="c-field">
                                                 <label class="c-field__label">Email</label>
                                                 <input type="text" class="c-input" name="email" value="{{ old('email') }}"/>
@@ -128,6 +79,18 @@
                                             <div class="c-field">
                                                 <label class="c-field__label">Sayt</label>
                                                 <input type="text" class="c-input" name="link" value="{{ old('link') }}"/>
+                                            </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">Albom</label>
+                                                <select style="font-size:13px" class="c-input" name="albom_id" >
+                                                    <option value="" disabled selected hidden>Albom seçin...</option>
+                                                    @forelse($alboms as $key=>$value)
+                                                        <option value="{{ $key}}">{{ $value }}</option>
+                                                    @empty
+                                                        <option value="">Albom tapılmadı !</option>
+                                                    @endforelse
+
+                                                </select>
                                             </div>
                                             <div class="c-field">
                                                 <button class="c-btn c-btn--info u-mb-xsmall" type="submit" name="btn">Yarat</button>

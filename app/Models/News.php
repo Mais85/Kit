@@ -9,6 +9,6 @@ class News extends Model
 {
     use HasTranslations;
     protected $table = 'news';
-    protected $fillable = ['title','desc','img','smallimg','isPublished','contents','slug'];
+    protected $fillable = ['title','desc','img','smallimg','isPublished','contents','slug','albom_id'];
     public $translatable = ['title','desc','contents','slug'];
 }

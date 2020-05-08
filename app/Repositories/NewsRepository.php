@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 
 use App\Http\Controllers\Admin\AdminBaseController;
+use App\Models\Albom;
 use App\Models\News;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -48,6 +49,10 @@ class NewsRepository  extends AdminBaseController
         return $desc;
     }
 
+    public function getAlbom(){
+        return Albom::all()->pluck('name','id');
+    }
+
     public function store($request)
     {
          return News::create([
@@ -57,6 +62,7 @@ class NewsRepository  extends AdminBaseController
              'img' => $this->uploadImage($request->img,'photos'),
              'smallimg' => $this->uploadImageFit($request->img,'smallphotos',$this->__thumbs),
              'isPublished' => $request->status,
+             'albom_id' => $request->albom_id,
              'slug' =>$this->getSlugFrom('title',$request),
          ]);
     }
@@ -71,6 +77,7 @@ class NewsRepository  extends AdminBaseController
             'img' => $this->editImage($request->img,$item->img,$request->old_img,'photos'),
             'smallimg' => $this->editImageFit($request->img,$item->smallimg,$request->old_img,'smallphotos',$this->__thumbs),
             'isPublished' => $request->status,
+            'albom_id' => $request->albom_id,
             'slug' =>$this->getSlugFrom('title',$request),
         ]);
     }

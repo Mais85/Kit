@@ -46,62 +46,13 @@
                                                     <label class="c-field__label">Mətn 2</label>
                                                     <textarea class="c-input" name="contents2_{{$language_key}}" rows="7" >@if(empty($items->contents2)){{old('contents2_'.$language_key) }}@else{{$items->getTranslation('contents2',$language_key,false)}}@endif</textarea>
                                                 </div>
-                                                <hr>
-                                                <h3>Bölmə 3</h3>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 1</label>
-                                                    <input type="text" class="c-input" name="title3_{{$language_key}}" value="@if(isset($items->title3)){{$items->getTranslation('title3',$language_key,false)}} @else {{old('title3_'.$language_key) }}@endif"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 2</label>
-                                                    <input type="text" class="c-input" name="title4_{{$language_key}}" value="@if(isset($items->title4)){{$items->getTranslation('title4',$language_key,false)}} @else {{old('title4_'.$language_key) }}@endif"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 3</label>
-                                                    <input type="text" class="c-input" name="title5_{{$language_key}}" value="@if(isset($items->title5)){{$items->getTranslation('title5',$language_key,false)}} @else {{old('title5
-                                                    _'.$language_key) }}@endif"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq 4</label>
-                                                    <input type="text" class="c-input" name="title6_{{$language_key}}" value="@if(isset($items->title6)){{$items->getTranslation('title6',$language_key,false)}} @else {{old('title6_'.$language_key) }}@endif"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 1</label>
-                                                    <input type="text" class="c-input" name="info3_{{$language_key}}" value="@if(isset($items->info3)){{$items->getTranslation('info3',$language_key,false)}} @else {{old('info3_'.$language_key) }}@endif"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 2</label>
-                                                    <input type="text" class="c-input" name="info4_{{$language_key}}" value="@if(isset($items->info4)){{$items->getTranslation('info4',$language_key,false)}} @else {{old('info4_'.$language_key) }}@endif"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 3</label>
-                                                    <input type="text" class="c-input" name="info5_{{$language_key}}" value="@if(isset($items->info5)){{$items->getTranslation('info5',$language_key,false)}} @else {{old('info5_'.$language_key) }}@endif"/>
-                                                </div>
-                                                <div class="c-field">
-                                                    <label class="c-field__label">İnfo 4</label>
-                                                    <input type="text" class="c-input" name="info6_{{$language_key}}" value="@if(isset($items->info6)){{$items->getTranslation('info6',$language_key,false)}} @else {{old('info6_'.$language_key) }}@endif"/>
-                                                </div>
                                             </div>
                                         @endforeach
                                     </div>
                                     <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">
                                         <div class="c-tabs__pane active">
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 1 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val3" value="@if(isset($items->value3)){{ $items->value3 }}@else{{ old('val3') }} @endif"/>
-                                            </div>
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 2 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val4" value="@if(isset($items->value4)){{ $items->value4 }}@else{{ old('val4') }} @endif"/>
-                                            </div>
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 3 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val5" value="@if(isset($items->value5)){{ $items->value5 }}@else{{ old('val5') }} @endif"/>
-                                            </div>
-                                            <div class="c-field">
-                                                <label class="c-field__label">İnfo 4 <span style="font: italic  bold 12px/30px 'Verdana'; color:#000000;text-decoration: underline">( rəqəmlərlə )</span></label>
-                                                <input type="number" class="c-input" name="val6" value="@if(isset($items->value6)){{ $items->value6 }}@else{{ old('val6') }} @endif"/>
-                                            </div>
+                                            <hr>
+                                            <h3>Bölmə 4</h3>
                                             <div class="c-field">
                                                 <label class="c-field__label">Layihənin tarixi</label>
                                                 <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="projectdate" value="{{ DateTime::createFromFormat('d/m/Y',$items->projectdate)->format('Y-d-m') }}" placeholder="iiii-aa-gg ss:dd:00">
@@ -129,8 +80,6 @@
                                                 @endif
                                                 <input type="file" class="c-input" name="img2" accept="image/*"/>
                                             </div>
-                                            <hr>
-                                            <h3>Bölmə 4</h3>
                                             <div class="c-field">
                                                 <label class="c-field__label">Email</label>
                                                 <input type="text" class="c-input" name="email" value="@if(isset($items->email)){{ $items->email }}@else{{ old('email') }} @endif"/>
@@ -143,6 +92,22 @@
                                             <div class="c-field">
                                                 <label class="c-field__label">Sayt</label>
                                                 <input type="text" class="c-input" name="link" value="@if(isset($items->link)){{ $items->link }}@else{{ old('link') }} @endif"/>
+                                            </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">Albom</label>
+                                                <select style="font-size:13px" class="c-input" name="albom_id" >
+                                                    <option value="" disabled selected hidden>Albom seçin...</option>
+                                                    @forelse($alboms as $key=>$value)
+                                                        @if($value == getAlbomName($items->albom_id))
+                                                            <option value="{{ $key}}" selected>{{ $value}}</option>
+                                                        @else
+                                                            <option value="{{ $key}}" >{{ $value }}</option>
+                                                        @endif
+                                                    @empty
+                                                        <option value="">Şirkət tapılmadı !</option>
+                                                    @endforelse
+
+                                                </select>
                                             </div>
                                             <div class="c-field">
                                                 <button class="c-btn c-btn--info u-mb-xsmall" type="submit" name="btn">Yarat</button>
