@@ -19,6 +19,11 @@
                                         @foreach($__languages as $language_key => $language_title )
 
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab" style="padding: 0">
+
+                                                <div class="c-field">
+                                                    <label class="c-field__label">Əsas Başlıq </label>
+                                                    <input type="text" class="c-input" name="head_title_{{$language_key}}"  @if(!empty($items)) value="{{ $items->getTranslation('head_title',$language_key,false) }}" @else value="{{ old('head_title_'.$language_key) }}" @endif />
+                                                </div>
                                                 <h3>Blok 1</h3>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Başlıq 1</label>
@@ -29,7 +34,7 @@
                                                     <textarea class="c-input" name="contents1_{{$language_key}}" rows="10" {{requiredFall($language_key)}} >@if(empty($items)){{old('contents1'.$language_key)}}@else{{$items->getTranslation('contents1',$language_key,false)}}@endif</textarea>
                                                 </div>
                                                 <hr>
-
+                                                <br>
                                                 <h3>Blok 2</h3>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Başlıq 2 (aşağıda kampaniyaların mətni basligi)</label>
@@ -41,12 +46,13 @@
                                                     <textarea class="c-input" name="contents2_{{$language_key}}" rows="10" {{requiredFall($language_key)}} >@if(empty($items)){{old('contents2_'.$language_key)}}@else{{$items->getTranslation('contents2',$language_key,false)}}@endif</textarea>
                                                 </div>
 
-
+                                                <hr>
+                                                <br>
                                             </div>
                                         @endforeach
                                     </div>
                                     <div class="c-field">
-                                        <label class="c-field__label">1.Blok - Şəkil</label>
+                                        <label class="c-field__label">1.Blok - Şəkil 1</label>
                                         @if(isset($items->img1))
                                             <div class="admin_image old_img1">
                                                 <img src="{{$items->img1}}"style="max-width: 190px;border: 1px solid #aaa;">
@@ -57,7 +63,7 @@
                                         <input type="file" class="c-input" name="img1" accept="image/*"/>
                                     </div>
                                     <div class="c-field">
-                                        <label class="c-field__label">2.Blok - Şəkil</label>
+                                        <label class="c-field__label">1.Blok - Şəkil 2</label>
                                         @if(isset($items->img2))
                                             <div class="admin_image old_img2">
                                                 <img src="{{$items->img2}}"style="max-width: 190px;border: 1px solid #aaa;">
@@ -69,6 +75,65 @@
                                     </div>
 
                                     <div class="c-field">
+                                        <label class="c-field__label">1.Blok - Şəkil 3</label>
+                                        @if(isset($items->img3))
+                                            <div class="admin_image old_img3">
+                                                <img src="{{$items->img3}}"style="max-width: 190px;border: 1px solid #aaa;">
+                                                <div class="admin_image_close" onclick="delete_old_image('old_img3')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                <input type="hidden" name="old_img3" value="{{$items->img3}}">
+                                            </div>
+                                        @endif
+                                        <input type="file" class="c-input" name="img3" accept="image/*"/>
+                                    </div>
+                                    <div class="c-field">
+                                        <hr>
+                                        <br>
+                                        <label class="c-field__label">2.Blok - Şəkil 1</label>
+                                        @if(isset($items->img4))
+                                            <div class="admin_image old_img4">
+                                                <img src="{{$items->img4}}"style="max-width: 190px;border: 1px solid #aaa;">
+                                                <div class="admin_image_close" onclick="delete_old_image('old_img4')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                <input type="hidden" name="old_img4" value="{{$items->img4}}">
+                                            </div>
+                                        @endif
+                                        <input type="file" class="c-input" name="img4" accept="image/*"/>
+                                    </div>
+                                    <div class="c-field">
+                                        <label class="c-field__label">2.Blok - Şəkil 2</label>
+                                        @if(isset($items->img5))
+                                            <div class="admin_image old_img5">
+                                                <img src="{{$items->img5}}"style="max-width: 190px;border: 1px solid #aaa;">
+                                                <div class="admin_image_close" onclick="delete_old_image('old_img5')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                <input type="hidden" name="old_img5" value="{{$items->img5}}">
+                                            </div>
+                                        @endif
+                                        <input type="file" class="c-input" name="img5" accept="image/*"/>
+                                    </div>
+                                    <div class="c-field">
+                                        <label class="c-field__label">2.Blok - Şəkil 3</label>
+                                        @if(isset($items->img6))
+                                            <div class="admin_image old_img6">
+                                                <img src="{{$items->img6}}"style="max-width: 190px;border: 1px solid #aaa;">
+                                                <div class="admin_image_close" onclick="delete_old_image('old_img6')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                <input type="hidden" name="old_img6" value="{{$items->img6}}">
+                                            </div>
+                                        @endif
+                                        <input type="file" class="c-input" name="img6" accept="image/*"/>
+                                    </div>
+                                    <hr>
+                                    <br>
+                                    <div class="c-field">
+                                        <label class="c-field__label">3.Blok - Şirkətlərin şəkili</label>
+                                        @if(isset($items->img7))
+                                            <div class="admin_image old_img7">
+                                                <img src="{{$items->img7}}"style="max-width: 190px;border: 1px solid #aaa;">
+                                                <div class="admin_image_close" onclick="delete_old_image('old_img7')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                <input type="hidden" name="old_img7" value="{{$items->img7}}">
+                                            </div>
+                                        @endif
+                                        <input type="file" class="c-input" name="img7" accept="image/*"/>
+                                    </div>
+                                    <div class="c-field">
                                         <button class="c-btn c-btn--info u-mb-xsmall" type="submit" name="btn">Yarat</button>
                                     </div>
                                 </form>
@@ -79,4 +144,10 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function deloldimg(oldimg) {
+            var elem = document.getElementById(oldimg);
+            elem.remove();
+        }
+    </script>
 @endsection
