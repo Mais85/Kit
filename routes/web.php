@@ -12,14 +12,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function (){
-
-    return view('welcome');
-});
+//Route::get('/', function (){
+//
+//    return view('site.index');
+//});
 
 Auth::routes(['register'=>false]);
-
-//Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],function (){
 
@@ -130,4 +128,10 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/setting','SettingController@index')->name('setting');
     Route::post('/setting','SettingController@store')->name('settingstore');
 
+});
+
+//site
+Route::group(['namespace'=>'Site'],function(){
+
+    Route::get('/', 'HomeController@index')->name('home');
 });
