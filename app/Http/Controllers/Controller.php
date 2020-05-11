@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use App\Models\Setting;
 
 class Controller extends BaseController
 {
@@ -36,7 +37,8 @@ class Controller extends BaseController
         //View Global Variables
         view()->share([
             "__languages"   => $this->__languages,
-            "__thumbs"      => $this->__thumbs
+            "__thumbs"      => $this->__thumbs,
+            "__settings"      => Setting::findOrFail(1)
         ]);
     }
 
