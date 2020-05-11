@@ -10,11 +10,11 @@ class Referance extends Model
     use HasTranslations;
 
     protected $table = 'referances';
-    protected $fillable = ['title', 'img', 'desc', 'slug'];
-    public $translatable = ['desc'];
+    protected $fillable = ['referancer', 'img', 'position','ref_date','name','company_id','slug'];
+    public $translatable = ['position'];
 
-    public function setTitleAttribute($title)
+    public function setReferancerAttribute($referancer)
     {
-        $this->attributes['title'] = ucfirst($title);
+        $this->attributes['referancer'] = ucfirst($referancer);
     }
 }

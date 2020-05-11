@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 
 class EmployeeRepository extends AdminBaseController
 {
-
     public function getAll()
     {
         return Employee::all();

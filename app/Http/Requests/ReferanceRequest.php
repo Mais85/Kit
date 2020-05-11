@@ -24,9 +24,11 @@ class ReferanceRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:191',
-            'desc_'.config('app.locale') => 'required|string|max:191',
+            'referancer' => 'required|string|max:191',
+            'name' => 'required|string|max:191',
+            'position_'.config('app.locale') => 'required|string|max:191',
             'img' => 'image|nullable',
+            'ref_date' => 'nullable|date',
         ];
     }
 
@@ -38,10 +40,12 @@ class ReferanceRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Müştəri adı mütləq doldurulmalıdır !',
-            'title.max:191' => 'Müştəri adı maksimum 191 simvoldan ibarət ola bilər !',
-            'desc_'.config('app.locale').'.required' =>'Qısa mətn mütləq doldurulmalıdır !',
-            'desc_'.config('app.locale').'.max:191' =>'Qısa mətn 191 simvoldan artıq ola bilməz!',
+            'referancer.required' => 'Referansverən şirkətin adı mütləq doldurulmalıdır !',
+            'referancer.max:191' => 'Referansverən şirkətin adı maksimum 191 simvoldan ibarət ola bilər !',
+            'name.required' => 'Referansverən əməkdaş mütləq doldurulmalıdır !',
+            'name.max:191' => 'Referansverən əməkdaşın adı maksimum 191 simvoldan ibarət ola bilər !',
+            'position_'.config('app.locale').'.required' =>'Vəzifəsi mütləq doldurulmalıdır !',
+            'position_'.config('app.locale').'.max:191' =>'Vəzifəsi  191 simvoldan artıq ola bilməz!',
             'img.image' => 'Yalnız şəkil seçmək olar !',
         ];
     }

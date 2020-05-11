@@ -53,8 +53,6 @@ class EmployerController extends AdminBaseController
 
     public function edit ($slug)
     {
-        //dd($this->employeerepository->getAll());
-//        dd($this->employeerepository->getFiltiringModel());
         $title = 'İşçi redaktəsi';
         $items = $this->employeerepository->getEmployee($slug);
         $companies = $this->employeerepository->getCompanylist();
