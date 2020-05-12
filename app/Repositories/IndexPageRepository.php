@@ -33,7 +33,7 @@ class IndexPageRepository extends AdminBaseController
           'img4' => $this->uploadImage($request->img4,"photos"),
           'img5' => $this->uploadImage($request->img5,"photos"),
           'img6' => $this->uploadImage($request->img6,"photos"),
-          'img7' => $this->uploadImage($request->img7,"photos"),
+          'video' => $this->uploadFile($request->video,"videos"),
 
       ]);
    }
@@ -52,7 +52,7 @@ class IndexPageRepository extends AdminBaseController
            'img4' => $this->editImage($request->img4,$items->img4,$request->old_img4,"photos"),
            'img5' => $this->editImage($request->img5,$items->img5,$request->old_img5,"photos"),
            'img6' => $this->editImage($request->img6,$items->img6,$request->old_img6,"photos"),
-           'img7' => $this->editImage($request->img7,$items->img7,$request->old_img7,"photos"),
+           'video' => $this->editFile($request->video,$items->video,$request->old_video,"videos"),
        ]);
 
    }

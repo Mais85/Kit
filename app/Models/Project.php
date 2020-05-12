@@ -14,8 +14,8 @@ class Project extends Model
 
     protected $table = 'projects';
     protected $guarded = [];
-    public $translatable = ['title1','title2','title3','title4','title5','title6','catname','desc','contents1',
-                            'contents2','info3','info4','info5','info6','slug'];
+    public $translatable = ['title1','title2','catname','desc','contents1',
+                            'contents2','slug'];
 
     public function getProjectdateAttribute($projectdate)
     {

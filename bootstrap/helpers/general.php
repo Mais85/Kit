@@ -233,6 +233,7 @@ function getPhotos($id)
 {
     return Photo::where('albom_id', $id)->get()->count();
 }
+
 function favOrNot($id){
     if(auth()->guest()){
         $favourites = [];

@@ -45,8 +45,8 @@ class AdminBaseController extends Controller
         if(isset($file)){
             $filename = $file->getClientOriginalName();
             Storage::putFileAs("public/$path",$file,$filename);
-            $pdf = "storage/$path/".$filename;
-            return $pdf;
+            $file = "/storage/$path/".$filename;
+            return $file;
         }else{
             return null;
         }
@@ -60,14 +60,14 @@ class AdminBaseController extends Controller
         if(isset($file)){
             $pdf = $this->uploadFile($file,$path);
             if($oldFiledb){
-                $pos = 'storage/files/';
+                $pos = "storage/$path/";
                 $oldFiledb= str_replace($pos, '', $oldFiledb);
                 File::delete(base_path("storage/app/public/$path/$oldFiledb"));
             }
             return $pdf;
         }else{
             if(empty($oldFileForm)){
-                $pos = 'storage/files/';
+                $pos = "storage/$path/";
                 $oldFiledb= str_replace($pos, '', $oldFiledb);
                 File::delete(base_path("/storage/app/public/$path/$oldFiledb"));
                 return null;
