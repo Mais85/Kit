@@ -133,5 +133,5 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
 //site
 Route::group(['namespace'=>'Site'],function(){
 
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'MainController@index')->name('main');
 });

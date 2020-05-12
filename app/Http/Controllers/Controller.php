@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\IndexPage;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -38,7 +39,8 @@ class Controller extends BaseController
         view()->share([
             "__languages"   => $this->__languages,
             "__thumbs"      => $this->__thumbs,
-            "__settings"      => Setting::findOrFail(1)
+            "__settings"      => Setting::findOrFail(1),
+            '__header' => IndexPage::findOrFail(1),
         ]);
     }
 

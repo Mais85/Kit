@@ -7,15 +7,15 @@
                     <div class="header-index-carousel owl-carousel">
                         <div class="header-index-carousel__item">
                             <video video autobuffer autoplay muted loop>
-                                <source src="video/pond5.mp4" type="video/mp4">
+                                <source src="{{ $__header->video }}" type="video/mp4">
                                 Your browser does not support HTML5 video.
                             </video>
                         </div>
                         <div class="header-index-carousel__item">
-                            <img src="img/header_index_1.png" />
+                            <img src="{{ $__header->img1 }}" />
                         </div>
                         <div class="header-index-carousel__item">
-                            <div class="header-index-carousel__img-box" style="background-image: url(img/header_index_1.png)"></div>
+                            <div class="header-index-carousel__img-box" style="background-image: url({{ $__header->img2 }})"></div>
                         </div>
                     </div>
                     <div class="header-index__top-substitute"></div>
@@ -84,9 +84,7 @@
                                 </ul>
                             </div>
                             <div class="offset-1 col-8 flex-column-start-between">
-                                <span class="header-index__description">Group of companies that</span>
-                                <h1 class="header-index__title">all way in up</h1>
-                                <a href="#" class="header-index__center-link">See our projects</a>
+                                     <h1 class="header-index__title">{{ $__header->head_title }}</h1>
                             </div>
                         </div>
                     </div>

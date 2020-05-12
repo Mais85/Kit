@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\IndexPage;
+use App\Repositories\IndexPageRepository;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * HomeController constructor.
      */
     public function __construct()
     {
@@ -17,12 +18,10 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('site.index');
+
     }
 }
