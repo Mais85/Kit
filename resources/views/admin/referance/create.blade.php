@@ -19,8 +19,12 @@
                                     <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">
                                         <div class="c-tabs__pane active">
                                             <div class="c-field">
-                                                <label class="c-field__label">Referans</label>
-                                                <input type="text" class="c-input" name="title" value="{{ old('title') }}"/>
+                                                <label class="c-field__label">Referansverən şirkət</label>
+                                                <input type="text" class="c-input" name="referancer" value="{{ old('referancer') }}"/>
+                                            </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">Referansverən əməkdaş</label>
+                                                <input type="text" class="c-input" name="name" value="{{ old('name') }}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -28,8 +32,8 @@
                                         @foreach($__languages as $language_key => $language_title )
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
                                                 <div class="c-field">
-                                                    <label class="c-field__label">Qısa məlumat  <span style="font: italic  bold 12px/30px 'Verdana'; color:#FA5661;text-decoration: underline">( max: 191 simvol )</span></label>
-                                                    <textarea class="c-input" name="desc_{{$language_key}}" rows="3" >{{old('desc_'.$language_key) }}</textarea>
+                                                    <label class="c-field__label">Vəzifəsi </label>
+                                                    <textarea class="c-input" name="position_{{$language_key}}" rows="3" >{{old('position_'.$language_key) }}</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

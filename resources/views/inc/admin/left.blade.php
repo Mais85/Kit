@@ -1,7 +1,7 @@
 <div class="o-page__sidebar js-page-sidebar">
     <aside class="c-sidebar">
         <div class="c-sidebar__brand" style="height: auto">
-            <a href="{{ route('admin') }}"><img style="margin: 5px" src="{{asset('assets/admin/img/logoadmin1.png')}}" alt="Logo" style="width: 200px;"></a>
+            <a href="{{ route('admin') }}"><img style="margin: 5px" src="{{asset('assets/admin/img/logoadmin1.png')}}" alt="Logo"/></a>
         </div>
 
         <!-- Scrollable -->

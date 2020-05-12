@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 
 class EmployeeRepository extends AdminBaseController
 {
-
     public function getAll()
     {
         return Employee::all();
@@ -34,8 +33,34 @@ class EmployeeRepository extends AdminBaseController
         return $item;
     }
 
+
+    public function getSortingModel()
+    {
+        return Employee::all()->sortBy('pos_number');
+    }
+
+    public function getFilteringModel($request)
+    {
+        $bigData = $this->getSortingModel();
+        $temp = 0;
+        foreach ($bigData as $elem){
+            if ($elem->pos_number == $request->pos_number){
+                $temp = $elem->pos_number+1;
+                $elem->update([
+                    'pos_number' =>$request->pos_number+1,
+                ]);
+            }elseif ($elem->pos_number == $temp){
+                $temp = $elem->pos_number+1;
+                $elem->update([
+                    'pos_number' =>$temp,
+                ]);
+            }
+        }
+    }
+
     public function store($request)
     {
+        $this->getFilteringModel($request);
         $username = $request->name.' '.$request->surname;
         $items = Employee::create([
             'slug'=>Str::slug($username,'-'),
@@ -44,6 +69,7 @@ class EmployeeRepository extends AdminBaseController
             'company' =>$request->company,
             'position' =>$this->getFormTranslations('position',$request),
             'phone' => $request->phone,
+            'pos_number' => $request->pos_number,
             'mobphone' => $request->mobphone,
             'email' => $request->email,
             'fb' => $request->fb,
@@ -51,7 +77,6 @@ class EmployeeRepository extends AdminBaseController
             'instagram' => $request->instagram,
             'linkedin' => $request->linkedin,
             'img' => $this->uploadImage($request->img,"photos"),
-
         ]);
 
         if($items){
@@ -63,6 +88,7 @@ class EmployeeRepository extends AdminBaseController
 
     public function update($request)
     {
+        $this->getFilteringModel($request);
         $item = cache('modEmpEdit');
         $username = $request->name.' '.$request->surname;
         return $item->update([
@@ -73,6 +99,7 @@ class EmployeeRepository extends AdminBaseController
             'position' =>$this->getFormTranslations('position',$request),
             'phone' => $request->phone,
             'mobphone' => $request->mobphone,
+            'pos_number' => $request->pos_number,
             'email' => $request->email,
             'fb' => $request->fb,
             'twitter' => $request->twitter,

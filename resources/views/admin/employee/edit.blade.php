@@ -42,6 +42,10 @@
 
                                                 </select>
                                             </div>
+                                            <div class="c-field">
+                                                <label  class="c-field__label">Sıra nömrəsi</label>
+                                                <input type="number" name="pos_number" class="c-input" min='0' value="@if(isset($items->pos_number)){{ $items->pos_number}}@else{{ old('pos_number') }} @endif">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">

@@ -35,8 +35,11 @@
                                                         @empty
                                                             <option value="">Şirkət tapılmadı !</option>
                                                         @endforelse
-
                                                     </select>
+                                                </div>
+                                                 <div class="c-field">
+                                                    <label  class="c-field__label">Sıra nömrəsi</label>
+                                                    <input type="number" name="pos_number" class="c-input" min='0' value="{{ old('pos_number') }}">
                                                 </div>
                                              </div>
                                         </div>
