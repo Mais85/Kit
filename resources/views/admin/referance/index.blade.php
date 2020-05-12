@@ -32,7 +32,9 @@
                             </div>
                         </th>
                         <th class="c-table__cell c-table__cell--head">ID</th>
-                        <th class="c-table__cell c-table__cell--head">Referans</th>
+                        <th class="c-table__cell c-table__cell--head">Referansverən</th>
+                        <th class="c-table__cell c-table__cell--head">Əməkdaşı</th>
+                        <th class="c-table__cell c-table__cell--head">Hansı şirkətə verilib</th>
                         <th class="c-table__cell c-table__cell--head">Redaktə Edildi</th>
                         <th class="c-table__cell c-table__cell--head">Hərəkətlər</th>
                     </tr>
@@ -49,7 +51,9 @@
 
                             </td>
                             <td class="c-table__cell">#{{$item->id}}</td>
-                            <th class="c-table__cell">{{$item->title}}</th>
+                            <th class="c-table__cell">{{$item->referancer}}</th>
+                            <th class="c-table__cell">{{$item->name}}</th>
+                            <th class="c-table__cell">{{$companies[$item->company_id]}}</th>
                             <th class="c-table__cell">{{$item->updated_at}}</th>
                             <td class="c-table__cell">
                                 <div class="c-dropdown dropdown">

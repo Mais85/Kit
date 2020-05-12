@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 
 use App\Http\Controllers\Admin\AdminBaseController;
+use App\Models\Company;
 use App\Models\Referance;
 use Illuminate\Support\Str;
 
@@ -27,12 +28,20 @@ class ReferanceRepository extends AdminBaseController
         return $items;
     }
 
+    public function getCompanylist()
+    {
+        return Company::all()->pluck('company','id');
+    }
+
     public function store($request)
     {
         return Referance::create([
-            'slug'=>Str::slug($request->title,'-'),
-            'title' => $request->title,
-            'desc' =>$this->getFormTranslations('desc',$request),
+            'slug'=>Str::slug($request->referancer,'-'),
+            'referancer' => $request->referancer,
+            'name' => $request->name,
+            'company_id' => $request->company_id,
+            'ref_date' => date('Y-m-d',strtotime($request->ref_date)),
+            'position' =>$this->getFormTranslations('position',$request),
             'img' => $this->uploadImage($request->img,"referancephotos"),
         ]);
     }
@@ -41,9 +50,11 @@ class ReferanceRepository extends AdminBaseController
     {
         $item = cache('modReferanceEdit');
         return $item->update([
-            'slug'=>Str::slug($request->title,'-'),
-            'title' => $request->title,
-            'desc' =>$this->getFormTranslations('desc',$request),
+            'slug'=>Str::slug($request->referancer,'-'),
+            'referancer' => $request->referancer,
+            'name' => $request->name,
+            'position' =>$this->getFormTranslations('position',$request),
+            'ref_date' => date('Y-m-d',strtotime($request->ref_date)),
             'img' => $this->editImage($request->img,$item->img,$request->old_img,"referancephotos"),
         ]);
     }

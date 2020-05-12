@@ -52,6 +52,17 @@
                                         @endforeach
                                     </div>
                                     <div class="c-field">
+                                        <label class="c-field__label">1.Blok - Video</label>
+                                        @if(isset($items->video))
+                                            <div class="admin_image old_video">
+                                                <video src="{{$items->video}}"style="width: 190px;border: 1px solid #aaa;" controls="controls" autoplay="autoplay"></video>
+                                                <div class="admin_image_close" onclick="delete_old_image('old_video')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
+                                                <input type="hidden" name="video" value="{{$items->video}}">
+                                            </div>
+                                        @endif
+                                        <input type="file" class="c-input" name="video" accept="video/*"/>
+                                    </div>
+                                    <div class="c-field">
                                         <label class="c-field__label">1.Blok - Şəkil 1</label>
                                         @if(isset($items->img1))
                                             <div class="admin_image old_img1">
@@ -62,6 +73,7 @@
                                         @endif
                                         <input type="file" class="c-input" name="img1" accept="image/*"/>
                                     </div>
+
                                     <div class="c-field">
                                         <label class="c-field__label">1.Blok - Şəkil 2</label>
                                         @if(isset($items->img2))
@@ -73,9 +85,10 @@
                                         @endif
                                         <input type="file" class="c-input" name="img2" accept="image/*"/>
                                     </div>
-
                                     <div class="c-field">
-                                        <label class="c-field__label">1.Blok - Şəkil 3</label>
+                                        <hr>
+                                        <br>
+                                        <label class="c-field__label">2.Blok - Şəkil 1</label>
                                         @if(isset($items->img3))
                                             <div class="admin_image old_img3">
                                                 <img src="{{$items->img3}}"style="max-width: 190px;border: 1px solid #aaa;">
@@ -86,9 +99,7 @@
                                         <input type="file" class="c-input" name="img3" accept="image/*"/>
                                     </div>
                                     <div class="c-field">
-                                        <hr>
-                                        <br>
-                                        <label class="c-field__label">2.Blok - Şəkil 1</label>
+                                        <label class="c-field__label">2.Blok - Şəkil 2</label>
                                         @if(isset($items->img4))
                                             <div class="admin_image old_img4">
                                                 <img src="{{$items->img4}}"style="max-width: 190px;border: 1px solid #aaa;">
@@ -99,7 +110,7 @@
                                         <input type="file" class="c-input" name="img4" accept="image/*"/>
                                     </div>
                                     <div class="c-field">
-                                        <label class="c-field__label">2.Blok - Şəkil 2</label>
+                                        <label class="c-field__label">2.Blok - Şəkil 3</label>
                                         @if(isset($items->img5))
                                             <div class="admin_image old_img5">
                                                 <img src="{{$items->img5}}"style="max-width: 190px;border: 1px solid #aaa;">
@@ -109,8 +120,10 @@
                                         @endif
                                         <input type="file" class="c-input" name="img5" accept="image/*"/>
                                     </div>
+                                    <hr>
+                                    <br>
                                     <div class="c-field">
-                                        <label class="c-field__label">2.Blok - Şəkil 3</label>
+                                        <label class="c-field__label">3.Blok - Şirkətlərin şəkili</label>
                                         @if(isset($items->img6))
                                             <div class="admin_image old_img6">
                                                 <img src="{{$items->img6}}"style="max-width: 190px;border: 1px solid #aaa;">
@@ -119,19 +132,6 @@
                                             </div>
                                         @endif
                                         <input type="file" class="c-input" name="img6" accept="image/*"/>
-                                    </div>
-                                    <hr>
-                                    <br>
-                                    <div class="c-field">
-                                        <label class="c-field__label">3.Blok - Şirkətlərin şəkili</label>
-                                        @if(isset($items->img7))
-                                            <div class="admin_image old_img7">
-                                                <img src="{{$items->img7}}"style="max-width: 190px;border: 1px solid #aaa;">
-                                                <div class="admin_image_close" onclick="delete_old_image('old_img7')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
-                                                <input type="hidden" name="old_img7" value="{{$items->img7}}">
-                                            </div>
-                                        @endif
-                                        <input type="file" class="c-input" name="img7" accept="image/*"/>
                                     </div>
                                     <div class="c-field">
                                         <button class="c-btn c-btn--info u-mb-xsmall" type="submit" name="btn">Yarat</button>

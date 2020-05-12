@@ -15,12 +15,12 @@ class Employee extends Model
 
     public function setNameAttribute($name)
     {
-        return $this->attributes['name'] = ucfirst($name);
+        return $this->attributes['name'] = ucfirst(strtolower($name));
     }
 
     public function setSurnameAttribute($surname)
     {
-        return $this->attributes['surname'] = ucfirst($surname);
+        return $this->attributes['surname'] = ucfirst(strtolower($surname));
     }
 
     public function setSlugAttribute($slug)

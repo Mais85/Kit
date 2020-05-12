@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
@@ -15,6 +16,17 @@ class Referance extends Model
 
     public function setReferancerAttribute($referancer)
     {
-        $this->attributes['referancer'] = ucfirst($referancer);
+        $this->attributes['referancer'] = ucwords($referancer);
+    }
+
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = ucwords(strtolower($name));
+    }
+
+    public function getRefDateAttribute($ref_date)
+    {
+        $date = Carbon::parse($ref_date)->format('d/m/Y');
+        return $date;
     }
 }

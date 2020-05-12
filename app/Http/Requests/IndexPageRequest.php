@@ -35,7 +35,7 @@ class IndexPageRequest extends FormRequest
             'img4' => 'nullable|image',
             'img5' => 'nullable|image',
             'img6' => 'nullable|image',
-            'img7' => 'nullable|image',
+            'video' => 'nullable|file',
         ];
     }
 
