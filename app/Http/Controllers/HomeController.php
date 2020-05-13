@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Site;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\IndexPage;
-use App\Repositories\IndexPageRepository;
 use Illuminate\View\View;
 
 class HomeController extends Controller

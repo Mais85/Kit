@@ -134,4 +134,12 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
 Route::group(['namespace'=>'Site'],function(){
 
     Route::get('/', 'MainController@index')->name('main');
+    Route::get('/about', 'AboutController@index')->name('about');
+    Route::get('/services', 'ServicesController@index')->name('services');
+    Route::get('/our-projects', 'ProjectsController@index')->name('ourprojects');
+    Route::get('/clients', 'ClientsController@index')->name('clients');
+    Route::get('/news', 'NewsController@index')->name('news');
+    Route::get('/test-ref', 'Tes_RefController@index')->name('tes_ref');
+    Route::get('/gallery', 'GalleryController@index')->name('gallery');
+    Route::get('/contacts', 'ContactController@index')->name('contact');
 });

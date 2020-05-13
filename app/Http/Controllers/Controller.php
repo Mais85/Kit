@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\IndexPage;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -41,6 +42,7 @@ class Controller extends BaseController
             "__thumbs"      => $this->__thumbs,
             "__settings"      => Setting::findOrFail(1),
             '__header' => IndexPage::findOrFail(1),
+            '__companies' => Company::all(),
         ]);
     }
 

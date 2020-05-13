@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Site\HomeController;
+use App\Http\Controllers\HomeController;
+use App\Models\Company;
 use App\Repositories\IndexPageRepository;
 
 class MainController extends HomeController

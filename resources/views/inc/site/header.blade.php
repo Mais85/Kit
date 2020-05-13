@@ -11,9 +11,11 @@
                                 Your browser does not support HTML5 video.
                             </video>
                         </div>
+
                         <div class="header-index-carousel__item">
                             <img src="{{ $__header->img1 }}" />
                         </div>
+
                         <div class="header-index-carousel__item">
                             <div class="header-index-carousel__img-box" style="background-image: url({{ $__header->img2 }})"></div>
                         </div>
@@ -23,36 +25,36 @@
                     <div class="header-index__top row ml-0 mr-0 flex-row-center-between">
                         <div class="header-index__top-mobile"></div>
                         <div class="header__left col-1 px-0">
-                            <a href="index.html" class="header__logo-link">
-                                <img src="img/logo.png" class="header__logo" />
+                            <a href="{{ route('main') }}" class="header__logo-link">
+                                <img src="{{ $__settings->logo }}" class="header__logo" />
                             </a>
                         </div>
                         <div class="header__right flex-row-center-between col-xl-10 col-2 px-0">
                             <ul class="menu-list">
                                 <li class="menu-list__item">
-                                    <a href="about.html" class="menu-list__link">About</a>
+                                    <a href="{{ route('about') }}" class="menu-list__link">About</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="services.html" class="menu-list__link">Services</a>
+                                    <a href="{{ route('services') }}" class="menu-list__link">Services</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="our-projects.html" class="menu-list__link">Our projects</a>
+                                    <a href="{{ route('ourprojects') }}" class="menu-list__link">Our projects</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="our-clients.html" class="menu-list__link">Our clients</a>
+                                    <a href="{{ route('clients') }}" class="menu-list__link">Our clients</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="news.html" class="menu-list__link">News</a>
+                                    <a href="{{ route('news') }}" class="menu-list__link">News</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="test-ref.html" class="menu-list__link">Testimonials and References</a>
+                                    <a href="{{ route('tes_ref') }}" class="menu-list__link">Testimonials and References</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="gallery.html" class="menu-list__link">Gallery</a>
+                                    <a href="{{ route('gallery') }}" class="menu-list__link">Gallery</a>
                                 </li>
                             </ul>
 
-                            <a href="contacts.html" class="button button_blue button_header">Contacts</a>
+                            <a href="{{ route('contact') }}" class="button button_blue button_header">Contacts</a>
 
                             <a id="mobile-nav-open" href="javascript:void(0)" class="link link_icon link_icon_menu"></a>
                         </div>
@@ -62,23 +64,23 @@
                             <div class="col-1">
                                 <ul class="contacts-social-list">
                                     <li class="contacts-social-list__item">
-                                        <a href="#" class="contacts-social-list__link">
-                                            <img src="img/facebook_white.svg" class="contacts-social-list__img"/>
+                                        <a href="{{ ($__settings->fb !=null) ? $__settings->fb : '#' }}"  target="_blank" class="contacts-social-list__link">
+                                            <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
                                         </a>
                                     </li>
                                     <li class="contacts-social-list__item">
-                                        <a href="#" class="contacts-social-list__link">
-                                            <img src="img/instagram_white.svg" class="contacts-social-list__img"/>
+                                        <a href="@if(isset( $__settings->instagram)){{ $__settings->instagram }}@else # @endif" target="_blank" class="contacts-social-list__link">
+                                            <img src="{{ asset('img/instagram_white.svg') }}" class="contacts-social-list__img"/>
                                         </a>
                                     </li>
                                     <li class="contacts-social-list__item">
-                                        <a href="#" class="contacts-social-list__link">
-                                            <img src="img/twitter_white.svg" class="contacts-social-list__img"/>
+                                        <a href="{{ ($__settings->twitter !=null) ? $__settings->twitter : '#' }}" class="contacts-social-list__link">
+                                            <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
                                         </a>
                                     </li>
                                     <li class="contacts-social-list__item">
-                                        <a href="#" class="contacts-social-list__link">
-                                            <img src="img/youtube_white.svg" class="contacts-social-list__img"/>
+                                        <a href="{{ ($__settings->youtube !=null) ? $__settings->youtube : '#' }}"  target="_blank" class="contacts-social-list__link">
+                                            <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
                                         </a>
                                     </li>
                                 </ul>
@@ -134,30 +136,17 @@
                     </div>
 
                     <ul class="comapnies-view-list mb-30">
-                        <li class="comapnies-view-list__item">
-                            <a href="companies.html" class="comapnies-view-list__link">
-                                <span class="comapnies-view-list__number">01</span>
-                                <span class="comapnies-view-list__name">KIT Construction</span>
-                            </a>
-                        </li>
-                        <li class="comapnies-view-list__item">
-                            <a href="companies.html" class="comapnies-view-list__link">
-                                <span class="comapnies-view-list__number">02</span>
-                                <span class="comapnies-view-list__name">KIT Media </span>
-                            </a>
-                        </li>
-                        <li class="comapnies-view-list__item">
-                            <a href="companies.html" class="comapnies-view-list__link">
-                                <span class="comapnies-view-list__number">03</span>
-                                <span class="comapnies-view-list__name">KIT FIinance </span>
-                            </a>
-                        </li>
-                        <li class="comapnies-view-list__item">
-                            <a href="companies.html" class="comapnies-view-list__link">
-                                <span class="comapnies-view-list__number">04</span>
-                                <span class="comapnies-view-list__name">VERTICAL Service</span>
-                            </a>
-                        </li>
+
+                            @php $counter = 0; @endphp
+                            @foreach($__companies as $el)
+                            @php   $counter++;  @endphp
+                            <li class="comapnies-view-list__item">
+                                <a href="companies.html" class="comapnies-view-list__link">
+                                    <span class="comapnies-view-list__number">{{ $counter }}</span>
+                                    <span class="comapnies-view-list__name">{{ $el->company }}</span>
+                                </a>
+                            </li>
+                            @endforeach
                     </ul>
 
                     <span class="comapnies-view__iso">ISO 9001:2015</span>
@@ -174,30 +163,17 @@
             </div>
             <div class="group-companies-mob__body">
                 <ul class="comapnies-view-list mb-30">
-                    <li class="comapnies-view-list__item">
-                        <a href="companies.html" class="comapnies-view-list__link">
-                            <span class="comapnies-view-list__number">01</span>
-                            <span class="comapnies-view-list__name">KIT Construction</span>
-                        </a>
-                    </li>
-                    <li class="comapnies-view-list__item">
-                        <a href="companies.html" class="comapnies-view-list__link">
-                            <span class="comapnies-view-list__number">02</span>
-                            <span class="comapnies-view-list__name">KIT Media </span>
-                        </a>
-                    </li>
-                    <li class="comapnies-view-list__item">
-                        <a href="companies.html" class="comapnies-view-list__link">
-                            <span class="comapnies-view-list__number">03</span>
-                            <span class="comapnies-view-list__name">KIT FIinance </span>
-                        </a>
-                    </li>
-                    <li class="comapnies-view-list__item">
-                        <a href="companies.html" class="comapnies-view-list__link">
-                            <span class="comapnies-view-list__number">04</span>
-                            <span class="comapnies-view-list__name">VERTICAL Service</span>
-                        </a>
-                    </li>
+
+                    @php $counter = 0; @endphp
+                    @foreach($__companies as $el)
+                        @php   $counter++;  @endphp
+                        <li class="comapnies-view-list__item">
+                            <a href="companies.html" class="comapnies-view-list__link">
+                                <span class="comapnies-view-list__number">{{ $counter }}</span>
+                                <span class="comapnies-view-list__name">{{ $el->company }}</span>
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
 
                 <span class="group-companies-mob__iso">ISO 9001:2015</span>
