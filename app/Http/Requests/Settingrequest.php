@@ -29,8 +29,6 @@ class Settingrequest extends FormRequest
             'meta_description_'.config('app.locale') => 'required',
             'meta_keywords_'.config('app.locale') => 'required',
             'footcontent_'.config('app.locale') => 'required',
-            'yandexMetrix' => 'nullable',
-            'googleMetrix' => 'nullable',
             'phone'=> 'required|numeric|digits_between:10,12',
             'mobphone'=> 'required|numeric|digits_between:10,12',
             'address' => 'required',

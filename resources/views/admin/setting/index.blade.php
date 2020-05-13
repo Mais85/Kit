@@ -46,15 +46,6 @@
                                             <div class="c-field">
                                                 <div class="c-field">
                                                     <div class="c-field">
-                                                        <label class="c-field__label">Yandex Metrika script</label>
-                                                        <textarea class="c-input" name="yandexMetrix" rows="10">@if(empty($items)){{old('yandexMetrix') }}@else{!! $items->yandexMetrix !!}@endif</textarea>
-                                                    </div>
-
-                                                    <div class="c-field">
-                                                        <label class="c-field__label">Google Metrika script</label>
-                                                        <textarea class="c-input" name="googleMetrix" rows="10">@if(empty($items)){{old('googleMetrix') }}@else{!! $items->googleMetrix !!}@endif</textarea>
-                                                    </div>
-                                                    <div class="c-field">
                                                         <label class="c-field__label">Ünvan</label>
                                                         <input class="c-input" type="text" name="address"@if(!empty($items))  value='{{$items->address}}' @else value="{{ old('address') }}" @endif >
                                                     </div>
@@ -87,7 +78,7 @@
 
                                                 @if(!empty($items->logo))
                                                     <div class="admin_image old_logo">
-                                                        <label class="c-field__label">Youtube</label>
+                                                        <label class="c-field__label">Logo</label>
                                                         <img src="{{$items->logo}}"style="max-width: 190px;border: 1px solid #aaa;">
                                                         <div class="admin_image_close" onclick="delete_old_image('old_logo')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
                                                         <input type="hidden" name="old_logo" value="{{$items->logo}}">
@@ -108,4 +99,10 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function deloldimg(oldimg) {
+            var elem = document.getElementById(oldimg);
+            elem.remove();
+        }
+    </script>
 @endsection

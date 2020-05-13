@@ -4,7 +4,7 @@
 <body>
   <div id="main">
       @if(route('main') != \Route::current())
-
+          @include('inc.site.header2')
       @endif
       @yield('content')
       @include("inc.site.footer")
