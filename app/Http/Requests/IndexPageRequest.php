@@ -49,6 +49,7 @@ class IndexPageRequest extends FormRequest
             'contents2_'.config('app.locale').'.required' => 'Mətn 2 mütləq doldurulmalıdır !',
             'max:191' => 'Maksimum 191 simvol daxil etmək olar',
             'image' => 'Şəkil seçin !',
+            'video.file' => 'Video fayl seçin !',
         ];
     }
 }

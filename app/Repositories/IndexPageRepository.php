@@ -3,6 +3,7 @@
 
 namespace App\Repositories;
 use App\Http\Controllers\Admin\AdminBaseController;
+use App\Models\Client;
 use App\Models\IndexPage;
 use App\Http\Requests\IndexPageRequest;
 use Illuminate\Support\Str;
@@ -16,6 +17,16 @@ class IndexPageRepository extends AdminBaseController
    public function all ()
    {
         return IndexPage::find(1);
+   }
+
+   public function getBlok1photos()
+   {
+       return IndexPage::select('img3','img4','img5')->first()->toArray();
+   }
+
+   public function getClients()
+   {
+       return Client::select('logo')->get();
    }
 
    public function store($request)

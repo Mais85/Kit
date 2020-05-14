@@ -20,6 +20,9 @@ class MainController extends HomeController
 
     public function index()
     {
-        return view('site.index');
+        $photoblock1 = $this->indexpagerepository->getBlok1photos();
+        $clients = $this->indexpagerepository->getClients();
+        //dd($clients);
+        return view('site.index',compact('photoblock1','clients'));
     }
 }

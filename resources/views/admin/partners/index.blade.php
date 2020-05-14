@@ -51,7 +51,7 @@
                             </td>
                             <td class="c-table__cell">#{{$item->id}}</td>
                             <th class="c-table__cell">{{$item->name}}</th>
-                            <th class="c-table__cell"><img width="144" src="{{$item->logo}}"></th>
+                            <th class="c-table__cell"><img style="max-width: 144px;max-height: 110px" src="{{$item->logo}}"></th>
                             <th class="c-table__cell">{{$item->updated_at}}</th>
                             <td class="c-table__cell">
                                 <div class="c-dropdown dropdown">

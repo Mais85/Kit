@@ -1,12 +1,10 @@
 @extends('layouts.site')
 
 {{--@section('title', '| '. __('main.title'))--}}
-@include("inc.site.header")
+
 
 @section('content')
 <div class="index-page">
-    <button id="comapnies-view-button-open" class="button button_white">View Group of companies</button>
-      @include('site.catalog')
     <div class="content">
 
     <section id="index-why" class="index-why">
@@ -14,29 +12,12 @@
             <div class="row">
                 <div class="offset-lg-3 col-lg-6 offset-md-2 col-md-8 col-12">
                     <div class="index-why-carousel owl-carousel mb-30">
+                        @foreach($photoblock1 as $elem)
                         <div class="index-why-carousel__item">
-                            <img src="img/why_1.png" class="index-why-carousel__img" />
+                            <img style="max-height: 500px; max-width: 930px" src="{{ $elem }}" class="index-why-carousel__img" />
                         </div>
-                        <div class="index-why-carousel__item">
-                            <img src="img/why_2.jpg" class="index-why-carousel__img" />
-                        </div>
-                        <div class="index-why-carousel__item">
-                            <img src="img/why_1.png" class="index-why-carousel__img" />
-                        </div>
-                        <div class="index-why-carousel__item">
-                            <img src="img/why_2.jpg" class="index-why-carousel__img" />
-                        </div>
-                        <div class="index-why-carousel__item">
-                            <img src="img/why_1.png" class="index-why-carousel__img" />
-                        </div>
-                        <div class="index-why-carousel__item">
-                            <img src="img/why_2.jpg" class="index-why-carousel__img" />
-                        </div>
-                        <div class="index-why-carousel__item">
-                            <img src="img/why_1.png" class="index-why-carousel__img" />
-                        </div>
+                        @endforeach
                     </div>
-
                     <h2 class="index-why__title mb-30">why kit group</h2>
                     <span class="index-why__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue, expertly hosted by kick-ass instructors and backed up with a suitably pumping soundtrack. In no time at all you’ll be throwing axes and competing against your friends or colleagues, you’d better practice those celebrations!</span>
                 </div>
@@ -54,27 +35,11 @@
 
                 <div class="col-8">
                     <div class="index-clients-carousel owl-carousel">
+                        @foreach($clients as $client)
                         <div class="index-clients-carousel__item">
-                            <img src="img/client_neftchi.png" class="index-clients-carousel__img" />
+                            <img src="{{ $client->logo }}" class="index-clients-carousel__img" />
                         </div>
-                        <div class="index-clients-carousel__item">
-                            <img src="img/client_affa.png" class="index-clients-carousel__img" />
-                        </div>
-                        <div class="index-clients-carousel__item">
-                            <img src="img/client_bs2.png" class="index-clients-carousel__img" />
-                        </div>
-                        <div class="index-clients-carousel__item">
-                            <img src="img/client_gunay_bank.png" class="index-clients-carousel__img" />
-                        </div>
-                        <div class="index-clients-carousel__item">
-                            <img src="img/client_premium_bank.png" class="index-clients-carousel__img" />
-                        </div>
-                        <div class="index-clients-carousel__item">
-                            <img src="img/client_bella_plaza.png" class="index-clients-carousel__img" />
-                        </div>
-                        <div class="index-clients-carousel__item">
-                            <img src="img/client_fifa.png" class="index-clients-carousel__img" />
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -515,4 +480,5 @@
 
 </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6gnyokeyiWFW_sgpLl0M9ijf0ToQ-Dn0&callback=initMap"></script>
 @stop

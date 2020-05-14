@@ -142,4 +142,5 @@ Route::group(['namespace'=>'Site'],function(){
     Route::get('/test-ref', 'Tes_RefController@index')->name('tes_ref');
     Route::get('/gallery', 'GalleryController@index')->name('gallery');
     Route::get('/contacts', 'ContactController@index')->name('contact');
+    Route::get('/companies', 'CompanyController@index')->name('companies');
 });

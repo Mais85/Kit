@@ -47,7 +47,6 @@ class IndexPageController extends AdminBaseController
      */
     public function store(IndexPageRequest $request)
     {
-
         $bvalidated = $request->validated();
         if($bvalidated){
          $data = cache('inpagemod');

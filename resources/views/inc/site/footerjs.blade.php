@@ -200,4 +200,4 @@
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6gnyokeyiWFW_sgpLl0M9ijf0ToQ-Dn0&callback=initMap"></script>
-<script src="js/scripts.js"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>

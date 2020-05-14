@@ -54,10 +54,10 @@
                                     <div class="c-field">
                                         <label class="c-field__label">1.Blok - Video</label>
                                         @if(isset($items->video))
-                                            <div class="admin_image old_video">
+                                            <div class="admin_video old_video">
                                                 <video src="{{$items->video}}"style="width: 190px;border: 1px solid #aaa;" controls="controls" autoplay="autoplay"></video>
                                                 <div class="admin_image_close" onclick="delete_old_image('old_video')"><i class="c-sidebar__icon feather icon-x-circle"></i></div>
-                                                <input type="hidden" name="video" value="{{$items->video}}">
+                                                <input type="hidden" name="old_video" value="{{$items->video}}">
                                             </div>
                                         @endif
                                         <input type="file" class="c-input" name="video" accept="video/*"/>

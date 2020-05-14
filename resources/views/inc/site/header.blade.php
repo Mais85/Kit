@@ -141,14 +141,13 @@
                             @foreach($__companies as $el)
                             @php   $counter++;  @endphp
                             <li class="comapnies-view-list__item">
-                                <a href="companies.html" class="comapnies-view-list__link">
+                                <a href="{{ route('companies') }}" class="comapnies-view-list__link">
                                     <span class="comapnies-view-list__number">{{ $counter }}</span>
                                     <span class="comapnies-view-list__name">{{ $el->company }}</span>
                                 </a>
                             </li>
                             @endforeach
                     </ul>
-
                     <span class="comapnies-view__iso">ISO 9001:2015</span>
                 </div>
             </div>
@@ -168,14 +167,14 @@
                     @foreach($__companies as $el)
                         @php   $counter++;  @endphp
                         <li class="comapnies-view-list__item">
-                            <a href="companies.html" class="comapnies-view-list__link">
+                            <a href="{{ route('companies') }}" class="comapnies-view-list__link">
                                 <span class="comapnies-view-list__number">{{ $counter }}</span>
                                 <span class="comapnies-view-list__name">{{ $el->company }}</span>
                             </a>
                         </li>
                     @endforeach
                 </ul>
-
+                <hr>
                 <span class="group-companies-mob__iso">ISO 9001:2015</span>
             </div>
         </div>
@@ -195,28 +194,28 @@
         </ul>
         <ul class="mobile-nav-list mb-30">
             <li class="mobile-nav-list__item">
-                <a href="about.html" class="mobile-nav-list__link">About</a>
+                <a href="{{ route('about') }}" class="mobile-nav-list__link">About</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="services.html" class="mobile-nav-list__link">Services</a>
+                <a href="{{ route('services') }}" class="mobile-nav-list__link">Services</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="our-projects.html" class="mobile-nav-list__link">Our projects</a>
+                <a href="{{ route('ourprojects') }}" class="mobile-nav-list__link">Our projects</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="our-clients.html" class="mobile-nav-list__link">Our clients</a>
+                <a href="{{ route('clients') }}" class="mobile-nav-list__link">Our clients</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="test-ref.html" class="mobile-nav-list__link">Testimonials and References</a>
+                <a href="{{ route('news') }}" class="mobile-nav-list__link">News</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="gallery.html" class="mobile-nav-list__link">Gallery</a>
+                <a href="{{ route('tes_ref') }}" class="mobile-nav-list__link">Testimonials and References</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="news.html" class="mobile-nav-list__link">News</a>
+                <a href="{{ route('gallery') }}" class="mobile-nav-list__link">Gallery</a>
             </li>
         </ul>
 
-        <a href="contacts.html" class="button button_blue button_header mb-30">Contacts</a>
+        <a href="{{ route('contact') }}" class="button button_blue button_header mb-30">Contacts</a>
     </div>
 </header>
