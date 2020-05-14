@@ -44,7 +44,7 @@ class NewsRepository  extends AdminBaseController
     {
         $desc = $this->getFormTranslations($name,$request);
         foreach ($desc as &$value){
-            $value = Str::substr($value,0,150);
+            $value = Str::substr($value,0,139);
         }
         return $desc;
     }

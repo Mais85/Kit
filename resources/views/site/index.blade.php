@@ -61,43 +61,25 @@
             <h2 class="index-title mb-50">news</h2>
 
             <div class="row mb-10">
-                <div class="offset-lg-2 col-lg-2 col-md-6 col-12 mb-20">
-                    <a href="news-item.html" class="news-item">
-                        <div class="news-item__img-box" style="background-image: url(img/news_item_preview.png);"></div>
-                        <h2 class="news-item__title">“Moody's” Britaniyaya təsəlli vermədi</h2>
-                        <span class="news-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue.</span>
-                        <span class="news-item__date">05 noyabr 2019</span>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-6 col-12 mb-20">
-                    <a href="news-item.html" class="news-item">
-                        <div class="news-item__img-box" style="background-image: url(img/news_item_preview.png);"></div>
-                        <h2 class="news-item__title">“Moody's” Britaniyaya təsəlli vermədi</h2>
-                        <span class="news-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue.</span>
-                        <span class="news-item__date">05 noyabr 2019</span>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-6 col-12 mb-20">
-                    <a href="news-item.html" class="news-item">
-                        <div class="news-item__img-box" style="background-image: url(img/news_item_preview.png);"></div>
-                        <h2 class="news-item__title">“Moody's” Britaniyaya təsəlli vermədi</h2>
-                        <span class="news-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue.</span>
-                        <span class="news-item__date">05 noyabr 2019</span>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-6 col-12 mb-20">
-                    <a href="news-item.html" class="news-item">
-                        <div class="news-item__img-box" style="background-image: url(img/news_item_preview.png);"></div>
-                        <h2 class="news-item__title">“Moody's” Britaniyaya təsəlli vermədi</h2>
-                        <span class="news-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue.</span>
-                        <span class="news-item__date">05 noyabr 2019</span>
-                    </a>
-                </div>
+                @foreach($news as $elem)
+                    @if($loop->first)
+                        <div class="offset-lg-2 col-lg-2 col-md-6 col-12 mb-20">
+                    @else
+                        <div class="col-lg-2 col-md-6 col-12 mb-20">
+                    @endif
+                         <a href="news-item.html" class="news-item">
+                            <div class="news-item__img-box" style="background-image: url({{ $elem->smallimg }});"></div>
+                            <h2 class="news-item__title">{{ $elem->title }}</h2>
+                            <span class="news-item__description">{{ $elem->desc }}</span>
+                            <span class="news-item__date">{{ $elem->created_at }}</span>
+                         </a>
+                        </div>
+                @endforeach
             </div>
 
             <div class="row">
                 <div class="offset-lg-2 col-lg-8 col-12">
-                    <a href="#" class="button button_white button_uppercase button_full">VIEW all news list</a>
+                    <a href="{{ route('news') }}" class="button button_white button_uppercase button_full">VIEW all news list</a>
                 </div>
             </div>
         </div>
@@ -122,7 +104,9 @@
                         </div>
 
                         <div class="col-8">
+
                             <div class="index-test-carousel owl-carousel">
+                                @foreach()
                                 <div class="index-test-carousel__item">
                                     <div class="testimonial-item">
                                         <div class="testimonial-item__img-box-block">
@@ -163,126 +147,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="index-test-carousel__item">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="index-test-carousel__item">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="index-test-carousel__item">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
 

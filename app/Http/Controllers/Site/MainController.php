@@ -22,7 +22,9 @@ class MainController extends HomeController
     {
         $photoblock1 = $this->indexpagerepository->getBlok1photos();
         $clients = $this->indexpagerepository->getClients();
-        //dd($clients);
-        return view('site.index',compact('photoblock1','clients'));
+        $news = $this->indexpagerepository->getNews();
+        $test = $this->indexpagerepository->getTest();
+//        dd($news);
+        return view('site.index',compact('photoblock1','clients','news','$test'));
     }
 }
