@@ -27,9 +27,9 @@
                                                 <input type="text" class="c-input" name="name" value="{{ old('name') }}"/>
                                             </div>
                                             <div class="c-field">
-                                                <label class="c-field__label">Şirkət</label>
+                                                <label class="c-field__label">Referans verilən şirkət</label>
                                                 <select style="font-size:13px" class="c-input" name="company_id" >
-                                                    <option value="" disabled selected hidden>İşlədiyi şirkəti seçin...</option>
+                                                    <option value="" disabled selected hidden>Verilən şirkəti seçin...</option>
                                                     @forelse($companies as $key=>$value)
                                                         <option value="{{ $key}}">{{ $value}}</option>
                                                     @empty

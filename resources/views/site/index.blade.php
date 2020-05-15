@@ -60,8 +60,8 @@
         <div class="container-fluid">
             <h2 class="index-title mb-50">news</h2>
 
-            <div class="row mb-10">
-                @foreach($news as $elem)
+            <div class="row mb-10 elems-block-wrap">
+                @forelse($news as $elem)
                     @if($loop->first)
                         <div class="offset-lg-2 col-lg-2 col-md-6 col-12 mb-20">
                     @else
@@ -69,12 +69,16 @@
                     @endif
                          <a href="news-item.html" class="news-item">
                             <div class="news-item__img-box" style="background-image: url({{ $elem->smallimg }});"></div>
-                            <h2 class="news-item__title">{{ $elem->title }}</h2>
-                            <span class="news-item__description">{{ $elem->desc }}</span>
-                            <span class="news-item__date">{{ $elem->created_at }}</span>
+                             <div class="elems-block-extra">
+                                 <h2 class="news-item__title">{{ $elem->title }}</h2>
+                                 <span style="margin-top: 10px;" class="news-item__description">{{ $elem->desc }}</span>
+                             </div>
+                            <span style="margin-top: 10px" class="news-item__date">{{ $elem->created_at }}</span>
                          </a>
                         </div>
-                @endforeach
+                    @empty
+                        <h3>Nəticə tapılmadı !</h3>
+                @endforelse
             </div>
 
             <div class="row">
@@ -106,48 +110,50 @@
                         <div class="col-8">
 
                             <div class="index-test-carousel owl-carousel">
-                                @foreach()
+                                @forelse($testi as $elems)
                                 <div class="index-test-carousel__item">
                                     <div class="testimonial-item">
                                         <div class="testimonial-item__img-box-block">
                                             <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
+                                                <img src="{{ $elems->img }}" class="testimonial-item__img"/>
                                             </div>
                                         </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
+                                        <span class="testimonial-item__description" style="height: 168px; overflow: hidden;">{{ $elems->contents }}</span>
                                         <div class="testimonial-item__hr"></div>
                                         <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
+                                            <h3 class="testimonial-item__name">{{ $elems->username }}</h3>
                                             <ul class="testimonial-item-social-list">
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
+                                                    <a href="{{ ($elems->facebook != null) ? $elems->facebook : '#' }}" target="_blank" class="testimonial-item-social-list__link">
+                                                        <img src="{{ asset('img/facebook.svg') }}" class="testimonial-item-social-list__img" />
+                                                    </a>
+                                                </li>
+                                                <li class="testimonial-item-social-list__item">
+                                                    <a href="{{ ($elems->twitter != null) ? $elems->twitter : '#' }}" class="testimonial-item-social-list__link">
+                                                        <img src="{{ asset('img/twitter.svg') }}" class="testimonial-item-social-list__img" />
+                                                    </a>
+                                                </li>
+                                                <li class="testimonial-item-social-list__item">
+                                                    <a href="{{ ($elems->linkedin != null) ? $elems->linkedin : '#' }}" class="testimonial-item-social-list__link">
+                                                        <img src="{{ asset('img/linkedin.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
                                                     <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
+                                                        <img src="{{ asset('img/instagram_org.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-name">{{ $elems->position }}, </span>
+                                            <span class="testimonial-item__position-value">{{ $elems->company }}</span>
                                         </div>
                                     </div>
                                 </div>
-                                @endforeach
+                                @empty
+                                 <h3>Nəticə tapılmadı !</h3>
+                               @endforelse
                             </div>
                         </div>
 
@@ -158,7 +164,7 @@
 
                     <div class="row">
                         <div class="offset-sm-2 col-sm-8 col-12">
-                            <a href="test-ref.html" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
+                            <a href="{{ route('tes_ref') }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
                         </div>
                     </div>
 
@@ -171,46 +177,31 @@
 
                         <div class="col-8">
                             <div class="index-ref-carousel owl-carousel">
-                                <div class="index-ref-carousel__item">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
+                                @forelse($ref as $elems)
+                                    <div class="index-ref-carousel__item">
+                                        <div class="reference-item">
+                                            <a href="{{ $elems->img }}" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
+                                                <img style="height: 415px" src="{{ $elems->img }}" class="reference-item__img" />
+                                            </a>
+                                            <h2 class="reference-item__title">{{ $elems->referancer }}</h2>
+                                            <div class="testimonial-item__position">
+                                                <span class="testimonial-item__position-name">{{ $elems->name }}, </span>
+                                                <span class="testimonial-item__position-position">{{ $elems->position }}</span><br><br>
+                                                @foreach($__companies as $el)
+                                                  @if($el->id == $elems->company_id)
+                                                    <span class="testimonial-item__position-value">{{ $el->company }}, </span>
+                                                  @endif
+                                                @endforeach
+                                                <span class="testimonial-item__position-name">{{ $elems->ref_date }} </span><br><br>
+                                            </div>
+
+                                            <a href="{{ $elems->img }}" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="index-ref-carousel__item">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
-                                    </div>
-                                </div>
-                                <div class="index-ref-carousel__item">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
-                                    </div>
-                                </div>
-                                <div class="index-ref-carousel__item">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
-                                    </div>
-                                </div>
+                                @empty
+                                    <h3>Nəticə tapılmadı !</h3>
+                                @endforelse
+
                             </div>
                         </div>
 
@@ -221,7 +212,7 @@
 
                     <div class="row">
                         <div class="offset-sm-2 col-sm-8 col-12">
-                            <a href="test-ref.html" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
+                            <a href="{{ route('tes_ref') }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
                         </div>
                     </div>
 
@@ -239,55 +230,19 @@
                     <span class="index-companies__description">Once your session starts, our trusty instructors will demonstrate how to safely and successfully throw an axe and then it’s your turn.</span>
 
                     <ul class="index-companies-list">
+                        @php $counter = 0; @endphp
+                        @foreach($__companies as $el)
+                            @php   $counter++;  @endphp
                         <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">01</span>
-                            <span class="index-companies-list__name">KIT Construction</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
+                            <span class="index-companies-list__number">{{ $counter }}</span>
+                            <span class="index-companies-list__name">{{ $el->company }}</span>
+                            <a href="{{ $el->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($el->pdf,'/') }}</a>
                         </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">02</span>
-                            <span class="index-companies-list__name">KIT Media</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">03</span>
-                            <span class="index-companies-list__name">KIT FIinance</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">01</span>
-                            <span class="index-companies-list__name">KIT Construction</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">02</span>
-                            <span class="index-companies-list__name">KIT Media</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">03</span>
-                            <span class="index-companies-list__name">KIT FIinance</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">01</span>
-                            <span class="index-companies-list__name">KIT Construction</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">02</span>
-                            <span class="index-companies-list__name">KIT Media</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
-                        <li class="index-companies-list__item">
-                            <span class="index-companies-list__number">03</span>
-                            <span class="index-companies-list__name">KIT FIinance</span>
-                            <a href="#" class="link link_blue link_icon link_icon_download">download (pdf, 356 KB)</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="d-none d-md-flex col-lg-5 col-md-4 flex-row-center-center">
-                    <img src="img/companies_img.png" class="index-companies__img">
+                    <img src="{{ $__header->img6 }}" class="index-companies__img">
                 </div>
             </div>
         </div>
@@ -298,26 +253,26 @@
             <div class="row">
                 <div class="offset-sm-2 col-sm-8 col-12">
                     <div class="contacts__main">
-                        <span class="contacts__about">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue, expertly hosted by kick-ass instructors and backed up with a suitably pumping </span>
+                        <span class="contacts__about">{{ $__settings->footcontent}}</span>
                         <ul class="contacts-social-list">
                             <li class="contacts-social-list__item">
-                                <a href="#" class="contacts-social-list__link">
-                                    <img src="img/facebook_white.svg" class="contacts-social-list__img"/>
+                                <a href="{{ ($__settings->fb != null) ? $__settings->fb : '#' }}" class="contacts-social-list__link">
+                                    <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>
                             <li class="contacts-social-list__item">
-                                <a href="#" class="contacts-social-list__link">
-                                    <img src="img/instagram_white.svg" class="contacts-social-list__img"/>
+                                <a href="{{ ($__settings->instagram != null) ? $__settings->instagram : '#' }}" class="contacts-social-list__link">
+                                    <img src="{{ asset('img/instagram_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>
                             <li class="contacts-social-list__item">
-                                <a href="#" class="contacts-social-list__link">
-                                    <img src="img/twitter_white.svg" class="contacts-social-list__img"/>
+                                <a href="{{ ($__settings->twitter != null) ? $__settings->twitter : '#' }}" class="contacts-social-list__link">
+                                    <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>
                             <li class="contacts-social-list__item">
-                                <a href="#" class="contacts-social-list__link">
-                                    <img src="img/youtube_white.svg" class="contacts-social-list__img"/>
+                                <a href="{{ ($__settings->youtube != null) ? $__settings->youtube : '#' }}" class="contacts-social-list__link">
+                                    <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>
                         </ul>
@@ -325,14 +280,13 @@
 
                     <div class="contacts__other mb-25">
                         <div class="contacts__address">
-                            <span class="contacts__name">KIT Group</span>
-                            <span class="contacts__value">36, 4 floor Chinar Park,</span>
-                            <span class="contacts__value">Baku, Azerbaijan</span>
+                            <span class="contacts__name">{{ $__settings->title }}</span>
+                            <span class="contacts__value">{{ $__settings->address }}</span>
                         </div>
                         <div class="contacts__connection">
-                            <span class="contacts__phone">012 345 67 89</span>
-                            <span class="contacts__phone">055 814 41 91</span>
-                            <span class="contacts__email">info@kitgroup.az</span>
+                            <span class="contacts__phone">{{ $__settings->phone }}</span>
+                            <span class="contacts__phone">{{ $__settings->mobphone }}</span>
+                            <span class="contacts__email">{{ $__settings->email }}</span>
                         </div>
                     </div>
                 </div>

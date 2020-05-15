@@ -4,9 +4,12 @@
 namespace App\Repositories;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Models\Client;
+use App\Models\Company;
 use App\Models\IndexPage;
 use App\Http\Requests\IndexPageRequest;
 use App\Models\News;
+use App\Models\Referance;
+use App\Models\Testimonial;
 use Illuminate\Support\Str;
 
 class IndexPageRepository extends AdminBaseController
@@ -33,12 +36,21 @@ class IndexPageRepository extends AdminBaseController
    public function getNews()
    {
        return News::select(['id','title','desc','smallimg','created_at'])
-           ->where('isPublished','!=',0)->get();
+           ->where('isPublished','!=',0)->limit(4)->orderBy('created_at','desc')->get();
+   }
+   public function getCompanylist()
+   {
+       return Company::all()->pluck('company','id');
    }
 
    public function getTest()
    {
-       return 
+       return  Testimonial::all()->sortByDesc('created_at');
+   }
+
+   public function getRef()
+   {
+       return  Referance::all()->sortByDesc('created_at');
    }
 
    public function store($request)

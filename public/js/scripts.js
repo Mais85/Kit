@@ -3801,6 +3801,7 @@ $(window).on("load", function(){
     var indexTestOwl = indexTest.owlCarousel({
         loop: true,
         autoWidth: false,
+        autoHeight: true,
         margin: 20,
         nav: false,
         dots: false,

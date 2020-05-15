@@ -37,7 +37,7 @@
 
                                                 <div class="c-field">
                                                     <label class="c-field__label">Əlaqə Footer Metni</label>
-                                                    <textarea class="editor" name="footcontent_{{$language_key}}" rows="4" {{requiredFall($language_key)}}>@if(empty($items)){{old('footcontent_'.$language_key) }}@else{{$items->getTranslation('footcontent',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="c-input" name="footcontent_{{$language_key}}" rows="4" {{requiredFall($language_key)}}>@if(empty($items)){{old('footcontent_'.$language_key) }}@else{{$items->getTranslation('footcontent',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

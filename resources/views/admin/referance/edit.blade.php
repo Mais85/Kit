@@ -27,9 +27,9 @@
                                                 <input type="text" class="c-input" name="name" value="@if(isset($items->name)){{$items->name}}@else {{ old('name') }} @endif"/>
                                             </div>
                                             <div class="c-field">
-                                                <label class="c-field__label">Şirkət</label>
+                                                <label class="c-field__label">Referans verilən şirkət</label>
                                                 <select style="font-size:13px" class="c-input" name="company_id" >
-                                                    <option value="" disabled selected hidden>İşlədiyi şirkəti seçin...</option>
+                                                    <option value="" disabled selected hidden>Verilən şirkəti seçin...</option>
                                                     @forelse($companies as $key=>$value)
                                                         @if($key == $items->company_id)
                                                             <option value="{{ $key}}" selected>{{ $value}}</option>
@@ -68,7 +68,7 @@
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Verilmə tarixi</label>
-                                                <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="ref_date" value="{{ DateTime::createFromFormat('d/m/Y',$items->ref_date)->format('Y-d-m') }}" placeholder="iiii-aa-gg ss:dd:00">
+                                                <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="ref_date" value="{{ DateTime::createFromFormat('d/m/Y',$items->ref_date)->format('Y-m-d') }}" placeholder="iiii-aa-gg ss:dd:00">
                                             </div>
                                             <div class="c-field">
                                                 <button class="c-btn c-btn--info u-mb-xsmall" type="submit" name="btn">Yarat</button>
