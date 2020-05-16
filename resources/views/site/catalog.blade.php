@@ -1,8 +1,8 @@
-<button id="comapnies-view-button-open" class="button button_white">View Group of companies</button>
+<button id="comapnies-view-button-open" class="button button_white">{{__('header.VGoC')}}</button>
 
 <div class="comapnies-view">
     <div class="comapnies-view__head mb-50">
-        <h2 class="comapnies-view__title">Group of companies</h2>
+        <h2 class="comapnies-view__title">{{__('header.GoC')}}</h2>
         <a id="comapnies-view-button-close" href="javascript:void(0)" class="link link_icon link_icon_arrow-right ml-50"></a>
 
     </div>
@@ -12,7 +12,7 @@
         @foreach($__companies as $el)
             @php   $counter++;  @endphp
             <li class="comapnies-view-list__item">
-                <a href="{{ route('companies') }}" class="comapnies-view-list__link">
+                <a href="{{ route('companies',['local' => App::getLocale()]) }}" class="comapnies-view-list__link">
                     <span class="comapnies-view-list__number">{{ $counter }}</span>
                     <span class="comapnies-view-list__name">{{ $el->company }}</span>
                 </a>

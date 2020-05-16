@@ -8,7 +8,7 @@
                         <div class="header-index-carousel__item">
                             <video video autobuffer autoplay muted loop>
                                 <source src="{{ $__header->video }}" type="video/mp4">
-                                Your browser does not support HTML5 video.
+                                {{__('header.video')}}
                             </video>
                         </div>
 
@@ -25,36 +25,36 @@
                     <div class="header-index__top row ml-0 mr-0 flex-row-center-between">
                         <div class="header-index__top-mobile"></div>
                         <div class="header__left col-1 px-0">
-                            <a href="{{ route('main') }}" class="header__logo-link">
+                            <a href="{{ route('main', ['local' => App::getLocale()]) }}" class="header__logo-link">
                                 <img src="{{ $__settings->logo }}" class="header__logo" />
                             </a>
                         </div>
                         <div class="header__right flex-row-center-between col-xl-10 col-2 px-0">
                             <ul class="menu-list">
                                 <li class="menu-list__item">
-                                    <a href="{{ route('about') }}" class="menu-list__link">About</a>
+                                    <a href="{{ route('about', ['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.About') }}</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="{{ route('services') }}" class="menu-list__link">Services</a>
+                                    <a href="{{ route('services',['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.Services') }}</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="{{ route('ourprojects') }}" class="menu-list__link">Our projects</a>
+                                    <a href="{{ route('ourprojects',['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.OurProjects') }}</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="{{ route('clients') }}" class="menu-list__link">Our clients</a>
+                                    <a href="{{ route('clients',['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.OurClients') }}</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="{{ route('news') }}" class="menu-list__link">News</a>
+                                    <a href="{{ route('news',['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.News') }}</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="{{ route('tes_ref') }}" class="menu-list__link">Testimonials and References</a>
+                                    <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.TestRef') }}</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="{{ route('gallery') }}" class="menu-list__link">Gallery</a>
+                                    <a href="{{ route('gallery',['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.Gallery') }}</a>
                                 </li>
                             </ul>
 
-                            <a href="{{ route('contact') }}" class="button button_blue button_header">Contacts</a>
+                            <a href="{{ route('contact',['local' => App::getLocale()]) }}" class="button button_blue button_header">{{ __('header.Contact') }}</a>
 
                             <a id="mobile-nav-open" href="javascript:void(0)" class="link link_icon link_icon_menu"></a>
                         </div>
@@ -86,7 +86,7 @@
                                 </ul>
                             </div>
                             <div class="offset-1 col-8 flex-column-start-between">
-                                     <h1 class="header-index__title">{{ $__header->head_title }}</h1>
+                                     <h1 class="header-index__title">{{  $__header->getTranslation('head_title', App::getLocale(),false) }}</h1>
                             </div>
                         </div>
                     </div>
@@ -96,13 +96,13 @@
                                 <a href="#index-why" class="header-index-bottom-list__link link link_icon link_icon_arrow-bottom-blue"></a>
                             </li>
                             <li class="header-index-bottom-list__item">
-                                <a href="#index-why" class="header-index-bottom-list__link">Why KIT Group</a>
+                                <a href="#index-why" class="header-index-bottom-list__link">{{ __('header.Why') }}</a>
                             </li>
                             <li class="header-index-bottom-list__item">
-                                <a href="#index-companies" class="header-index-bottom-list__link">Catalogs</a>
+                                <a href="#index-companies" class="header-index-bottom-list__link">{{ __('header.Catalog') }}</a>
                             </li>
                             <li class="header-index-bottom-list__item">
-                                <a href="#index-contacts" class="header-index-bottom-list__link">Contacts</a>
+                                <a href="#index-contacts" class="header-index-bottom-list__link">{{ __('header.Contact') }}</a>
                             </li>
                         </ul>
 
@@ -115,14 +115,14 @@
                         </div>
 
                         <ul class="lang-list">
-                            <li class="lang-list__item">
-                                <a href="#" class="lang-list__link">az</a>
+                            <li class="lang-list__item {{ langactive('az') }}">
+                                <a href="{{  route(\Route::currentRouteName(),'az') }}" class="lang-list__link">az</a>
                             </li>
-                            <li class="lang-list__item active">
-                                <a href="#" class="lang-list__link">en</a>
+                            <li class="lang-list__item {{ langactive('en') }}">
+                                <a href="{{  route(\Route::currentRouteName(),'en') }}" class="lang-list__link">en</a>
                             </li>
-                            <li class="lang-list__item">
-                                <a href="#" class="lang-list__link">ru</a>
+                            <li class="lang-list__item {{ langactive('ru') }}">
+                                <a href="{{  route(\Route::currentRouteName(),'ru') }}" class="lang-list__link">ru</a>
                             </li>
                         </ul>
                     </div>
@@ -132,7 +132,7 @@
                 <div class="comapnies-view">
                     <div class="comapnies-view__head mb-50">
                         <a id="comapnies-view-button-close" href="javascript:void(0)" class="link link_icon link_icon_arrow-right ml-50"></a>
-                        <h2 class="comapnies-view__title">Group of companies</h2>
+                        <h2 class="comapnies-view__title">{{__('header.GoC')}}</h2>
                     </div>
 
                     <ul class="comapnies-view-list mb-30">
@@ -141,7 +141,7 @@
                             @foreach($__companies as $el)
                             @php   $counter++;  @endphp
                             <li class="comapnies-view-list__item">
-                                <a href="{{ route('companies') }}" class="comapnies-view-list__link">
+                                <a href="{{ route('companies',['local' => App::getLocale()]) }}" class="comapnies-view-list__link">
                                     <span class="comapnies-view-list__number">{{ $counter }}</span>
                                     <span class="comapnies-view-list__name">{{ $el->company }}</span>
                                 </a>
@@ -157,7 +157,7 @@
     <div class="group-companies-mob-block container-fluid bg-navy-dark">
         <div class="group-companies-mob">
             <div id="group-companies-list-open" class="group-companies-mob__header">
-                <h1 class="group-companies-mob__title">Group of companies</h1>
+                <h1 class="group-companies-mob__title">{{__('header.GoC')}}</h1>
                 <button class="link link_icon link_icon_plus-white"></button>
             </div>
             <div class="group-companies-mob__body">
@@ -167,7 +167,7 @@
                     @foreach($__companies as $el)
                         @php   $counter++;  @endphp
                         <li class="comapnies-view-list__item">
-                            <a href="{{ route('companies') }}" class="comapnies-view-list__link">
+                            <a href="{{ route('companies',['local' => App::getLocale()]) }}" class="comapnies-view-list__link">
                                 <span class="comapnies-view-list__number">{{ $counter }}</span>
                                 <span class="comapnies-view-list__name">{{ $el->company }}</span>
                             </a>
@@ -182,40 +182,40 @@
 
     <div class="mobile-nav-block">
         <ul class="lang-list mb-30">
-            <li class="lang-list__item">
-                <a href="#" class="lang-list__link">az</a>
+            <li class="lang-list__item {{ langactive('az') }}">
+                <a href="{{  route(\Route::currentRouteName(),'az') }}" class="lang-list__link">az</a>
             </li>
-            <li class="lang-list__item active">
-                <a href="#" class="lang-list__link">en</a>
+            <li class="lang-list__item {{ langactive('en') }}">
+                <a href="{{  route(\Route::currentRouteName(),'en') }}" class="lang-list__link">en</a>
             </li>
-            <li class="lang-list__item">
-                <a href="#" class="lang-list__link">ru</a>
+            <li class="lang-list__item {{ langactive('ru') }}">
+                <a href="{{  route(\Route::currentRouteName(),'ru') }}" class="lang-list__link">ru</a>
             </li>
         </ul>
         <ul class="mobile-nav-list mb-30">
             <li class="mobile-nav-list__item">
-                <a href="{{ route('about') }}" class="mobile-nav-list__link">About</a>
+                <a href="{{ route('about',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.About') }}</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="{{ route('services') }}" class="mobile-nav-list__link">Services</a>
+                <a href="{{ route('services',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.Services') }}</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="{{ route('ourprojects') }}" class="mobile-nav-list__link">Our projects</a>
+                <a href="{{ route('ourprojects',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.OurProjects') }}</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="{{ route('clients') }}" class="mobile-nav-list__link">Our clients</a>
+                <a href="{{ route('clients',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.OurClients') }}</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="{{ route('news') }}" class="mobile-nav-list__link">News</a>
+                <a href="{{ route('news',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.News') }}</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="{{ route('tes_ref') }}" class="mobile-nav-list__link">Testimonials and References</a>
+                <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.TestRef') }}</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="{{ route('gallery') }}" class="mobile-nav-list__link">Gallery</a>
+                <a href="{{ route('gallery',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.Gallery') }}</a>
             </li>
         </ul>
 
-        <a href="{{ route('contact') }}" class="button button_blue button_header mb-30">Contacts</a>
+        <a href="{{ route('contact',['local' => App::getLocale()]) }}" class="button button_blue button_header mb-30">{{ __('header.Contact') }}</a>
     </div>
 </header>

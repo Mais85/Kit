@@ -339,7 +339,8 @@ html {
       text-transform: uppercase;
       font-family: Kanit;
       color: #FFF; }
-
+		.lang-list .lang-list__item .lang-list__link:hover {
+			color:rgb(62, 181, 241);}
 .footer {
   display: flex;
   align-items: center;

@@ -18,8 +18,8 @@
                         </div>
                         @endforeach
                     </div>
-                    <h2 class="index-why__title mb-30">why kit group</h2>
-                    <span class="index-why__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue, expertly hosted by kick-ass instructors and backed up with a suitably pumping soundtrack. In no time at all you’ll be throwing axes and competing against your friends or colleagues, you’d better practice those celebrations!</span>
+                    <h2 class="index-why__title mb-30">{{ $header->getTranslation('title1',App::getLocale(),false) }}</h2>
+                    <span class="index-why__description">{{ $header->getTranslation('contents1',App::getLocale(),false) }}</span>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
 
     <section class="index-clients">
         <div class="container-fluid">
-            <h2 class="index-title index-title_white mb-50">our clients</h2>
+            <h2 class="index-title index-title_white mb-50">{{__('header.OurClients')}}</h2>
             <div class="row mb-40">
                 <div class="offset-sm-1 col-sm-1 col-2 flex-row-center-start">
                     <button id="index-clients-left" href="javascript:void(0)" class="carousel-button-2 carousel-button-2_transparent carousel-button-2_left"></button>
@@ -83,7 +83,7 @@
 
             <div class="row">
                 <div class="offset-lg-2 col-lg-8 col-12">
-                    <a href="{{ route('news') }}" class="button button_white button_uppercase button_full">VIEW all news list</a>
+                    <a href="{{ route('news',['local' => App::getLocale()]) }}" class="button button_white button_uppercase button_full">VIEW all news list</a>
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@
 
                     <div class="row">
                         <div class="offset-sm-2 col-sm-8 col-12">
-                            <a href="{{ route('tes_ref') }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
+                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
                         </div>
                     </div>
 
@@ -212,7 +212,7 @@
 
                     <div class="row">
                         <div class="offset-sm-2 col-sm-8 col-12">
-                            <a href="{{ route('tes_ref') }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
+                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
                         </div>
                     </div>
 

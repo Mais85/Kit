@@ -234,6 +234,15 @@ function getPhotos($id)
     return Photo::where('albom_id', $id)->get()->count();
 }
 
+function langactive($lang)
+{
+    if($lang != app()->getLocale()) {
+        return '';
+    }else{
+        return 'active';
+    }
+}
+
 function favOrNot($id){
     if(auth()->guest()){
         $favourites = [];
