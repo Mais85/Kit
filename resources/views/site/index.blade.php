@@ -50,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="offset-lg-2 col-lg-8 col-12">
-                    <a href="#" class="button button_dark-blue-alpha button_uppercase button_full">VIEW all clients</a>
+                    <a href="{{ route('clients',App::getLocale()) }}" class="button button_dark-blue-alpha button_uppercase button_full">{{ __('index.clientAllView') }}</a>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
 
     <section class="index-news bc-light-grey">
         <div class="container-fluid">
-            <h2 class="index-title mb-50">news</h2>
+            <h2 class="index-title mb-50">{{ __('index.news') }}</h2>
 
             <div class="row mb-10 elems-block-wrap">
                 @forelse($news as $elem)
@@ -70,33 +70,33 @@
                          <a href="news-item.html" class="news-item">
                             <div class="news-item__img-box" style="background-image: url({{ $elem->smallimg }});"></div>
                              <div class="elems-block-extra">
-                                 <h2 class="news-item__title">{{ $elem->title }}</h2>
-                                 <span style="margin-top: 10px;" class="news-item__description">{{ $elem->desc }}</span>
+                                 <h2 class="news-item__title">{{ $elem->getTranslation('title',app()->getLocale(),false) }}</h2>
+                                 <span style="margin-top: 10px;" class="news-item__description">{{ $elem->getTranslation('desc',app()->getLocale(),false) }}</span>
                              </div>
                             <span style="margin-top: 10px" class="news-item__date">{{ $elem->created_at }}</span>
                          </a>
                         </div>
                     @empty
-                        <h3>Nəticə tapılmadı !</h3>
+                        <h3>{{ __('index.notf') }}</h3>
                 @endforelse
             </div>
 
             <div class="row">
                 <div class="offset-lg-2 col-lg-8 col-12">
-                    <a href="{{ route('news',['local' => App::getLocale()]) }}" class="button button_white button_uppercase button_full">VIEW all news list</a>
+                    <a href="{{ route('news',['local' => App::getLocale()]) }}" class="button button_white button_uppercase button_full">{{ __('index.newsAllView') }}</a>
                 </div>
             </div>
-        </div>
+            </div>
     </section>
 
     <div class="index-test-ref">
         <div class="container-fluid">
             <ul class="test-ref-nav nav-tabs mb-50">
                 <li class="test-ref-nav__item active nav-tabs__item">
-                    <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#testimonials">testimonials</a></h2>
+                    <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#testimonials">{{ __('index.testi') }}</a></h2>
                 </li>
                 <li class="test-ref-nav__item nav-tabs__item">
-                    <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#references">references</a></h2>
+                    <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#references">{{ __('index.referen') }}</a></h2>
                 </li>
             </ul>
 
@@ -118,7 +118,7 @@
                                                 <img src="{{ $elems->img }}" class="testimonial-item__img"/>
                                             </div>
                                         </div>
-                                        <span class="testimonial-item__description" style="height: 168px; overflow: hidden;">{{ $elems->contents }}</span>
+                                        <span class="testimonial-item__description" style="height: 168px; overflow: hidden;">{{ $elems->getTranslation('contents',app()->getLocale(),false) }}</span>
                                         <div class="testimonial-item__hr"></div>
                                         <div class="testimonial-item__personal">
                                             <h3 class="testimonial-item__name">{{ $elems->username }}</h3>
@@ -146,7 +146,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">{{ $elems->position }}, </span>
+                                            <span class="testimonial-item__position-name">{{ $elems->getTranslation('position',app()->getLocale(),false) }}, </span>
                                             <span class="testimonial-item__position-value">{{ $elems->company }}</span>
                                         </div>
                                     </div>
