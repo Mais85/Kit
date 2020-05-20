@@ -146,13 +146,12 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">{{ $elems->getTranslation('position',app()->getLocale(),false) }}, </span>
-                                            <span class="testimonial-item__position-value">{{ $elems->company }}</span>
+                                            <span class="testimonial-item__position-text">{{ $elems->getTranslation('position',app()->getLocale(),false) }}, <span class="testimonial-item__position-text-bold">{{ $elems->company }}</span></span>
                                         </div>
                                     </div>
                                 </div>
                                 @empty
-                                 <h3>Nəticə tapılmadı !</h3>
+                                 <h3>{{ __('index.notf') }}</h3>
                                @endforelse
                             </div>
                         </div>
@@ -164,7 +163,7 @@
 
                     <div class="row">
                         <div class="offset-sm-2 col-sm-8 col-12">
-                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
+                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">{{ __('index.tesView') }}</a>
                         </div>
                     </div>
 
@@ -185,21 +184,21 @@
                                             </a>
                                             <h2 class="reference-item__title">{{ $elems->referancer }}</h2>
                                             <div class="testimonial-item__position">
-                                                <span class="testimonial-item__position-name">{{ $elems->name }}, </span>
-                                                <span class="testimonial-item__position-position">{{ $elems->position }}</span><br><br>
+                                                <span class="testimonial-item__position-text">{{ $elems->name }}, </span>
+                                                <span class="testimonial-item__position-text">{{ $elems->position }}</span><br><br>
                                                 @foreach($__companies as $el)
                                                   @if($el->id == $elems->company_id)
-                                                    <span class="testimonial-item__position-value">{{ $el->company }}, </span>
+                                                    <span style="font-weight: bold" class="testimonial-item__position-text-bold">{{ $el->company }}, </span>
                                                   @endif
                                                 @endforeach
-                                                <span class="testimonial-item__position-name">{{ $elems->ref_date }} </span><br><br>
+                                                <span class="testimonial-item__position-text">{{ $elems->ref_date }} </span><br><br>
                                             </div>
 
-                                            <a href="{{ $elems->img }}" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
+                                            <a href="{{ $elems->img }}" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">{{ __('index.zoom') }}</a>
                                         </div>
                                     </div>
                                 @empty
-                                    <h3>Nəticə tapılmadı !</h3>
+                                    <h3>{{ __('index.notf') }}</h3>
                                 @endforelse
 
                             </div>
@@ -212,7 +211,7 @@
 
                     <div class="row">
                         <div class="offset-sm-2 col-sm-8 col-12">
-                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">VIEW more reviews</a>
+                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">{{ __('index.ref') }}</a>
                         </div>
                     </div>
 
@@ -226,8 +225,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="offset-lg-2 col-lg-4 offset-md-1 col-md-5 offset-1 col-10">
-                    <h2 class="index-companies__title">catalogs of companies</h2>
-                    <span class="index-companies__description">Once your session starts, our trusty instructors will demonstrate how to safely and successfully throw an axe and then it’s your turn.</span>
+                    <h2 class="index-companies__title">{{ $__header->title2 }}</h2>
+                    <span class="index-companies__description">{{ $__header->contents2 }}</span>
 
                     <ul class="index-companies-list">
                         @php $counter = 0; @endphp
@@ -235,7 +234,7 @@
                             @php   $counter++;  @endphp
                         <li class="index-companies-list__item">
                             <span class="index-companies-list__number">{{ $counter }}</span>
-                            <span class="index-companies-list__name">{{ $el->company }}</span>
+                            <span style="font-weight: bold" class="index-companies-list__name">{{ $el->company }}</span>
                             <a href="{{ $el->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($el->pdf,'/') }}</a>
                         </li>
                         @endforeach
@@ -256,22 +255,22 @@
                         <span class="contacts__about">{{ $__settings->footcontent}}</span>
                         <ul class="contacts-social-list">
                             <li class="contacts-social-list__item">
-                                <a href="{{ ($__settings->fb != null) ? $__settings->fb : '#' }}" class="contacts-social-list__link">
+                                <a href="{{ ($__settings->fb != null) ? $__settings->fb : '#' }}" target="_blank" class="contacts-social-list__link">
                                     <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>
                             <li class="contacts-social-list__item">
-                                <a href="{{ ($__settings->instagram != null) ? $__settings->instagram : '#' }}" class="contacts-social-list__link">
+                                <a href="{{ ($__settings->instagram != null) ? $__settings->instagram : '#' }}"  target="_blank" class="contacts-social-list__link">
                                     <img src="{{ asset('img/instagram_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>
                             <li class="contacts-social-list__item">
-                                <a href="{{ ($__settings->twitter != null) ? $__settings->twitter : '#' }}" class="contacts-social-list__link">
+                                <a href="{{ ($__settings->twitter != null) ? $__settings->twitter : '#' }}"  target="_blank" class="contacts-social-list__link">
                                     <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>
                             <li class="contacts-social-list__item">
-                                <a href="{{ ($__settings->youtube != null) ? $__settings->youtube : '#' }}" class="contacts-social-list__link">
+                                <a href="{{ ($__settings->youtube != null) ? $__settings->youtube : '#' }}" target="_blank" class="contacts-social-list__link">
                                     <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
                                 </a>
                             </li>

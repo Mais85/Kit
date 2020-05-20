@@ -439,7 +439,6 @@ html {
   text-decoration: none; }
   .news-item .news-item__img-box {
     width: 100%;
-    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
     height: 192px;
@@ -550,7 +549,7 @@ html {
       .testimonial-item .testimonial-item__personal .testimonial-item-social-list .testimonial-item-social-list__item .testimonial-item-social-list__link {
         display: block; }
 
-.testimonial-item .testimonial-item__position {
+.testimonial-item .testimonial-item__position .testimonial-item__position-text {
   display: flex;
   align-items: center; }
   .testimonial-item .testimonial-item__position .testimonial-item__position-name {
@@ -558,11 +557,10 @@ html {
     line-height: 180%;
     color: #2B2F51;
     margin-right: 5px; }
-  .testimonial-item .testimonial-item__position .testimonial-item__position-value {
-    display: block;
-    font-weight: 600;
-    line-height: 180%;
-    color: #2B2F51; }
+  .testimonial-item .testimonial-item__position .testimonial-item__position {
+	font-weight: 600;}
+    .testimonial-item .testimonial-item__position .testimonial-item__position-text-bold {
+     font-weight: 600; }
 
 .reference-item .reference-item__img-link {
   display: block;

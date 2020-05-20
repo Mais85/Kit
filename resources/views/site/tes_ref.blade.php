@@ -59,8 +59,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -99,8 +98,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -139,8 +137,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -179,8 +176,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -219,8 +215,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -259,8 +254,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -299,8 +293,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -339,8 +332,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -379,8 +371,7 @@
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-name">CEO,</span>
-                                            <span class="testimonial-item__position-value">eBay</span>
+                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
                                         </div>
                                     </div>
                                 </div>

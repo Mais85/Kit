@@ -43,9 +43,9 @@
                     </li>
                 </ul>
 
-                <a href="{{ route('contact',['local' => App::getLocale()]) }}" class="button button_blue button_header">{{ __('header.Contact') }}</a>
+                <a href="{{ route('contact',['local' => App::getLocale()]) }}" class="button button_blue button_header ml-auto">{{ __('header.Contact') }}</a>
 
-                <a id="mobile-nav-open" href="javascript:void(0)" class="link link_icon link_icon_menu"></a>
+                <a id="mobile-nav-open" href="javascript:void(0)" class="link link_icon link_icon_menu  ml-auto"></a>
             </div>
         </div>
     </div>

@@ -10,4 +10,7 @@ return [
     'referen' => 'Referanslar',
     'news' => 'Xəbərlər',
     'notf' => 'Nəticə tapılmadı !',
+    'ref' => 'Digər Referanslar',
+    'tesView' => 'Digər Rəylər',
+    'zoom' => 'Şəkili böyüt',
 ];

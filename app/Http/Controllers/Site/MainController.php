@@ -25,7 +25,6 @@ class MainController extends HomeController
         $news = $this->indexpagerepository->getNews();
         $testi = $this->indexpagerepository->getTest();
         $ref = $this->indexpagerepository->getRef();
-       // dd($companies);
         return view('site.index',compact('photoblock1','clients','news','testi','ref'));
     }
 }

@@ -19,7 +19,7 @@
                                     <div class="c-tabs__content tab-content" id="nav-tabContent" style="padding-top:0px ">
                                         <div class="c-tabs__pane active">
                                             <div class="c-field">
-                                                <label class="c-field__label">Referans</label>
+                                                <label class="c-field__label">Sertifikat</label>
                                                 <input type="text" class="c-input" name="title" value="@if(isset($items->title)){{ $items->title}}@else{{ old('title') }} @endif"/>
                                             </div>
                                         </div>

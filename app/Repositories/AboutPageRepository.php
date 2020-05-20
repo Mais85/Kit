@@ -4,6 +4,8 @@
 namespace App\Repositories;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Models\AboutPage;
+use App\Models\Certificate;
+use App\Models\Employee;
 use Illuminate\Support\Str;
 
 
@@ -19,10 +21,25 @@ class AboutPageRepository extends AdminBaseController
     }
 
     /**
+     * Get all certificates from db
+     * @return Certificate[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function getAllCertificates()
+    {
+        return Certificate::all();
+    }
+
+    /**
      * Create Aboutpage table data in db
      * @param $request
      * @return mixed
      */
+
+    public function getEmployeebysort()
+    {
+        return Employee::all()->sortBy('pos_number');
+    }
+
     public function store($request)
     {
         return  AboutPage::create([

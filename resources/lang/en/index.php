@@ -10,4 +10,7 @@ return [
     'referen' => 'references',
     'news' => 'News',
     'notf' => 'No Items !',
+    'ref' => 'View more reviews',
+    'tesView' => 'View more reviews',
+    'zoom' => 'Zoom image',
 ];
