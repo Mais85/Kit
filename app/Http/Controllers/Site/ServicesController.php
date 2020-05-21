@@ -28,7 +28,7 @@ class ServicesController extends HomeController
     public function index()
     {
         $services = $this->servicerepository->getAll();
-        dd(Route::currentRouteName());
+//        dd(Route::currentRouteName());
         return view('site.services',compact('services'));
     }
 }
