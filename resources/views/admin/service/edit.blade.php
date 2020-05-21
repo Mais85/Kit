@@ -35,7 +35,7 @@
                                             <div class="c-field">
                                                 <label class="c-field__label">Şirkət</label>
                                                 <select style="font-size:13px" class="c-input" name="company" >
-                                                    <option value="" disabled selected hidden>İşlədiyi şirkəti seçin...</option>
+                                                    <option value="" disabled selected hidden>Aid olduğu şirkəti seçin...</option>
                                                     @forelse($companies as $key=>$value)
                                                         @if($value == $items->company_name)
                                                             <option value="{{ $key}}" selected>{{ $value}}</option>

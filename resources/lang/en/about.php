@@ -8,4 +8,7 @@ return [
     'cer' =>'Certificates',
     'zoom' => 'Zoom Certificate',
     'Direction' => 'Direction',
+    'keep' => 'keep in touch',
+    'OurCont' => 'Our contacts and location',
+    'visPag' => 'Visit page',
 ];

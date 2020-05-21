@@ -88,6 +88,7 @@ class EmployeeRepository extends AdminBaseController
 
     public function update($request)
     {
+       // dd($request->all());
         $this->getFilteringModel($request);
         $item = cache('modEmpEdit');
         $username = $request->name.' '.$request->surname;

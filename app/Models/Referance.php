@@ -21,7 +21,7 @@ class Referance extends Model
 
     public function setNameAttribute($name)
     {
-        $this->attributes['name'] = ucwords(strtolower($name));
+        $this->attributes['name'] = ucwords(mb_strtolower($name));
     }
 
     public function getRefDateAttribute($ref_date)

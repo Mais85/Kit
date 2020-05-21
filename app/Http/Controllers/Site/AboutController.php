@@ -22,7 +22,10 @@ class AboutController extends HomeController
         $this->aboutpagerepository = $aboutpagerepository;
     }
 
-
+    /**
+     * Show About page
+     * @return \Illuminate\Contracts\Support\Renderable|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $abItems = $this->aboutpagerepository->all();

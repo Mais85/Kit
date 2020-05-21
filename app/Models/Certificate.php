@@ -15,6 +15,10 @@ class Certificate extends Model
 
     public function setTitleAttribute($title)
     {
-        $this->attributes['title'] = ucfirst($title);
+        $strlen = mb_strlen($title);
+        $firstChar = mb_substr($title, 0, 1);
+        $then = mb_substr(mb_strtolower($title), 1, $strlen - 1);
+        $word =  mb_strtoupper($firstChar) . $then;
+        return $this->attributes['title'] = $word;
     }
 }

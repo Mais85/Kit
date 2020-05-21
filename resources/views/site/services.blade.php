@@ -3,7 +3,6 @@
 {{--@section('title', '| '. __('main.title'))--}}
 
 @section('content')
-<button id="comapnies-view-button-open" class="button button_white">View Group of companies</button>
 
 @include('site.catalog')
 
@@ -15,41 +14,20 @@
                 <div class="service-left-block">
                     <div class="row mx-0">
                         <div class="offset-xl-2 col-xl-8 offset-1 col-10">
-                            <h1 class="page-title mt-70 mb-35">Services</h1>
+                            <h1 class="page-title mt-70 mb-35">{{ __('services.serv') }}</h1>
                             <ul class="services-list">
-                                <li class="services-list__item active">
-                                    <a href="#" class="services-list__link">Sənaye Alpinizmi</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">KIT Consulting & Service</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Maliyyə və mühasibat xidmətləri</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Marketinq və PR xidmətləri</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Yüksəklikdə təmizlik</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Daxili təmizlik </a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">KIT Consulting & Service</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Maliyyə və mühasibat xidmətləri</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Marketinq və PR xidmətləri</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Yüksəklikdə təmizlik</a>
-                                </li>
-                                <li class="services-list__item">
-                                    <a href="#" class="services-list__link">Daxili təmizlik </a>
-                                </li>
+                                @foreach($services as $key => $item)
+                                    @if($loop->first)
+                                    <li class="services-list__item active">
+                                        <a href="#" class="services-list__link">{{ $item->title }}</a>
+                                    </li>
+                                    @elseif(true)
+                                    <li class="services-list__item">
+                                        <a href="{{ route('servicesItem', ['local' => App::getLocale(),'slug'=>$item->slug]) }}" class="services-list__link">KIT Consulting & Service</a>
+                                    </li>
+                                    @else
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                     </div>

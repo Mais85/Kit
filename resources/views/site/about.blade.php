@@ -171,7 +171,7 @@
                                 <div class="direction-item__main-info">
                                     <h3 class="direction-item__name">{{ $items->name }} {{ $items->surname }}</h3>
                                     <span class="direction-item__position">{{ $items->position }}, {{ $items->company }}</span>
-                                    <img src="{{ asset('img/kit_group_logo_dark.png') }}" class="direction-item__logo"/>
+                                    <img src="{{ $__companies->where('company',$items->company)->pluck('logo')->first() }}" class="direction-item__logo"/>
                                 </div>
                                 <div class="direction-item__contacts">
                                     <span class="direction-item__email">{{ $items->email }}</span>
@@ -211,16 +211,15 @@
             </div>
 
 
-
         </div>
 
         <div class="container-fluid">
             <div class="row">
                 <div class="offset-xl-2 col-xl-9 offset-sm-1 col-sm-10 col-12">
                     <div class="learn-more-section">
-                        <span class="learn-more-section__description">keep in touch</span>
-                        <h3 class="learn-more-section__title">Our contacts and location</h3>
-                        <a href="#" class="learn-more-section__link">/ Visit page /</a>
+                        <span class="learn-more-section__description">{{ __('about.keep') }}</span>
+                        <h3 class="learn-more-section__title">{{ __('about.OurCont') }}</h3>
+                        <a href="{{  route('contact',['local' => App::getLocale()])  }}" class="learn-more-section__link">/ {{ __('about.visPag') }} /</a>
                     </div>
                 </div>
             </div>
