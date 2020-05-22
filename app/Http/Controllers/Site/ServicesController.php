@@ -6,7 +6,6 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\HomeController;
 use App\Repositories\ServiceRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 class ServicesController extends HomeController
 {
@@ -24,11 +23,27 @@ class ServicesController extends HomeController
         $this->servicerepository = $servicerepository;
     }
 
-
+    /**
+     * Show services index page
+     * @return \Illuminate\Contracts\Support\Renderable|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $services = $this->servicerepository->getAll();
-//        dd(Route::currentRouteName());
-        return view('site.services',compact('services'));
+        $item = $services->first();
+        return view('site.services',compact('services','item'));
+    }
+
+    /**
+     * Show service
+     * @param $local
+     * @param null $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show ($local,$slug = null)
+    {
+         $services = $this->servicerepository->getAll();
+         $item= $this->servicerepository->getItembySlug($slug)->first();
+       return view ('site.services',compact('services','item'));
     }
 }

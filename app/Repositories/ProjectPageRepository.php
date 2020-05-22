@@ -13,7 +13,7 @@ class ProjectPageRepository extends AdminBaseController
 
     public function all()
     {
-        return ProjectPage::find(2);
+        return ProjectPage::find(1);
     }
 
     public function store($request)

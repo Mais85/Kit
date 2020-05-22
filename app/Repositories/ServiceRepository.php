@@ -10,6 +10,7 @@ use App\Models\Company;
 use App\Models\Service;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use function MongoDB\BSON\fromJSON;
 
 class ServiceRepository extends AdminBaseController
 {
@@ -25,6 +26,11 @@ class ServiceRepository extends AdminBaseController
     public function getAll()
     {
         return Service::all();
+    }
+
+    public function getItembySlug($slug)
+    {
+        return Service::whereJsonContains('slug->'.\App::getLocale(), $slug)->get();
     }
 
     public function getPaginate()

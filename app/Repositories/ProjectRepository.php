@@ -7,6 +7,7 @@ namespace App\Repositories;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Models\Albom;
 use App\Models\Project;
+use App\Models\ProjectPage;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
@@ -15,6 +16,11 @@ class ProjectRepository extends AdminBaseController
     public function getAll()
     {
         return Project::all();
+    }
+
+    public function getPropage()
+    {
+        return ProjectPage::pluck('contents')->first();
     }
 
     public function getPaginate()
