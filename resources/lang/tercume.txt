@@ -29,4 +29,5 @@ RUS {
      'keep in touch' => '?',
      'Our contacts and location' => 'Наши контакты и местоположение',
      'Visit page' => 'Посетить страницу',
+     'view more info' => '?',
 }

@@ -139,6 +139,7 @@ Route::group(['namespace'=>'Site'],function(){
     Route::get('{local}/services', 'ServicesController@index')->name('services');
     Route::get('{local}/services/{slug?}', 'ServicesController@show')->name('servicesItem');
     Route::get('{local}/our-projects', 'ProjectsController@index')->name('ourprojects');
+    Route::get('{local}/project/{slug?}', 'ProjectsController@show')->name('project');
     Route::get('{local}/clients', 'ClientsController@index')->name('clients');
     Route::get('{local}/news', 'NewsController@index')->name('news');
     Route::get('{local}/test-ref', 'Tes_RefController@index')->name('tes_ref');

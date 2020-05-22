@@ -32,7 +32,7 @@ class ProjectRepository extends AdminBaseController
     {
         $slug = $this->getFormTranslations($name,$request);
         foreach ($slug as &$item){
-            $item = Str::slug($item,'-');
+            $item = Str::slug($item,'-').'-'.time();
         }
         return $slug;
     }
@@ -46,6 +46,11 @@ class ProjectRepository extends AdminBaseController
 
     public function getAlbom(){
         return Albom::all()->pluck('name','id');
+    }
+
+    public function getProjectbySlug($slug)
+    {
+        return Project::whereJsonContains('slug->'.\App::getLocale(),$slug)->first();
     }
 
     public function store($request)

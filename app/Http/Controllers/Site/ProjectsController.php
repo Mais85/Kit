@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\HomeController;
 use App\Repositories\ProjectRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class ProjectsController extends HomeController
 {
@@ -19,7 +20,12 @@ class ProjectsController extends HomeController
     {
         $contents = $this->projectrepository->getPropage();
         $projects = $this->projectrepository->getAll();
-//        dd($projects);
         return view('site.our_projects',compact('contents','projects'));
+    }
+
+    public function show( $local,$slug)
+    {
+        $item = $this->projectrepository->getProjectbySlug($slug);
+        return view('site.project',compact('item'));
     }
 }

@@ -9,7 +9,7 @@
 
     <div class="content">
 
-        <div class="project-item-page-header-block mb-40" style="background-image: url(img/project_main.png);">
+        <div class="project-item-page-header-block mb-40" style="background-image: url({{$item->img1}});">
             <div class="container-fluid">
                 <div class="row">
                     <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
@@ -69,58 +69,58 @@
             </div>
         </div>
 
-        <div class="container-fluid mb-50">
-            <div class="row">
-                <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
-                    <h2 class="page-mini-title mb-40">General information</h2>
-                    <div class="page-hr mb-40"></div>
-                    <ul class="gen-info-project-list mb-10">
-                        <li class="gen-info-project-list__item">
-                            <span class="gen-info-project-list__name">Toplam donor sayı:</span>
-                            <span class="gen-info-project-list__value">50 412</span>
-                            <span class="gen-info-project-list__description">qəhraman donorlar xib edilmiş müraciətə əsasən</span>
-                        </li>
-                        <li class="gen-info-project-list__item">
-                            <span class="gen-info-project-list__name">Qana ehtiyacı olanlar sayı:</span>
-                            <span class="gen-info-project-list__value">31 273</span>
-                            <span class="gen-info-project-list__description">qəhraman donorlar xib edilmiş müraciətə əsasən</span>
-                        </li>
-                        <li class="gen-info-project-list__item">
-                            <span class="gen-info-project-list__name">Verilmiş qanın həcmi:</span>
-                            <span class="gen-info-project-list__value">124 894 litr</span>
-                            <span class="gen-info-project-list__description">mart 2019</span>
-                        </li>
-                        <li class="gen-info-project-list__item">
-                            <span class="gen-info-project-list__name">Təşkil edilmiş qan aksiyaların sayı:</span>
-                            <span class="gen-info-project-list__value">754</span>
-                            <span class="gen-info-project-list__description">1 oktyabr 2014-u ildən məlumat yenilənənə qədər</span>
-                        </li>
-                        <li class="gen-info-project-list__item">
-                            <span class="gen-info-project-list__name">Məlumatın yenilənmə tarixi:</span>
-                            <span class="gen-info-project-list__value">07 noyabr 2019</span>
-                        </li>
-                    </ul>
+{{--        <div class="container-fluid mb-50">--}}
+{{--            <div class="row">--}}
+{{--                <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">--}}
+{{--                    <h2 class="page-mini-title mb-40">General information</h2>--}}
+{{--                    <div class="page-hr mb-40"></div>--}}
+{{--                    <ul class="gen-info-project-list mb-10">--}}
+{{--                        <li class="gen-info-project-list__item">--}}
+{{--                            <span class="gen-info-project-list__name">Toplam donor sayı:</span>--}}
+{{--                            <span class="gen-info-project-list__value">50 412</span>--}}
+{{--                            <span class="gen-info-project-list__description">qəhraman donorlar xib edilmiş müraciətə əsasən</span>--}}
+{{--                        </li>--}}
+{{--                        <li class="gen-info-project-list__item">--}}
+{{--                            <span class="gen-info-project-list__name">Qana ehtiyacı olanlar sayı:</span>--}}
+{{--                            <span class="gen-info-project-list__value">31 273</span>--}}
+{{--                            <span class="gen-info-project-list__description">qəhraman donorlar xib edilmiş müraciətə əsasən</span>--}}
+{{--                        </li>--}}
+{{--                        <li class="gen-info-project-list__item">--}}
+{{--                            <span class="gen-info-project-list__name">Verilmiş qanın həcmi:</span>--}}
+{{--                            <span class="gen-info-project-list__value">124 894 litr</span>--}}
+{{--                            <span class="gen-info-project-list__description">mart 2019</span>--}}
+{{--                        </li>--}}
+{{--                        <li class="gen-info-project-list__item">--}}
+{{--                            <span class="gen-info-project-list__name">Təşkil edilmiş qan aksiyaların sayı:</span>--}}
+{{--                            <span class="gen-info-project-list__value">754</span>--}}
+{{--                            <span class="gen-info-project-list__description">1 oktyabr 2014-u ildən məlumat yenilənənə qədər</span>--}}
+{{--                        </li>--}}
+{{--                        <li class="gen-info-project-list__item">--}}
+{{--                            <span class="gen-info-project-list__name">Məlumatın yenilənmə tarixi:</span>--}}
+{{--                            <span class="gen-info-project-list__value">07 noyabr 2019</span>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
 
-                    <div class="page-hr mb-55"></div>
+{{--                    <div class="page-hr mb-55"></div>--}}
 
-                    <ul class="project-info-list">
-                        <li class="project-info-list__item">
-                            <span class="project-info-list__name">Sayta keçid</span>
-                            <a href="#" class="project-info-list__link">qehramandonor.az</a>
-                        </li>
-                        <li class="project-info-list__item">
-                            <span class="project-info-list__name">Telefon</span>
-                            <span class="project-info-list__value">+994 55 814 41 91</span>
-                        </li>
-                        <li class="project-info-list__item">
-                            <span class="project-info-list__name">Email</span>
-                            <span class="project-info-list__value">info@qehramandonor.az</span>
-                        </li>
-                    </ul>
+{{--                    <ul class="project-info-list">--}}
+{{--                        <li class="project-info-list__item">--}}
+{{--                            <span class="project-info-list__name">Sayta keçid</span>--}}
+{{--                            <a href="#" class="project-info-list__link">qehramandonor.az</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="project-info-list__item">--}}
+{{--                            <span class="project-info-list__name">Telefon</span>--}}
+{{--                            <span class="project-info-list__value">+994 55 814 41 91</span>--}}
+{{--                        </li>--}}
+{{--                        <li class="project-info-list__item">--}}
+{{--                            <span class="project-info-list__name">Email</span>--}}
+{{--                            <span class="project-info-list__value">info@qehramandonor.az</span>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
 
-                </div>
-            </div>
-        </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
 
 

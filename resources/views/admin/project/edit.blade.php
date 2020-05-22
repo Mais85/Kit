@@ -55,7 +55,7 @@
                                             <h3>Bölmə 4</h3>
                                             <div class="c-field">
                                                 <label class="c-field__label">Layihənin tarixi</label>
-                                                <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="projectdate" value="{{ DateTime::createFromFormat('d/m/Y',$items->projectdate)->format('Y-d-m') }}" placeholder="iiii-aa-gg ss:dd:00">
+                                                <input type='text'  id='date' class='c-input datepicker-here' data-language='az' data-timepicker="false" data-time-format='yy-mm-dd' name="projectdate" value="{{ DateTime::createFromFormat('d/m/Y',$items->projectdate)->format('Y-m-d') }}" placeholder="iiii-aa-gg ss:dd:00">
                                             </div>
                                             <hr>
                                             <div class="c-field">
