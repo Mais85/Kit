@@ -36,7 +36,7 @@
                         <a href="{{  route(\Route::currentRouteName(),'az') }}" class="lang-list__link">az</a>
                     </li>
                     <li class="lang-list__item {{ langactive('en') }}">
-                        <a href="{{  route(\Route::currentRouteName(),'en') }}" class="lang-list__link">en</a>
+                        <a href="{{  response()->re ->with('local','en')->withCookie('local','en',60*24*30) }}" class="lang-list__link">en</a>
                     </li>
                     <li class="lang-list__item {{ langactive('ru') }}">
                         <a href="{{  route(\Route::currentRouteName(),'ru') }}" class="lang-list__link">ru</a>
