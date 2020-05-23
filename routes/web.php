@@ -132,13 +132,14 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
 
 Route::redirect('/','az');
 //site
+Route::get('{local}','LangController@changeLang')->name('lang');
 Route::group(['namespace'=>'Site'],function(){
 
-    Route::get('{local}/', 'MainController@index')->name('main');
-    Route::get('{local}/about', 'AboutController@index')->name('about');
-    Route::get('{local}/services', 'ServicesController@index')->name('services');
-    Route::get('{local}/services/{slug?}', 'ServicesController@show')->name('servicesItem');
-    Route::get('{local}/our-projects', 'ProjectsController@index')->name('ourprojects');
+    Route::get('{local?}/', 'MainController@index')->name('main');
+    Route::get('/about', 'AboutController@index')->name('about');
+    Route::get('/services', 'ServicesController@index')->name('services');
+    Route::get('/services/{slug?}', 'ServicesController@show')->name('servicesItem');
+    Route::get('/our-projects', 'ProjectsController@index')->name('ourprojects');
     Route::get('{local}/project/{slug?}', 'ProjectsController@show')->name('project');
     Route::get('{local}/clients', 'ClientsController@index')->name('clients');
     Route::get('{local}/news', 'NewsController@index')->name('news');

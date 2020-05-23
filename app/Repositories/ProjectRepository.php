@@ -48,7 +48,7 @@ class ProjectRepository extends AdminBaseController
         return Albom::all()->pluck('name','id');
     }
 
-    public function getProjectbySlug($slug)
+    public function getProjectbySlug($local,$slug)
     {
         return Project::whereJsonContains('slug->'.\App::getLocale(),$slug)->first();
     }

@@ -14,14 +14,14 @@
                 <div class="row">
                     <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
                         <div class="project-item-page-header">
-                            <a href="our-projects.html" class="link link_blue link_page mb-45">Our projects</a>
-                            <h1 class="project-item-page__title">Qəhrəman Donorlar</h1>
+                            <a href="{{ route('ourprojects',app()->getLocale()) }}" class="link link_blue link_page mb-45">{{ __('header.OurProjects') }}</a>
+                            <h1 class="project-item-page__title">{{ $item->title }}</h1>
                             <div class="project-item-page__add-info">
                                 <span class="project-item-page__category">– Xeyriyyıçilik</span>
                                 <span class="project-item-page__year">/ 2019 /</span>
                             </div>
                             <span class="project-item-page__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city. Wrapped in a vibrant venue.</span>
-                            <a href="#" class="button button_white button_uppercase" target="_blank">view project’s website</a>
+{{--                            <a href="#" class="button button_white button_uppercase" target="_blank">view project’s website</a>--}}
                         </div>
                     </div>
                 </div>

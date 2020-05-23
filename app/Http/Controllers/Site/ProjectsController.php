@@ -23,9 +23,10 @@ class ProjectsController extends HomeController
         return view('site.our_projects',compact('contents','projects'));
     }
 
-    public function show( $local,$slug)
+    public function show( $local, $slug)
     {
-        $item = $this->projectrepository->getProjectbySlug($slug);
+//        dd(\request());
+        $item = $this->projectrepository->getProjectbySlug($local, $slug);
         return view('site.project',compact('item'));
     }
 }
