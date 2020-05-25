@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\HomeController;
+use App\Models\ProjectPage;
 use App\Repositories\ProjectRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -25,8 +26,8 @@ class ProjectsController extends HomeController
 
     public function show( $local,$slug)
     {
-//        dd(\request()->getUri());
         $item = $this->projectrepository->getProjectbySlug($slug);
-        return view('site.project',compact('item'));
+        $projects = $this->projectrepository->getAll();
+        return view('site.project',compact('item','projects'));
     }
 }

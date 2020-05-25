@@ -275,3 +275,36 @@ function getAlbomName($id)
     $el = Albom::where('id',$id)->pluck('name')->first();
     return $el;
 }
+
+//function changeLang($url, $loc)
+//{
+//     $arr = ['az','en','ru'];
+//     foreach ($arr as $var)
+//     {
+//         if(mb_strpos($url,$var) != null){
+//             $temp = mb_strpos($url,$var) ;
+//             $url = mb_convert_encoding($url,'utf-8');
+//             $newurl = substr_replace($url,$loc,$temp,mb_strlen($loc));
+//             return $newurl;
+//         }
+//
+//     }
+//  return $url;
+//}
+
+function changeLang($url, $loc)
+{
+    $itemH = 'http://kit';
+    $itemS = 'https://kit';
+    $arr = ['az','en','ru'];
+    $item = $_SERVER['REQUEST_URI'];
+    $itemAr = explode('/',$item);
+    array_shift($itemAr);
+    array_shift($itemAr);
+    array_unshift($itemAr,$loc);
+    array_unshift($itemAr,'');
+    $newItem = implode('/',$itemAr);
+    $newUrl = $itemH.$newItem;
+//    dd($url,$item , $itemAr, $newItem,$newUrl);
+    return $newUrl;
+}

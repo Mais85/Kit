@@ -18,9 +18,13 @@ class ServiceRepository extends AdminBaseController
     {
         $slug = $this->getFormTranslations($name,$request);
         foreach ($slug as &$item){
-            $item = Str::slug($item,'-').'-'.time();
+            if($item !=null){
+                $item = Str::slug($item,'-').'-'.time();
+                break;
+            }
+
         }
-        return $slug;
+        return $item;
     }
 
     public function getAll()
@@ -30,7 +34,7 @@ class ServiceRepository extends AdminBaseController
 
     public function getItembySlug($slug)
     {
-        return Service::whereJsonContains('slug->'.\App::getLocale(), $slug)->get();
+        return Service::where('slug', $slug)->get();
     }
 
     public function getPaginate()

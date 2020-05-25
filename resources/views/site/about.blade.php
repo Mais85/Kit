@@ -14,44 +14,44 @@
 
                     <div class="row mb-80">
                         <div class="col-lg-6 col-12">
-                            <h2 class="about__title">{{ $abItems->title1 }}</h2>
-                            <span class="about__description">{!!  $abItems->content1 !!}</span>
+                            <h2 class="about__title">{{ $abItems->getTranslation('title1',app()->getLocale(),false)}}</h2>
+                            <span class="about__description">{!!  $abItems->getTranslation('content1',app()->getLocale(),false) !!}</span>
                         </div>
                         <div class="col-lg-6 col-12 flex-row-center-center">
                             <img src="{{ asset('img/about_img.png') }}" class="about__img" />
                         </div>
                     </div>
 
-                    <h2 class="page-mini-title mb-40">{{ $abItems->title2}}</h2>
+                    <h2 class="page-mini-title mb-40">{{ $abItems->getTranslation('title2',app()->getLocale(),false)}}</h2>
                     <div class="page-hr mb-40"></div>
 
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-12 mb-10">
                             <div class="pholosophy-item">
                                 <img src="{{ asset('img/reliability.svg') }}" class="pholosophy-item__img" />
-                                <h3 class="pholosophy-item__title">{{ $abItems->desc1 }}</h3>
-                                <span class="pholosophy-item__description">{{  $abItems->smtxt1 }}</span>
+                                <h3 class="pholosophy-item__title">{{ $abItems->getTranslation('desc1',app()->getLocale(),false)}}</h3>
+                                <span class="pholosophy-item__description">{{ $abItems->getTranslation('smtxt1',app()->getLocale(),false)}}</span>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-10">
                             <div class="pholosophy-item">
                                 <img src="{{ asset('img/reliability.svg') }}" class="pholosophy-item__img" />
                                 <h3 class="pholosophy-item__title">Rapidity</h3>
-                                <span class="pholosophy-item__description">{{ $abItems->smtxt2 }}</span>
+                                <span class="pholosophy-item__description">{{ $abItems->getTranslation('smtxt2',app()->getLocale(),false)}}</span>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-10">
                             <div class="pholosophy-item">
                                 <img src="{{ asset('img/reliability.svg') }}" class="pholosophy-item__img" />
                                 <h3 class="pholosophy-item__title">Safe & Secure</h3>
-                                <span class="pholosophy-item__description">{{ $abItems->smtxt3 }}</span>
+                                <span class="pholosophy-item__description">{{ $abItems->getTranslation('smtxt3',app()->getLocale(),false)}}</span>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-10">
                             <div class="pholosophy-item">
                                 <img src="{{ asset('img/reliability.svg') }}" class="pholosophy-item__img" />
                                 <h3 class="pholosophy-item__title">Benefit</h3>
-                                <span class="pholosophy-item__description">{{ $abItems->smtxt4 }}</span>
+                                <span class="pholosophy-item__description">{{ $abItems->getTranslation('smtxt4',app()->getLocale(),false)}}</span>
                             </div>
                         </div>
                     </div>
@@ -63,14 +63,14 @@
         <div class="mission container-fluid">
             <div class="row">
                 <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
-                    <h2 class="page-mini-title page-mini-title_white mb-40">{{ $abItems->title3}}</h2>
+                    <h2 class="page-mini-title page-mini-title_white mb-40">{{ $abItems->getTranslation('title3',app()->getLocale(),false)}}</h2>
                     <div class="page-hr page-hr_grey-2 mb-40"></div>
                 </div>
                 <div class="offset-xl-2 col-xl-4 offset-sm-1 col-sm-5 col-12">
-                    <span class="mission__description">{{  $abItems->content2 }}</span>
+                    <span class="mission__description">{{ $abItems->getTranslation('content2',app()->getLocale(),false)}}</span>
                 </div>
                 <div class="col-xl-4 col-sm-5 col-12">
-                    <span class="mission__description">{{  $abItems->content3 }}</span>
+                    <span class="mission__description">{{ $abItems->getTranslation('content3',app()->getLocale(),false)}}</span>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
                                 <div class="certificate-item">
                                     <div class="certificate-item__img-box" style="background-image: url({{ $items->img }})"></div>
                                     <h3 class="certificate-item__title">{{ $items->title }}</h3>
-                                    <span class="certificate-item__description">{{ $items->desc }}y.</span>
+                                    <span class="certificate-item__description">{{ $items->getTranslation('desc',app()->getLocale(),false)}}</span>
                                     <a href="{{ $items->img }}" class="link link_blue link_size-16 link_underlined ta-center" data-lightbox="certificates-links" data-title="{{ $items->title }}">{{ __('about.zoom') }}</a>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="direction-item__main-info">
                                     <h3 class="direction-item__name">{{ $items->name }} {{ $items->surname }}</h3>
-                                    <span class="direction-item__position">{{ $items->position }}, {{ $items->company }}</span>
+                                    <span class="direction-item__position">{{ $items->getTranslation('position',app()->getLocale(),false) }}, {{ $items->company }}</span>
                                     <img src="{{ asset('img/kit_group_logo_dark.png') }}" class="direction-item__logo"/>
                                 </div>
                                 <div class="direction-item__contacts">
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="direction-item__main-info">
                                     <h3 class="direction-item__name">{{ $items->name }} {{ $items->surname }}</h3>
-                                    <span class="direction-item__position">{{ $items->position }}, {{ $items->company }}</span>
+                                    <span class="direction-item__position">{{ $items->getTranslation('position',app()->getLocale(),false) }}, {{ $items->company }}</span>
                                     <img src="{{ $__companies->where('company',$items->company)->pluck('logo')->first() }}" class="direction-item__logo"/>
                                 </div>
                                 <div class="direction-item__contacts">

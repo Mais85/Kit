@@ -32,9 +32,13 @@ class ProjectRepository extends AdminBaseController
     {
         $slug = $this->getFormTranslations($name,$request);
         foreach ($slug as &$item){
-            $item = Str::slug($item,'-').'-'.time();
+            if($item !=null){
+                $item = Str::slug($item,'-').'-'.time();
+                break;
+            }
+
         }
-        return $slug;
+        return $item;
     }
 
     public function getProject($slug,$id)
@@ -50,7 +54,7 @@ class ProjectRepository extends AdminBaseController
 
     public function getProjectbySlug($slug)
     {
-        return Project::whereJsonContains('slug->'.\App::getLocale(),$slug)->first();
+        return Project::where('slug',$slug)->first();
     }
 
     public function store($request)

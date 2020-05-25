@@ -116,13 +116,13 @@
 
                         <ul class="lang-list">
                             <li class="lang-list__item {{ langactive('az') }}">
-                                <a href="{{  route(\Route::currentRouteName(),'az') }}" class="lang-list__link">az</a>
+                                <a href="{{ changeLang(url()->current(),'az') }}" class="lang-list__link">az</a>
                             </li>
                             <li class="lang-list__item {{ langactive('en') }}">
-                                <a href="{{  route(\Route::currentRouteName(),'en') }}" class="lang-list__link">en</a>
+                                <a href="{{  changeLang(url()->current(),'en') }}" class="lang-list__link">en</a>
                             </li>
                             <li class="lang-list__item {{ langactive('ru') }}">
-                                <a href="{{  route(\Route::currentRouteName(),'ru') }}" class="lang-list__link">ru</a>
+                                <a href="{{  changeLang(url()->current(),'ru') }}" class="lang-list__link">ru</a>
                             </li>
                         </ul>
                     </div>
@@ -183,13 +183,13 @@
     <div class="mobile-nav-block">
         <ul class="lang-list mb-30">
             <li class="lang-list__item {{ langactive('az') }}">
-                <a href="{{  route(\Route::currentRouteName(),'az') }}" class="lang-list__link">az</a>
+                <a href="{{ changeLang(url()->current(),'az') }}" class="lang-list__link">az</a>
             </li>
             <li class="lang-list__item {{ langactive('en') }}">
-                <a href="{{  route(\Route::currentRouteName(),'en') }}" class="lang-list__link">en</a>
+                <a href="{{  changeLang(url()->current(),'en') }}" class="lang-list__link">en</a>
             </li>
             <li class="lang-list__item {{ langactive('ru') }}">
-                <a href="{{  route(\Route::currentRouteName(),'ru') }}" class="lang-list__link">ru</a>
+                <a href="{{  changeLang(url()->current(),'ru') }}" class="lang-list__link">ru</a>
             </li>
         </ul>
         <ul class="mobile-nav-list mb-30">

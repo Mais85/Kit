@@ -11,6 +11,6 @@ class Service extends Model
 
     protected $table = 'services';
     protected $fillable = ['title','contents','slug','img1','img2','company_id','company_name','albom_id'];
-    public $translatable = ['title','contents','slug'];
+    public $translatable = ['title','contents'];
 
 }

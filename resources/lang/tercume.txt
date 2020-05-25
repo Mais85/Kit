@@ -30,4 +30,7 @@ RUS {
      'Our contacts and location' => 'Наши контакты и местоположение',
      'Visit page' => 'Посетить страницу',
      'view more info' => '?',
+     'General information' => '?',
+     'view project’s website' => '?',
+     'Other projects' => 'Другие проекты',
 }

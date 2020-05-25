@@ -6,7 +6,7 @@
                 <ul class="services-list">
                     @foreach($services as $key => $item)
                         <li class="services-list__item  {{  $loop->first && (Str::afterlast(request()->path(),'/') =='services') || (Str::afterlast(request()->path(),'/') == $item->slug) ? 'active': '' }} ">
-                            <a href="{{ route('servicesItem', ['local' => App::getLocale(),'slug'=>$item->slug]) }}" class="services-list__link ">{{ $item->title }}</a>
+                            <a href="{{ route('servicesItem', ['local' => App::getLocale(),'slug'=>$item->slug]) }}" class="services-list__link ">{{ $item->getTranslation('title',app()->getLocale(),false)}}</a>
                         </li>
                     @endforeach
                 </ul>

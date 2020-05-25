@@ -185,7 +185,7 @@
                                             <h2 class="reference-item__title">{{ $elems->referancer }}</h2>
                                             <div class="testimonial-item__position">
                                                 <span class="testimonial-item__position-text">{{ $elems->name }}, </span>
-                                                <span class="testimonial-item__position-text">{{ $elems->position }}</span><br><br>
+                                                <span class="testimonial-item__position-text">{{ $elems->getTranslation('position',app()->getLocale(),false) }}</span><br><br>
                                                 @foreach($__companies as $el)
                                                   @if($el->id == $elems->company_id)
                                                     <span style="font-weight: bold" class="testimonial-item__position-text-bold">{{ $el->company }}, </span>
@@ -225,8 +225,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="offset-lg-2 col-lg-4 offset-md-1 col-md-5 offset-1 col-10">
-                    <h2 class="index-companies__title">{{ $__header->title2 }}</h2>
-                    <span class="index-companies__description">{{ $__header->contents2 }}</span>
+                    <h2 class="index-companies__title">{{ $__header->getTranslation('title2',app()->getLocale(),false) }}</h2>
+                    <span class="index-companies__description">{{ $__header->getTranslation('contents2',app()->getLocale(),false) }}</span>
 
                     <ul class="index-companies-list">
                         @php $counter = 0; @endphp
@@ -252,7 +252,7 @@
             <div class="row">
                 <div class="offset-sm-2 col-sm-8 col-12">
                     <div class="contacts__main">
-                        <span class="contacts__about">{{ $__settings->footcontent}}</span>
+                        <span class="contacts__about">{{ $__settings->getTranslation('footcontent',app()->getLocale(),false) }}</span>
                         <ul class="contacts-social-list">
                             <li class="contacts-social-list__item">
                                 <a href="{{ ($__settings->fb != null) ? $__settings->fb : '#' }}" target="_blank" class="contacts-social-list__link">
@@ -279,7 +279,7 @@
 
                     <div class="contacts__other mb-25">
                         <div class="contacts__address">
-                            <span class="contacts__name">{{ $__settings->title }}</span>
+                            <span class="contacts__name">{{ $__settings->getTranslation('title',app()->getLocale(),false) }}</span>
                             <span class="contacts__value">{{ $__settings->address }}</span>
                         </div>
                         <div class="contacts__connection">

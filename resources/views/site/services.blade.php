@@ -23,10 +23,10 @@
                                 <h2 class="service__main-title">{{ $item->company_name }}</h2>
                             </div>
                             <div class="page-hr mb-25"></div>
-                            <h2 class="service__title">{{$item->title}}</h2>
+                            <h2 class="service__title">{{ $item->getTranslation('title',app()->getLocale(),false)}}</h2>
                             <div class="service__text-block">
                                 <img src="{{ $item->img2 }}" />
-                                <p>{{ $item->contents }}</p>
+                                <p>{{ $item->getTranslation('contents',app()->getLocale(),false)}}</p>
 
 
                             </div>
@@ -105,7 +105,7 @@
 
                             <div class="contacts__other mb-25">
                                 <div class="contacts__address">
-                                    <span class="contacts__name"> {{ $__settings->title }} (Baş ofis)</span>
+                                    <span class="contacts__name"> {{ $__settings->getTranslation('title',app()->getLocale(),false) }} (Baş ofis)</span>
                                     <span class="contacts__value">{{ $__settings->address }}</span>
                                 </div>
                                 <div class="contacts__connection">
