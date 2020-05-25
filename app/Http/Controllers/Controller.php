@@ -34,7 +34,7 @@ class Controller extends BaseController
     public function  __construct()
     {
         //Load All Helper Files without using composer
-//        Statics\Helper::Load();
+        Statics\Helper::Load();
 
         //View Global Variables
         view()->share([
