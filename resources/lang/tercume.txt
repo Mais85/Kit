@@ -33,4 +33,5 @@ RUS {
      'General information' => '?',
      'view project’s website' => '?',
      'Other projects' => 'Другие проекты',
+     'Load more news' => 'Другие новости',
 }

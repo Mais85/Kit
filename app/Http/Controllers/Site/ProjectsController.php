@@ -10,13 +10,24 @@ use Illuminate\Support\Facades\App;
 
 class ProjectsController extends HomeController
 {
+    /**
+     * @var ProjectRepository
+     */
     private $projectrepository;
 
+    /**
+     * ProjectsController constructor.
+     * @param ProjectRepository $projectrepository
+     */
     public function __construct(ProjectRepository $projectrepository)
     {
         $this->projectrepository = $projectrepository;
     }
 
+    /**
+     * Display a listing of the resource.
+     * @return \Illuminate\Contracts\Support\Renderable|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $contents = $this->projectrepository->getPropage();
@@ -24,6 +35,13 @@ class ProjectsController extends HomeController
         return view('site.our_projects',compact('contents','projects'));
     }
 
+    /**
+     *  Display the specified resource.
+     *
+     * @param $local
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show( $local,$slug)
     {
         $item = $this->projectrepository->getProjectbySlug($slug);

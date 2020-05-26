@@ -63,7 +63,7 @@
                                         Göstər <i class="feather icon-chevron-down"></i>
                                     </a>
                                     <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuTable1">
-                                        <a class="c-dropdown__item dropdown-item" href="/admin/news/edit/@if(isset($item->slug)){{$item->getTranslation('slug',\App::getlocale(),false)}}@endif/{{$item->id}}" >Redaktə Et</a>
+                                        <a class="c-dropdown__item dropdown-item" href="/admin/news/edit/@if(isset($item->slug)){{$item->slug}}@endif/{{$item->id}}" >Redaktə Et</a>
                                         <a class="c-dropdown__item dropdown-item" href="javascript:;" onclick="confirm_delete('/admin/news/delete/{{$item->id}}')">Sil</a>
                                     </div>
                                 </div>

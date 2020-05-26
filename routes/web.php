@@ -141,7 +141,9 @@ Route::group(['namespace'=>'Site'],function(){
     Route::get('{local}/our-projects', 'ProjectsController@index')->name('ourprojects');
     Route::get('{local}/project/{slug?}', 'ProjectsController@show')->name('project');
     Route::get('{local}/clients', 'ClientsController@index')->name('clients');
-    Route::get('{local}/news', 'NewsController@index')->name('news');
+    Route::get('{local}/news', 'NewsController@loadmorenews')->name('news');
+//    Route::post('{local}/loadmorenews', 'NewsController@loadmorenews')->name('loadnews');
+    Route::get('{local}/news/{slug}/{id}', 'NewsController@show')->name('newsItem');
     Route::get('{local}/test-ref', 'Tes_RefController@index')->name('tes_ref');
     Route::get('{local}/gallery', 'GalleryController@index')->name('gallery');
     Route::get('{local}/contacts', 'ContactController@index')->name('contact');

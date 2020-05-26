@@ -23,6 +23,15 @@ class NewsRepository  extends AdminBaseController
         return News::paginate(8);
     }
 
+    public function getByPaginate()
+    {
+       return News::where('isPublished',1)->paginate(8);
+    }
+
+    public  function getByLimit()
+    {
+        return News::limit(8)->get();
+    }
 
     public function getNews($slug,$id)
     {
@@ -35,9 +44,13 @@ class NewsRepository  extends AdminBaseController
     {
         $slug = $this->getFormTranslations($name,$request);
         foreach ($slug as &$item){
-            $item = Str::slug($item,'-');
+            if($item !=null){
+                $item = Str::slug($item,'-');
+                break;
+            }
+
         }
-        return $slug;
+        return $item;
     }
 
     private function getDescFrom($name,$request)
