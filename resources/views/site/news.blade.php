@@ -13,8 +13,8 @@
         <div class="row">
             <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
                 <h1 class="page-title mb-50">{{ __('header.News') }}</h1>
-
-                <div class="row mb-25  news endless-pagination" data-next-page="{{ $items->nextPageUrl() }}">
+                @csrf
+                <div class="row mb-25"">
                     @foreach($items as $item)
                     <div  class="col-xl-3 col-md-6 col-12 mb-40 ">
                         <a href="{{ route('newsItem', ['local' => app()->getLocale(),'slug'=> $item->slug , 'id'=>$item->id] ) }}" class="news-item">

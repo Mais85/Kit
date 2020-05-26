@@ -30,7 +30,7 @@ class NewsRepository  extends AdminBaseController
 
     public  function getByLimit()
     {
-        return News::limit(8)->get();
+        return News::limit(8)->orderBy('created_at','DESC')->get();
     }
 
     public function getNews($slug,$id)
