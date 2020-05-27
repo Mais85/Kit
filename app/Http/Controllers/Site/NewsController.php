@@ -10,9 +10,15 @@ use Illuminate\Http\Request;
 class NewsController extends HomeController
 {
 
+    /**
+     * @var NewsRepository
+     */
     private $newsrepository;
 
-
+    /**
+     * NewsController constructor.
+     * @param NewsRepository $newsrepository
+     */
     public function __construct(NewsRepository $newsrepository)
     {
         $this->newsrepository = $newsrepository;
@@ -21,34 +27,15 @@ class NewsController extends HomeController
 
     public function index()
     {
-        $items = $this->newsrepository->getByLimit();
+        $items = $this->newsrepository->getByPaginate();
         return view('site.news',compact('items'));
     }
 
-    public function loadmorenews(Request $request)
-    {
-        if($request->ajax()) {
-            if ($request->id > 0) {
-                $items = News::where('id', '<', $request->)
-                    ->orderBy('created_at', 'DESC')->limit(8)->get()
-            } else {
-                $items = $this->newsrepository->getByLimit();
-            }
-            $output = '';
-            $last_id = '';
-            if(!$items->isEmpty()) {
-            }
-              foreach ($items as $val){
-                  $output.=" 
-                  "
-              }
-            }
-        }
-
-    }
 
     public function show($local, $slug, $id)
     {
-        return true;
+        $item = $this->newsrepository->getById_Slug($slug,$id);
+        $othernews = $this->newsrepository->getOthernews($id);
+        return view ('site.news_item',compact('item','othernews'));
     }
 }

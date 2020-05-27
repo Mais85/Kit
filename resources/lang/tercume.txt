@@ -34,4 +34,6 @@ RUS {
      'view project’s website' => '?',
      'Other projects' => 'Другие проекты',
      'Load more news' => 'Другие новости',
+     'newClient' => 'Новый клиент',
+     'other news' => 'Другие новости',
 }

@@ -14,30 +14,42 @@
             <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
                 <h1 class="page-title mb-50">{{ __('header.News') }}</h1>
                 @csrf
-                <div class="row mb-25"">
+                <div class="row mb-25 infinite">
                     @foreach($items as $item)
-                    <div  class="col-xl-3 col-md-6 col-12 mb-40 ">
+                    <div  class="col-xl-3 col-md-6 col-12 mb-40 post">
                         <a href="{{ route('newsItem', ['local' => app()->getLocale(),'slug'=> $item->slug , 'id'=>$item->id] ) }}" class="news-item">
                             <div class="news-item__img-box" style="background-image: url({{ $item->smallimg }});"></div>
-                            <h2 class="news-item__title">{{ $item->title }}</h2>
-                            <span class="news-item__description">{{ $item->desc }}</span>
+                            <h2 class="news-item__title">{{ $item->getTranslation('title',app()->getLocale(),false) }}</h2>
+                            <span class="news-item__description">{{ $item->getTranslation('desc',app()->getLocale(),false) }}</span>
                             <span class="news-item__date">{{ $item->created_at }}</span>
                         </a>
                     </div>
                     @endforeach
                 </div>
-                <a id="load_more" href="{{ route('news',app()->getLocale()) }}" class="button button_white button_uppercase button_full mb-70">{{ __('news.LMViews') }}</a>
-
+                <a id="load_more" href="#" class="button button_white button_uppercase button_full mb-70 view-more-button">{{ __('news.LMViews') }}</a>
+                    <div class="hid"> {{ $items->links() }} </div>
             </div>
         </div>
     </div>
 </div>
+<script src="{{ asset('js/infinite-scroll.min.js') }}"></script>
 <script>
 
-    $(document).ready(function() {
 
 
-    })
+            $('.infinite').infiniteScroll({
+                // options
+                path: '.nxt',
+                append: '.post',
+                button: '.view-more-button',
+                // using button, disable loading on scroll
+                scrollThreshold: false,
+                status: '.scroller-status',
+                history: false,
+                hideNav: '.hid',
 
+
+            });
 </script>
+
 @stop

@@ -10,7 +10,7 @@ class News extends Model
 {
     use HasTranslations;
     protected $table = 'news';
-    protected $fillable = ['title','desc','img','smallimg','isPublished','contents','slug','albom_id'];
+    protected $fillable = ['title','desc','img','smallimg','isPublished','contents','slug','albom_id','newClient'];
     public $translatable = ['title','desc','contents'];
 
     public function getCreatedAtAttribute($created_at)

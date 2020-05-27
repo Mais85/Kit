@@ -55,6 +55,11 @@
                                             <input type="radio" id="no" name="status" value="0" checked>
                                             <label for="no">Xeyir</label>
                                             <input type="radio" id="yes" name="status" value="1">
+                                            <label for="yes">Bəli</label><br><br>
+                                            <label for="">Yeni müştəri?</label><br>
+                                            <input type="radio" id="no" name="client" value="0" checked>
+                                            <label for="no">Xeyir</label>
+                                            <input type="radio" id="yes" name="client" value="1">
                                             <label for="yes">Bəli</label>
 
                                             <div style="margin-top: 10px" class="c-field">

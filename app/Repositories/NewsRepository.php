@@ -18,6 +18,12 @@ class NewsRepository  extends AdminBaseController
         return News::all();
     }
 
+    public function getOthernews($id)
+    {
+        return News::where([ ['isPublished',1],['id','!=',$id] ])
+                     ->orderby('created_at','DESC')
+                     ->get();
+    }
     public function paginate()
     {
         return News::paginate(8);
@@ -25,12 +31,17 @@ class NewsRepository  extends AdminBaseController
 
     public function getByPaginate()
     {
-       return News::where('isPublished',1)->paginate(8);
+       return News::where('isPublished',1)->orderBy('created_at','DESC')->paginate(8);
     }
 
     public  function getByLimit()
     {
         return News::limit(8)->orderBy('created_at','DESC')->get();
+    }
+
+    public function getById_Slug($slug,$id)
+    {
+        return News::where([['isPublished',1],['slug',$slug],['id',$id]])->get()->first();
     }
 
     public function getNews($slug,$id)
@@ -75,6 +86,7 @@ class NewsRepository  extends AdminBaseController
              'img' => $this->uploadImage($request->img,'photos'),
              'smallimg' => $this->uploadImageFit($request->img,'smallphotos',$this->__thumbs),
              'isPublished' => $request->status,
+             'newClient' => $request->client,
              'albom_id' => $request->albom_id,
              'slug' =>$this->getSlugFrom('title',$request),
          ]);
@@ -90,6 +102,7 @@ class NewsRepository  extends AdminBaseController
             'img' => $this->editImage($request->img,$item->img,$request->old_img,'photos'),
             'smallimg' => $this->editImageFit($request->img,$item->smallimg,$request->old_img,'smallphotos',$this->__thumbs),
             'isPublished' => $request->status,
+            'newClient' => $request->client,
             'albom_id' => $request->albom_id,
             'slug' =>$this->getSlugFrom('title',$request),
         ]);
