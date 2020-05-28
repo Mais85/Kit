@@ -24,7 +24,10 @@ class NewsController extends HomeController
         $this->newsrepository = $newsrepository;
     }
 
-
+    /**
+     *  Display a listing of the resource.
+     * @return \Illuminate\Contracts\Support\Renderable|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $items = $this->newsrepository->getByPaginate();
@@ -32,6 +35,13 @@ class NewsController extends HomeController
     }
 
 
+    /**
+     * Display the specified resource.
+     * @param $local
+     * @param $slug
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($local, $slug, $id)
     {
         $item = $this->newsrepository->getById_Slug($slug,$id);

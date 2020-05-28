@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\HomeController;
 use App\Models\ProjectPage;
 use App\Repositories\ProjectRepository;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
+
 
 class ProjectsController extends HomeController
 {

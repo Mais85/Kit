@@ -3,7 +3,6 @@
 {{--@section('title', '| '. __('main.title'))--}}
 
 @section('content')
-<button id="comapnies-view-button-open" class="button button_white">View Group of companies</button>
 
 @include('site.catalog')
 

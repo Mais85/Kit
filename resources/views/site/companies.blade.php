@@ -126,50 +126,7 @@
                 </div>
 
             </div>
-            <div class="d-xl-block col-xl-4 d-none bg-black px-0">
-                <div class="company-left-block">
-                    <div class="row mb-60 mx-0">
-                        <div class="offset-xl-2 col-xl-8 offset-1 col-10">
-                            <h1 class="page-title page-title_white mt-70 mb-60">companies</h1>
-                            <ul class="companies-list">
-                                <li class="companies-list__item active">
-                                    <span class="companies-list__number">01</span>
-                                    <a href="companies.html" class="companies-list__link">KIT Construction</a>
-                                </li>
-                                <li class="companies-list__item">
-                                    <span class="companies-list__number">03</span>
-                                    <a href="companies.html" class="companies-list__link">KIT Media</a>
-                                </li>
-                                <li class="companies-list__item">
-                                    <span class="companies-list__number">04</span>
-                                    <a href="companies.html" class="companies-list__link">KIT FIinance</a>
-                                </li>
-                                <li class="companies-list__item">
-                                    <span class="companies-list__number">05</span>
-                                    <a href="companies.html" class="companies-list__link">VERTICAL Service</a>
-                                </li>
-                                <li class="companies-list__item">
-                                    <span class="companies-list__number">06</span>
-                                    <a href="companies.html" class="companies-list__link">VERTICAL Travel</a>
-                                </li>
-                                <li class="companies-list__item">
-                                    <span class="companies-list__number">07</span>
-                                    <a href="companies.html" class="companies-list__link">VERTICAL Training Center </a>
-                                </li>
-                                <li class="companies-list__item">
-                                    <span class="companies-list__number">08</span>
-                                    <a href="companies.html" class="companies-list__link">ALO Insurance</a>
-                                </li>
-                                <li class="companies-list__item">
-                                    <span class="companies-list__number">09</span>
-                                    <a href="companies.html" class="companies-list__link">Hero Donors N.G.O</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="company__iso">ISO 9001:2015</span>
-                </div>
-            </div>
+            @include('site.catalog')
         </div>
     </div>
 

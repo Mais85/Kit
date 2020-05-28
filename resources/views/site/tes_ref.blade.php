@@ -3,7 +3,6 @@
 {{--@section('title', '| '. __('main.title'))--}}
 
 @section('content')
-    <button id="comapnies-view-button-open" class="button button_white">View Group of companies</button>
 
     @include('site.catalog')
 
@@ -14,421 +13,82 @@
                 <div class="offset-xl-2 col-xl-9 offset-sm-1 col-sm-10 col-12">
                     <ul class="test-ref-nav nav-tabs mb-50">
                         <li class="test-ref-nav__item active nav-tabs__item">
-                            <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#testimonials">testimonials</a></h2>
+                            <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#testimonials">{{ __('index.testi') }}</a></h2>
                         </li>
                         <li class="test-ref-nav__item nav-tabs__item">
-                            <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#references">references</a></h2>
+                            <h2><a href="javascript:void(0)" class="test-ref-nav__link page-title nav-tabs__link" data-tab="#references">{{ __('index.referen') }}</a></h2>
                         </li>
                     </ul>
 
                     <div class="tab-content">
                         <div id="testimonials" class="tab-pane">
                             <div class="row">
+                                @foreach($Titems as $item)
                                 <div class="col-xl-4 col-md-6 col-12 mb-100">
                                     <div class="testimonial-item">
                                         <div class="testimonial-item__img-box-block">
                                             <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
+                                                <img src="{{ $item->img }}" class="testimonial-item__img"/>
                                             </div>
                                         </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
+                                        <span class="testimonial-item__description">{{ $item->getTranslation('contents',app()->getLocale(),false) }}</span>
                                         <div class="testimonial-item__hr"></div>
                                         <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
+                                            <h3 class="testimonial-item__name">{{ $item->username }}</h3>
                                             <ul class="testimonial-item-social-list">
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
+                                                    <a href="{{ ($item->facebook !=null) ? $item->facebook : '#' }}"  target="_blank" class="testimonial-item-social-list__link">
+                                                        <img src="{{ asset('img/facebook.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
+                                                    <a href="{{ ($item->twitter !=null) ? $item->twitter : '#' }}" target="_blank"  class="testimonial-item-social-list__link">
+                                                        <img src="{{ asset('img/twitter.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
+                                                    <a href="{{ ($item->linkedin !=null) ? $item->linkedin : '#' }}"  target="_blank" class="testimonial-item-social-list__link">
+                                                        <img src="{{ asset('img/linkedin.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
+                                                    <a href="{{ ($item->instagram !=null) ? $item->instagram : '#' }}" target="_blank" class="testimonial-item-social-list__link">
+                                                        <img src="{{ asset('img/instagram_org.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
+                                            <span class="testimonial-item__position-text">{{ $item->getTranslation('position',app()->getLocale(),false) }}, <span class="testimonial-item__position-text-bold">{{ $item->company }}</span></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-100">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-item__img-box-block">
-                                            <div class="testimonial-item__img-box">
-                                                <img src="img/testimonial_person.png" class="testimonial-item__img"/>
-                                            </div>
-                                        </div>
-                                        <span class="testimonial-item__description">Yes, you’ve read that correctly. We’ve taken the axe throwing out of the woodland and brought it into the city.</span>
-                                        <div class="testimonial-item__hr"></div>
-                                        <div class="testimonial-item__personal">
-                                            <h3 class="testimonial-item__name">Tanya Fisher</h3>
-                                            <ul class="testimonial-item-social-list">
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/facebook.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/twitter.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/linkedin.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                                <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
-                                                        <img src="img/google.svg" class="testimonial-item-social-list__img" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-item__position">
-                                            <span class="testimonial-item__position-text">CEO, <span class="testimonial-item__position-text-bold">eBay</span></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div id="references" class="tab-pane">
                             <div class="row">
+                                @foreach($Ritems as $elems)
                                 <div class="col-xl-4 col-md-6 col-12 mb-60">
                                     <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
+                                        <a href="{{ $elems->img }}" class="reference-item__img-link" data-lightbox="references-links" data-title="{{ $elems->referancer }}">
+                                            <img style="height: 415px" src="{{ $elems->img }}" class="reference-item__img" />
                                         </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
+                                        <h2 class="reference-item__title">{{ $elems->referancer }}</h2>
+                                        <div class="testimonial-item__position">
+                                            <span class="testimonial-item__position-text">{{ $elems->name }}, </span>
+                                            <span class="testimonial-item__position-text">{{ $elems->getTranslation('position',app()->getLocale(),false) }}</span><br><br>
+                                            @foreach($__companies as $el)
+                                                @if($el->id == $elems->company_id)
+                                                    <span style="font-weight: bold" class="testimonial-item__position-text-bold">{{ $el->company }}, </span>
+                                                @endif
+                                            @endforeach
+                                            <span class="testimonial-item__position-text">{{ $elems->ref_date }} </span><br><br>
+                                        </div>
+                                        <a href="{{ $elems->img }}" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="{{ $elems->referancer }}">{{ __('index.zoom') }}</a>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-60">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-60">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-60">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 col-12 mb-60">
-                                    <div class="reference-item">
-                                        <a href="img/reference_item.png" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
-                                            <img src="img/reference_item.png" class="reference-item__img" />
-                                        </a>
-                                        <h2 class="reference-item__title">Name of certificate</h2>
-                                        <span class="reference-item__description">Description of Certificate. Yes, you’ve read that correctly.</span>
-                                        <a href="img/reference_item.png" class="link link_blue link_icon link_icon_zoom_in" data-lightbox="references" data-title="Name of certificate">Zoom letter</a>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -436,18 +96,5 @@
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid bc-light-blue">
-            <div class="row">
-                <div class="offset-xl-2 col-xl-9 offset-sm-1 col-sm-10 col-12">
-                    <div class="learn-more-section">
-                        <span class="learn-more-section__description">Learn more about</span>
-                        <h3 class="learn-more-section__title">Our clients</h3>
-                        <a href="#" class="learn-more-section__link">/ Visit page /</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 @endsection

@@ -141,7 +141,7 @@
                             @foreach($__companies as $el)
                             @php   $counter++;  @endphp
                             <li class="comapnies-view-list__item">
-                                <a href="{{ route('companies',['local' => App::getLocale()]) }}" class="comapnies-view-list__link">
+                                <a href="{{ route('companies',['local' => App::getLocale(),'slug'=> $el->slug, 'id'=>$el->id]) }}" class="comapnies-view-list__link">
                                     <span class="comapnies-view-list__number">{{ $counter }}</span>
                                     <span class="comapnies-view-list__name">{{ $el->company }}</span>
                                 </a>
@@ -167,7 +167,7 @@
                     @foreach($__companies as $el)
                         @php   $counter++;  @endphp
                         <li class="comapnies-view-list__item">
-                            <a href="{{ route('companies',['local' => App::getLocale()]) }}" class="comapnies-view-list__link">
+                            <a href="{{ route('companies',['local' => App::getLocale(),'slug'=> $el->slug, 'id'=>$el->id]) }}" class="comapnies-view-list__link">
                                 <span class="comapnies-view-list__number">{{ $counter }}</span>
                                 <span class="comapnies-view-list__name">{{ $el->company }}</span>
                             </a>

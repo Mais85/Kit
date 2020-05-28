@@ -179,7 +179,7 @@
                                 @forelse($ref as $elems)
                                     <div class="index-ref-carousel__item">
                                         <div class="reference-item">
-                                            <a href="{{ $elems->img }}" class="reference-item__img-link" data-lightbox="references-links" data-title="Name of certificate">
+                                            <a href="{{ $elems->img }}" class="reference-item__img-link" data-lightbox="references-links" data-title="{{ $elems->referancer }}">
                                                 <img style="height: 415px" src="{{ $elems->img }}" class="reference-item__img" />
                                             </a>
                                             <h2 class="reference-item__title">{{ $elems->referancer }}</h2>

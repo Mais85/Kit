@@ -28,6 +28,11 @@ class Companyrepository extends AdminBaseController
         return $items;
     }
 
+    public function getWithSlug_Id($slug,$id)
+    {
+        $items = Company::where('slug',$slug)->where('id',$id)->first();
+        return $items;
+    }
     public function paginate()
     {
         return Company::paginate(8);

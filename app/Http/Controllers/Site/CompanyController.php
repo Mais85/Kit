@@ -3,12 +3,22 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\HomeController;
+use App\Repositories\Companyrepository;
 use Illuminate\Http\Request;
 
 class CompanyController extends HomeController
 {
-    public function index()
+    private $companyrepository;
+
+    public function __construct(Companyrepository $companyrepository)
     {
-        return view ('site.companies');
+        $this->companyrepository = $companyrepository;
+    }
+
+
+    public function show($local, $slug,$id)
+    {
+        $item = $this->companyrepository->getWithSlug_Id($slug,$id);
+        return view ('site.companies',compact('item'));
     }
 }

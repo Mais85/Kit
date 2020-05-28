@@ -35,7 +35,7 @@ class EmpupdateRequest extends FormRequest
             'twitter'=> 'nullable|url',
             'instagram'=> 'nullable|url',
             'linkedin'=> 'nullable|url',
-            'img'=> 'nullable|image',
+            'img'=> 'required|image',
         ];
     }
 
@@ -68,6 +68,7 @@ class EmpupdateRequest extends FormRequest
             'twitter.url' => 'Url adress düzgün qeyd olunmalıdır !',
             'linkedin.url' => 'Url adress düzgün qeyd olunmalıdır !',
             'img'=>'Şəkil seçin !',
+            'img.required'=>'Şəkil mütləq seçilməlidir !',
         ];
     }
 }
