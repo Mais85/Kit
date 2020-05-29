@@ -3,7 +3,6 @@
 {{--@section('title', '| '. __('main.title'))--}}
 
 @section('content')
-    @include('site.catalog')
 
     <div class="content">
 

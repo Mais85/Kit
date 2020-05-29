@@ -26,7 +26,7 @@ class Companycreaterequest extends FormRequest
         return [
             'company' => 'required|unique:companies,company|string|max:191',
             'contents_'.config('app.locale') => 'required|string',
-            'contacttext_'.config('app.locale') => 'required|string',
+            'contacttext_'.config('app.locale') => 'required|string|max:600',
             'email'=> 'required|email:rfc,dns',
             'address'=> 'required',
             'phone'=> 'required|numeric|digits_between:10,12',
@@ -54,6 +54,7 @@ class Companycreaterequest extends FormRequest
             'company.max:191' => 'Maksimum 191 simvol daxil etmək olar !',
             'contents_'.config('app.locale').'.required' => 'Mətn mütləq doldurulmalıdır !',
             'contacttext_'.config('app.locale').'.required' => 'Kontakt mətni mütləq doldurulmalıdır !',
+            'contacttext_'.config('app.locale').'.max' => 'Hər dil üzrə maksimum 191 simvol daxil etmək olar !',
             'email.required' => 'Email mütləq doldurulmalıdır',
             'email.email' => 'Email düzgün deyil !',
             'email.email:rfc,dns:' => 'Email düzgün deyil !',

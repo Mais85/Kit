@@ -4,8 +4,6 @@
 
 @section('content')
 
-    @include('site.catalog')
-
     <div class="content">
 
         <div class="project-item-page-header-block mb-40" style="background-image: url({{$item->img1}});">

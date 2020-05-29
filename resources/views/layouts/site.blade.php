@@ -14,7 +14,9 @@
       @else
           @include('inc.site.header2')
       @endif
-      @include('site.catalog')
+      @if('companies' !== \Route::currentRouteName())
+          @include('site.catalog')
+      @endif
       @yield('content')
       @include("inc.site.footer")
   </div>

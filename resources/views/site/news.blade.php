@@ -4,8 +4,6 @@
 
 @section('content')
 
-@include('site.catalog')
-
 <div class="content">
 
     <div class="container-fluid bc-light-grey pt-50">

@@ -4,8 +4,6 @@
 
 @section('content')
 
-    @include('site.catalog')
-
     <div class="content">
 
         <div class="contacts-page container-fluid bg-navy-dark pt-50">
