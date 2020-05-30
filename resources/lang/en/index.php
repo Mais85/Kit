@@ -13,4 +13,5 @@ return [
     'ref' => 'View more reviews',
     'tesView' => 'View more reviews',
     'zoom' => 'Zoom image',
+    'Alb' => 'Albums',
 ];

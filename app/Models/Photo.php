@@ -8,4 +8,10 @@ class Photo extends Model
 {
     protected $table = 'photos';
     protected $fillable = ['img','albom_id','user_id'];
+
+    public function albom()
+    {
+        return $this->belongsTo(Albom::class);
+    }
+
 }

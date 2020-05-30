@@ -25,8 +25,10 @@
                             <div class="service__text-block">
                                 <img src="{{ $item->img2 }}" />
                                 <p>{{ $item->getTranslation('contents',app()->getLocale(),false)}}</p>
-
-
+                                @if(isset($item->pdf))
+                                <span style="display:inline-block;float: left;font-weight: bold; font-family: 'Antiqua Azeri' " class="index-companies-list__number">PDF: &nbsp;</span>
+                                <a style="float: left;margin-bottom: 10px;" href="{{ $item->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($item->pdf,'/') }}</a>
+                                @endif
                             </div>
                         </div>
                     </div>

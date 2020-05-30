@@ -74,6 +74,23 @@
                                                 @endif
                                                 <input type="file" class="c-input" name="img2" accept="image/*"/>
                                             </div>
+
+                                            <div class="c-field">
+                                                <label class="c-field__label">Pdf</label>
+                                                @if(isset($items->pdf))
+                                                    <div id="oldpdf"  style="margin-bottom: 7px; padding:6px; border:1px solid #99a5bd; border-radius: 4px" >
+                                                        <i style="margin: 0; padding: 1px" class="c-sidebar__icon feather icon-file "></i>{{Str::afterlast($items->pdf,'/') }}
+                                                        <input type="hidden" name="oldpdf" value="{{ $items->pdf }}">
+                                                    </div>
+                                                @endif
+                                                <input type="file" class="c-input"  id="pdf" name="pdf" accept=".pdf" onclick="deletepdf()"/>
+                                            </div>
+                                            <script>
+                                                function deletepdf() {
+                                                    var elem = document.getElementById('oldpdf');
+                                                    elem.remove();
+                                                }
+                                            </script>
                                             <div class="c-field">
                                                 <label class="c-field__label">Albom</label>
                                                 <select style="font-size:13px" class="c-input" name="albom_id" >

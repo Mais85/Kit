@@ -13,4 +13,5 @@ return [
     'ref' => 'Digər Referanslar',
     'tesView' => 'Digər Rəylər',
     'zoom' => 'Şəkili böyüt',
+    'Alb' => 'Albomlar',
 ];

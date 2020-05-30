@@ -145,6 +145,7 @@ Route::group(['namespace'=>'Site'],function(){
     Route::get('{local}/news/{slug}/{id}', 'NewsController@show')->name('newsItem');
     Route::get('{local}/test-ref', 'Tes_RefController@index')->name('tes_ref');
     Route::get('{local}/gallery', 'GalleryController@index')->name('gallery');
+    Route::get('{local}/gallery/{id}', 'GalleryController@ajaxphotos')->name('getPhotos');
     Route::get('{local}/contacts', 'ContactController@index')->name('contact');
     Route::get('{local}/companies/{slug}/{id}', 'CompanyController@show')->name('companies');
 

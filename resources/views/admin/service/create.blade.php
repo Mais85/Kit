@@ -57,6 +57,10 @@
                                                 <input type="file" class="c-input" name="img2" accept="image/*"/>
                                             </div>
                                             <div class="c-field">
+                                                <label class="c-field__label">Pdf</label>
+                                                <input type="file" class="c-input" name="pdf" accept=".pdf"/>
+                                            </div>
+                                            <div class="c-field">
                                                 <label class="c-field__label">Albom</label>
                                                 <select style="font-size:13px" class="c-input" name="albom_id" >
                                                     <option value="" disabled selected hidden>Albom seçin...</option>

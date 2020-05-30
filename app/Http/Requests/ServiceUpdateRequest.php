@@ -29,6 +29,7 @@ class ServiceUpdateRequest extends FormRequest
             'company' => 'required',
             'img1' => 'nullable|image',
             'img2' => 'nullable|image',
+            'pdf'=> 'nullable|file',
         ];
     }
 
@@ -46,6 +47,7 @@ class ServiceUpdateRequest extends FormRequest
             'company.required' => 'Şirkət mütləq qeyd olunmalıdır !',
             'img1.image' => 'Şəkil 1 mütləq seçilməlidir !',
             'img2.image' => 'Şəkil 2 mütləq seçilməlidir !',
+            'pdf.file'  => 'Pdf fayl seçin !',
         ];
     }
 }
