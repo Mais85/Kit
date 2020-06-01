@@ -15,7 +15,7 @@
                         @php $name = ''; $num =null; @endphp
                        @foreach($items as $item)
                             @if($loop->first) @php $name = $item->name; $num =$item->id;  @endphp  @endif
-                        <li class="gallery-nav__item @if($loop->first) {{ 'active' }} @else {{ '' }} @endif">
+                        <li class="gallery-nav__item @if(($loop->first && (Str::afterlast(request()->path(),'/') =='gallery')) || $item->id == request()->id) {{ 'active' }} @else {{ '' }} @endif">
                             <a href="{{ route('getPhotos',['local'=> app()->getLocale(),'id'=>$item->id]) }}" class="gallery-nav__link" style="background-image: url({{ $item->coverimg }});" data-id="0">
                                 <h3 class="gallery-nav__title">{{ $item->name }}</h3>
                                 <span class="gallery-nav__date">/ {{ date_format($item->created_at,'d-m-Y')  }} /</span>
@@ -33,7 +33,7 @@
                     <div class="col-xl-10 col-12">
                         <h1 class="page-title page-title_center-white mt-10 mb-30">{{ __('index.Alb') }}</h1>
 
-                        <h2 id="gallery-title-main" class="gallery-title mb-10">{{ $name }}</h2>
+                        <h2 id="gallery-title-main" class="gallery-title mb-10">@if(\Route::currentRouteName() == 'getPhotos'){{ $Alname }} @else {{ $name }} @endif</h2>
                     </div>
                 </div>
                 <div class="gallery-carousel-wrapper">

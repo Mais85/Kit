@@ -13,4 +13,5 @@ return [
     'ref' => 'View more reviews RU',
     'zoom' => 'Увеличить изображение',
     'Alb' => 'Албомы',
+    'compAlb' => 'Албом Компании',
 ];

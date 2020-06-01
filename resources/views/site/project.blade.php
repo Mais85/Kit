@@ -80,8 +80,17 @@
             </div>
         </div>
 
-
-
+        @if(isset($item->albom_id))
+        <div class="container-fluid">
+            <div class="row">
+                <div class="offset-xl-2 col-xl-9 offset-sm-1 col-sm-10 col-12">
+                    <div class="learn-more-section">
+                        <a href="{{  route('getPhotos',['local' => App::getLocale(),'id'=>$item->albom_id])  }}" class="learn-more-section__link">/ {{ __('project.proAlb') }} /</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="container-fluid bc-light-blue">
             <div class="other-more-section">
                 <div class="row">

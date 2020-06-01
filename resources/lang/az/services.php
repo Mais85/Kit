@@ -6,4 +6,5 @@
  */
 return [
     'serv' => 'Xidmətlər',
+    'serAlb' => 'Xidmətə aid şəkillər',
 ];

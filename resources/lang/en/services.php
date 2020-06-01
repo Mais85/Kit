@@ -6,4 +6,5 @@
  */
 return [
     'serv' => 'Services',
+    'serAlb' => 'Service\'s Albom',
 ];

@@ -33,8 +33,17 @@
                         </div>
                     </div>
                 </div>
-
-
+                @if(isset($item->albom_id))
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="offset-xl-2 col-xl-9 offset-sm-1 col-sm-10 col-12">
+                            <div class="learn-more-section">
+                                <a href="{{  route('getPhotos',['local' => App::getLocale(),'id'=>$item->albom_id])  }}" class="learn-more-section__link">/ {{ __('services.serAlb') }} /</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
                 <div class="contacts-page bg-navy-dark pt-50">
                     <div class="row">
                         <div class="offset-xl-2 col-xl-8 offset-1 col-10">

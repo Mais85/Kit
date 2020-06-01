@@ -14,4 +14,5 @@ return [
     'tesView' => 'Digər Rəylər',
     'zoom' => 'Şəkili böyüt',
     'Alb' => 'Albomlar',
+    'compAlb' => 'Şirkətə aid şəkillər',
 ];

@@ -14,4 +14,5 @@ return [
     'tesView' => 'View more reviews',
     'zoom' => 'Zoom image',
     'Alb' => 'Albums',
+    'compAlb' => 'Company Albom',
 ];

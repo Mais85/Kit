@@ -7,4 +7,5 @@ return [
     'LMViews' => 'Load more news',
     'newClient' => 'New Client',
     'otnews' => 'Other News',
+    'newsPhot' => 'News photos',
 ];

@@ -9,4 +9,5 @@ return [
     'website' => 'view project’s website',
     'Phone' => 'Phone',
     'Opro' => 'Other projects',
+    'proAlb' => 'Projects Albom',
 ];

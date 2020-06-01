@@ -20,6 +20,17 @@
                         <p>{{ $item->getTranslation('contents',app()->getLocale(),false) }}</p>
                     </div>
                 </div>
+                @if(isset($item->albom_id))
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="offset-xl-3 col-xl-5 offset-sm-2 col-sm-7 col-12">
+                                <div class="learn-more-section">
+                                    <a href="{{  route('getPhotos',['local' => App::getLocale(),'id'=>$item->albom_id])  }}" class="learn-more-section__link">/ {{ __('news.newsPhot') }} /</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
 

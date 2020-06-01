@@ -9,4 +9,5 @@ return [
     'website' => 'Sayta keçid',
     'Phone' => 'Telefon',
     'Opro' => 'Digər layihələrimiz',
+    'proAlb' => 'Layihəyə aid şəkillər',
 ];

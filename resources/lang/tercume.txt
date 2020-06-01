@@ -36,4 +36,7 @@ RUS {
      'Load more news' => 'Другие новости',
      'newClient' => 'Новый клиент',
      'other news' => 'Другие новости',
+     'Service 's albom ' => '? ',
+     'Projects Albom' => 'Фоты проекта',
+     'compAlb' => 'Албом Компании',
 }
