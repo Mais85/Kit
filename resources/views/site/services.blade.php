@@ -114,7 +114,7 @@
 
                             <div class="contacts__other mb-25">
                                 <div class="contacts__address">
-                                    <span class="contacts__name"> {{ $__settings->getTranslation('title',app()->getLocale(),false) }} (Baş ofis)</span>
+                                    <span class="contacts__name"> {{ $__settings->title }} (Baş ofis)</span>
                                     <span class="contacts__value">{{ $__settings->address }}</span>
                                 </div>
                                 <div class="contacts__connection">

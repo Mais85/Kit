@@ -42,7 +42,7 @@ class SettingController extends AdminBaseController
 
             if(isset($item)){
                 $items = $item->update([
-                    'title' => $this->getFormTranslations('title',$request),
+                    'title' => $request->title,
                     'meta_description' => $this->getFormTranslations('meta_description',$request),
                     'meta_keywords' => $this->getFormTranslations('meta_keywords',$request),
                     'footcontent' => $this->getFormTranslations('footcontent',$request),
@@ -60,7 +60,7 @@ class SettingController extends AdminBaseController
             }else{
 
                 $items = Setting::create([
-                    'title' => $this->getFormTranslations('title',$request),
+                    'title' => $request->title,
                     'meta_description' => $this->getFormTranslations('meta_description',$request),
                     'meta_keywords' => $this->getFormTranslations('meta_keywords',$request),
                     'footcontent' => $this->getFormTranslations('footcontent',$request),

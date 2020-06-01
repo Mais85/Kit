@@ -9,5 +9,5 @@ class Setting extends Model
 {
     use HasTranslations;
     protected $fillable = ['title','meta_description','meta_keywords','footcontent','logo','address','email','phone','mobphone','fb','twitter','instagram','youtube'];
-    public $translatable = ['title','meta_description','meta_keywords','footcontent'];
+    public $translatable = ['meta_description','meta_keywords','footcontent'];
 }

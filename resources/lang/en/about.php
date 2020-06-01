@@ -11,4 +11,5 @@ return [
     'keep' => 'keep in touch',
     'OurCont' => 'Our contacts and location',
     'visPag' => 'Visit page',
+    'title' => 'About us',
 ];

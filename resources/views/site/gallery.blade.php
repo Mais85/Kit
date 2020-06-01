@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-{{--@section('title', '| '. __('main.title'))--}}
+@section('title', '| '. __('header.Gallery'))
 
 @section('content')
 
@@ -75,30 +75,5 @@
     </div>
 
 </div>
-<script>
 
-    // var albom = [
-    //     {
-    //         name: "New photos 1",
-    //         photos: [
-    //             "project_item_preview.png",
-    //             "project_item_preview.png",
-    //             "project_item_preview.png",
-    //             "project_item_preview.png",
-    //             "project_item_preview.png"
-    //         ]
-    //     },
-    //     {
-    //         name: "New photos 2",
-    //         photos: [
-    //             "news_item_preview.png",
-    //             "news_item_preview.png",
-    //             "news_item_preview.png",
-    //             "news_item_preview.png",
-    //             "news_item_preview.png"
-    //         ]
-    //     }
-    // ]
-
-</script>
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-{{--@section('title', '| '. __('main.title'))--}}
+@section('title', '| '. __('header.TestRef'))
 
 @section('content')
 

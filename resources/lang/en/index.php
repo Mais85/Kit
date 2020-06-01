@@ -15,4 +15,6 @@ return [
     'zoom' => 'Zoom image',
     'Alb' => 'Albums',
     'compAlb' => 'Company Albom',
+    'title' => 'Main Page',
+    'clitit' => 'Clients',
 ];

@@ -15,4 +15,6 @@ return [
     'zoom' => 'Şəkili böyüt',
     'Alb' => 'Albomlar',
     'compAlb' => 'Şirkətə aid şəkillər',
+    'title' => 'Əsas Səhifə',
+    'clitit' => 'Müştərilərimiz',
 ];

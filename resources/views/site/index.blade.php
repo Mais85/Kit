@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-{{--@section('title', '| '. __('main.title'))--}}
+@section('title', '| '. __('index.title'))
 
 
 @section('content')
@@ -279,7 +279,7 @@
 
                     <div class="contacts__other mb-25">
                         <div class="contacts__address">
-                            <span class="contacts__name">{{ $__settings->getTranslation('title',app()->getLocale(),false) }}</span>
+                            <span class="contacts__name">{{ $__settings->title }}</span>
                             <span class="contacts__value">{{ $__settings->address }}</span>
                         </div>
                         <div class="contacts__connection">

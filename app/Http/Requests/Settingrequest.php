@@ -25,7 +25,7 @@ class Settingrequest extends FormRequest
     {
         return [
             //
-            'title_'.config('app.locale') => 'required|max:191',
+            'title' => 'required|max:191',
             'meta_description_'.config('app.locale') => 'required',
             'meta_keywords_'.config('app.locale') => 'required',
             'footcontent_'.config('app.locale') => 'required',
@@ -44,7 +44,7 @@ class Settingrequest extends FormRequest
     public function messages()
     {
         return [
-            'title_'.config('app.locale').'.required' => 'Başlıq mütləq doldurulmalıdır !',
+            'title.required' => 'Başlıq mütləq doldurulmalıdır !',
             'email.required' =>'Email mütləq doldurulmalıdır !',
             'email.email:rfc,dns' =>'Email doğru deyil !',
             'url' => 'link (url) daxil edin !',

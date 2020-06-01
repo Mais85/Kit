@@ -17,13 +17,17 @@
                                         @endforeach
                                     </div>
                                     <div class="c-tabs__content tab-content" id="nav-tabContent">
+                                        <div class="c-tabs__pane active">
+                                            <div class="c-field">
+                                                <label class="c-field__label">Başlıq (saytın adı)</label>
+                                                <input class="c-input" type="text" name="title" @if(!empty($items->title)) value="{{ $items->title }}" @else value="{{ old('title') }}" @endif/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c-tabs__content tab-content" id="nav-tabContent">
                                         @foreach($__languages as $language_key => $language_title )
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
 
-                                                <div class="c-field">
-                                                    <label class="c-field__label">Başlıq</label>
-                                                    <input class="c-input" type="text" name="title_{{$language_key}}" {{requiredFall($language_key)}} @if(!empty($items)) value="{{ $items->getTranslation('title',$language_key,false) }}" @else value="{{ old('title_'.$language_key) }}" @endif/>
-                                                </div>
 
                                                 <div class="c-field">
                                                     <label class="c-field__label">Meta İzah</label>

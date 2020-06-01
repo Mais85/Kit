@@ -7,4 +7,5 @@
 return [
 
     'comp' => 'Companies',
+    'title' => 'Companies',
 ];

@@ -50,7 +50,7 @@
 
                             </td>
                             <td class="c-table__cell">#{{$item->id}}</td>
-                            <th class="c-table__cell">{{$item->title}}</th>
+                            <th class="c-table__cell"><div style="width: 300px; overflow: hidden; text-overflow: ellipsis; white-space:nowrap;">{{$item->title}}</div></th>
                            @if($item->isPublished ==1)
                                 <th class="c-table__cell"><a class="c-badge c-badge--small c-badge--success c-tooltip c-tooltip--top" aria-label=".{{ $item->isPublished }}.">Aktiv</a></th>
                             @else

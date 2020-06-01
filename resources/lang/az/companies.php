@@ -6,4 +6,5 @@
 return [
 
     'comp' => 'Şirkətlər',
+    'title' => 'Şirkətlər',
 ];

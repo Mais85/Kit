@@ -11,4 +11,6 @@ return [
     'keep' => 'Bizi izləyin',
     'OurCont' => 'Bizimlə əlaqə yaradın',
     'visPag' => '? ',
+    'title' => 'Haqqımızda',
+
 ];
