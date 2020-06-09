@@ -198,39 +198,6 @@
         });
     }
 </script>
-<script>
-    // Block height
-    setHeights  = function()
-
-    {
-        var $list       = $( '.elems-block-wrap' );
-        $list.each(function(){
-            $items      = $(this).find( '.elems-block-extra' );
-
-            $items.css( 'height', 'auto' );
-
-            var perRow = Math.floor( $(this).width() / $items.width() );
-            if( perRow == null || perRow < 2 ) return true;
-
-            for( var i = 0, j = $items.length; i < j; i += perRow )
-            {
-
-                var maxHeight   = 0,
-                    $row        = $items.slice( i, i + perRow );
-
-                $row.each( function()
-                {
-                    var itemHeight = parseInt( $( this ).outerHeight() );
-                    if ( itemHeight > maxHeight ) maxHeight = itemHeight;
-                });
-                $row.css( 'height', maxHeight );
-            }
-        });
-
-    };
-    setHeights();
-    $( window ).on( 'resize', function(){setTimeout(function(){ setHeights()}, 1000) });
-</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6gnyokeyiWFW_sgpLl0M9ijf0ToQ-Dn0&callback=initMap"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
