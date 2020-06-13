@@ -118,7 +118,7 @@
                                                 <img src="{{ $elems->img }}" class="testimonial-item__img"/>
                                             </div>
                                         </div>
-                                        <span class="testimonial-item__description" style="height: 168px; overflow: hidden;">{{ $elems->getTranslation('contents',app()->getLocale(),false) }}</span>
+                                        <span class="testimonial-item__description" >{{ $elems->getTranslation('contents',app()->getLocale(),false) }}</span>
                                         <div class="testimonial-item__hr"></div>
                                         <div class="testimonial-item__personal">
                                             <h3 class="testimonial-item__name">{{ $elems->username }}</h3>
@@ -139,7 +139,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="#" class="testimonial-item-social-list__link">
+                                                    <a href="{{ ($elems->instagram != null) ? $elems->instagram : '#' }}" class="testimonial-item-social-list__link">
                                                         <img src="{{ asset('img/instagram_org.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
@@ -180,7 +180,7 @@
                                     <div class="index-ref-carousel__item">
                                         <div class="reference-item">
                                             <a href="{{ $elems->img }}" class="reference-item__img-link" data-lightbox="references-links" data-title="{{ $elems->referancer }}">
-                                                <img style="height: 415px" src="{{ $elems->img }}" class="reference-item__img" />
+                                                <img  src="{{ $elems->img }}" class="reference-item__img" />
                                             </a>
                                             <h2 class="reference-item__title">{{ $elems->referancer }}</h2>
                                             <div class="testimonial-item__position">

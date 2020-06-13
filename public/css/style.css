@@ -165,7 +165,7 @@ html {
       .header-index .header-index__main .header-index__bottom .header-index-bottom-list {
         display: flex;
         align-items: center;
-        padding: 30px 40px;
+        padding: 30px 60px;
         background-color: rgba(0, 3, 34, 0.8); }
         .header-index .header-index__main .header-index__bottom .header-index-bottom-list .header-index-bottom-list__item {
           margin-right: 15px; }
@@ -276,6 +276,9 @@ html {
     .header .header__right .link_icon_menu {
       display: none; }
 
+#mobile-nav-open {
+  margin-left: auto; }
+
 .mobile-nav-block {
   display: none;
   flex-direction: column;
@@ -339,8 +342,7 @@ html {
       text-transform: uppercase;
       font-family: Kanit;
       color: #FFF; }
-		.lang-list .lang-list__item .lang-list__link:hover {
-			color:rgb(62, 181, 241);}
+
 .footer {
   display: flex;
   align-items: center;
@@ -549,18 +551,16 @@ html {
       .testimonial-item .testimonial-item__personal .testimonial-item-social-list .testimonial-item-social-list__item .testimonial-item-social-list__link {
         display: block; }
 
-.testimonial-item .testimonial-item__position .testimonial-item__position-text {
+.testimonial-item .testimonial-item__position {
   display: flex;
   align-items: center; }
-  .testimonial-item .testimonial-item__position .testimonial-item__position-name {
+  .testimonial-item .testimonial-item__position .testimonial-item__position-text {
     display: block;
     line-height: 180%;
     color: #2B2F51;
     margin-right: 5px; }
-  .testimonial-item .testimonial-item__position .testimonial-item__position {
-	font-weight: 600;}
-    .testimonial-item .testimonial-item__position .testimonial-item__position-text-bold {
-     font-weight: 600; }
+  .testimonial-item .testimonial-item__position .testimonial-item__position-text-bold {
+    font-weight: 600; }
 
 .reference-item .reference-item__img-link {
   display: block;
@@ -1685,7 +1685,7 @@ html {
   padding: 20px 30px;
   text-decoration: none; }
   .button.button_header {
-    padding: 33px 27px; }
+    padding: 33px 64px; }
   .button.button_uppercase {
     text-transform: uppercase; }
   .button.button_blue {
@@ -1716,10 +1716,10 @@ html {
     position: fixed;
     top: -58px;
     right: 0;
-    width: 100vh;
+    width: calc(100vh + 8px);
     z-index: 10;
     transform: rotate(-90deg);
-    transform-origin: 100vh 100%;
+    transform-origin: calc(100vh + 4px) calc(100% - 4px);
     border-top: 1px solid rgba(0, 3, 34, 0.5);
     background-color: #FFF; }
 

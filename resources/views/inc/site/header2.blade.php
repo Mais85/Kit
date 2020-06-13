@@ -31,7 +31,7 @@
                     </li>
                 </ul>
 
-                <ul class="lang-list">
+                <ul class="lang-list ml-auto mr-50">
                     <li class="lang-list__item {{ langactive('az') }}">
                         <a href="{{ changeLang(url()->current(),'az') }}" class="lang-list__link">az</a>
                     </li>
@@ -43,9 +43,9 @@
                     </li>
                 </ul>
 
-                <a href="{{ route('contact',['local' => App::getLocale()]) }}" class="button button_blue button_header ml-auto">{{ __('header.Contact') }}</a>
+                <a href="{{ route('contact',['local' => App::getLocale()]) }}" class="button button_blue button_header">{{ __('header.Contact') }}</a>
 
-                <a id="mobile-nav-open" href="javascript:void(0)" class="link link_icon link_icon_menu  ml-auto"></a>
+                <a id="mobile-nav-open" href="javascript:void(0)" class="link link_icon link_icon_menu"></a>
             </div>
         </div>
     </div>

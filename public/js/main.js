@@ -189,7 +189,8 @@ $(window).on("load", function(){
 
     $(".comapnies-view").on("mouseleave", function(e){
         if(opened){
-            $("#comapnies-view-button-close").trigger("click")
+            $(companiesView).removeClass("active")
+            TweenLite.to(companiesView, 0.5, {display: "none", right: -companiesViewWidth, ease: Power2.easeInOut, onComplete: function(){ opened = false; }});
         }
     })
 

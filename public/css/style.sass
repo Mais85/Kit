@@ -174,7 +174,7 @@ html
             .header-index-bottom-list
                 display: flex
                 align-items: center
-                padding: 30px 40px
+                padding: 30px 60px
                 background-color: rgba(0, 3, 34, .8)
                 .header-index-bottom-list__item
                     margin-right: 15px
@@ -290,6 +290,9 @@ html
             margin-right: 15px
         .link_icon_menu
             display: none
+
+#mobile-nav-open
+    margin-left: auto
 
 .mobile-nav-block
     display: none
@@ -1760,7 +1763,7 @@ html
     padding: 20px 30px
     text-decoration: none
     &.button_header
-        padding: 33px 27px
+        padding: 33px 64px
     &.button_uppercase
         text-transform: uppercase
     &.button_blue
@@ -1791,10 +1794,10 @@ html
         position: fixed
         top: -58px
         right: 0
-        width: 100vh
+        width: calc(100vh + 8px)
         z-index: 10
         transform: rotate(-90deg)
-        transform-origin: 100vh 100%
+        transform-origin: calc(100vh + 4px) calc(100% - 4px)
         border-top: 1px solid rgba(0, 3, 34, .5)
         background-color: #FFF
 

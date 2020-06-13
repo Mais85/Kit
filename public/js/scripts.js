@@ -3373,7 +3373,8 @@ $(window).on("load", function(){
 
     $(".comapnies-view").on("mouseleave", function(e){
         if(opened){
-            $("#comapnies-view-button-close").trigger("click")
+            $(companiesView).removeClass("active")
+            TweenLite.to(companiesView, 0.5, {display: "none", right: -companiesViewWidth, ease: Power2.easeInOut, onComplete: function(){ opened = false; }});
         }
     })
 
@@ -3801,7 +3802,6 @@ $(window).on("load", function(){
     var indexTestOwl = indexTest.owlCarousel({
         loop: true,
         autoWidth: false,
-        autoHeight: true,
         margin: 20,
         nav: false,
         dots: false,
@@ -3817,6 +3817,43 @@ $(window).on("load", function(){
             }
         }
     })
+	console.log('test');
+	// Block height
+	indexTestOwl.on('initialized.owl.carousel', function(event) {
+    console.log('test');
+})
+    setHeights2  = function()
+
+    {
+		console.log('test');
+        var $list       = $( '.elems-block-wrap' );
+        $list.each(function(){
+            $items      = $(this).find( '.elems-block-extra' );
+
+            $items.css( 'height', 'auto' );
+
+            var perRow = Math.floor( $(this).width() / $items.width() );
+            if( perRow == null || perRow < 2 ) return true;
+
+            for( var i = 0, j = $items.length; i < j; i += perRow )
+            {
+
+                var maxHeight   = 0,
+                    $row        = $items.slice( i, i + perRow );
+
+                $row.each( function()
+                {
+                    var itemHeight = parseInt( $( this ).outerHeight() );
+                    if ( itemHeight > maxHeight ) maxHeight = itemHeight;
+                });
+                $row.css( 'height', maxHeight );
+                // console.log($row);
+            }
+        });
+
+    };
+    setHeights2();
+    $( window ).on( 'resize', function(){setTimeout(function(){ setHeights2()}, 1000) });
 
 
 

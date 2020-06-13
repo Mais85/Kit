@@ -3,7 +3,7 @@
     padding: 20px 30px !important; }
   .header-index-slider-text {
     margin-right: 40px !important; }
-  .lang-list {
+  .header-index__bottom .lang-list {
     margin-right: 10px !important; } }
 
 @media screen and (max-width: 1380px) {
