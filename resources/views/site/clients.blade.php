@@ -5,7 +5,7 @@
 @section('content')
     <div class="content">
 
-        <div class="container-fluid bg-dark pt-50">
+        <div class="container-fluid bg-dark pt-50" style="min-height: calc(100vh - 120px)">
             <div class="row">
                 <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
                     <h1 class="page-title page-title_center-white mb-50">{{ __('header.OurClients') }}</h1>

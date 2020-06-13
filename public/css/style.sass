@@ -14,6 +14,10 @@ html
 *:before, *:after
   box-sizing: border-box
 
+button
+    outline: none
+
+
 @keyframes owl-dot
     from
         width: 0
@@ -185,6 +189,8 @@ html
                         text-decoration: none
                         line-height: 120%
                         color: #FFF
+                        &:hover
+                            color: #9d9da2
             #header-index-dots
                 display: flex
                 align-items: center
@@ -341,6 +347,8 @@ html
             display: block
             text-decoration: none
             color: #FFF
+            &:hover
+                color: #9d9da2
 
 .lang-list
     display: flex
@@ -351,13 +359,15 @@ html
             margin-right: 0
         &.active
             .lang-list__link
-                color: rgba(255, 255, 255, .4)
+                color: rgba(255, 255, 255, .4)!important
         .lang-list__link
             display: block
             text-decoration: none
             text-transform: uppercase
             font-family: Kanit
             color: #FFF
+            &:hover
+                color: #b1b1b1
 
 .footer
     display: flex
@@ -378,6 +388,7 @@ html
 
 .content
     max-width: 1920px
+    min-height: calc(100vh - 120px)
     margin-top: 80px
     margin-left: auto
     margin-right: auto
@@ -459,6 +470,8 @@ html
 .news-item
     display: block
     text-decoration: none
+    &:hover
+        opacity: .7
     .news-item__img-box
         width: 100%
         margin-left: auto
@@ -515,6 +528,8 @@ html
             display: block
             text-decoration: none
             color: rgba(0, 3, 34, .3)
+            &:hover
+                color: #63667b
 
 .testimonial-item
     .testimonial-item__img-box-block
@@ -571,7 +586,9 @@ html
                     margin-right: 0
                 .testimonial-item-social-list__link
                     display: block
-                    .testimonial-item-social-list__img
+                    &:hover
+                        .testimonial-item-social-list__img
+                            transform: scale(1.2)
     .testimonial-item__position
         display: flex
         align-items: center
@@ -606,6 +623,9 @@ html
         line-height: 140%
         color: #2B2F51
         margin-bottom: 9px
+    .link_blue
+        &:hover
+            text-decoration: underline
     
 
 
@@ -861,8 +881,16 @@ html
 .contacts-map-white
     height: 342px
 
+.contacts-inner
+    display: flex
+    justify-content: space-between
+    .contacts-social-list
+        .contacts-social-list__item
+            margin-right: 60px
+
 .contacts__main
     display: flex
+    flex-direction: column
     justify-content: space-between
     .contacts__about
         display: block
@@ -870,22 +898,7 @@ html
         font-size: 1.142rem
         line-height: 180%
         color: #FFF
-
-.contacts-social-list
-    display: flex
-    align-items: center
-    .contacts-social-list__item
-        margin-right: 20px
-        &:last-child
-            margin-right: 0
-        .contacts-social-list__link
-            display: block
-            text-decoration: none
-
-.contacts__other
-    display: flex
-    justify-content: space-between
-    align-items: flex-end
+        margin-bottom: 45px
     .contacts__address
         .contacts__name
             display: block
@@ -899,6 +912,11 @@ html
             line-height: 180%
             color: #FFF
 
+.contacts__other
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-end
     .contacts__connection
         &>*
             margin-bottom: 30px
@@ -916,6 +934,21 @@ html
             line-height: 150%
             color: #FFF
             text-align: right
+
+.contacts-social-list
+    display: flex
+    align-items: center
+    margin-bottom: 50px
+    .contacts-social-list__item
+        margin-right: 20px
+        &:last-child
+            margin-right: 0
+        .contacts-social-list__link
+            display: block
+            text-decoration: none
+            &:hover
+                .contacts-social-list__img
+                    transform: scale(1.2)
 
 
 .about__title
@@ -1088,17 +1121,19 @@ html
                         margin-right: 0
                     .direction-item-social-list__link
                         display: block
+                        &:hover
+                            .direction-item-social-list__img
+                                transform: scale(1.2)
                         .direction-item-social-list__img
                             height: 10px
 
 .service-left-block
     &.service-left-block_fixed
-        position: fixed
+        position: sticky
         z-index: 1
         left: 0
         top: 80px
-        width: inherit
-        max-width: inherit
+        width: 100%
         height: calc(100vh - 120px)
         overflow-y: auto
         overflow-x: hidden
@@ -1122,13 +1157,15 @@ html
                 left: -24px
                 transform: translate(0, -50%)
             .services-list__link
-                color: $blue
+                color: $blue!important
         .services-list__link
             display: block
             text-decoration: none
             font-size: 1.142rem
             line-height: 120%
             color: $navyBlue
+            &:hover
+                color: #8dd5f9
 .service__iso
     display: block
     font-family: Kanit
@@ -1236,16 +1273,18 @@ html
             margin: 12px auto
             &:first-child
                 margin: 0
+        .link_blue
+            &:hover
+                text-decoration: underline
 
 
 .company-left-block
     &.company-left-block_fixed
-        position: fixed
+        position: sticky
         z-index: 1
         right: 0
         top: 80px
-        width: inherit
-        max-width: inherit
+        width: 100%
         height: calc(100vh - 120px)
         overflow-y: auto
         overflow-x: hidden
@@ -1259,7 +1298,7 @@ html
             margin-bottom: 0
         &.active
             .companies-list__link
-                color: $blue
+                color: $blue!important
         .companies-list__number
             display: block
             flex-shrink: 0
@@ -1272,6 +1311,8 @@ html
             font-size: 1.142rem
             line-height: 150%
             color: #FFF
+            &:hover
+                color: #8dd5f9
 
 .company__iso
     display: block
@@ -1344,11 +1385,10 @@ html
     padding: 16px 20px
     background-color: rgba(255, 255, 255, .1)
     &.gallery-block_fixed
-        position: fixed
+        position: sticky
         z-index: 1
         top: 80px
-        width: inherit
-        max-width: inherit
+        width: 100%
         height: calc(100vh - 120px)
         overflow-y: auto
         overflow-x: hidden
@@ -1400,6 +1440,9 @@ html
             background-position: center
             background-size: cover
             position: relative
+            &:hover
+                &::before
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0.24) 0%, rgba(45, 45, 45, 0.8) 100%)
             &::before
                 content: ''
                 display: block
@@ -1526,6 +1569,10 @@ html
             display: block
             text-decoration: none
             display: flex
+            align-items: center
+            &:hover
+                .comapnies-view-list__name
+                    color: #9d9da2
             .comapnies-view-list__number
                 display: block
                 line-height: 120%
@@ -1799,7 +1846,11 @@ html
         transform: rotate(-90deg)
         transform-origin: calc(100vh + 4px) calc(100% - 4px)
         border-top: 1px solid rgba(0, 3, 34, .5)
+        border-bottom: 1px solid rgba(0, 3, 34, .5)
         background-color: #FFF
+        cursor: pointer
+        &:hover
+            background-color: #f3f3f3
 
 
 .bc-light-grey
@@ -1923,7 +1974,9 @@ html
             .test-ref-nav__link
                 font-size: 1.714rem!important
                 line-height: 130%!important
-                color: rgba(0, 3, 34, .3)!important
+                color: rgba(0, 3, 34, .3)
+                &:hover
+                    color: #8dd5f9
 
 
 
@@ -1973,6 +2026,9 @@ html
                 color: #2B2F51
                 flex-shrink: 0
                 margin-right: 15px
+            .link_blue
+                &:hover
+                    text-decoration: underline
     .index-companies__img
         display: block
         width: 100%

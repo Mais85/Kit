@@ -6,7 +6,7 @@
 
 <div class="content">
 
-    <div class="container-fluid bc-light-grey pt-50">
+    <div class="container-fluid bc-light-grey pt-50" style="min-height: calc(100vh - 120px)">
         @csrf
         <div class="row">
             <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">

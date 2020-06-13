@@ -10,6 +10,9 @@ html {
 *:before, *:after {
   box-sizing: border-box; }
 
+button {
+  outline: none; }
+
 @keyframes owl-dot {
   from {
     width: 0; }
@@ -176,6 +179,8 @@ html {
             text-decoration: none;
             line-height: 120%;
             color: #FFF; }
+            .header-index .header-index__main .header-index__bottom .header-index-bottom-list .header-index-bottom-list__item .header-index-bottom-list__link:hover {
+              color: #9d9da2; }
       .header-index .header-index__main .header-index__bottom #header-index-dots {
         display: flex;
         align-items: center;
@@ -326,6 +331,8 @@ html {
       display: block;
       text-decoration: none;
       color: #FFF; }
+      .menu-list .menu-list__item .menu-list__link:hover {
+        color: #9d9da2; }
 
 .lang-list {
   display: flex;
@@ -335,13 +342,15 @@ html {
     .lang-list .lang-list__item:last-child {
       margin-right: 0; }
     .lang-list .lang-list__item.active .lang-list__link {
-      color: rgba(255, 255, 255, 0.4); }
+      color: rgba(255, 255, 255, 0.4) !important; }
     .lang-list .lang-list__item .lang-list__link {
       display: block;
       text-decoration: none;
       text-transform: uppercase;
       font-family: Kanit;
       color: #FFF; }
+      .lang-list .lang-list__item .lang-list__link:hover {
+        color: #b1b1b1; }
 
 .footer {
   display: flex;
@@ -361,6 +370,7 @@ html {
 
 .content {
   max-width: 1920px;
+  min-height: calc(100vh - 120px);
   margin-top: 80px;
   margin-left: auto;
   margin-right: auto; }
@@ -439,6 +449,8 @@ html {
 .news-item {
   display: block;
   text-decoration: none; }
+  .news-item:hover {
+    opacity: .7; }
   .news-item .news-item__img-box {
     width: 100%;
     margin-left: auto;
@@ -492,6 +504,8 @@ html {
       display: block;
       text-decoration: none;
       color: rgba(0, 3, 34, 0.3); }
+      .test-ref-nav .test-ref-nav__item .test-ref-nav__link:hover {
+        color: #63667b; }
 
 .testimonial-item .testimonial-item__img-box-block {
   position: relative;
@@ -550,6 +564,8 @@ html {
         margin-right: 0; }
       .testimonial-item .testimonial-item__personal .testimonial-item-social-list .testimonial-item-social-list__item .testimonial-item-social-list__link {
         display: block; }
+        .testimonial-item .testimonial-item__personal .testimonial-item-social-list .testimonial-item-social-list__item .testimonial-item-social-list__link:hover .testimonial-item-social-list__img {
+          transform: scale(1.2); }
 
 .testimonial-item .testimonial-item__position {
   display: flex;
@@ -585,6 +601,9 @@ html {
   line-height: 140%;
   color: #2B2F51;
   margin-bottom: 9px; }
+
+.reference-item .link_blue:hover {
+  text-decoration: underline; }
 
 .learn-more-section {
   padding: 66px 0; }
@@ -827,42 +846,40 @@ html {
 .contacts-map-white {
   height: 342px; }
 
+.contacts-inner {
+  display: flex;
+  justify-content: space-between; }
+  .contacts-inner .contacts-social-list .contacts-social-list__item {
+    margin-right: 60px; }
+
 .contacts__main {
   display: flex;
+  flex-direction: column;
   justify-content: space-between; }
   .contacts__main .contacts__about {
     display: block;
     max-width: 600px;
     font-size: 1.142rem;
     line-height: 180%;
-    color: #FFF; }
-
-.contacts-social-list {
-  display: flex;
-  align-items: center; }
-  .contacts-social-list .contacts-social-list__item {
-    margin-right: 20px; }
-    .contacts-social-list .contacts-social-list__item:last-child {
-      margin-right: 0; }
-    .contacts-social-list .contacts-social-list__item .contacts-social-list__link {
-      display: block;
-      text-decoration: none; }
-
-.contacts__other {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end; }
-  .contacts__other .contacts__address .contacts__name {
+    color: #FFF;
+    margin-bottom: 45px; }
+  .contacts__main .contacts__address .contacts__name {
     display: block;
     font-weight: 600;
     font-size: 1.142rem;
     line-height: 180%;
     color: #FFF; }
-  .contacts__other .contacts__address .contacts__value {
+  .contacts__main .contacts__address .contacts__value {
     display: block;
     font-size: 1.142rem;
     line-height: 180%;
     color: #FFF; }
+
+.contacts__other {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end; }
   .contacts__other .contacts__connection > * {
     margin-bottom: 30px; }
   .contacts__other .contacts__connection > *:last-child {
@@ -879,6 +896,20 @@ html {
     line-height: 150%;
     color: #FFF;
     text-align: right; }
+
+.contacts-social-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px; }
+  .contacts-social-list .contacts-social-list__item {
+    margin-right: 20px; }
+    .contacts-social-list .contacts-social-list__item:last-child {
+      margin-right: 0; }
+    .contacts-social-list .contacts-social-list__item .contacts-social-list__link {
+      display: block;
+      text-decoration: none; }
+      .contacts-social-list .contacts-social-list__item .contacts-social-list__link:hover .contacts-social-list__img {
+        transform: scale(1.2); }
 
 .about__title {
   font-weight: 600;
@@ -1043,16 +1074,17 @@ html {
           margin-right: 0; }
         .direction .direction-item .direction-item__contacts .direction-item-social-list .direction-item-social-list__item .direction-item-social-list__link {
           display: block; }
+          .direction .direction-item .direction-item__contacts .direction-item-social-list .direction-item-social-list__item .direction-item-social-list__link:hover .direction-item-social-list__img {
+            transform: scale(1.2); }
           .direction .direction-item .direction-item__contacts .direction-item-social-list .direction-item-social-list__item .direction-item-social-list__link .direction-item-social-list__img {
             height: 10px; }
 
 .service-left-block.service-left-block_fixed {
-  position: fixed;
+  position: sticky;
   z-index: 1;
   left: 0;
   top: 80px;
-  width: inherit;
-  max-width: inherit;
+  width: 100%;
   height: calc(100vh - 120px);
   overflow-y: auto;
   overflow-x: hidden; }
@@ -1075,13 +1107,15 @@ html {
       left: -24px;
       transform: translate(0, -50%); }
     .services-list .services-list__item.active .services-list__link {
-      color: #3EB5F1; }
+      color: #3EB5F1 !important; }
     .services-list .services-list__item .services-list__link {
       display: block;
       text-decoration: none;
       font-size: 1.142rem;
       line-height: 120%;
       color: #000322; }
+      .services-list .services-list__item .services-list__link:hover {
+        color: #8dd5f9; }
 
 .service__iso {
   display: block;
@@ -1191,13 +1225,15 @@ html {
   .service .service__text-block img:first-child {
     margin: 0; }
 
+.service .service__text-block .link_blue:hover {
+  text-decoration: underline; }
+
 .company-left-block.company-left-block_fixed {
-  position: fixed;
+  position: sticky;
   z-index: 1;
   right: 0;
   top: 80px;
-  width: inherit;
-  max-width: inherit;
+  width: 100%;
   height: calc(100vh - 120px);
   overflow-y: auto;
   overflow-x: hidden; }
@@ -1209,7 +1245,7 @@ html {
   .companies-list .companies-list__item:last-child {
     margin-bottom: 0; }
   .companies-list .companies-list__item.active .companies-list__link {
-    color: #3EB5F1; }
+    color: #3EB5F1 !important; }
   .companies-list .companies-list__item .companies-list__number {
     display: block;
     flex-shrink: 0;
@@ -1222,6 +1258,8 @@ html {
     font-size: 1.142rem;
     line-height: 150%;
     color: #FFF; }
+    .companies-list .companies-list__item .companies-list__link:hover {
+      color: #8dd5f9; }
 
 .company__iso {
   display: block;
@@ -1292,11 +1330,10 @@ html {
   padding: 16px 20px;
   background-color: rgba(255, 255, 255, 0.1); }
   .gallery-block.gallery-block_fixed {
-    position: fixed;
+    position: sticky;
     z-index: 1;
     top: 80px;
-    width: inherit;
-    max-width: inherit;
+    width: 100%;
     height: calc(100vh - 120px);
     overflow-y: auto;
     overflow-x: hidden; }
@@ -1348,6 +1385,8 @@ html {
       background-position: center;
       background-size: cover;
       position: relative; }
+      .gallery-nav .gallery-nav__item .gallery-nav__link:hover::before {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.24) 0%, rgba(45, 45, 45, 0.8) 100%); }
       .gallery-nav .gallery-nav__item .gallery-nav__link::before {
         content: '';
         display: block;
@@ -1464,7 +1503,10 @@ html {
   .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link {
     display: block;
     text-decoration: none;
-    display: flex; }
+    display: flex;
+    align-items: center; }
+    .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link:hover .comapnies-view-list__name {
+      color: #9d9da2; }
     .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link .comapnies-view-list__number {
       display: block;
       line-height: 120%;
@@ -1721,7 +1763,11 @@ html {
     transform: rotate(-90deg);
     transform-origin: calc(100vh + 4px) calc(100% - 4px);
     border-top: 1px solid rgba(0, 3, 34, 0.5);
-    background-color: #FFF; }
+    border-bottom: 1px solid rgba(0, 3, 34, 0.5);
+    background-color: #FFF;
+    cursor: pointer; }
+    .button#comapnies-view-button-open:hover {
+      background-color: #f3f3f3; }
 
 .bc-light-grey {
   background-image: url(../img/grain.jpg);
@@ -1837,7 +1883,9 @@ html {
   .index-test-ref .test-ref-nav .test-ref-nav__item .test-ref-nav__link {
     font-size: 1.714rem !important;
     line-height: 130% !important;
-    color: rgba(0, 3, 34, 0.3) !important; }
+    color: rgba(0, 3, 34, 0.3); }
+    .index-test-ref .test-ref-nav .test-ref-nav__item .test-ref-nav__link:hover {
+      color: #8dd5f9; }
 
 .index-contacts {
   padding: 55px 0 44px;
@@ -1881,6 +1929,8 @@ html {
       color: #2B2F51;
       flex-shrink: 0;
       margin-right: 15px; }
+    .index-companies .index-companies-list .index-companies-list__item .link_blue:hover {
+      text-decoration: underline; }
   .index-companies .index-companies__img {
     display: block;
     width: 100%;

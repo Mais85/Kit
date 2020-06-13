@@ -45,78 +45,85 @@
                         <div class="offset-xl-2 col-xl-8 offset-1 col-10">
                             <h1 class="page-title page-title_white mb-60">{{ __('header.Contact') }}</h1>
 
-                            <div class="contacts__main">
-                                <span class="contacts__about">{{ $item->contacttext }}</span>
-                                <ul class="contacts-social-list">
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($item->fb !=null) ? $item->fb : '#' }}" target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($item->instagram !=null) ? $item->instagram : '#' }}" target="_blank" class="contacts-social-list__link">
-                                            <img src="{{asset('img/instagram_white.svg')}}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($item->twitter !=null) ? $item->twitter : '#' }}" target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($item->youtube !=null) ? $item->youtube : '#' }}" target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="contacts-inner mb-40">
+                                <div class="contacts__main">
+                                    <span class="contacts__about">{{ $item->contacttext }}</span>
+    
+                                    <div class="contacts__address">
+                                        <span class="contacts__name">{{ $item->company }}</span>
+                                        <span class="contacts__value">{{ $item->address }}</span>
+                                    </div>
+                                </div>
+    
+                                <div class="contacts__other">
+                                    <ul class="contacts-social-list">
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($item->fb !=null) ? $item->fb : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($item->instagram !=null) ? $item->instagram : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{asset('img/instagram_white.svg')}}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($item->twitter !=null) ? $item->twitter : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($item->youtube !=null) ? $item->youtube : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+    
+                                    <div class="contacts__connection">
+                                        <span class="contacts__phone">{{ $item->phone }}</span>
+                                        <span class="contacts__phone">{{ $item->mobphone }}</span>
+                                        <span class="contacts__email">{{ $item->email }}</span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="contacts__other mb-80">
-                                <div class="contacts__address">
-                                    <span class="contacts__name">{{ $item->company }}</span>
-                                    <span class="contacts__value">{{ $item->address }}</span>
-                                </div>
-                                <div class="contacts__connection">
-                                    <span class="contacts__phone">{{ $item->phone }}</span>
-                                    <span class="contacts__phone">{{ $item->mobphone }}</span>
-                                    <span class="contacts__email">{{ $item->email }}</span>
-                                </div>
-                            </div>
+                            <div class="contacts-inner mb-40">
 
-                            <div class="contacts__main flex-row-center-end mb-30">
-                                <ul class="contacts-social-list">
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($__settings->fb !=null) ? $__settings->fb : '#' }}"  target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($__settings->instagram !=null) ? $__settings->instagram : '#' }}" target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/instagram_white.svg') }}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($__settings->twitter !=null) ? $__settings->twitter : '#' }}" target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                    <li class="contacts-social-list__item">
-                                        <a href="{{ ($__settings->youtube !=null) ? $__settings->youtube : '#' }}" target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="contacts__other mb-25">
-                                <div class="contacts__address">
-                                    <span class="contacts__name">{{ $__settings->title }} (Baş ofis)</span>
-                                    <span class="contacts__value">{{ $__settings->address }}</span>
+                                <div class="contacts__main">
+                                    <div class="contacts__address">
+                                        <span class="contacts__name">{{ $__settings->title }} (Baş ofis)</span>
+                                        <span class="contacts__value">{{ $__settings->address }}</span>
+                                    </div>
                                 </div>
-                                <div class="contacts__connection">
-                                    <span class="contacts__phone">{{ $__settings->phone }}</span>
-                                    <span class="contacts__phone">{{ $__settings->mobphone }}</span>
-                                    <span class="contacts__email">{{ $__settings->email }}</span>
+
+                                <div class="contacts__other">
+                                    <ul class="contacts-social-list">
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($__settings->fb !=null) ? $__settings->fb : '#' }}"  target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($__settings->instagram !=null) ? $__settings->instagram : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/instagram_white.svg') }}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($__settings->twitter !=null) ? $__settings->twitter : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                        <li class="contacts-social-list__item">
+                                            <a href="{{ ($__settings->youtube !=null) ? $__settings->youtube : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="contacts__connection">
+                                        <span class="contacts__phone">{{ $__settings->phone }}</span>
+                                        <span class="contacts__phone">{{ $__settings->mobphone }}</span>
+                                        <span class="contacts__email">{{ $__settings->email }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

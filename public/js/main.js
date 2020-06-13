@@ -418,6 +418,7 @@ $(window).on("load", function(){
     let indexRef  = $(".index-ref-carousel")
 
     $("#index-ref-left").click(function(){
+        console.log("aue")
         indexRef.trigger('prev.owl.carousel');
     })
 
@@ -633,11 +634,8 @@ $(window).on("load", function(){
             }
         }
     })
-	console.log('test');
+    
 	// Block height
-	indexTestOwl.on('initialized.owl.carousel', function(event) {
-    console.log('test');
-})
     setHeights2  = function()
 
     {

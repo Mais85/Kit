@@ -6,7 +6,7 @@
 
 <div class="content">
 
-    <div class="container-fluid bg-navy-dark">
+    <div class="container-fluid bg-navy-dark" style="min-height: calc(100vh - 120px)">
         <div class="row">
             <div class="col-xl-2 d-xl-block d-none pl-0 pr-0">
                 <div class="gallery-block">
