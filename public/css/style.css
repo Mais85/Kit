@@ -1727,7 +1727,8 @@ button {
   padding: 20px 30px;
   text-decoration: none; }
   .button.button_header {
-    padding: 33px 64px; }
+    padding: 33px 64px;
+    transition: all .5s; }
   .button.button_uppercase {
     text-transform: uppercase; }
   .button.button_blue {
@@ -1765,7 +1766,8 @@ button {
     border-top: 1px solid rgba(0, 3, 34, 0.5);
     border-bottom: 1px solid rgba(0, 3, 34, 0.5);
     background-color: #FFF;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all .5s; }
     .button#comapnies-view-button-open:hover {
       background-color: #f3f3f3; }
 

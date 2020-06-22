@@ -12,7 +12,7 @@
   .header .header__right {
     padding-right: 0; } }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1360px) {
   .services-list .services-list__item.active::before {
     width: 12px !important;
     left: -18px !important; }

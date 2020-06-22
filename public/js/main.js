@@ -128,13 +128,19 @@ $(window).on("load", function(){
         //header-index group of companies
         if($(document).scrollTop() > headerIndexHeight - headerIndexTopHeight){
             $(".header-index .header-index__top .button_header").css("margin-right", "56px")
+
+            $(".index-page #comapnies-view-button-open").css("right", "-60px")
             
-            $(".index-page #comapnies-view-button-open").css("display", "block")
+            // $(".index-page #comapnies-view-button-open").css("display", "block")
+
+            // $(".index-page #comapnies-view-button-open").css("right", "0")
         }
         else{
             $(".header-index .header-index__top .button_header").css("margin-right", 0)
+
+            $(".index-page #comapnies-view-button-open").css("right", "0")
             
-            $(".index-page #comapnies-view-button-open").css("display", "none")
+            // $(".index-page #comapnies-view-button-open").css("display", "none")
         }
 
         if($("#comapnies-view-button-open").is(":visible")) $(".footer .footer__text").last().css("margin-right", "56px")
