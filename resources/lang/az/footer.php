@@ -5,5 +5,5 @@
  */
 return [
     'AllRight' => 'Bütün hüqüqlar qorunur.',
-    'MLove' => 'Sevgi ilə hazırladıq',
+    'MLove' => 'Sevgi ilə hazırlanmışdır',
 ];

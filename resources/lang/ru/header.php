@@ -4,17 +4,17 @@
  * return ru
  */
 return[
-    'video' => ' Ваш браузер не поддерживает Html5 видео. ',
+    'video' => ' Ваш браузер не поддерживает  Html5 видео. ',
     'About' => 'О Нас',
-    'Services' => 'Услиги',
-    'OurClients' => 'Наши  Клиенты',
-    'OurProjects' => 'Наши Проекты',
+    'Services' => 'Сервисы',
+    'OurClients' => 'Наши клиенты',
+    'OurProjects' => 'Наши проекты',
     'News' => 'Новости',
-    'TestRef' => 'Testimonials and Referances ',
-    'Contact' => 'Контакты',
+    'TestRef' => 'Отзывы и рекомендации',
+    'Contact' => 'Связь	',
     'Gallery' => 'Галерея',
-    'Why' => 'Why KIT Group',
+    'Why' => 'Почему КИТ Групп ',
     'Catalog' => 'Каталог',
-    'GoC' => 'Group of companies',
-    'VGoC' => 'View Group of companies',
+    'GoC' => 'Группа компаний',
+    'VGoC' => 'Просмотреть группу компаний',
 ];

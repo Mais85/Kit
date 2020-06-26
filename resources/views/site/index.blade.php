@@ -67,7 +67,7 @@
                     @else
                         <div class="col-lg-2 col-md-6 col-12 mb-20">
                     @endif
-                         <a href="news-item.html" class="news-item">
+                         <a href="{{  route('newsItem', ['local' => app()->getLocale(),'slug'=> $elem->slug , 'id'=>$elem->id] ) }} }}" class="news-item">
                             <div class="news-item__img-box" style="background-image: url({{ $elem->smallimg }});"></div>
                              <div class="elems-block-extra">
                                  <h2 class="news-item__title">{{ $elem->getTranslation('title',app()->getLocale(),false) }}</h2>
@@ -163,7 +163,7 @@
 
                     <div class="row">
                         <div class="offset-sm-2 col-sm-8 col-12">
-                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">{{ __('index.tesView') }}</a>
+                            <a href="{{ route('tes_ref',['local' => App::getLocale()]) }}" class="button button_light-blue button_uppercase button_full">{{ __('index.ref') }}</a>
                         </div>
                     </div>
 
@@ -258,7 +258,6 @@
                             <div class="contacts__address">
                                 <span class="contacts__name">{{ $__settings->title }}</span>
                                 <span class="contacts__value">{{ $__settings->address }}</span>
-                                <span class="contacts__value">{{ $__settings->address }}</span>
                             </div>
                         </div>
 
@@ -298,10 +297,9 @@
         </div>
     </section>
 
-    <div id="index-map"></div>
+    <div  id="index-map"></div>
 
 
 </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6gnyokeyiWFW_sgpLl0M9ijf0ToQ-Dn0&callback=initMap"></script>
 @stop

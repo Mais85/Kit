@@ -27,7 +27,7 @@ button
 
 .index-page
     #comapnies-view-button-open
-        display: none
+        // display: none
 
 .header-index
     height: 100vh
@@ -203,6 +203,7 @@ button
                     margin-right: 16px
                     background-color: unset
                     border: none
+                    cursor: pointer
                     &:last-child
                         margin-right: 0
                     &::after
@@ -289,7 +290,7 @@ button
     .header__right
         display: flex
         align-items: center
-        margin-right: 46px
+        // margin-right: 46px
         &.header__right_without-margin-right
             margin-right: 0!important
         .lang-list
@@ -1128,6 +1129,9 @@ button
                             height: 10px
 
 .service-left-block
+    .service-left-block__inner
+        height: calc(100vh - 144px)
+        overflow-y: auto
     &.service-left-block_fixed
         position: sticky
         z-index: 1
@@ -1174,7 +1178,6 @@ button
     color: $navyBlue
     text-align: right
     margin-right: 48px
-    margin-bottom: 26px
 
 
 .services-mob-block
@@ -1850,7 +1853,7 @@ button
         border-bottom: 1px solid rgba(0, 3, 34, .5)
         background-color: #FFF
         cursor: pointer
-        transition: all .5s
+        // transition: all .5s
         &:hover
             background-color: #f3f3f3
 

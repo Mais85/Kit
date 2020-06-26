@@ -1,6 +1,6 @@
-<div class="d-xl-block col-xl-4 d-none bc-light-blue px-0">
+<div class="d-xl-block col-xl-4 d-none bc-light-blue pr-0">
     <div class="service-left-block">
-        <div class="row mx-0">
+        <div class="row service-left-block__inner mx-0">
             <div class="offset-xl-2 col-xl-8 offset-1 col-10">
                 <h1 class="page-title mt-70 mb-35">{{ __('services.serv') }}</h1>
                 <ul class="services-list">

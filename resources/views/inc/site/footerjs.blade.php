@@ -6,7 +6,7 @@
     function initMap() {
 
         var image = {
-            url: "img/pin_blue.svg",
+            url: "{{ asset('img/pin_blue.svg') }}",
             // origin: new google.maps.Point(0, -15)
         }
 
@@ -199,6 +199,6 @@
     }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6gnyokeyiWFW_sgpLl0M9ijf0ToQ-Dn0&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1sY2LdhMbMOFLGqcKbXhD1Z7iEzMRwqA&callback=initMap"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
 

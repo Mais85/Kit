@@ -15,6 +15,12 @@ function contentHeightChange(){
     if((headerAndFooterHeight + contentHeight) < window.innerHeight) $(".content").height(window.innerHeight - headerAndFooterHeight - 88)
 }
 
+var tween = {
+    progress: function(){
+        return 1
+    }
+}
+
 $(window).on("load", function(){
     $("body").delegate(".view-change-list__link", "click", function(e){
         var $this
@@ -38,8 +44,8 @@ $(window).on("load", function(){
 
     
     var headerHeight = $(".header").height()
-    var headerIndexHeight = $(".header-index").height()
-    var headerIndexTopHeight = $(".header-index__top").height()
+    var headerIndexHeight = $(".header-index").height() || $(".header").height()
+    var headerIndexTopHeight = $(".header-index__top").height() ? $(".header-index__top").height() : 0
 
     $(document).on("scroll", function(){
 
@@ -69,10 +75,10 @@ $(window).on("load", function(){
         
         //index-page
         if($(document).scrollTop() > headerHeight){
-            $(".index-page #comapnies-view-button-open").show()
+            // $(".index-page #comapnies-view-button-open").show()
         }
         else{
-            $(".index-page #comapnies-view-button-open").hide()
+            // $(".index-page #comapnies-view-button-open").hide()
         }
 
         //header
@@ -96,7 +102,7 @@ $(window).on("load", function(){
         //header-index
         if($(document).scrollTop() > headerIndexTopHeight){
 
-            headerIndexTopHeight = $(".header-index__top").height()
+            headerIndexTopHeight = $(".header-index__top").height() || 0
 
             if(!$(".header-index__top").hasClass("header-index__top_resp")){
                 let headerIndex = document.getElementsByClassName("header-index__top")[0]
@@ -104,7 +110,7 @@ $(window).on("load", function(){
                 $(".header-index__top").addClass("header-index__top_resp")
                 $(".header-index__top").css("top", -headerIndexTopHeight)
                 $(".header-index__center").css("margin-top", headerIndexTopHeight)
-                TweenLite.to(headerIndex, 0.5, {top: "0", ease: Power2.easeInOut});
+                if(headerIndex) TweenLite.to(headerIndex, 0.5, {top: "0", ease: Power2.easeInOut});
             }
         }
         else{
@@ -127,20 +133,24 @@ $(window).on("load", function(){
 
         //header-index group of companies
         if($(document).scrollTop() > headerIndexHeight - headerIndexTopHeight){
-            $(".header-index .header-index__top .button_header").css("margin-right", "56px")
+            if(tween && tween.progress() === 1){
+                $(".button_header").css("margin-right", "56px")
 
-            $(".index-page #comapnies-view-button-open").css("right", "-60px")
-            
-            // $(".index-page #comapnies-view-button-open").css("display", "block")
+                $("#comapnies-view-button-open").css("display", "block")
 
-            // $(".index-page #comapnies-view-button-open").css("right", "0")
+                tween = TweenLite.to(document.querySelector("#comapnies-view-button-open"), 0.5, {right: "0", ease: Power2.easeInOut});
+                
+                // $(".index-page #comapnies-view-button-open").css("right", "0")
+            }
         }
         else{
-            $(".header-index .header-index__top .button_header").css("margin-right", 0)
+            $(".button_header").css("margin-right", 0)
 
-            $(".index-page #comapnies-view-button-open").css("right", "0")
+            tween = TweenLite.to(document.querySelector("#comapnies-view-button-open"), 0.5, {right: "-60px", ease: Power2.easeInOut, onComplete: function(){ $("#comapnies-view-button-open").css("display", "none"); }});
             
             // $(".index-page #comapnies-view-button-open").css("display", "none")
+
+            // $(".index-page #comapnies-view-button-open").css("right", "-60px")
         }
 
         if($("#comapnies-view-button-open").is(":visible")) $(".footer .footer__text").last().css("margin-right", "56px")

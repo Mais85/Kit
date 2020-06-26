@@ -20,7 +20,6 @@ class MainController extends HomeController
 
     public function index()
     {
-//        dd(session()->previousUrl());
         $photoblock1 = $this->indexpagerepository->getBlok1photos();
         $clients = $this->indexpagerepository->getClients();
         $news = $this->indexpagerepository->getNews();

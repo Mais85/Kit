@@ -294,8 +294,8 @@ function getAlbomName($id)
 
 function changeLang($url, $loc)
 {
-    $itemH = 'http://kit';
-    $itemS = 'https://kit';
+    $itemH = 'http://kitgroup.az';
+    $itemS = 'https://kitgroup.az';
     $arr = ['az','en','ru'];
     $item = $_SERVER['REQUEST_URI'];
     $itemAr = explode('/',$item);
@@ -305,6 +305,5 @@ function changeLang($url, $loc)
     array_unshift($itemAr,'');
     $newItem = implode('/',$itemAr);
     $newUrl = $itemH.$newItem;
-//    dd($url,$item , $itemAr, $newItem,$newUrl);
     return $newUrl;
 }

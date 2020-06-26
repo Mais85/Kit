@@ -35,7 +35,7 @@ class IndexPageRepository extends AdminBaseController
 
    public function getNews()
    {
-       return News::select(['id','title','desc','smallimg','created_at'])
+       return News::select(['id','slug','title','desc','smallimg','created_at'])
            ->where('isPublished','!=',0)->limit(4)->orderBy('created_at','desc')->get();
    }
    public function getCompanylist()

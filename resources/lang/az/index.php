@@ -4,17 +4,16 @@
  * return az
  */
 return [
-    'clientAllView' => 'Bütün Müştərilər',
-    'newsAllView' => 'Bütün Xəbərlər',
+    'clientAllView' => 'Müştərilər tam siyahısı',
+    'newsAllView' => 'Yeniliklər',
     'testi' => 'Rəylər',
-    'referen' => 'Referanslar',
+    'referen' => 'İstinadlar',
     'news' => 'Xəbərlər',
-    'notf' => 'Nəticə tapılmadı !',
-    'ref' => 'Digər Referanslar',
-    'tesView' => 'Digər Rəylər',
-    'zoom' => 'Şəkili böyüt',
+    'notf' => 'Nəticə yoxdur!',
+    'ref' => 'Digər Rəy və İstinadlar',
+    'zoom' => 'Təsviri böyüt',
     'Alb' => 'Albomlar',
-    'compAlb' => 'Şirkətə aid şəkillər',
+    'compAlb' => 'Şirkət Albomları',
     'title' => 'Əsas Səhifə',
     'clitit' => 'Müştərilərimiz',
 ];

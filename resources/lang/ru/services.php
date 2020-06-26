@@ -4,7 +4,7 @@
  *  return ru
  */
 return [
-    'serv' => ' СЕРВИСЫ',
+    'serv' => 'Список услуг',
     'serAlb' => '? ',
 
 ];

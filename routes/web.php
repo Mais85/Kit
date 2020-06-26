@@ -132,7 +132,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
 
 Route::redirect('/','az');
 //site
-Route::group(['namespace'=>'Site'],function(){
+Route::group(['namespace'=>'Site','middleware'=>['auth']],function(){
 
     Route::get('{local}/', 'MainController@index')->name('main');
     Route::get('{local}/about', 'AboutController@index')->name('about');

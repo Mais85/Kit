@@ -4,8 +4,8 @@
  * return az
  */
 return [
-    'LMViews' => 'Digər xəbərlər',
-    'newClient' => 'Yeni müştərimiz ',
+    'LMViews' => 'Daha çox xəbər yüklə',
+    'newClient' => 'Yeni müştərilər ',
     'otnews' => 'Digər Xəbərlər',
     'newsPhot' => 'Xəbərə aid şəkillər',
 ];

@@ -11,7 +11,7 @@
 
            @include('site.rightServicebar',$services)
 
-            <div class="col-xl-8 offset-xl-0 col-sm-10 offset-sm-1 offset-0 col-12 px-0">
+            <div class="col-xl-8 offset-xl-0 col-sm-10 offset-sm-1 offset-0 col-12 pl-0">
                 <div class="service__top-img-box mb-30" style="background-image: url({{ $item->img1 }});"></div>
                 <div class="row mx-0">
                     <div class="offset-xl-2 col-xl-8 offset-1 col-10">

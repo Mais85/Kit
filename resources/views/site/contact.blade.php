@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class="contacts-map-white"></div>
+        <div id="index-map" class="contacts-map-white"></div>
 
     </div>
 @stop

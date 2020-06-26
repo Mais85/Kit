@@ -7,10 +7,10 @@ return [
     'about' =>' Haqqımızda',
     'cer' =>'Sertifikatlar',
     'zoom' => 'Sertifikatı böyüt',
-    'Direction' => 'İdarə Heyəti',
-    'keep' => 'Bizi izləyin',
-    'OurCont' => 'Bizimlə əlaqə yaradın',
-    'visPag' => '? ',
+    'Direction' => 'İstiqamət',
+    'keep' => 'Əlaqə saxlamaq',
+    'OurCont' => 'Əlaqə və məkanımız',
+    'visPag' => 'Səhifəni ziyarət et',
     'title' => 'Haqqımızda',
 
 ];

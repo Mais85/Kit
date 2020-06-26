@@ -5,6 +5,6 @@
  *  return en
  */
 return [
-    'serv' => 'Services',
+    'serv' => 'List of services',
     'serAlb' => 'Service\'s Albom',
 ];

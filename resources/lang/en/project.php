@@ -4,9 +4,9 @@
  *  return en
  */
 return [
-    'vmi' => 'view more info',
+    'vmi' => 'View more info',
     'gi' => 'General information',
-    'website' => 'view project’s website',
+    'website' => 'View project’s website',
     'Phone' => 'Phone',
     'Opro' => 'Other projects',
     'proAlb' => 'Projects Albom',

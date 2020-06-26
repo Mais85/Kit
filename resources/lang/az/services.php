@@ -5,6 +5,6 @@
  *  return az
  */
 return [
-    'serv' => 'Xidmətlər',
-    'serAlb' => 'Xidmətə aid şəkillər',
+    'serv' => 'Xidmətlər siyahısı',
+    'serAlb' => 'Xidmətlərə aid şəkillər',
 ];

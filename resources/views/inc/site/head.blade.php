@@ -9,7 +9,7 @@
     <meta name="keywords" content="{{$__settings->meta_keywords}}">
 
 
-    <!-- CUSTOM STYLESHEET -->Montserrat
+    <!-- CUSTOM STYLESHEET -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
     <link media="screen" href="{{ asset('/css/site.css') }}?<?php echo rand(100, 10000); ?>" type="text/css" rel="stylesheet" />

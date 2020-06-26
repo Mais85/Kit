@@ -4,10 +4,10 @@
  *  return az
  */
 return [
-    'vmi' => 'Layihəni göstər',
+    'vmi' => 'Daha çox məlumata bax',
     'gi' => 'Ümumi məlumat',
-    'website' => 'Sayta keçid',
+    'website' => 'Layihənin veb saytına bax',
     'Phone' => 'Telefon',
-    'Opro' => 'Digər layihələrimiz',
-    'proAlb' => 'Layihəyə aid şəkillər',
+    'Opro' => 'Digər layihələr',
+    'proAlb' => 'Layihələrin albomu',
 ];
