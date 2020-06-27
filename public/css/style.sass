@@ -147,7 +147,7 @@ button
                 color: #FFF
             .header-index__title
                 font-weight: 600
-                font-size: 5.142rem
+                font-size: 4.285rem
                 line-height: 120%
                 letter-spacing: 1px
                 text-transform: uppercase
@@ -255,6 +255,7 @@ button
     .group-companies-mob-block
         position: relative
         z-index: 999
+        cursor: pointer
         &.group-companies-mob-block_resp
             position: fixed
             top: 80px
@@ -348,6 +349,7 @@ button
             display: block
             text-decoration: none
             color: #FFF
+            word-break: keep-all
             &:hover
                 color: #9d9da2
 
@@ -367,6 +369,7 @@ button
             text-transform: uppercase
             font-family: Kanit
             color: #FFF
+            word-break: keep-all
             &:hover
                 color: #b1b1b1
 
@@ -606,10 +609,14 @@ button
     .reference-item__img-link
         display: block
         text-decoration: none
+        width: 320px
+        height: 415px
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16)
+        margin-bottom: 12px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
         .reference-item__img
-            max-width: 320px
-            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16)
-            margin-bottom: 12px
     .reference-item__title
         display: block
         font-weight: 600
@@ -954,7 +961,7 @@ button
 
 .about__title
     font-weight: 600
-    font-size: 4.5714rem
+    font-size: 4rem
     line-height: 120%
     letter-spacing: 2px
     text-transform: uppercase
@@ -1182,6 +1189,7 @@ button
 
 .services-mob-block
     display: none
+    cursor: pointer
 .services-mob
     &.active
         .services-mob__body
@@ -1261,12 +1269,12 @@ button
         font-size: 2.285rem
         line-height: 120%
         color: $navyBlue
-        margin-bottom: 16px
+        margin-bottom: 32px
     .service__text-block
         p
             line-height: 180%
             color: #2B2F51
-            margin: 12px 0
+            margin: 24px 0
             &:first-child
                 margin: 0
         img
@@ -1280,7 +1288,8 @@ button
             &:hover
                 text-decoration: underline
 
-
+.company-left-block-block
+    display: block
 .company-left-block
     &.company-left-block_fixed
         position: sticky
@@ -1291,6 +1300,11 @@ button
         height: calc(100vh - 120px)
         overflow-y: auto
         overflow-x: hidden
+    .companies-list
+        height: calc(100vh - 372px)
+        overflow-y: auto
+    .company__iso
+        margin-bottom: 0
 
 .companies-list
     .companies-list__item
@@ -1564,6 +1578,8 @@ button
         margin-top: auto
 
 .comapnies-view-list
+    height: calc(100vh - 100px)
+    overflow-y: auto
     .comapnies-view-list__item
         margin-bottom: 40px
         &:last-child
@@ -1727,6 +1743,7 @@ button
     text-decoration: none
     background-color: unset
     border: none
+    cursor: pointer
     &.link_blue
         color: $blue
     &.link_size-16
@@ -1815,6 +1832,7 @@ button
     &.button_header
         padding: 33px 64px
         transition: all .5s
+        word-break: keep-all
     &.button_uppercase
         text-transform: uppercase
     &.button_blue
@@ -1842,6 +1860,7 @@ button
         justify-content: center
         text-align: center
     &#comapnies-view-button-open
+        display: none
         position: fixed
         top: -58px
         right: 0
@@ -1917,6 +1936,9 @@ button
 .index-why
     padding: 63px 0 77px
     .index-why__title
+        width: 420px
+        margin-left: auto
+        margin-right: auto
         font-weight: 600
         font-size: 3.428rem
         line-height: 130%

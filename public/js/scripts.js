@@ -3275,7 +3275,7 @@ $(window).on("load", function(){
                 $(".header").addClass("header_resp")
                 $(".header").css("top", -headerHeight)
                 $(".content").css("margin-top", headerHeight)
-                TweenLite.to(header, 0.5, {top: "0", ease: Power2.easeInOut});
+                if(header) TweenLite.to(header, 0.5, {top: "0", ease: Power2.easeInOut});
             }
         }
         else{
@@ -3316,26 +3316,27 @@ $(window).on("load", function(){
         }
 
         //header-index group of companies
-        console.log($(document).scrollTop(), headerIndexHeight, headerIndexTopHeight)
-        if($(document).scrollTop() > headerIndexHeight - headerIndexTopHeight){
-            if(tween && tween.progress() === 1){
-                $(".button_header").css("margin-right", "56px")
-
-                $("#comapnies-view-button-open").css("display", "block")
-
-                tween = TweenLite.to(document.querySelector("#comapnies-view-button-open"), 0.5, {right: "0", ease: Power2.easeInOut});
-                
-                // $(".index-page #comapnies-view-button-open").css("right", "0")
+        if(document.querySelector("#comapnies-view-button-open") && window.innerWidth > 1440){
+            if(($(document).scrollTop() > headerIndexHeight - headerIndexTopHeight)){
+                if(tween && tween.progress() === 1){
+                    $(".button_header").css("margin-right", "56px")
+    
+                    $("#comapnies-view-button-open").css("display", "block")
+    
+                    tween = TweenLite.to(document.querySelector("#comapnies-view-button-open"), 0.5, {right: "0", ease: Power2.easeInOut});
+                    
+                    // $(".index-page #comapnies-view-button-open").css("right", "0")
+                }
             }
-        }
-        else{
-            $(".button_header").css("margin-right", 0)
-
-            tween = TweenLite.to(document.querySelector("#comapnies-view-button-open"), 0.5, {right: "-60px", ease: Power2.easeInOut, onComplete: function(){ $("#comapnies-view-button-open").css("display", "none"); }});
-            
-            // $(".index-page #comapnies-view-button-open").css("display", "none")
-
-            // $(".index-page #comapnies-view-button-open").css("right", "-60px")
+            else{
+                $(".button_header").css("margin-right", 0)
+    
+                tween = TweenLite.to(document.querySelector("#comapnies-view-button-open"), 0.5, {right: "-60px", ease: Power2.easeInOut, onComplete: function(){ $("#comapnies-view-button-open").css("display", "none"); }});
+                
+                // $(".index-page #comapnies-view-button-open").css("display", "none")
+    
+                // $(".index-page #comapnies-view-button-open").css("right", "-60px")
+            }
         }
 
         if($("#comapnies-view-button-open").is(":visible")) $(".footer .footer__text").last().css("margin-right", "56px")
@@ -3479,10 +3480,12 @@ $(window).on("load", function(){
             $(this).removeClass("link_icon_menu")
             $(this).addClass("link_icon_close")
 
-            if($(mobileNavBlock).closest(".header-index").length > 0){
-                $(".header-index__top").addClass("header-index__top_resp")
-                $(headerIndexTopMobile).addClass("header-index__top__mobile")
-                TweenLite.to(headerIndexTopMobile, 0.5, {display: "block", width: "100%", ease: Power2.easeInOut});
+            if(headerIndexTopMobile){
+                if($(mobileNavBlock).closest(".header-index").length > 0){
+                    $(".header-index__top").addClass("header-index__top_resp")
+                    $(headerIndexTopMobile).addClass("header-index__top__mobile")
+                    TweenLite.to(headerIndexTopMobile, 0.5, {display: "block", width: "100%", ease: Power2.easeInOut});
+                }
             }
         }
         

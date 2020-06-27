@@ -15,8 +15,8 @@
                 <div class="service__top-img-box mb-30" style="background-image: url({{ $item->img1 }});"></div>
                 <div class="row mx-0">
                     <div class="offset-xl-2 col-xl-8 offset-1 col-10">
-                        <div class="service">
-                            <div class="service__header mb-30">
+                        <div class="service mb-20">
+                            <div class="service__header @if(!isset($item->pdf)) mb-80 @endif">
                                 <img src="{{ $__companies->where('company',$item->company_name)->pluck('logo')->first() }}" class="service__logo" />
                                 <h2 class="service__main-title">{{ $item->company_name }}</h2>
                             </div>
@@ -26,8 +26,8 @@
                                 <img src="{{ $item->img2 }}" />
                                 <p>{{ $item->getTranslation('contents',app()->getLocale(),false)}}</p>
                                 @if(isset($item->pdf))
-                                <span style="display:inline-block;float: left;font-weight: bold; font-family: 'Antiqua Azeri' " class="index-companies-list__number">PDF: &nbsp;</span>
-                                <a style="float: left;margin-bottom: 10px;" href="{{ $item->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($item->pdf,'/') }}</a>
+                                    <span style="display:inline-block;float: left;font-weight: bold; font-family: 'Antiqua Azeri' " class="index-companies-list__number">PDF: &nbsp;</span>
+                                    <a style="float: left;margin-bottom: 10px;" href="{{ $item->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($item->pdf,'/') }}</a>
                                 @endif
                             </div>
                         </div>

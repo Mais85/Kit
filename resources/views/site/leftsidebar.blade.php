@@ -1,7 +1,7 @@
 
-<div class="d-xl-block col-xl-4 d-none bg-black px-0">
+<div class="company-left-block-block col-xl-4 bg-black px-0">
     <div class="company-left-block">
-        <div class="row mb-60 mx-0">
+        <div class="row mb-40 mx-0">
             <div class="offset-xl-2 col-xl-8 offset-1 col-10">
                 <h1 class="page-title page-title_white mt-70 mb-60">{{ __('companies.comp') }}</h1>
                 <ul class="companies-list">

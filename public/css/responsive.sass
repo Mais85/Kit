@@ -5,6 +5,12 @@
                 .menu-list__link
                     font-size: 0.714rem
 
+@media screen and (min-width: 1441px)
+    .service-block
+        max-width: 66.6666666%!important
+        flex: 0 0 66.6666666%!important
+        margin-left: 0!important
+
 @media screen and (max-width: 1440px)
     .header-index-bottom-list
         padding: 20px 30px!important
@@ -13,19 +19,6 @@
     .header-index__bottom
         .lang-list
             margin-right: 10px!important
-
-@media screen and (min-width: 1200px)
-    .header
-        .header__right
-            padding-right: 0
-    
-@media screen and (max-width: 1360px)
-    .services-list
-        .services-list__item
-            &.active
-                &::before
-                    width: 12px!important
-                    left: -18px!important
     .header
         .header__left
             .header__logo-link
@@ -36,6 +29,50 @@
                 display: none!important
             .link_icon_menu
                 display: flex!important
+    .group-companies-mob-block
+        display: block!important
+    .company-left-block-block
+        display: none
+
+@media screen and (min-width: 1200px)
+    .header
+        .header__left
+            padding-left: 30px
+        .header__right
+            padding-right: 30px
+    .header-index
+        .header__left
+            padding-left: 20px
+        .header__right
+            padding-right: 20px
+    .group-companies-mob-block
+        #group-companies-list-open
+            .group-companies-mob__title
+                padding-left: 20px
+            .link_icon_plus-white, .link_icon_minus-white
+                padding-right: 20px
+    .group-companies-mob__body
+        .comapnies-view-list
+            padding-left: 20px
+            padding-right: 20px
+    .services-mob-block
+        #services-list-open
+            .services-mob__title
+                padding-left: 20px
+            .link_icon_plus-white, .link_icon_minus-white
+                padding-right: 20px
+    .services-mob__body
+        .services-mob-menu-list
+            padding-left: 20px
+            padding-right: 20px
+    
+@media screen and (max-width: 1360px)
+    .services-list
+        .services-list__item
+            &.active
+                &::before
+                    width: 12px!important
+                    left: -18px!important
     .services-mob-block
         display: block!important
     .companies-mob-block
@@ -44,8 +81,6 @@
         display: block!important
     #comapnies-view-button-open
         display: none!important
-    .group-companies-mob-block
-        display: block!important
 
     .index-page
         .header-index

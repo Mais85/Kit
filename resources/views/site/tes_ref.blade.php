@@ -69,8 +69,8 @@
                                 @foreach($Ritems as $elems)
                                 <div class="col-xl-4 col-md-6 col-12 mb-60">
                                     <div class="reference-item">
-                                        <a href="{{ $elems->img }}" class="reference-item__img-link" data-lightbox="references-links" data-title="{{ $elems->referancer }}">
-                                            <img src="{{ $elems->img }}" class="reference-item__img" />
+                                        <a href="{{ $elems->img }}" class="reference-item__img-link" data-lightbox="references-links" data-title="{{ $elems->referancer }}" style="background-image: url({{ $elems->img }})">
+                                            {{-- <img src="{{ $elems->img }}" class="reference-item__img" /> --}}
                                         </a>
                                         <h2 class="reference-item__title">{{ $elems->referancer }}</h2>
                                         <div class="testimonial-item__position">

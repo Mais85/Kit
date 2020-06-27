@@ -8,11 +8,11 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-8 offset-xl-0 col-sm-10 offset-sm-1 offset-0 col-12 px-0">
+            <div class="service-block col-sm-10 offset-sm-1 offset-0 col-12 px-0">
                 <div class="service__top-img-box mb-30" style="background-image: url({{ $item->img1 }});"></div>
                 <div class="row mx-0">
                     <div class="offset-xl-2 col-xl-8 offset-1 col-10">
-                        <div class="service">
+                        <div class="service  @if(!isset($item->albom_id)) mb-80 @endif">
                             <div class="service__header mb-30">
                                 <img src="{{ $item->logo }}" class="service__logo" />
                                 <h2 class="service__main-title">{{ $item->company }}</h2>

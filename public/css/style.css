@@ -134,7 +134,7 @@ button {
         color: #FFF; }
       .header-index .header-index__main .header-index__center .header-index__title {
         font-weight: 600;
-        font-size: 5.142rem;
+        font-size: 4.285rem;
         line-height: 120%;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -239,7 +239,8 @@ button {
       display: none !important; }
   .header-index .group-companies-mob-block {
     position: relative;
-    z-index: 999; }
+    z-index: 999;
+    cursor: pointer; }
     .header-index .group-companies-mob-block.group-companies-mob-block_resp {
       position: fixed;
       top: 80px; }
@@ -327,7 +328,8 @@ button {
     .menu-list .menu-list__item .menu-list__link {
       display: block;
       text-decoration: none;
-      color: #FFF; }
+      color: #FFF;
+      word-break: keep-all; }
       .menu-list .menu-list__item .menu-list__link:hover {
         color: #9d9da2; }
 
@@ -345,7 +347,8 @@ button {
       text-decoration: none;
       text-transform: uppercase;
       font-family: Kanit;
-      color: #FFF; }
+      color: #FFF;
+      word-break: keep-all; }
       .lang-list .lang-list__item .lang-list__link:hover {
         color: #b1b1b1; }
 
@@ -577,11 +580,14 @@ button {
 
 .reference-item .reference-item__img-link {
   display: block;
-  text-decoration: none; }
-  .reference-item .reference-item__img-link .reference-item__img {
-    max-width: 320px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-    margin-bottom: 12px; }
+  text-decoration: none;
+  width: 320px;
+  height: 415px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  margin-bottom: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
 
 .reference-item .reference-item__title {
   display: block;
@@ -910,7 +916,7 @@ button {
 
 .about__title {
   font-weight: 600;
-  font-size: 4.5714rem;
+  font-size: 4rem;
   line-height: 120%;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1128,7 +1134,8 @@ button {
   margin-right: 48px; }
 
 .services-mob-block {
-  display: none; }
+  display: none;
+  cursor: pointer; }
 
 .services-mob.active .services-mob__body {
   height: calc(100vh - 140px);
@@ -1208,12 +1215,12 @@ button {
   font-size: 2.285rem;
   line-height: 120%;
   color: #000322;
-  margin-bottom: 16px; }
+  margin-bottom: 32px; }
 
 .service .service__text-block p {
   line-height: 180%;
   color: #2B2F51;
-  margin: 12px 0; }
+  margin: 24px 0; }
   .service .service__text-block p:first-child {
     margin: 0; }
 
@@ -1228,6 +1235,9 @@ button {
 .service .service__text-block .link_blue:hover {
   text-decoration: underline; }
 
+.company-left-block-block {
+  display: block; }
+
 .company-left-block.company-left-block_fixed {
   position: sticky;
   z-index: 1;
@@ -1237,6 +1247,13 @@ button {
   height: calc(100vh - 120px);
   overflow-y: auto;
   overflow-x: hidden; }
+
+.company-left-block .companies-list {
+  height: calc(100vh - 372px);
+  overflow-y: auto; }
+
+.company-left-block .company__iso {
+  margin-bottom: 0; }
 
 .companies-list .companies-list__item {
   display: flex;
@@ -1496,27 +1513,30 @@ button {
     color: #FFF;
     margin-top: auto; }
 
-.comapnies-view-list .comapnies-view-list__item {
-  margin-bottom: 40px; }
-  .comapnies-view-list .comapnies-view-list__item:last-child {
-    margin-bottom: 0; }
-  .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link {
-    display: block;
-    text-decoration: none;
-    display: flex;
-    align-items: center; }
-    .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link:hover .comapnies-view-list__name {
-      color: #9d9da2; }
-    .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link .comapnies-view-list__number {
+.comapnies-view-list {
+  height: calc(100vh - 100px);
+  overflow-y: auto; }
+  .comapnies-view-list .comapnies-view-list__item {
+    margin-bottom: 40px; }
+    .comapnies-view-list .comapnies-view-list__item:last-child {
+      margin-bottom: 0; }
+    .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link {
       display: block;
-      line-height: 120%;
-      color: rgba(255, 255, 255, 0.4);
-      margin-right: 20px; }
-    .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link .comapnies-view-list__name {
-      display: block;
-      font-size: 1.142rem;
-      line-height: 120%;
-      color: #FFF; }
+      text-decoration: none;
+      display: flex;
+      align-items: center; }
+      .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link:hover .comapnies-view-list__name {
+        color: #9d9da2; }
+      .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link .comapnies-view-list__number {
+        display: block;
+        line-height: 120%;
+        color: rgba(255, 255, 255, 0.4);
+        margin-right: 20px; }
+      .comapnies-view-list .comapnies-view-list__item .comapnies-view-list__link .comapnies-view-list__name {
+        display: block;
+        font-size: 1.142rem;
+        line-height: 120%;
+        color: #FFF; }
 
 .group-companies-mob-block {
   display: none; }
@@ -1651,7 +1671,8 @@ button {
   display: inline-block;
   text-decoration: none;
   background-color: unset;
-  border: none; }
+  border: none;
+  cursor: pointer; }
   .link.link_blue {
     color: #3EB5F1; }
   .link.link_size-16 {
@@ -1728,7 +1749,8 @@ button {
   text-decoration: none; }
   .button.button_header {
     padding: 33px 64px;
-    transition: all .5s; }
+    transition: all .5s;
+    word-break: keep-all; }
   .button.button_uppercase {
     text-transform: uppercase; }
   .button.button_blue {
@@ -1756,6 +1778,7 @@ button {
     justify-content: center;
     text-align: center; }
   .button#comapnies-view-button-open {
+    display: none;
     position: fixed;
     top: -58px;
     right: 0;
@@ -1829,6 +1852,9 @@ button {
 .index-why {
   padding: 63px 0 77px; }
   .index-why .index-why__title {
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
     font-weight: 600;
     font-size: 3.428rem;
     line-height: 130%;
