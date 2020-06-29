@@ -52,6 +52,10 @@
     padding-left: 20px;
     padding-right: 20px; } }
 
+@media screen and (min-width: 1361px) and (max-width: 1440px) {
+  .index-why {
+    padding: 126px 0 77px; } }
+
 @media screen and (max-width: 1360px) {
   .services-list .services-list__item.active::before {
     width: 12px !important;

@@ -18,7 +18,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <h2 class="index-why__title mb-30">{{ $__header->getTranslation('title1',App::getLocale(),false) }}</h2>
+                    <h2 class="index-why__title mb-30">{!! $__header->getTranslation('title1',App::getLocale(),false) !!}</h2>
                     <span class="index-why__description">{{ $__header->getTranslation('contents1',App::getLocale(),false) }}</span>
                 </div>
             </div>

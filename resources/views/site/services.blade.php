@@ -16,7 +16,7 @@
                 <div class="row mx-0">
                     <div class="offset-xl-2 col-xl-8 offset-1 col-10">
                         <div class="service mb-20">
-                            <div class="service__header @if(!isset($item->pdf)) mb-80 @endif">
+                            <div class="service__header mb-30">
                                 <img src="{{ $__companies->where('company',$item->company_name)->pluck('logo')->first() }}" class="service__logo" />
                                 <h2 class="service__main-title">{{ $item->company_name }}</h2>
                             </div>
