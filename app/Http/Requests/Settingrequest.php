@@ -29,12 +29,12 @@ class Settingrequest extends FormRequest
             'meta_description_'.config('app.locale') => 'required',
             'meta_keywords_'.config('app.locale') => 'required',
             'footcontent_'.config('app.locale') => 'required',
-            'phone'=> 'required|numeric|digits_between:10,12',
-            'mobphone'=> 'required|numeric|digits_between:10,12',
+            'phone'=> 'required|numeric|min:9',
+            'mobphone'=> 'required|numeric|min:9',
             'address' => 'required',
             'email' => 'required|email:rfc,dns',
             'fb' => 'nullable|url',
-            'twitter' => 'nullable|url',
+            'linkedin' => 'nullable|url',
             'instagram' => 'nullable|url',
             'youtube' => 'nullable|url',
             'logo' => 'nullable|image',
@@ -51,10 +51,10 @@ class Settingrequest extends FormRequest
             'max:191' => 'Maksimum 191 simvol daxil etmək olar',
             'phone.required' => 'Telefon qeyd olunmalıdır !',
             'phone.numeric' => 'Telefon yalniz rəqəmlərdən ibarət ola bilər !',
-            'phone.digits_between' => 'Telefon  min::min   max::max simvoldan ibarət ola bilər !',
+            'phone.min' => 'Telefon  min::min  simvoldan ibarət ola bilər !',
             'mobphone.required' => 'Mob.Telefon qeyd olunmalıdır !',
             'mobphone.numeric' => 'Mob.Telefon yalniz rəqəmlərdən ibarət ola bilər !',
-            'mobphone.digits_between' => 'Mob.Telefon  min::min   max::max simvoldan ibarət ola bilər !',
+            'mobphone.min' => 'Mob.Telefon  min::min simvoldan ibarət ola bilər !',
         ];
     }
 }

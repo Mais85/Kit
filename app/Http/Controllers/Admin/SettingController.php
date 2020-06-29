@@ -52,7 +52,7 @@ class SettingController extends AdminBaseController
                     'address' => $request->address,
                     'email' => $request->email,
                     'fb' => $request->fb,
-                    'twitter' => $request->twitter,
+                    'linkedin' => $request->linkedin,
                     'instagram' => $request->instagram,
                     'youtube' => $request->youtube,
                 ]);
@@ -70,7 +70,7 @@ class SettingController extends AdminBaseController
                     'address' => $request->address,
                     'email' => $request->email,
                     'fb' => $request->fb,
-                    'twitter' => $request->twitter,
+                    'linkedin' => $request->linkedin,
                     'instagram' => $request->instagram,
                     'youtube' => $request->youtube,
                 ]);

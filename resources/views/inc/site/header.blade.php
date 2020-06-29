@@ -77,8 +77,8 @@
                                         </a>
                                     </li>
                                     <li class="contacts-social-list__item">
-                                        <a href="{{ ($__settings->twitter !=null) ? $__settings->twitter : '#' }}"  target="_blank" class="contacts-social-list__link">
-                                            <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                        <a href="{{ ($__settings->linkedin !=null) ? $__settings->linkedin : '#' }}"  target="_blank" class="contacts-social-list__link">
+                                            <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                         </a>
                                     </li>
                                     <li class="contacts-social-list__item">

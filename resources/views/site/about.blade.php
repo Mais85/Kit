@@ -17,7 +17,7 @@
                             <span class="about__description">{!!  $abItems->getTranslation('content1',app()->getLocale(),false) !!}</span>
                         </div>
                         <div class="col-lg-6 col-12 flex-row-center-center">
-                            <img src="{{ asset('img/about_img.png') }}" class="about__img" />
+                            <img src="{{ $abItems->img}}" class="about__img" />
                         </div>
                     </div>
 
@@ -35,21 +35,21 @@
                         <div class="col-md-3 col-sm-6 col-12 mb-10">
                             <div class="pholosophy-item">
                                 <img src="{{ asset('img/reliability.svg') }}" class="pholosophy-item__img" />
-                                <h3 class="pholosophy-item__title">Rapidity</h3>
+                                <h3 class="pholosophy-item__title">{{ $abItems->getTranslation('desc2',app()->getLocale(),false)}}</h3>
                                 <span class="pholosophy-item__description">{{ $abItems->getTranslation('smtxt2',app()->getLocale(),false)}}</span>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-10">
                             <div class="pholosophy-item">
                                 <img src="{{ asset('img/reliability.svg') }}" class="pholosophy-item__img" />
-                                <h3 class="pholosophy-item__title">Safe & Secure</h3>
+                                <h3 class="pholosophy-item__title">{{ $abItems->getTranslation('desc3',app()->getLocale(),false)}}</h3>
                                 <span class="pholosophy-item__description">{{ $abItems->getTranslation('smtxt3',app()->getLocale(),false)}}</span>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-12 mb-10">
                             <div class="pholosophy-item">
                                 <img src="{{ asset('img/reliability.svg') }}" class="pholosophy-item__img" />
-                                <h3 class="pholosophy-item__title">Benefit</h3>
+                                <h3 class="pholosophy-item__title">{{ $abItems->getTranslation('desc4',app()->getLocale(),false)}}</h3>
                                 <span class="pholosophy-item__description">{{ $abItems->getTranslation('smtxt4',app()->getLocale(),false)}}</span>
                             </div>
                         </div>

@@ -82,7 +82,7 @@ class ServiceRepository extends AdminBaseController
             'img1' => $this->editImage($request->img1,$item->img1,$request->old_img1,'photos'),
             'img2' => $this->editImage($request->img2,$item->img2,$request->old_img2,'photos'),
             'pdf' => $this->editFile($request->pdf,$item->pdf,$request->oldpdf,'files'),
-            'slug' =>$this->getSlugFrom('title',$request),
+//            'slug' =>$this->getSlugFrom('title',$request),
             'company_id' =>$request->company,
             'albom_id' => $request->albom_id,
             'company_name' => $this->getCompanylist()[$request->company],

@@ -1,5 +1,5 @@
     <script src="/assets/admin/js/neat.minc619.js?v=1.0"></script>
-    <script src="//cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+{{--    <script src="//cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>--}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <!-- Global Site tag (gtag.js) - Google Analytics -->

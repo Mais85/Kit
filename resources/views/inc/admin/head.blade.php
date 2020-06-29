@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.13.1/full/ckeditor.js"></script>
     <link href="{{ asset('/assets/admin//css/datepicker.min.css') }}" rel="stylesheet" type="text/css">
     @yield('assets')
     <script src="{{ asset('/assets/admin/js/datepicker.min.js') }}"></script>

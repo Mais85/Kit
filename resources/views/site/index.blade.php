@@ -235,7 +235,9 @@
                         <li class="index-companies-list__item">
                             <span class="index-companies-list__number">{{ $counter }}</span>
                             <span style="font-weight: bold" class="index-companies-list__name">{{ $el->company }}</span>
+                            @if(isset($item->pdf))
                             <a href="{{ $el->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($el->pdf,'/') }}</a>
+                            @endif
                         </li>
                         @endforeach
                     </ul>
@@ -254,7 +256,7 @@
                     <div class="contacts-inner">
                         <div class="contacts__main">
                             <span class="contacts__about">{{ $__settings->getTranslation('footcontent',app()->getLocale(),false) }}</span>
-                            
+
                             <div class="contacts__address">
                                 <span class="contacts__name">{{ $__settings->title }}</span>
                                 <span class="contacts__value">{{ $__settings->address }}</span>

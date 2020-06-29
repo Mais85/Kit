@@ -22,8 +22,10 @@
                             <div class="service__text-block">
                                 <img src="{{$item->img2}}" />
                                 <p>{{ $item->getTranslation('contents',app()->getLocale(),false) }}</p><br>
+                                @if(isset($item->pdf))
                                 <span style="display:inline-block;float: left;font-weight: bold; font-family: 'Antiqua Azeri' " class="index-companies-list__number">PDF: &nbsp;</span>
                                 <a style="float: left;margin-bottom: 10px;" href="{{ $item->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($item->pdf,'/') }}</a>
+                                @endif
                                 <br>
                             </div>
                         </div>
@@ -48,13 +50,13 @@
                             <div class="contacts-inner mb-40">
                                 <div class="contacts__main">
                                     <span class="contacts__about">{{ $item->contacttext }}</span>
-    
+
                                     <div class="contacts__address">
                                         <span class="contacts__name">{{ $item->company }}</span>
                                         <span class="contacts__value">{{ $item->address }}</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="contacts__other">
                                     <ul class="contacts-social-list">
                                         <li class="contacts-social-list__item">
@@ -68,8 +70,8 @@
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
-                                            <a href="{{ ($item->twitter !=null) ? $item->twitter : '#' }}" target="_blank" class="contacts-social-list__link">
-                                                <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                            <a href="{{ ($item->linkedin !=null) ? $item->linkedin : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
@@ -78,7 +80,7 @@
                                             </a>
                                         </li>
                                     </ul>
-    
+
                                     <div class="contacts__connection">
                                         <span class="contacts__phone">{{ $item->phone }}</span>
                                         <span class="contacts__phone">{{ $item->mobphone }}</span>
@@ -109,8 +111,8 @@
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
-                                            <a href="{{ ($__settings->twitter !=null) ? $__settings->twitter : '#' }}" target="_blank" class="contacts-social-list__link">
-                                                <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                            <a href="{{ ($__settings->linkedin !=null) ? $__settings->linkedin : '#' }}" target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">

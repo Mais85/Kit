@@ -51,14 +51,14 @@
 
                             <div class="contacts-inner mb-40">
                                 <div class="contacts__main">
-                                    <span class="contacts__about">{{  $__companies->where('company',$item->company_name)->pluck('contents')->first() }}</span>
-                                    
+                                    <span class="contacts__about">{{  $__companies->where('company',$item->company_name)->pluck('contacttext')->first() }}</span>
+
                                     <div class="contacts__address">
                                         <span class="contacts__name">{{$item->company_name}}</span>
                                         <span class="contacts__value">{{ $__companies->where('company',$item->company_name)->pluck('address')->first() }}</span>
                                     </div>
                                 </div>
-    
+
                                 <div class="contacts__other">
 
                                     <ul class="contacts-social-list">
@@ -73,8 +73,8 @@
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
-                                            <a href="{{  $__companies->where('company',$item->company_name)->pluck('twitter')->first() }}"  target="_blank" class="contacts-social-list__link">
-                                                <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                            <a href="{{  $__companies->where('company',$item->company_name)->pluck('linkedin')->first() }}"  target="_blank" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
@@ -108,17 +108,17 @@
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
-                                            <a href="{{ ($__settings->instagram != null) ? $__settings->fb : '#' }}" class="contacts-social-list__link">
+                                            <a href="{{ ($__settings->instagram != null) ? $__settings->instagram : '#' }}" class="contacts-social-list__link">
                                                 <img src="{{ asset('img/instagram_white.svg') }}" class="contacts-social-list__img"/>
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
-                                            <a href="{{ ($__settings->twitter != null) ? $__settings->fb : '#' }}" class="contacts-social-list__link">
-                                                <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                            <a href="{{ ($__settings->linkedin != null) ? $__settings->linkedin : '#' }}" class="contacts-social-list__link">
+                                                <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                             </a>
                                         </li>
                                         <li class="contacts-social-list__item">
-                                            <a href="{{ ($__settings->youtube != null) ? $__settings->fb : '#' }}" class="contacts-social-list__link">
+                                            <a href="{{ ($__settings->youtube != null) ? $__settings->youtube : '#' }}" class="contacts-social-list__link">
                                                 <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
                                             </a>
                                         </li>
