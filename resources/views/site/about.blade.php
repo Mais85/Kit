@@ -16,7 +16,7 @@
                             <h2 class="about__title">{{ $abItems->getTranslation('title1',app()->getLocale(),false)}}</h2>
                             <span class="about__description">{!!  $abItems->getTranslation('content1',app()->getLocale(),false) !!}</span>
                         </div>
-                        <div class="col-lg-6 col-12 flex-row-center-center">
+                        <div class="col-lg-6 col-12 flex-row-start-center">
                             <img src="{{ $abItems->img}}" class="about__img" />
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                          @else
-                        <div class="col-lg-6 col-12 mb-25">
+                        <div class="col-xl-6 col-12 mb-25">
                             <div class="direction-item">
                                 <div class="direction-item__img-box-block">
                                     <div class="direction-item__img-box">

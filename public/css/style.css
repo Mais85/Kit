@@ -45,7 +45,8 @@ button {
         left: 0;
         background-image: url(../img/dotted_bg_index.png);
         background-repeat: no-repeat;
-        background-position: center; }
+        background-position: center;
+        background-size: cover; }
       .header-index .header-index__main .header-index-carousel .owl-stage-outer {
         height: 100%; }
         .header-index .header-index__main .header-index-carousel .owl-stage-outer .owl-stage {
@@ -258,8 +259,6 @@ button {
     width: 100%;
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
     z-index: 3; }
   .header .header__left .header__logo-link {
     display: block;
@@ -329,7 +328,8 @@ button {
       display: block;
       text-decoration: none;
       color: #FFF;
-      word-break: keep-all; }
+      word-break: keep-all;
+      text-align: center; }
       .menu-list .menu-list__item .menu-list__link:hover {
         color: #9d9da2; }
 
@@ -1010,12 +1010,14 @@ button {
         width: 240px;
         height: 240px;
         margin-right: 38px; }
-    .direction .direction-item.direction-item_big .direction-item__main-info .direction-item__name {
-      font-size: 2.1428rem; }
-    .direction .direction-item.direction-item_big .direction-item__main-info .direction-item__position {
-      font-size: 1.142rem; }
-    .direction .direction-item.direction-item_big .direction-item__main-info .direction-item__logo {
-      width: 101px; }
+    .direction .direction-item.direction-item_big .direction-item__main-info {
+      margin-right: 5px; }
+      .direction .direction-item.direction-item_big .direction-item__main-info .direction-item__name {
+        font-size: 2.1428rem; }
+      .direction .direction-item.direction-item_big .direction-item__main-info .direction-item__position {
+        font-size: 1.142rem; }
+      .direction .direction-item.direction-item_big .direction-item__main-info .direction-item__logo {
+        width: 101px; }
     .direction .direction-item.direction-item_big .direction-item__contacts .direction-item__email, .direction .direction-item.direction-item_big .direction-item__contacts .direction-item__phone {
       font-size: 1.142rem; }
     .direction .direction-item.direction-item_big .direction-item__contacts .direction-item-social-list .direction-item-social-list__item .direction-item-social-list__link .direction-item-social-list__img {
@@ -1058,7 +1060,8 @@ button {
       font-size: 0.857rem;
       line-height: 120%;
       text-align: right;
-      color: #2B2F51; }
+      color: #2B2F51;
+      word-break: keep-all; }
     .direction .direction-item .direction-item__contacts .direction-item__phone {
       display: block;
       font-size: 0.857rem;
