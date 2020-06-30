@@ -41,7 +41,7 @@
 
                                                 <div class="c-field">
                                                     <label class="c-field__label">Əlaqə Footer Metni</label>
-                                                    <textarea class="c-input" name="footcontent_{{$language_key}}" rows="4" {{requiredFall($language_key)}}>@if(empty($items)){{old('footcontent_'.$language_key) }}@else{{$items->getTranslation('footcontent',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="footcontent_{{$language_key}}" rows="4" {{requiredFall($language_key)}}>@if(empty($items)){{old('footcontent_'.$language_key) }}@else{{$items->getTranslation('footcontent',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -57,19 +57,26 @@
                                                         <label class="c-field__label">Email</label>
                                                         <input class="c-input" type="text" name="email"@if(!empty($items))  value='{{$items->email}}' @else value="{{ old('email') }}" @endif >
                                                     </div>
+                                                    <div class="c-field">
+                                                        <label class="c-field__label">Email 2</label>
+                                                        <input class="c-input" type="text" name="email2"@if(!empty($items))  value='{{$items->email2}}' @else value="{{ old('email2') }}" @endif >
+                                                    </div>
                                                     <label class="c-field__label">Telefon</label>
                                                     <input class="c-input" type="text" name="phone" placeholder='+994 XX XXX XX XX' @if(!empty($items)) value={{$items->phone}} @else value="{{ old('phone') }}" @endif>
-
+                                                    <label class="c-field__label">Qısa nömrə</label>
+                                                    <input class="c-input" type="text" name="shortphone" placeholder='*999' @if(!empty($items)) value={{$items->shortphone}} @else value="{{ old('shortphone') }}" @endif>
                                                     <label class="c-field__label">Mob.Telefon</label>
                                                     <input class="c-input" type="text" name="mobphone" placeholder='+994 XX XXX XX XX' @if(!empty($items)) value={{$items->mobphone}} @else value="{{ old('mobphone') }}" @endif>
+                                                    <label class="c-field__label">Mob.Telefon 2</label>
+                                                    <input class="c-input" type="text" name="mobphone2" placeholder='+994 XX XXX XX XX' @if(!empty($items)) value={{$items->mobphone2}} @else value="{{ old('mobphone2') }}" @endif>
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Facebook</label>
                                                     <input class="c-input" type="text" name="fb"@if(!empty($items))  value='{{$items->fb}}' @else value="{{ old('fb') }}" @endif >
                                                 </div>
                                                 <div class="c-field">
-                                                    <label class="c-field__label">Twitter</label>
-                                                    <input class="c-input" type="text" name="twitter" @if(!empty($items))  value='{{$items->twitter}}' @else value="{{ old('twitter') }}" @endif >
+                                                    <label class="c-field__label">Linkedin</label>
+                                                    <input class="c-input" type="text" name="linkedin" @if(!empty($items))  value='{{$items->linkedin}}' @else value="{{ old('linkedin') }}" @endif >
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Instagram</label>

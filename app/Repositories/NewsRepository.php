@@ -26,7 +26,7 @@ class NewsRepository  extends AdminBaseController
     }
     public function paginate()
     {
-        return News::paginate(8);
+        return News::orderby('updated_at','desc')->paginate(8);
     }
 
     public function getByPaginate()
@@ -69,6 +69,7 @@ class NewsRepository  extends AdminBaseController
         $desc = $this->getFormTranslations($name,$request);
         foreach ($desc as &$value){
             $value = Str::substr($value,0,139);
+            $value = strip_tags(html_entity_decode($value));
         }
         return $desc;
     }

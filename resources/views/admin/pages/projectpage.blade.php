@@ -21,7 +21,7 @@
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab"  style="padding: 0">
                                                 <h3>Layihələr (ümumi məlumat)</h3>
                                                 <div class="c-field">
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="10" >@if(empty($items)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents_{{$language_key}}" rows="10" >@if(empty($items)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

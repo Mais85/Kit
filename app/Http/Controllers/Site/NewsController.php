@@ -31,6 +31,7 @@ class NewsController extends HomeController
     public function index()
     {
         $items = $this->newsrepository->getByPaginate();
+//        dd($items);
         return view('site.news',compact('items'));
     }
 

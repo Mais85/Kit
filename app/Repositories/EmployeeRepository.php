@@ -18,7 +18,7 @@ class EmployeeRepository extends AdminBaseController
 
     public function getpaginate()
     {
-        return Employee::paginate(8);
+        return Employee::orderby('pos_number')->paginate(8);
     }
 
     public function getCompanylist()

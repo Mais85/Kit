@@ -29,7 +29,7 @@
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
                                                 <div class="c-field">
                                                     <label class="c-field__label">Qısa məlumat  <span style="font: italic  bold 12px/30px 'Verdana'; color:#FA5661;text-decoration: underline">( max: 191 simvol )</span></label>
-                                                    <textarea class="c-input" name="desc_{{$language_key}}" rows="3" >@if(empty($items->desc)){{old('desc_'.$language_key) }}@else{{$items->getTranslation('desc',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="desc_{{$language_key}}" rows="3" >@if(empty($items->desc)){{old('desc_'.$language_key) }}@else{{$items->getTranslation('desc',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

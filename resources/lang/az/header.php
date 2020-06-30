@@ -8,6 +8,7 @@ return [
     'video' => 'Sizin brauzer HTML5 videonu dəstəkləmir.',
     'About' => 'Haqqımızda',
     'Services' => 'Xidmətlər',
+    'Comp' => 'Şirkətlər',
     'OurClients' => 'Müştərilərimiz',
     'OurProjects' => 'Layihələrimiz',
     'News' => 'Xəbərlər',

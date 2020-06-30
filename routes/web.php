@@ -147,6 +147,7 @@ Route::group(['namespace'=>'Site','middleware'=>['auth']],function(){
     Route::get('{local}/gallery', 'GalleryController@index')->name('gallery');
     Route::get('{local}/gallery/{id}', 'GalleryController@showphotos')->name('getPhotos');
     Route::get('{local}/contacts', 'ContactController@index')->name('contact');
+    Route::get('{local}/companies', 'CompanyController@index')->name('companiesList');
     Route::get('{local}/companies/{slug}/{id}', 'CompanyController@show')->name('companies');
 
 });

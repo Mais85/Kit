@@ -31,6 +31,7 @@ class ServicesController extends HomeController
     {
         $services = $this->servicerepository->getAll();
         $item = $services->first();
+//        dd($item)->dd();
         return view('site.services',compact('services','item'));
     }
 

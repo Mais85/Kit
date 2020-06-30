@@ -18,8 +18,8 @@
                         </div>
                         @endforeach
                     </div>
-                    <h2 class="index-why__title mb-30">{!! $__header->getTranslation('title1',App::getLocale(),false) !!}</h2>
-                    <span class="index-why__description">{{ $__header->getTranslation('contents1',App::getLocale(),false) }}</span>
+                    <h2 class="index-why__title mb-30">{{  $__header->getTranslation('title1',App::getLocale(),false) }} </h2>
+                    <span class="index-why__description">{!! $__header->getTranslation('contents1',App::getLocale(),false) !!} </span>
                 </div>
             </div>
         </div>
@@ -226,7 +226,7 @@
             <div class="row">
                 <div class="offset-lg-2 col-lg-4 offset-md-1 col-md-5 offset-1 col-10">
                     <h2 class="index-companies__title">{{ $__header->getTranslation('title2',app()->getLocale(),false) }}</h2>
-                    <span class="index-companies__description">{{ $__header->getTranslation('contents2',app()->getLocale(),false) }}</span>
+                    <span class="index-companies__description">{!! $__header->getTranslation('contents2',app()->getLocale(),false) !!} </span>
 
                     <ul class="index-companies-list">
                         @php $counter = 0; @endphp
@@ -255,7 +255,7 @@
                 <div class="offset-sm-1 col-sm-10 col-12">
                     <div class="contacts-inner">
                         <div class="contacts__main">
-                            <span class="contacts__about">{{ $__settings->getTranslation('footcontent',app()->getLocale(),false) }}</span>
+                            <span class="contacts__about">{!! $__settings->getTranslation('footcontent',app()->getLocale(),false) !!} </span>
 
                             <div class="contacts__address">
                                 <span class="contacts__name">{{ $__settings->title }}</span>
@@ -276,8 +276,8 @@
                                     </a>
                                 </li>
                                 <li class="contacts-social-list__item">
-                                    <a href="{{ ($__settings->twitter != null) ? $__settings->twitter : '#' }}"  target="_blank" class="contacts-social-list__link">
-                                        <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                    <a href="{{ ($__settings->linkedin != null) ? $__settings->linkedin : '#' }}"  target="_blank" class="contacts-social-list__link">
+                                        <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                     </a>
                                 </li>
                                 <li class="contacts-social-list__item">
@@ -288,9 +288,18 @@
                             </ul>
 
                             <div class="contacts__connection">
+                                @if(isset($__settings->shortphone))
+                                    <span class="contacts__phone">{{ $__settings->shortphone }}</span>
+                                @endif
                                 <span class="contacts__phone">{{ $__settings->phone }}</span>
                                 <span class="contacts__phone">{{ $__settings->mobphone }}</span>
+                                @if(isset($__settings->mobphone2))
+                                    <span class="contacts__phone">{{ $__settings->mobphone2 }}</span>
+                                @endif
                                 <span class="contacts__email">{{ $__settings->email }}</span>
+                                @if(isset($__settings->email2))
+                                    <span class="contacts__email">{{ $__settings->email2 }}</span>
+                                @endif
                             </div>
                         </div>
                     </div>

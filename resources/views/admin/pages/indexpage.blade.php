@@ -31,7 +31,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn Bloku 1</label>
-                                                    <textarea class="c-input" name="contents1_{{$language_key}}" rows="10" {{requiredFall($language_key)}} >@if(empty($items)){{old('contents1'.$language_key)}}@else{{$items->getTranslation('contents1',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents1_{{$language_key}}" rows="10" {{requiredFall($language_key)}} >@if(empty($items)){{old('contents1'.$language_key)}}@else{{$items->getTranslation('contents1',$language_key,false)}}@endif</textarea>
                                                 </div>
                                                 <hr>
                                                 <br>
@@ -43,7 +43,7 @@
                                                 <hr>
                                                 <div class="c-field">
                                                     <label class="c-field__label"> Mətn 2 (aşağıda kampaniyaların mətni)</label>
-                                                    <textarea class="c-input" name="contents2_{{$language_key}}" rows="10" {{requiredFall($language_key)}} >@if(empty($items)){{old('contents2_'.$language_key)}}@else{{$items->getTranslation('contents2',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents2_{{$language_key}}" rows="10" {{requiredFall($language_key)}} >@if(empty($items)){{old('contents2_'.$language_key)}}@else{{$items->getTranslation('contents2',$language_key,false)}}@endif</textarea>
                                                 </div>
 
                                                 <hr>

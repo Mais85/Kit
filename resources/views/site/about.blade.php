@@ -66,10 +66,10 @@
                     <div class="page-hr page-hr_grey-2 mb-40"></div>
                 </div>
                 <div class="offset-xl-2 col-xl-4 offset-sm-1 col-sm-5 col-12">
-                    <span class="mission__description">{{ $abItems->getTranslation('content2',app()->getLocale(),false)}}</span>
+                    <span class="mission__description">{!! $abItems->getTranslation('content2',app()->getLocale(),false) !!} </span>
                 </div>
                 <div class="col-xl-4 col-sm-5 col-12">
-                    <span class="mission__description">{{ $abItems->getTranslation('content3',app()->getLocale(),false)}}</span>
+                    <span class="mission__description">{!! $abItems->getTranslation('content3',app()->getLocale(),false) !!} </span>
                 </div>
             </div>
         </div>

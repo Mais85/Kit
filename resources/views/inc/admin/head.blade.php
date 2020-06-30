@@ -36,8 +36,7 @@
     </style>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" href="/assets/admin/apple-touch-icon.png">
-    <link rel="shortcut icon" href="/assets/admin/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}?<?php echo rand(100, 10000); ?>" type="image/x-icon">
 
     <!-- Stylesheet -->
     @yield('css')

@@ -13,8 +13,8 @@
 
                    <div class="contacts-inner">
                         <div class="contacts__main">
-                            <span class="contacts__about">{{ $__settings->getTranslation('footcontent',app()->getLocale(),false) }}</span>
-                            
+                            <span class="contacts__about">{!! $__settings->getTranslation('footcontent',app()->getLocale(),false) !!}</span>
+
                             <div class="contacts__address">
                                 <span class="contacts__name">{{ $__settings->title }}</span>
                                 <span class="contacts__value">{{ $__settings->address }}</span>
@@ -34,8 +34,8 @@
                                     </a>
                                 </li>
                                 <li class="contacts-social-list__item">
-                                    <a href="{{ ($__settings->twitter !=null) ? $__settings->twitter : '#' }}" target="_blank"  class="contacts-social-list__link">
-                                        <img src="{{ asset('img/twitter_white.svg') }}" class="contacts-social-list__img"/>
+                                    <a href="{{ ($__settings->linkedin !=null) ? $__settings->linkedin : '#' }}" target="_blank"  class="contacts-social-list__link">
+                                        <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                     </a>
                                 </li>
                                 <li class="contacts-social-list__item">
@@ -44,11 +44,21 @@
                                     </a>
                                 </li>
                             </ul>
-                            
+
                             <div class="contacts__connection">
+
+                                @if(isset($__settings->shortphone))
+                                    <span class="contacts__phone">{{ $__settings->shortphone }}</span>
+                                @endif
                                 <span class="contacts__phone">{{ $__settings->phone }}</span>
                                 <span class="contacts__phone">{{ $__settings->mobphone }}</span>
+                                @if(isset($__settings->mobphone2))
+                                    <span class="contacts__phone">{{ $__settings->mobphone2 }}</span>
+                                @endif
                                 <span class="contacts__email">{{ $__settings->email }}</span>
+                                @if(isset($__settings->email2))
+                                <span class="contacts__email">{{ $__settings->email2 }}</span>
+                                @endif
                             </div>
                         </div>
                    </div>

@@ -25,7 +25,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətni</label>
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="8" >@if(empty($items->contents)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents_{{$language_key}}" rows="8" >@if(empty($items->contents)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -64,8 +64,8 @@
                                                 <input type="file" class="c-input" name="img1" accept="image/*"/>
                                             </div>
                                             <div class="c-field">
-                                                <label class="c-field__label">Şəkil </label>
-                                                @if($items->img1)
+                                                <label class="c-field__label">Şəkil 2</label>
+                                                @if($items->img2)
                                                     <div id="old_img2" class="admin_image old_img">
                                                         <img src="{{$items->img2}}" style="max-width: 190px;border: 1px solid #aaa;">
                                                         <div class="admin_image_close" onclick="deloldimg('old_img2');"><i class="c-sidebar__icon feather icon-x-circle"></i></div>

@@ -29,11 +29,11 @@
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn</label>
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="10">@if(empty($items)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents_{{$language_key}}" rows="10">@if(empty($items)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Kontakt Mətni</label>
-                                                    <textarea class="c-input" name="contacttext_{{$language_key}}" rows="8" >@if(empty($items->contacttext)){{old('contacttext_'.$language_key) }}@else{{$items->getTranslation('contacttext',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contacttext_{{$language_key}}" rows="8" >@if(empty($items->contacttext)){{old('contacttext_'.$language_key) }}@else{{$items->getTranslation('contacttext',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -48,6 +48,10 @@
                                                 <input type="text" class="c-input" name="email" value="@if(isset($items->email)){{ $items->email }}@else{{ old('email') }} @endif"/>
                                             </div>
                                             <div class="c-field">
+                                                <label class="c-field__label">Email 2</label>
+                                                <input type="text" class="c-input" name="email2" value="@if(isset($items->email2)){{ $items->email2 }}@else{{ old('email2') }} @endif"/>
+                                            </div>
+                                            <div class="c-field">
                                                 <label class="c-field__label">Unvan</label>
                                                 <input type="text" class="c-input" name="address" value="@if(isset($items->address)){{ $items->address }}@else{{ old('address') }} @endif"/>
                                             </div>
@@ -56,16 +60,24 @@
                                                 <input type="text" class="c-input" name="phone" value="@if(isset($items->phone)){{ $items->phone }}@else{{ old('phone') }} @endif"/>
                                             </div>
                                             <div class="c-field">
+                                                <label class="c-field__label">Qısa nömrə</label>
+                                                <input type="text" class="c-input" name="shortphone" value="@if(isset($items->shortphone)){{ $items->shortphone }}@else{{ old('shortphone') }} @endif"/>
+                                            </div>
+                                            <div class="c-field">
                                                 <label class="c-field__label">Mob. Telefon</label>
                                                 <input type="text" class="c-input" name="mobphone" value="@if(isset($items->mobphone)){{ $items->mobphone }}@else{{ old('mobphone') }} @endif"/>
+                                            </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">Mob. Telefon 2</label>
+                                                <input type="text" class="c-input" name="mobphone2" value="@if(isset($items->mobphone2)){{ $items->mobphone2 }}@else{{ old('mobphone2') }} @endif"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Facebook</label>
                                                 <input type="text" class="c-input" name="fb" value="@if(isset($items->fb)){{ $items->fb }}@else{{ old('fb') }} @endif"/>
                                             </div>
                                             <div class="c-field">
-                                                <label class="c-field__label">Twitter</label>
-                                                <input type="text" class="c-input" name="twitter" value="@if(isset($items->twitter)){{ $items->twitter }}@else{{ old('twitter') }} @endif"/>
+                                                <label class="c-field__label">Linkedin</label>
+                                                <input type="text" class="c-input" name="linkedin" value="@if(isset($items->linkedin)){{ $items->linkedin }}@else{{ old('linkedin') }} @endif"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Instagram</label>

@@ -85,12 +85,12 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Məlumat 3.1</label>
-                                                    <textarea class="c-input" name="content2_{{$language_key}}" rows="8" >@if(empty($items)){{old('content2_'.$language_key) }}@else{{$items->getTranslation('content2',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="content2_{{$language_key}}" rows="8" >@if(empty($items)){{old('content2_'.$language_key) }}@else{{$items->getTranslation('content2',$language_key,false)}}@endif</textarea>
                                                 </div>
 
                                                <div class="c-field">
                                                 <label class="c-field__label">Məlumat 3.2</label>
-                                                <textarea class="c-input" name="content3_{{$language_key}}" rows="8" >@if(empty($items)){{old('content3_'.$language_key) }}@else{{$items->getTranslation('content3',$language_key,false)}}@endif</textarea>
+                                                <textarea class="editor" name="content3_{{$language_key}}" rows="8" >@if(empty($items)){{old('content3_'.$language_key) }}@else{{$items->getTranslation('content3',$language_key,false)}}@endif</textarea>
                                             </div>
                                             </div>
                                         @endforeach

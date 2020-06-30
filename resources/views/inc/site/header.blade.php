@@ -35,7 +35,7 @@
                                     <a href="{{ route('about', ['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.About') }}</a>
                                 </li>
                                 <li class="menu-list__item">
-                                    <a href="{{ route('about', ['local' => App::getLocale()]) }}" class="menu-list__link">Şirkətlər</a>
+                                    <a href="{{ route('companiesList', ['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.Comp') }}</a>
                                 </li>
                                 <li class="menu-list__item">
                                     <a href="{{ route('services',['local' => App::getLocale()]) }}" class="menu-list__link">{{ __('header.Services') }}</a>
@@ -200,7 +200,7 @@
                 <a href="{{ route('about',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.About') }}</a>
             </li>
             <li class="mobile-nav-list__item">
-                <a href="{{ route('about',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">Şirkətlər</a>
+                <a href="{{ route('companiesList',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.Comp') }}</a>
             </li>
             <li class="mobile-nav-list__item">
                 <a href="{{ route('services',['local' => App::getLocale()]) }}" class="mobile-nav-list__link">{{ __('header.Services') }}</a>

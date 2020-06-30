@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="offset-xl-2 col-xl-8 offset-sm-1 col-sm-10 col-12">
                     <h1 class="page-title mb-50">{{ __('header.OurProjects') }}</h1>
-                    <span class="page-description mb-60">{{ $contents  }}</span>
+                    <span class="page-description mb-60">{!! $contents !!} </span>
                     <div class="row mb-45">
                         @foreach($projects as $item)
                         <div class="col-xl-6 col-12 mb-20">

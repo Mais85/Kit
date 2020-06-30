@@ -17,7 +17,7 @@
                     </div>
                     <div class="news-item-page__text-box">
                         <img src="{{ $item->img }}" />
-                        <p>{{ $item->getTranslation('contents',app()->getLocale(),false) }}</p>
+                        <p>{!! $item->getTranslation('contents',app()->getLocale(),false) !!} </p>
                     </div>
                 </div>
                 @if(isset($item->albom_id))

@@ -29,11 +29,11 @@
                                             <div class="c-tabs__pane {{tabActive($language_key)}}" id="{{$language_key}}" role="tabpanel" aria-labelledby="nav-home-tab">
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn</label>
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="10" >{{old('contents_'.$language_key)}}</textarea>
+                                                    <textarea class="editor" name="contents_{{$language_key}}" rows="10" >{{old('contents_'.$language_key)}}</textarea>
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Kontakt Mətni</label>
-                                                    <textarea class="c-input" name="contacttext_{{$language_key}}" rows="8" >{{old('contacttext_'.$language_key) }}</textarea>
+                                                    <textarea class="editor" name="contacttext_{{$language_key}}" rows="8" >{{old('contacttext_'.$language_key) }}</textarea>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -48,6 +48,10 @@
                                                 <input type="text" class="c-input" name="email" value="{{ old('email') }}"/>
                                             </div>
                                             <div class="c-field">
+                                                <label class="c-field__label">Email 2</label>
+                                                <input type="text" class="c-input" name="email2" value="{{ old('email2') }}"/>
+                                            </div>
+                                            <div class="c-field">
                                                 <label class="c-field__label">Unvan</label>
                                                 <input type="text" class="c-input" name="address" value="{{ old('address') }}"/>
                                             </div>
@@ -56,16 +60,24 @@
                                                 <input type="text" class="c-input" name="phone" value="{{ old('phone') }}"/>
                                             </div>
                                             <div class="c-field">
+                                                <label class="c-field__label">Qısa nömrə</label>
+                                                <input type="text" class="c-input" name="shortphone" value="{{ old('shortphone') }}"/>
+                                            </div>
+                                            <div class="c-field">
                                                 <label class="c-field__label">Mob. Telefon</label>
                                                 <input type="text" class="c-input" name="mobphone" value="{{ old('mobphone') }}"/>
+                                            </div>
+                                            <div class="c-field">
+                                                <label class="c-field__label">Mob. Telefon 2</label>
+                                                <input type="text" class="c-input" name="mobphone2" value="{{ old('mobphone2') }}"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Facebook</label>
                                                 <input type="text" class="c-input" name="fb" value="{{ old('fb') }}"/>
                                             </div>
                                             <div class="c-field">
-                                                <label class="c-field__label">Twitter</label>
-                                                <input type="text" class="c-input" name="twitter" value="{{ old('twitter') }}"/>
+                                                <label class="c-field__label">Linkedin</label>
+                                                <input type="text" class="c-input" name="linkedin" value="{{ old('linkedin') }}"/>
                                             </div>
                                             <div class="c-field">
                                                 <label class="c-field__label">Instagram</label>

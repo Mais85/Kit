@@ -25,7 +25,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn</label>
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="10" >{{old('contents_'.$language_key)}}</textarea>
+                                                    <textarea class="editor" name="contents_{{$language_key}}" rows="10" >{{old('contents_'.$language_key)}}</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

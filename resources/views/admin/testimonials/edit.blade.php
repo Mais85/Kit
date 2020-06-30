@@ -37,7 +37,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətni &nbsp;<span style="font: italic  bold 12px/30px 'Verdana'; color:#FA5661;text-decoration: underline">( max: 191 simvol )</span></label>
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="3" >@if(empty($items->contents)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents_{{$language_key}}" rows="3" >@if(empty($items->contents)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

@@ -30,7 +30,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Qısa Başlıq</label>
-                                                    <textarea class="c-input" name="desc_{{$language_key}}" rows="4" >@if(empty($items->desc)){{old('desc_'.$language_key) }}@else{{$items->getTranslation('desc',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="desc_{{$language_key}}" rows="4" >@if(empty($items->desc)){{old('desc_'.$language_key) }}@else{{$items->getTranslation('desc',$language_key,false)}}@endif</textarea>
                                                 </div>
                                                 <hr>
                                                 <h3>Bölmə 2</h3>
@@ -40,11 +40,11 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn 1</label>
-                                                    <textarea class="c-input" name="contents1_{{$language_key}}" rows="7" >@if(empty($items->contents1)){{old('contents1_'.$language_key) }}@else{{$items->getTranslation('contents1',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents1_{{$language_key}}" rows="7" >@if(empty($items->contents1)){{old('contents1_'.$language_key) }}@else{{$items->getTranslation('contents1',$language_key,false)}}@endif</textarea>
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn 2</label>
-                                                    <textarea class="c-input" name="contents2_{{$language_key}}" rows="7" >@if(empty($items->contents2)){{old('contents2_'.$language_key) }}@else{{$items->getTranslation('contents2',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents2_{{$language_key}}" rows="7" >@if(empty($items->contents2)){{old('contents2_'.$language_key) }}@else{{$items->getTranslation('contents2',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

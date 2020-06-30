@@ -7,6 +7,7 @@ return [
     'video' => ' Your browser does not support HTML5 video.',
     'About' => 'About',
     'Services' => 'Services',
+    'Comp' => 'Companies',
     'OurClients' => 'Our Clients',
     'OurProjects' => 'Our Projects',
     'News' => 'News',

@@ -8,7 +8,7 @@
                     @php $counter = 0; @endphp
                     @foreach($__companies as $values)
                         @php   $counter++;  @endphp
-                        <li class="companies-list__item {{ (Str::afterlast(request()->path(),'/') == $values->id) ? 'active': ''  }}">
+                        <li class="companies-list__item {{ ($loop->first && (Str::afterlast(request()->path(),'/') =='companies') || Str::afterlast(request()->path(),'/') == $values->id) ? 'active': ''  }}">
 
                             <span class="companies-list__number">{{ $counter }}</span>
                             <a href="{{ route('companies',['local' => App::getLocale(),'slug'=> $values->slug, 'id'=>$values->id]) }}" class="companies-list__link">{{ $values->company }}</a>

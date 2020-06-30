@@ -15,6 +15,7 @@
     <link media="screen" href="{{ asset('/css/site.css') }}?<?php echo rand(100, 10000); ?>" type="text/css" rel="stylesheet" />
 
     <link rel="stylesheet" href="{{ asset('/fonts/Montserrat/stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}?<?php echo rand(100, 10000); ?>" type="image/x-icon">
 
     <!-- CUSTOM JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

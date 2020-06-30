@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminBaseController;
 use App\Http\Requests\Companycreaterequest;
 use App\Http\Requests\Companyupdaterequest;
 use App\Models\Company;
 use App\Repositories\Companyrepository;
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class CompanyController extends AdminBaseController
 {
     /**
      * @var $companyrepository
@@ -80,6 +80,7 @@ class CompanyController extends Controller
 
     public function update(Companyupdaterequest $request,$slug)
     {
+//        dd($request->all());
         $bvalidated = $request->validated();
 
         if($bvalidated){

@@ -25,7 +25,7 @@
                                                 </div>
                                                 <div class="c-field">
                                                     <label class="c-field__label">Mətn</label>
-                                                    <textarea class="c-input" name="contents_{{$language_key}}" rows="8" >@if(empty($items->contents)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
+                                                    <textarea class="editor" name="contents_{{$language_key}}" rows="8" >@if(empty($items->contents)){{old('contents_'.$language_key) }}@else{{$items->getTranslation('contents',$language_key,false)}}@endif</textarea>
                                                 </div>
                                             </div>
                                         @endforeach

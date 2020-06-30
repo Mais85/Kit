@@ -4,6 +4,25 @@
 
 @section('content')
 
+    <div class="services-mob-block container-fluid bc-light-blue">
+        <div class="services-mob">
+            <div id="services-list-open" class="services-mob__header">
+                <h1 class="services-mob__title">{{ __('services.serv') }}</h1>
+                <button class="link link_icon link_icon_plus"></button>
+            </div>
+            <div class="services-mob__body">
+                <ul class="services-mob-menu-list">
+                    @foreach($services as $key => $val)
+                        <li class="services-list__item  {{  $loop->first && (Str::afterlast(request()->path(),'/') =='services') || (Str::afterlast(request()->path(),'/') == $val->slug) ? 'active': '' }} ">
+                            <a href="{{ route('servicesItem', ['local' => App::getLocale(),'slug'=>$val->slug]) }}" class="services-list__link ">{{ $val->getTranslation('title',app()->getLocale(),false)}}</a>
+                        </li>
+                    @endforeach
+                </ul>
+
+                <span class="services-mob__iso">ISO 9001:2015</span>
+            </div>
+        </div>
+    </div>
 <div class="content">
 
     <div class="container-fluid">
@@ -24,7 +43,7 @@
                             <h2 class="service__title">{{ $item->getTranslation('title',app()->getLocale(),false)}}</h2>
                             <div class="service__text-block">
                                 <img src="{{ $item->img2 }}" />
-                                <p>{{ $item->getTranslation('contents',app()->getLocale(),false)}}</p>
+                                <p>{!! $item->getTranslation('contents',app()->getLocale(),false)  !!} </p>
                                 @if(isset($item->pdf))
                                     <span style="display:inline-block;float: left;font-weight: bold; font-family: 'Antiqua Azeri' " class="index-companies-list__number">PDF: &nbsp;</span>
                                     <a style="float: left;margin-bottom: 10px;" href="{{ $item->pdf }}" target="_blank" class="link link_blue link_icon link_icon_download">{{ \Str::afterlast($item->pdf,'/') }}</a>
@@ -85,9 +104,18 @@
                                     </ul>
 
                                     <div class="contacts__connection">
+                                        @if(!empty($__companies->where('company',$item->company_name)->pluck('shortphone')->first()))
+                                        <span class="contacts__phone">{{ $__companies->where('company',$item->company_name)->pluck('shortphone')->first() }}</span>
+                                        @endif
                                         <span class="contacts__phone">{{ $__companies->where('company',$item->company_name)->pluck('phone')->first() }}</span>
                                         <span class="contacts__phone">{{ $__companies->where('company',$item->company_name)->pluck('mobphone')->first() }}</span>
+                                        @if(!empty($__companies->where('company',$item->company_name)->pluck('mobphone2')->first()))
+                                        <span class="contacts__phone">{{ $__companies->where('company',$item->company_name)->pluck('mobphone2')->first() }}</span>
+                                        @endif
                                         <span class="contacts__email">{{ $__companies->where('company',$item->company_name)->pluck('email')->first() }}</span>
+                                        @if(!empty($__companies->where('company',$item->company_name)->pluck('email2')->first()))
+                                        <span class="contacts__email">{{ $__companies->where('company',$item->company_name)->pluck('email2')->first() }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -124,9 +152,18 @@
                                         </li>
                                     </ul>
                                     <div class="contacts__connection">
+                                        @if(isset($__settings->shortphone))
+                                            <span class="contacts__phone">{{ $__settings->shortphone }}</span>
+                                        @endif
                                         <span class="contacts__phone">{{ $__settings->phone }}</span>
                                         <span class="contacts__phone">{{ $__settings->mobphone }}</span>
+                                        @if(isset($__settings->mobphone2))
+                                            <span class="contacts__phone">{{ $__settings->mobphone2 }}</span>
+                                        @endif
                                         <span class="contacts__email">{{ $__settings->email }}</span>
+                                        @if(isset($__settings->email2))
+                                            <span class="contacts__email">{{ $__settings->email2 }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
