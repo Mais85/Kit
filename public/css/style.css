@@ -1235,6 +1235,15 @@ button {
   .service .service__text-block img:first-child {
     margin: 0; }
 
+.service .service__text-block u {
+  text-decoration: underline; }
+
+.service .service__text-block em, .service .service__text-block i {
+  font-style: italic; }
+
+.service .service__text-block strong, .service .service__text-block b {
+  font-weight: bold; }
+
 .service .service__text-block .link_blue:hover {
   text-decoration: underline; }
 
