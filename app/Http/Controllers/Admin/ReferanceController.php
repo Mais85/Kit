@@ -34,7 +34,6 @@ class ReferanceController extends AdminBaseController
         $title = 'Bütün Referanslar';
         $items = $this->referancerepository->getPaginate();
         $companies = $this->referancerepository->getCompanylist()->toArray();
-        dd($items,$companies);
         cache(['modRef'=> $items],3600*24);
         return view('admin.referance.index',compact('title','items','companies'));
     }
@@ -75,7 +74,6 @@ class ReferanceController extends AdminBaseController
     {
         $title = 'Referans redaktəsi';
         $items = $this->referancerepository->getReferance($slug,$id);
-        //dd($items);
         $companies = $this->referancerepository->getCompanylist();
         cache(['modReferanceEdit' => $items],3600*24);
         return view('admin.referance.edit',compact('title','items','companies'));

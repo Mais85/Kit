@@ -30,6 +30,7 @@ class GalleryController extends HomeController
          $items = $this->albomrepository->getAll();
          $items = $items->where('isPublished',1);
          $photos = Photo::with('albom')->where('albom_id',$id)->get();
+//         dd($photos);
          $Alname = $photos->first()->albom->name;
          $img = $photos->pluck('img')->first();
          return view ('site.gallery',compact('items','photos','Alname','img'));

@@ -674,6 +674,14 @@ button {
     margin: 15px 0; }
     .news-item-page__text-box p:first-child {
       margin-top: 0; }
+  .news-item-page__text-box u {
+    text-decoration: underline; }
+  .news-item-page__text-box em, .news-item-page__text-box i {
+    font-style: italic; }
+  .news-item-page__text-box strong, .news-item-page__text-box b {
+    font-weight: bold; }
+  .news-item-page__text-box .link_blue:hover {
+    text-decoration: underline; }
 
 .page-mini-title {
   display: block;
@@ -1356,6 +1364,7 @@ button {
     color: #FFF; }
 
 .gallery-block {
+  height: 100%;
   padding: 16px 20px;
   background-color: rgba(255, 255, 255, 0.1); }
   .gallery-block.gallery-block_fixed {

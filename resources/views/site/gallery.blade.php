@@ -43,7 +43,7 @@
                             <button href="javascript:void(0)" class="carousel-button carousel-button_transparent carousel-button_left"></button>
                         </div>
                         <div class="col-xl-8 col-10">
-                            <img src="{{ $img }}" class="gallery-carousel-img" />
+                            <img src="{{ $img }}?<?php echo rand(100, 10000); ?>" class="gallery-carousel-img" />
                         </div>
                         <div class="col-1 flex-row-center-center">
                             <button href="javascript:void(0)" class="carousel-button carousel-button_transparent carousel-button_right"></button>
@@ -58,7 +58,7 @@
 
                                 @foreach($photos as $photo)
                                 <div class="gallery-carousel__item">
-                                    <img src="{{ $photo->img }}" class="gallery-carousel__img" />
+                                    <img src="{{ $photo->img }}?<?php echo rand(100, 10000); ?>" class="gallery-carousel__img" />
                                 </div>
                                 @endforeach
                             </div>

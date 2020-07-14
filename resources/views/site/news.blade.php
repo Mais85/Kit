@@ -18,7 +18,7 @@
                         <a href="{{ route('newsItem', ['local' => app()->getLocale(),'slug'=> $item->slug , 'id'=>$item->id] ) }}" class="news-item">
                             <div class="news-item__img-box" style="background-image: url({{ $item->smallimg }});"></div>
                             <h2 class="news-item__title">{{ $item->getTranslation('title',app()->getLocale(),false) }}</h2>
-                            <span class="news-item__description">{{ $item->getTranslation('desc',app()->getLocale(),false) }}</span>
+                            <span class="news-item__description">{!! $item->getTranslation('desc',app()->getLocale(),false) !!}</span>
                             <span class="news-item__date">{{ $item->created_at }}</span>
                         </a>
                     </div>

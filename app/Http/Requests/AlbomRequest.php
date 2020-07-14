@@ -41,7 +41,7 @@ class AlbomRequest extends FormRequest
             'name.required' => 'Albom adı mütləq seçilməlidir !',
             'name.max' => 'Albom adı :max simvoldan artıq ola bilməz !',
             'img.required_without'  => 'Kapak şəkili mütləq seçilməlidir !',
-            'img.image'  => 'Şəkil seçin !',
+            'img.image'  => 'Şəkil formatı düz deyil!',
         ];
     }
 }

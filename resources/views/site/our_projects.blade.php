@@ -18,7 +18,7 @@
                                 <span class="project-item__category">– {{ $item->getTranslation('catname',app()->getLocale(),false)}}</span>
                                 <h2 class="project-item__title">{{ $item->getTranslation('title1',app()->getLocale(),false)}}</h2>
                                 <span class="project-item__year">/{{ $item->projectdate }}/</span>
-                                <span class="project-item__description">{{ $item->getTranslation('desc',app()->getLocale(),false)}}</span>
+                                <span class="project-item__description">{!! $item->getTranslation('desc',app()->getLocale(),false) !!}</span>
                                 <a href="{{ route('project',[app()->getLocale(),$item->slug]) }}" class="button button_light-blue button_uppercase">{{ __('project.vmi') }}</a>
                             </div>
                         </div>

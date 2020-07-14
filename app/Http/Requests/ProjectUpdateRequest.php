@@ -31,7 +31,7 @@ class ProjectUpdateRequest extends FormRequest
             'contents1_'.config('app.locale') => 'required|string',
             'contents2_'.config('app.locale') => 'required|string',
             'email'=> 'required|email:rfc,dns',
-            'mobphone'=> 'required|numeric|digits_between:10,12',
+            'mobphone'=> 'required|min:9',
             'link'=> 'nullable|url',
             'img1'=> 'nullable|image',
             'img2'=> 'nullable|image',
@@ -57,11 +57,10 @@ class ProjectUpdateRequest extends FormRequest
             'email.email' => 'Email düzgün deyil !',
             'email.email:rfc,dns:' => 'Email düzgün deyil !',
             'mobphone.required' => 'Mob.Telefon qeyd olunmalıdır !',
-            'mobphone.numeric' => 'Mob.Telefon yalniz rəqəmlərdən ibarət ola bilər !',
-            'mobphone.digits_between' => 'Mob.Telefon  min::min   max::max simvoldan ibarət ola bilər !',
+            'mobphone.min' => 'Mob.Telefon  min::min simvoldan ibarət ola bilər !',
             'link.url' => 'Url adress düzgün qeyd olunmalıdır !',
-            'img1.image'  => 'Şəkil 1 seçin !',
-            'img2.image'  => 'Şəkil 2 seçin !',
+            'img1.image'  => 'Arxa fon şəkil bölməsindəki şəkil formatı duz deyil !',
+            'img2.image'  => 'Şəkil  bölməsindəki şəkil formatı duz deyil !',
         ];
     }
 }

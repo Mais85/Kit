@@ -50,10 +50,10 @@
                         <div class="news-carousel owl-carousel">
                             @foreach($othernews as $val)
                             <div class="news-carousel__item">
-                                <a href="{{ route('newsItem',['local' => app()->getLocale(),'slug'=> $item->slug , 'id'=>$item->id] ) }}" class="news-item">
+                                <a href="{{ route('newsItem',['local' => app()->getLocale(),'slug'=> $val->slug , 'id'=>$val->id] ) }}" class="news-item">
                                     <div class="news-item__img-box" style="background-image: url({{ $val->smallimg }});"></div>
                                     <h2 class="news-item__title">{{ $val->getTranslation('title',app()->getLocale(),false) }}</h2>
-                                    <span class="news-item__description">{{ $val->getTranslation('desc',app()->getLocale(),false) }}</span>
+                                    <span class="news-item__description">{!! $val->getTranslation('desc',app()->getLocale(),false) !!}</span>
                                     <span class="news-item__date">{{ $val->created_at }}</span>
                                 </a>
                             </div>

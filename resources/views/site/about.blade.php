@@ -92,7 +92,7 @@
                                 <div class="certificate-item">
                                     <div class="certificate-item__img-box" style="background-image: url({{ $items->img }})"></div>
                                     <h3 class="certificate-item__title">{{ $items->title }}</h3>
-                                    <span class="certificate-item__description">{{ $items->getTranslation('desc',app()->getLocale(),false)}}</span>
+                                    <span class="certificate-item__description">{!! $items->getTranslation('desc',app()->getLocale(),false) !!}</span>
                                     <a href="{{ $items->img }}" class="link link_blue link_size-16 link_underlined ta-center" data-lightbox="certificates-links" data-title="{{ $items->title }}">{{ __('about.zoom') }}</a>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                                 <div class="direction-item__main-info">
                                     <h3 class="direction-item__name">{{ $items->name }} {{ $items->surname }}</h3>
                                     <span class="direction-item__position">{{ $items->getTranslation('position',app()->getLocale(),false) }}, {{ $items->company }}</span>
-                                    <img src="{{ asset('img/kit_group_logo_dark.png') }}" class="direction-item__logo"/>
+                                    <img src="{{ $__companies->where('company',$items->company)->pluck('logo')->first() }}" class="direction-item__logo"/>
                                 </div>
                                 <div class="direction-item__contacts">
                                     <span class="direction-item__email">{{ $items->email }}</span>
@@ -136,22 +136,22 @@
                                     <span class="direction-item__phone">+{{ $items->mobphone }}</span>
                                     <ul class="direction-item-social-list">
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->fb !=null) ? $items->fb : '#' }}" target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->fb !=null) ? $items->fb : 'javascript:void(0)' }}" @if($items->fb)target="_blank"@endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/facebook.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->twitter !=null) ? $items->fb : '#' }}"  target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->twitter !=null) ? $items->twitter : 'javascript:void(0)' }}"  @if($items->twitter)target="_blank" @endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/twitter.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->linkedin !=null) ? $items->linkedin : '#' }}" target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->linkedin !=null) ? $items->linkedin : 'javascript:void(0)' }}" @if($items->linkedin)target="_blank" @endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/linkedin.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->instagram !=null) ? $items->instagram : '#' }}" target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->instagram !=null) ? $items->instagram : 'javascript:void(0)' }}"  @if($items->instagram)target="_blank" @endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/instagram_org.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>
@@ -178,22 +178,22 @@
                                     <span class="direction-item__phone">+{{ $items->mobphone }}</span>
                                     <ul class="direction-item-social-list">
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->fb !=null) ? $items->fb : '#' }}" target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->fb !=null) ? $items->fb : 'javascript:void(0)' }}" @if($items->fb)target="_blank" @endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/facebook.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->twitter !=null) ? $items->fb : '#' }}"  target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->twitter !=null) ? $items->twitter : 'javascript:void(0)' }}"  @if($items->twitter)target="_blank" @endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/twitter.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->linkedin !=null) ? $items->linkedin : '#' }}" target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->linkedin !=null) ? $items->linkedin : 'javascript:void(0)' }}" @if($items->linkedin)target="_blank" @endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/linkedin.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>
                                         <li class="direction-item-social-list__item">
-                                            <a href="{{ ($items->instagram !=null) ? $items->instagram : '#' }}" target="_blank" class="direction-item-social-list__link">
+                                            <a href="{{ ($items->instagram !=null) ? $items->instagram : 'javascript:void(0)' }}" @if($items->instagram)target="_blank" @endif class="direction-item-social-list__link">
                                                 <img src="{{ asset('img/instagram_org.svg') }}" class="direction-item-social-list__img" />
                                             </a>
                                         </li>

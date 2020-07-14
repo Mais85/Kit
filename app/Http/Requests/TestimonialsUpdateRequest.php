@@ -55,7 +55,7 @@ class TestimonialsUpdateRequest extends FormRequest
             'instagram.url' => 'Url adress düzgün qeyd olunmalıdır !',
             'twitter.url' => 'Url adress düzgün qeyd olunmalıdır !',
             'linkedin.url' => 'Url adress düzgün qeyd olunmalıdır !',
-            'img'=>'Şəkil seçin !',
+            'img.image'=>'Şəkil formati düz deyil !',
         ];
     }
 }

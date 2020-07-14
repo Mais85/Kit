@@ -41,7 +41,7 @@ class NewsUpdateRequest extends FormRequest
             'title_'.config('app.locale').'.required' => 'Başlıq mütləq qeyd olunmalıdır !',
             'contents_'.config('app.locale').'.required' => 'Mətn mütləq doldurulmalıdır !',
             'title_'.config('app.locale').'.max:191' => 'Başlıq naksimum 191 simvoldan ibarət ola bilər.',
-            'img.image' => 'Şəkil mütləq seçilməlidir !',
+            'img.image' => 'Şəkil bölməsindəki şəkil formatı duz deyil !',
         ];
     }
 }

@@ -53,6 +53,7 @@ class ReferanceRepository extends AdminBaseController
             'slug'=>Str::slug($request->referancer,'-'),
             'referancer' => $request->referancer,
             'name' => $request->name,
+            'company_id' => $request->company_id,
             'position' =>$this->getFormTranslations('position',$request),
             'ref_date' => date('Y-m-d',strtotime($request->ref_date)),
             'img' => $this->editImage($request->img,$item->img,$request->old_img,"referancephotos"),

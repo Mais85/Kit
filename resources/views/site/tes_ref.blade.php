@@ -29,28 +29,28 @@
                                                 <img src="{{ $item->img }}" class="testimonial-item__img"/>
                                             </div>
                                         </div>
-                                        <span class="testimonial-item__description">{{ $item->getTranslation('contents',app()->getLocale(),false) }}</span>
+                                        <span class="testimonial-item__description">{!! $item->getTranslation('contents',app()->getLocale(),false) !!} </span>
                                         <div class="testimonial-item__hr"></div>
                                         <div class="testimonial-item__personal">
                                             <h3 class="testimonial-item__name">{{ $item->username }}</h3>
                                             <ul class="testimonial-item-social-list">
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="{{ ($item->facebook !=null) ? $item->facebook : '#' }}"  target="_blank" class="testimonial-item-social-list__link">
+                                                    <a href="{{ ($item->facebook !=null) ? $item->facebook : "javascript:void(0)" }}"  @if($item->facebook) target="_blank"@endif class="testimonial-item-social-list__link">
                                                         <img src="{{ asset('img/facebook.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="{{ ($item->twitter !=null) ? $item->twitter : '#' }}" target="_blank"  class="testimonial-item-social-list__link">
+                                                    <a href="{{ ($item->twitter !=null) ? $item->twitter : "javascript:void(0)" }}"  @if($item->twitter) target="_blank"@endif  class="testimonial-item-social-list__link">
                                                         <img src="{{ asset('img/twitter.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="{{ ($item->linkedin !=null) ? $item->linkedin : '#' }}"  target="_blank" class="testimonial-item-social-list__link">
+                                                    <a href="{{ ($item->linkedin !=null) ? $item->linkedin : "javascript:void(0)"}}"   @if($item->linkedin) target="_blank"@endif class="testimonial-item-social-list__link">
                                                         <img src="{{ asset('img/linkedin.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>
                                                 <li class="testimonial-item-social-list__item">
-                                                    <a href="{{ ($item->instagram !=null) ? $item->instagram : '#' }}" target="_blank" class="testimonial-item-social-list__link">
+                                                    <a href="{{ ($item->instagram !=null) ? $item->instagram : "javascript:void(0)" }}"  @if($item->instagram) target="_blank"@endif class="testimonial-item-social-list__link">
                                                         <img src="{{ asset('img/instagram_org.svg') }}" class="testimonial-item-social-list__img" />
                                                     </a>
                                                 </li>

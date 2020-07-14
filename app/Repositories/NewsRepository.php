@@ -26,7 +26,7 @@ class NewsRepository  extends AdminBaseController
     }
     public function paginate()
     {
-        return News::orderby('updated_at','desc')->paginate(8);
+        return News::orderby('created_at','desc')->paginate(8);
     }
 
     public function getByPaginate()

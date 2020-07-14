@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Http\Requests\AlbomRequest;
 use App\Repositories\AlbomRepository;
+use Illuminate\Support\Facades\Artisan;
 
 
 class AlbomController extends AdminBaseController
@@ -33,7 +34,7 @@ class AlbomController extends AdminBaseController
     {
         $title = 'Bütün Albomlar';
         $items = $this->albomrepository->getPaginate();
-        cache(['modAlb'=>$items],3600*24);
+//        cache(['modAlb'=>$items],3600*24);
         return view ('admin.albom.inxdex',compact('title','items'));
     }
 
@@ -78,7 +79,7 @@ class AlbomController extends AdminBaseController
         $title = 'Albom redaktəsi';
         $items = $this->albomrepository->getAlboms($slug,$id);
         $photos = $this->albomrepository->getPhotos($id);
-        cache(['modAlbEdit' => $items],3600*24);
+//        cache(['modAlbEdit' => $items],3600*24);
         return view('admin.albom.edit',compact('title','items','photos'));
     }
 
@@ -88,11 +89,11 @@ class AlbomController extends AdminBaseController
      * @param AlbomRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(AlbomRequest $request)
+    public function update(AlbomRequest $request,$id)
     {
         $bvalidated = $request->validated();
         if($bvalidated){
-            $this->albomrepository->update($request);
+            $this->albomrepository->update($request,$id);
             return redirect('/admin/alboms')->with('message','Yenilənmə əməliyyatı uğurla başa çatdı.');
         }else{
             return redirect()->back()->withErrors($bvalidated)->withInput();

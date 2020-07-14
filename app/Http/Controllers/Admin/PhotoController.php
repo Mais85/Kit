@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Http\Requests\AlbomRequest;
 use App\Repositories\PhotoRepository;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 
 class PhotoController extends AdminBaseController

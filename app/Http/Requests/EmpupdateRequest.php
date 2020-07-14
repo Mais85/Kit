@@ -29,13 +29,14 @@ class EmpupdateRequest extends FormRequest
             'company' => 'required|string|max:191',
             'position_'.config('app.locale') => 'required|string|max:191',
             'email'=> 'required|email:rfc,dns',
-            'phone'=> 'required|min:10|max:12',
-            'mobphone'=> 'required|min:10|max:12',
+            'phone'=> 'required|min:9',
+            'pos_number' => 'required|numeric',
+            'mobphone'=> 'required|min:9',
             'fb'=> 'nullable|url',
             'twitter'=> 'nullable|url',
             'instagram'=> 'nullable|url',
             'linkedin'=> 'nullable|url',
-            'img'=> 'required|image',
+            'img'=> 'required_without:old_img|image',
         ];
     }
 
@@ -50,6 +51,7 @@ class EmpupdateRequest extends FormRequest
             'name.max:191' => 'Maksimum 191 simvol daxil etmək olar !',
             'surname.required' =>'Soyad mütləq doldurulmalıdır !',
             'surname.max:191' => 'Maksimum 191 simvol daxil etmək olar !',
+            'pos_number.required' => 'Sıra nömrəsi mütləq qeyd olunmalıdır',
             'company.required' => 'Şirkət adı mütləq doldurulmalıdır !',
             'company.max:191' => 'Maksimum 191 simvol daxil etmək olar !',
             'position_'.config('app.locale').'.required' => 'Vəzifə mütləq doldurulmalıdır !',
@@ -67,7 +69,7 @@ class EmpupdateRequest extends FormRequest
             'instagram.url' => 'Url adress düzgün qeyd olunmalıdır !',
             'twitter.url' => 'Url adress düzgün qeyd olunmalıdır !',
             'linkedin.url' => 'Url adress düzgün qeyd olunmalıdır !',
-            'img'=>'Şəkil seçin !',
+            'img.image'=>'Şəkil seçin !',
             'img.required'=>'Şəkil mütləq seçilməlidir !',
         ];
     }

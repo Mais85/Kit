@@ -17,7 +17,7 @@
                                 <span class="project-item-page__category">– {{ $item->getTranslation('catname',app()->getLocale(),false)}}</span>
                                 <span class="project-item-page__year">/ {{ $item->projectdate }} /</span>
                             </div>
-                            <span class="project-item-page__description">{{ $item->getTranslation('desc',app()->getLocale(),false)}}</span>
+                            <span class="project-item-page__description">{!! $item->getTranslation('desc',app()->getLocale(),false) !!} </span>
                         </div>
                     </div>
                 </div>
@@ -30,8 +30,8 @@
                     <h2 class="page-mini-title mb-40">{{ $item->getTranslation('title2',app()->getLocale(),false)}}</h2>
                     <div class="page-hr mb-40"></div>
                     <div class="project-item-page-mission-list row mb-75">
-                        <div class="project-item-page-mission-list__item col-md-6 col-12">{{ $item->getTranslation('contents1',app()->getLocale(),false)}}</div>
-                        <div class="project-item-page-mission-list__item col-md-6 col-12">{{ $item->getTranslation('contents2',app()->getLocale(),false)}}</div>
+                        <div class="project-item-page-mission-list__item col-md-6 col-12">{!! $item->getTranslation('contents1',app()->getLocale(),false) !!} </div>
+                        <div class="project-item-page-mission-list__item col-md-6 col-12">{!! $item->getTranslation('contents2',app()->getLocale(),false) !!} </div>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                                             <span class="project-item__category">– {{ $items->getTranslation('catname',app()->getLocale(),false)}}</span>
                                             <h2 class="project-item__title">{{ $items->getTranslation('title1',app()->getLocale(),false)}}</h2>
                                             <span class="project-item__year">/{{ $items->projectdate }}/</span>
-                                            <span class="project-item__description">{{ $items->getTranslation('desc',app()->getLocale(),false)}}</span>
+                                            <span class="project-item__description">{!! $items->getTranslation('desc',app()->getLocale(),false) !!} </span>
                                             <a href="{{ route('project',[app()->getLocale(),$items->slug]) }}" class="button button_light-blue button_uppercase">{{ __('project.vmi') }}</a>
                                         </div>
                                     </div>

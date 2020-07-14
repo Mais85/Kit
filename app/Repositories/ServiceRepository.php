@@ -19,7 +19,7 @@ class ServiceRepository extends AdminBaseController
         $slug = $this->getFormTranslations($name,$request);
         foreach ($slug as &$item){
             if($item !=null){
-                $item = Str::slug($item,'-').'-'.time();
+                $item = Str::slug($item,'-');
                 break;
             }
 
@@ -29,7 +29,7 @@ class ServiceRepository extends AdminBaseController
 
     public function getAll()
     {
-        return Service::all();
+        return Service::all()->sortBy('pos_number');
     }
 
     public function getItembySlug($slug)
@@ -39,7 +39,7 @@ class ServiceRepository extends AdminBaseController
 
     public function getPaginate()
     {
-        return Service::paginate(8);
+        return Service::orderby('pos_number')->paginate(8);
     }
 
     public function getCompanylist()
@@ -58,6 +58,46 @@ class ServiceRepository extends AdminBaseController
         return Albom::all()->pluck('name','id');
     }
 
+    public function getSortingModel()
+    {
+        return Service::all()->sortBy('pos_number');
+    }
+
+    public function getFilteringModel($request,$pos=null)
+    {
+        $bigData = $this->getSortingModel();
+        $temp = 0;
+        foreach ($bigData as $elem){
+            if($pos == null || $request->pos_number < $pos){
+                if ($elem->pos_number == $request->pos_number){
+                    $temp = $elem->pos_number+1;
+                    $elem->update([
+                        'pos_number' =>$request->pos_number+1,
+                    ]);
+                }elseif ($elem->pos_number== $pos){
+                    break;
+                } elseif ($elem->pos_number === $temp){
+                    $temp = $elem->pos_number+1;
+                    $elem->update([
+                        'pos_number' =>$temp,
+                    ]);
+                }
+            }else{
+                if($elem->pos_number == $pos){
+                    $temp = $pos;
+                    continue;
+                }elseif($elem->pos_number > $request->pos_number){
+                    break;
+                }elseif($elem->pos_number > $pos){
+                    $elem->update([
+                        'pos_number' =>$elem->pos_number-1,
+                    ]);
+                }
+            }
+
+        }
+    }
+
     public function store($request)
     {
         return Service::create([
@@ -66,6 +106,7 @@ class ServiceRepository extends AdminBaseController
             'img1' => $this->uploadImage($request->img1,'photos'),
             'img2' => $this->uploadImage($request->img2,'photos'),
             'pdf' => $this->uploadFile($request->pdf,'files'),
+            'pos_number' => $request->pos_number,
             'slug' =>$this->getSlugFrom('title',$request),
             'company_id' =>$request->company,
             'albom_id' => $request->albom_id,
@@ -76,17 +117,36 @@ class ServiceRepository extends AdminBaseController
     public function update($request)
     {
         $item = cache('modServiceEdit');
+
+        if($request->pos_number != $item->pos_number){
+            $this->getFilteringModel($request,$item->pos_number);
+        }
+
         return $item->update([
             'title' => $this->getFormTranslations('title',$request),
             'contents'=>$this->getFormTranslations('contents',$request),
             'img1' => $this->editImage($request->img1,$item->img1,$request->old_img1,'photos'),
             'img2' => $this->editImage($request->img2,$item->img2,$request->old_img2,'photos'),
             'pdf' => $this->editFile($request->pdf,$item->pdf,$request->oldpdf,'files'),
-//            'slug' =>$this->getSlugFrom('title',$request),
+            'slug' =>$this->getSlugFrom('title',$request),
             'company_id' =>$request->company,
             'albom_id' => $request->albom_id,
+            'pos_number' => $request->pos_number,
             'company_name' => $this->getCompanylist()[$request->company],
         ]);
+    }
+
+    public function filterAfterDestroying($pos)
+    {
+        $data =  $this->getSortingModel();
+        $temp =null;
+        foreach ($data as $val ){
+            if($val->pos_number > $pos){
+                $val->update([
+                    'pos_number' => $val->pos_number - 1,
+                ]);
+            }
+        }
     }
 
     public function destroy($id)
@@ -95,6 +155,8 @@ class ServiceRepository extends AdminBaseController
         foreach ($items as $item) {
             $data = cache('modservice');
             $deleted_item = $data->where('id',$item)->first();
+            $poss = $deleted_item->pos_number;
+            $this->filterAfterDestroying($poss);
             $filename1 = $deleted_item->img1;
             $filename2 = $deleted_item->img2;
             $filepdf = $deleted_item->pdf;

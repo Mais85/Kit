@@ -114,7 +114,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth']],fun
     Route::get('/alboms/create','AlbomController@create');
     Route::post('/alboms/create','AlbomController@store');
     Route::get('/alboms/edit/{slug}/{id}','AlbomController@edit');
-    Route::post('/alboms/edit','AlbomController@update')->name('AlbomUpdate');
+    Route::post('/alboms/edit/{id}','AlbomController@update')->name('AlbomUpdate');
     Route::get('/alboms/delete/{id}','AlbomController@destroy');
     Route::post('/alboms/photo','PhotoController@store');
     Route::post('/alboms/photo/delete/{id}','PhotoController@delPhoto');

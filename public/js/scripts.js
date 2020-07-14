@@ -3199,6 +3199,14 @@ function contentHeightChange(){
     if((headerAndFooterHeight + contentHeight) < window.innerHeight) $(".content").height(window.innerHeight - headerAndFooterHeight - 88)
 }
 
+function galleryBlockHeightChange(){
+
+    let headerHeight = $("header").outerHeight()
+    let footerHeight = $("footer").outerHeight()
+
+    $(".gallery-block").height("calc(100vh - "+(headerHeight + footerHeight)+"px)")
+}
+
 var tween = {
     progress: function(){
         return 1
@@ -3928,7 +3936,11 @@ $(window).on("load", function(){
 
     $(window).resize(function(){
         $("#comapnies-view-button-open").css("right", (window.innerWidth - 1920 > 0 ? (window.innerWidth - 1920)/2 : 0) + "px")
+
+        // galleryBlockHeightChange()
     })
+
+    // galleryBlockHeightChange()
 
 })
 
@@ -3959,4 +3971,4 @@ $(window).on("load", function(){
 //     })
 // })
 
-// $(window).resize(contentHeightChange)
+// $(window).resize(galleryBlockHeightChange)

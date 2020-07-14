@@ -10,7 +10,7 @@ class Service extends Model
     Use HasTranslations;
 
     protected $table = 'services';
-    protected $fillable = ['title','contents','slug','img1','img2','company_id','company_name','albom_id','pdf'];
+    protected $fillable = ['title','contents','slug','img1','img2','pos_number','company_id','company_name','albom_id','pdf'];
     public $translatable = ['title','contents'];
 
 }

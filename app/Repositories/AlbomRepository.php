@@ -7,6 +7,7 @@ namespace App\Repositories;
 use App\Http\Controllers\Admin\AdminBaseController;
 use App\Models\Albom;
 use App\Models\Photo;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -24,7 +25,8 @@ class AlbomRepository extends AdminBaseController
 
     public function getAlboms($slug, $id)
     {
-        $data = cache('modAlb');
+//        $data = cache('modAlb');
+        $data = $this->getPaginate();
         $item = $data->where('id', $id)->first();
         return $item;
     }
@@ -71,9 +73,10 @@ class AlbomRepository extends AdminBaseController
         }
     }
 
-    public function update($request)
+    public function update($request,$id)
     {
-        $item = cache('modAlbEdit');
+//        $item = cache('modAlbEdit');
+         $item = Albom::findOrFail($id);
          $data = $item->update([
             'slug' =>Str::slug($request->name,'-'),
             'name' =>$request->name,
@@ -98,7 +101,8 @@ class AlbomRepository extends AdminBaseController
     {
         $items = array_filter(explode(',',$id));
         foreach ($items as $item) {
-            $data = cache('modAlb');
+//            $data = cache('modAlb');
+            $data = $this->getPaginate();
             $deleted_item = $data->where('id',$item)->first();
             $filename = $deleted_item->coverimg;
             $pos = '/storage/smallphotos/';

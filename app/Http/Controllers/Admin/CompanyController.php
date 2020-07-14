@@ -80,7 +80,6 @@ class CompanyController extends AdminBaseController
 
     public function update(Companyupdaterequest $request,$slug)
     {
-//        dd($request->all());
         $bvalidated = $request->validated();
 
         if($bvalidated){

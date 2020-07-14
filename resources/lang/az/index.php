@@ -7,7 +7,7 @@ return [
     'clientAllView' => 'Müştərilər tam siyahısı',
     'newsAllView' => 'Yeniliklər',
     'testi' => 'Rəylər',
-    'referen' => 'İstinadlar',
+    'referen' => 'Tövsiyələr',
     'news' => 'Xəbərlər',
     'notf' => 'Nəticə yoxdur!',
     'ref' => 'Digər Rəy və İstinadlar',

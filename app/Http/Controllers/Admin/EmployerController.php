@@ -86,6 +86,7 @@ class EmployerController extends AdminBaseController
      */
     public function update(EmpupdateRequest $request)
     {
+//        dd($request->all());
          $bvalidated = $request->validated();
         if($bvalidated){
             $this->employeerepository->update($request);

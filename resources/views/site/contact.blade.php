@@ -15,7 +15,7 @@
                         <div class="contacts__main">
                             <span class="contacts__about">{!! $__settings->getTranslation('footcontent',app()->getLocale(),false) !!}</span>
 
-                            <div class="contacts__address">
+                            <div class="contacts__address mt-auto">
                                 <span class="contacts__name">{{ $__settings->title }}</span>
                                 <span class="contacts__value">{{ $__settings->address }}</span>
                             </div>
@@ -24,22 +24,22 @@
                         <div class="contacts__other">
                             <ul class="contacts-social-list">
                                 <li class="contacts-social-list__item">
-                                    <a href="{{ ($__settings->fb !=null) ? $__settings->fb : '#' }}" target="_blank" class="contacts-social-list__link">
+                                    <a href="{{ ($__settings->fb !=null) ? $__settings->fb : 'javascript:void(0)' }}" @if($__settings->fb)target="_blank" @endif class="contacts-social-list__link">
                                         <img src="{{ asset('img/facebook_white.svg') }}" class="contacts-social-list__img"/>
                                     </a>
                                 </li>
                                 <li class="contacts-social-list__item">
-                                    <a href="@if(isset( $__settings->instagram)){{ $__settings->instagram }}@else # @endif"  target="_blank" class="contacts-social-list__link">
+                                    <a href="{{ ($__settings->instagram !=null) ? $__settings->instagram : 'javascript:void(0)' }}" @if($__settings->instagram)target="_blank" @endif class="contacts-social-list__link">
                                         <img src="{{ asset('img/instagram_white.svg') }}" class="contacts-social-list__img"/>
                                     </a>
                                 </li>
                                 <li class="contacts-social-list__item">
-                                    <a href="{{ ($__settings->linkedin !=null) ? $__settings->linkedin : '#' }}" target="_blank"  class="contacts-social-list__link">
+                                    <a href="{{ ($__settings->linkedin !=null) ? $__settings->linkedin : 'javascript:void(0)' }}" @if($__settings->linkedin)target="_blank" @endif  class="contacts-social-list__link">
                                         <img src="{{ asset('img/linkedin_white.svg') }}" class="contacts-social-list__img"/>
                                     </a>
                                 </li>
                                 <li class="contacts-social-list__item">
-                                    <a href="{{ ($__settings->youtube !=null) ? $__settings->youtube : '#' }}" target="_blank"  class="contacts-social-list__link">
+                                    <a href="{{ ($__settings->youtube !=null) ? $__settings->youtube : 'javascript:void(0)' }}" @if($__settings->youtube)target="_blank" @endif  class="contacts-social-list__link">
                                         <img src="{{ asset('img/youtube_white.svg') }}" class="contacts-social-list__img"/>
                                     </a>
                                 </li>

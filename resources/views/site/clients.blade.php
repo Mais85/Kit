@@ -13,7 +13,7 @@
                     <div class="row mb-70">
                         @foreach($items as $item)
                         <div class="col-xl-3 col-md-6 col-12 mb-70">
-                            <a href="javascript:void(0)" class="client-item">
+                            <a href="{{ $item->link !=null ? $item->link : " javascript:void(0)" }}"  @if($item->link)target="_blank" @endif class="client-item">
                                 <img src="{{ $item->logo }}" class="client-item__img" />
                             </a>
                         </div>

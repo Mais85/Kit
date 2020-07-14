@@ -29,7 +29,7 @@ class CompanyController extends HomeController
      */
     public function index()
     {
-        $companies = $this->companyrepository->All();
+        $companies = $this->companyrepository->getBySort();
         $item = $companies->first();
         return view('site.companies',compact('companies','item'));
     }

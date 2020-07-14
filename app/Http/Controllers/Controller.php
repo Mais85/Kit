@@ -42,7 +42,7 @@ class Controller extends BaseController
             "__thumbs"      => $this->__thumbs,
             "__settings"      => Setting::findOrFail(1),
             '__header' => IndexPage::findOrFail(1),
-            '__companies' => Company::all(),
+            '__companies' => Company::all()->sortBy('pos_number'),
         ]);
     }
 
